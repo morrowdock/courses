@@ -1,6 +1,6 @@
 {
   "date": "2026-11-02",
-  "status": "reviewed local source inventory; public release pending",
+  "status": "private GitHub working candidate; public release not authorized",
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/bug.md",
@@ -16,7 +16,7 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "2518e0f28227cefc1561ecfb9ab64c0b3e2e28eaa71c854f28b9911d75bc4125"
+      "sha256": "4a37de3fd013cbd3c7d32fe8a69d1fa6afee8fd3bf53e65e9cb96e117fd56450"
     },
     {
       "path": ".gitignore",
@@ -52,7 +52,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "9f13e787e3cca71f886948cc19c6841a39bc7150d0f3432a0741be5b295fe00d"
+      "sha256": "5a974b646b53702a0247b116960574f78ce0003a9c1690dae8acb259b1a36e69"
     },
     {
       "path": "SECURITY.md",
@@ -60,7 +60,7 @@
     },
     {
       "path": "THIRD-PARTY.md",
-      "sha256": "2253d8019c5204915eb13b8d9d181be9379e724d125590b18f3cfe29bb7178ec"
+      "sha256": "70600fb2a09d74f847a8bb6c51dcd6f1d2a472b634c0d9a01cb62d9566175c0a"
     },
     {
       "path": "TRADEMARKS.md",

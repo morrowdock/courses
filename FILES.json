@@ -52,11 +52,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "61a93111ab4c23e49d48f0388068458d01506796dcf377435568ca3b7924ed21"
+      "sha256": "9f13e787e3cca71f886948cc19c6841a39bc7150d0f3432a0741be5b295fe00d"
     },
     {
       "path": "SECURITY.md",
-      "sha256": "13d9e80b04c2b26777bf017d812b35d0d8f88c446e5f1ff855f4dc753a19e84c"
+      "sha256": "c5de7c092c7eddf66c62a311a34e059fedbc95224badacc1231ea016eaf60197"
     },
     {
       "path": "THIRD-PARTY.md",

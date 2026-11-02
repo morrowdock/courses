@@ -1,0 +1,18 @@
+{
+  "author": "Morrowdock contributors",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "sources": [
+    "Original synthetic arithmetic example, 2026-11-02"
+  ],
+  "assets": [
+    {
+      "path": "bundle.json",
+      "sha256": "14fc13475a5010fa0d701099caad4b3d3ae4a358dc74e7252d6ff8bb5479995d",
+      "origin": "original synthetic example",
+      "rightsHolder": "Morrowdock contributors",
+      "license": "CC-BY-SA-4.0",
+      "changes": "initial version"
+    }
+  ]
+}

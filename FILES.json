@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-02",
+  "status": "reviewed local source inventory; public release pending",
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.md",
+      "sha256": "fa6bcc8cfdfe1e97cc2e0b530eae03d351ebe58c505736307d37086c82e50781"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/course.md",
+      "sha256": "1e50725dcdfdf0f6ba2a4afbf147a76d2d6539cf03039e4bd23cb86188b2a473"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "sha256": "a2147908156e05a52b6d63be3587bede7b9465a5d28d8e12419c2b46b876954c"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "2518e0f28227cefc1561ecfb9ab64c0b3e2e28eaa71c854f28b9911d75bc4125"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "fa3789407a8137a8cd505b86494926534dfe71fcd64ce86c7a3fb5253867c6d0"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "634da34191a3a65251f18ec664f7cf63ea627f9a0df2fe933f83e0b204162fe8"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "b061a7cc5473e063aad0efe8f2c4ad90fe1681383632dfe0b902a6e3dabd3f51"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "sha256": "11f10a46d0d826d4799ec8ee5e5808ede9f463c04459c98fc9905cf5f7cc28d6"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2"
+    },
+    {
+      "path": "LICENSE-CODE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "79b5beada5889ad887aeed4ee880304db3468a17f161511d473d9ded5fc2416d"
+    },
+    {
+      "path": "QUALITY.md",
+      "sha256": "5f4579ce6a9d725443c530db108f3d841092b359027e35a4b05d56111f51ae8f"
+    },
+    {
+      "path": "README.md",
+      "sha256": "61a93111ab4c23e49d48f0388068458d01506796dcf377435568ca3b7924ed21"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "ac7b0df28d9db52b140349596fffcd6616335692c524301db642b9ffa994d8c0"
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "sha256": "2253d8019c5204915eb13b8d9d181be9379e724d125590b18f3cfe29bb7178ec"
+    },
+    {
+      "path": "TRADEMARKS.md",
+      "sha256": "bace4b82f63e1523c3c0edb3fcf4f941e330a4543f90e70ede815ded7510861c"
+    },
+    {
+      "path": "demo/bundle.json",
+      "sha256": "14fc13475a5010fa0d701099caad4b3d3ae4a358dc74e7252d6ff8bb5479995d"
+    },
+    {
+      "path": "demo/provenance.json",
+      "sha256": "fd15c3b3a67afa9c1be866af68e064c76fe275f702ee65494990e2e375f27543"
+    },
+    {
+      "path": "registry.json",
+      "sha256": "01630716cfdeae6869fed234211b6471c94c19ad2ebaebf2308e41bb79eac809"
+    },
+    {
+      "path": "tests/test_courses.py",
+      "sha256": "4539ccec396a788cd6daa8b381c733a2e738efa513bce95ed5c00a674d08d332"
+    },
+    {
+      "path": "tools/check_dco.py",
+      "sha256": "0960ae93203836cd70328402153220ee52522c11540e531a720977ecaf5ef494"
+    },
+    {
+      "path": "tools/validate.py",
+      "sha256": "fcc821894913a461239408d2d0cc12c2ffc6e5f0778146813805c10867705fe0"
+    },
+    {
+      "path": "validator/CourseBundle.swift",
+      "sha256": "94e11ba755b4d8f5829daea435dba148d491c4cbc2a7ec56a8a2f23d83fd18b7"
+    },
+    {
+      "path": "validator/main.swift",
+      "sha256": "c9d3a4b18e9c93cccf43c16efc014579c3741090fa3151893751e9eef5b92f62"
+    }
+  ]
+}

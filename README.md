@@ -1,6 +1,6 @@
 # courses
 
-PRIVATE WORKING REPOSITORY — no public release. Fresh history; selected source only. Ownership/grants and approved reporting contacts remain release gates.
+Early preview — no stable release yet. Fresh history; selected source only. Course content: CC BY-SA 4.0 ([LICENSE](LICENSE)); validation tooling: Apache-2.0 ([LICENSE-CODE](LICENSE-CODE)); see [NOTICE](NOTICE). Names, mascot and logos are not licensed ([TRADEMARKS.md](TRADEMARKS.md)). Contributions need a DCO sign-off ([CONTRIBUTING.md](CONTRIBUTING.md)).
 
 Run: `python3 -m unittest discover -s tests`. Linux CI runs on pushes and pull requests; execution status is recorded in GitHub Actions. macOS: run the same command with Swift 6 / Python 3.12 as applicable. Apple UI renderers and app/device acceptance are outside this portable slice.
 

@@ -37,7 +37,7 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "49d5b022c6dad7416728f898b8666a87cb450b00ab345dafdd676a1c7fb2de4c"
+      "sha256": "75d75b34ae37103f75196032b8d8d6bf84f9efbdc0fa4f9b81712e37b7d166eb"
     },
     {
       "path": "COPYRIGHT.md",
@@ -162,6 +162,14 @@
     {
       "path": "validator/main.swift",
       "sha256": "c9d3a4b18e9c93cccf43c16efc014579c3741090fa3151893751e9eef5b92f62"
+    },
+    {
+      "path": ".github/workflows/changelog.yml",
+      "sha256": "d4d519023959cad9d1e04047e662733a348c5d5d06a51bbf1a9597bb345618b9"
+    },
+    {
+      "path": ".github/tests/changelog.test.cjs",
+      "sha256": "a69e67f7fbf841bbafba429289770a49a94a017d203d86c611ea0403053bfa81"
     }
   ]
 }

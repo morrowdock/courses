@@ -1,4 +1,22 @@
 {
   "format": "morrowdock-registry-v1",
-  "entries": []
+  "entries": [
+    {
+      "id": "demo",
+      "version": "1.0.0",
+      "creators": [
+        {
+          "displayName": "Morrowdock contributors"
+        }
+      ],
+      "licence": "CC-BY-SA-4.0",
+      "path": "courses/demo/1.0.0/course.json",
+      "status": "draft",
+      "reviewedAt": null,
+      "reviewers": {
+        "aiChecks": [],
+        "humanApprover": null
+      }
+    }
+  ]
 }

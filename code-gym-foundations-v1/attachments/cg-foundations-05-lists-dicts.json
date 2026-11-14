@@ -1,0 +1,1368 @@
+{
+  "activities": [
+    {
+      "code": [
+        "xs = [5, 8]",
+        "xs.append(3)",
+        "first = xs[0]",
+        "last = xs[-1]"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "xs": "[5, 8]"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "xs": "[5, 8, 3]"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "first": "5",
+                "xs": "[5, 8, 3]"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "first": "5",
+                "last": "3",
+                "xs": "[5, 8, 3]"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "ld-l-watch",
+      "kind": "trace",
+      "mode": "learn",
+      "narration": [
+        "Line 1 is next.",
+        "xs labels a list holding 5 and 8. 5 is at position 0, 8 at position 1.",
+        "append changed the list in place: 3 joined the end. No = was needed.",
+        "xs[0] is the item at position 0, the first one.",
+        "xs[-1] counts from the end: the last item. The list has len(xs) = 3 items, at positions 0, 1 and 2."
+      ],
+      "outcomes": [
+        "ld-o1"
+      ],
+      "prompt": "Step through. Positions start at 0.",
+      "title": "Watch it: a list grows"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Yes. b = a didn't copy the list; both names label the same list, so b sees the change.",
+            "text": "[1, 2, 3]"
+          },
+          {
+            "reaction": "In lesson 1, a = a + 1 moved the name a to a new number. append doesn't move any name; it changes the one list a and b both label.",
+            "text": "[1, 2]"
+          },
+          {
+            "reaction": "append ran once, on the one list both names share.",
+            "text": "[1, 2, 3, 3]"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "a = [1, 2]",
+        "b = a",
+        "a.append(3)",
+        "print(b)"
+      ],
+      "id": "ld-l-alias",
+      "kind": "predict",
+      "mode": "learn",
+      "outcomes": [
+        "ld-o3"
+      ],
+      "output": "[1, 2, 3]\n",
+      "prompt": "Guess first; it's free. What does this print?",
+      "reveal": "[1, 2, 3]. b = a puts a second label on the same list. Changing the list through either name changes it for both. To get a separate list, use b = a.copy().",
+      "title": "Predict before you peek: two names, one list"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Right: position 1 is the second item, and there are 3 items.",
+            "text": "dog 3"
+          },
+          {
+            "reaction": "That's Lua's t[1]. Python lists start at position 0, so pets[1] is the second item.",
+            "text": "cat 3"
+          },
+          {
+            "reaction": "len counts the items: 3. The last position is 2.",
+            "text": "dog 2"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "pets = [\"cat\", \"dog\", \"eel\"]",
+        "print(pets[1], len(pets))"
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "ld-g-index#hint-1",
+          "text": "Number the items from 0.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "ld-g-index#hint-2",
+          "text": "cat is 0, dog is 1, eel is 2.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "ld-g-index",
+      "kind": "predict",
+      "mode": "guided",
+      "outcomes": [
+        "ld-o1"
+      ],
+      "output": "dog 3\n",
+      "prompt": "What does this print?",
+      "title": "Which pet?"
+    },
+    {
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: each new word got 1.",
+                "text": "{'hi': 1, 'yo': 1}"
+              },
+              {
+                "reaction": "'yo' wasn't a key, so the else block added it too.",
+                "text": "{'hi': 1}"
+              },
+              {
+                "reaction": "The second word was 'yo', not 'hi'.",
+                "text": "{'hi': 2}"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "Two words handled. What does counts hold?",
+          "frame": 7,
+          "var": "counts"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right: 'hi' was already a key, so it went up to 2.",
+                "text": "{'hi': 2, 'yo': 1}"
+              },
+              {
+                "reaction": "The third word was 'hi' again; since it's already a key, its count rises.",
+                "text": "{'hi': 1, 'yo': 1}"
+              },
+              {
+                "reaction": "Only the key for this word changes.",
+                "text": "{'hi': 2, 'yo': 2}"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "All three words handled. What does counts hold?",
+          "frame": 10,
+          "var": "counts"
+        }
+      ],
+      "code": [
+        "counts = {}",
+        "for w in [\"hi\", \"yo\", \"hi\"]:",
+        "    if w in counts:",
+        "        counts[w] = counts[w] + 1",
+        "    else:",
+        "        counts[w] = 1"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{}"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{}",
+                "w": "'hi'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 6,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{}",
+                "w": "'hi'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 1}",
+                "w": "'hi'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 1}",
+                "w": "'yo'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 6,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 1}",
+                "w": "'yo'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 1, 'yo': 1}",
+                "w": "'yo'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 1, 'yo': 1}",
+                "w": "'hi'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 1, 'yo': 1}",
+                "w": "'hi'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 2, 'yo': 1}",
+                "w": "'hi'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "counts": "{'hi': 2, 'yo': 1}",
+                "w": "'hi'"
+              }
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "ld-g-trace#hint-1",
+          "text": "in asks whether a key exists. Keys are the words; values are the counts.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "ld-g-trace#hint-2",
+          "text": "First time a word appears: else adds it with 1. Next time: its count goes up.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "ld-g-trace",
+      "kind": "trace",
+      "mode": "guided",
+      "narration": [
+        "Line 1 is next.",
+        "counts is an empty dict. The loop hands out each word.",
+        "w is 'hi'. Is 'hi' already a key in counts?",
+        "No, so the else block adds it with 1.",
+        "Back to the for line.",
+        "w is 'yo'. Is it a key yet?",
+        "No: the else block adds it.",
+        "Back to the for line.",
+        "w is 'hi' again. Is it a key now?",
+        "Yes, so its count goes up by one.",
+        "Back to the for line; no words left.",
+        "Finished."
+      ],
+      "outcomes": [
+        "ld-o2"
+      ],
+      "prompt": "Step through. Fill in each hidden value before moving on.",
+      "title": "Trace: counting words"
+    },
+    {
+      "bugLine": 2,
+      "code": [
+        "stock = {\"apple\": 3}",
+        "stock[\"pear\"] = stock[\"pear\"] + 2",
+        "print(stock)"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "stock[\"pear\"] = stock.get(\"pear\", 0) + 2",
+          "output": "{'apple': 3, 'pear': 2}\n",
+          "reaction": "Yes. .get(key, 0) gives 0 when the key isn't there yet, instead of stopping."
+        },
+        {
+          "fixLine": "stock[\"pear\"] = stock[\"apple\"] + 2",
+          "output": "{'apple': 3, 'pear': 5}\n",
+          "reaction": "That runs, but it gives 5 pears: it starts from the apple count."
+        },
+        {
+          "fixLine": "stock.pear = 2",
+          "output": "",
+          "raises": "AttributeError",
+          "reaction": "Lua lets you write t.pear for t[\"pear\"]; Python dicts don't, so this stops with an AttributeError."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "ld-g-fix#hint-1",
+          "text": "The right side reads stock[\"pear\"] before it exists. Is there a way to read with a default?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "ld-g-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "Starting with 3 apples is fine.",
+        "3": "Python never gets here."
+      },
+      "mode": "guided",
+      "outcomes": [
+        "ld-o2"
+      ],
+      "prompt": "This should add 2 pears to the stock, but it stops with a KeyError. Tap the wrong line, then pick the repair.",
+      "symptom": {
+        "actual": "",
+        "expected": "{'apple': 3, 'pear': 2}",
+        "raises": "KeyError"
+      },
+      "title": "The missing pear"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        [
+          "b",
+          "a",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    out = n * 2",
+          "reaction": "That replaces the whole list with a single number on every pass."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "ld-g-parsons#hint-1",
+          "text": "Make the empty list before the loop, append inside it, print after it.",
+          "tier": "nudge"
+        }
+      ],
+      "id": "ld-g-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "nums = [1, 2, 3]"
+        },
+        {
+          "id": "b",
+          "line": "out = []"
+        },
+        {
+          "id": "c",
+          "line": "for n in nums:"
+        },
+        {
+          "id": "d",
+          "line": "    out.append(n * 2)"
+        },
+        {
+          "id": "e",
+          "line": "print(out)"
+        }
+      ],
+      "mode": "guided",
+      "outcomes": [
+        "ld-o1"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints [2, 4, 6]. One line isn't needed.",
+      "start": [
+        "e",
+        "d",
+        "x",
+        "c",
+        "b",
+        "a"
+      ],
+      "target": "[2, 4, 6]",
+      "title": "Put it in order: double everything"
+    },
+    {
+      "grading": "self-check",
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "ld-g-explain#hint-1",
+          "text": "Did any name move with a.append(3)? Or did the list itself change?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "ld-g-explain",
+      "kind": "explain",
+      "mode": "guided",
+      "model": "In both programs b = a makes b label the same thing a labels. With numbers, a = a + 1 builds a new number and moves only a. With a list, append doesn't move any name; it changes the one list that a and b both label, so b shows it too. b = a.copy() would make a separate list.",
+      "outcomes": [
+        "ld-o3"
+      ],
+      "prompt": "In your own words: in lesson 1, b = a followed by a = a + 1 left b alone. Here, b = a followed by a.append(3) changed b. What's different?",
+      "rubric": [
+        {
+          "id": "ld-g-explain#k1",
+          "idea": "b = a never copies; it puts a second name on the same value."
+        },
+        {
+          "id": "ld-g-explain#k2",
+          "idea": "a = a + 1 moves the name a to a new number; b keeps the old one."
+        },
+        {
+          "id": "ld-g-explain#k3",
+          "idea": "a.append(3) changes the shared list itself, so every name for it sees the change. Use .copy() for a separate list."
+        }
+      ],
+      "title": "Explain it back: why b changed"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-index#help-1",
+          "text": "xs[0] is the first item; xs[-1] is the last."
+        },
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-index#help-2",
+          "text": "4 + 1 = 5 is appended at position 3."
+        }
+      ],
+      "answer": {
+        "expected": "4 5",
+        "misreadings": [
+          {
+            "reaction": "xs[-1] is the last item, 1, not 7.",
+            "text": "4 11"
+          },
+          {
+            "reaction": "append added an item, so the length grew.",
+            "text": "3 5"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "xs = [4, 7, 1]",
+        "xs.append(xs[0] + xs[-1])",
+        "print(len(xs), xs[3])"
+      ],
+      "id": "ld-i-index",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "ld-o1"
+      ],
+      "output": "4 5\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "On your own: first plus last"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-index-cb#help-1",
+          "text": "Position 1 is the second item."
+        }
+      ],
+      "answer": {
+        "expected": "4 10",
+        "misreadings": [
+          {
+            "reaction": "After append, the last item is the new one.",
+            "text": "4 30"
+          },
+          {
+            "reaction": "ys[1] is 20 and ys[0] is 10: 20 - 10.",
+            "text": "4 -10"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "ys = [10, 20, 30]",
+        "ys.append(ys[1] - ys[0])",
+        "print(len(ys), ys[-1])"
+      ],
+      "comebackFor": "ld-i-index",
+      "id": "ld-i-index-cb",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "ld-o1"
+      ],
+      "output": "4 10\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "Comeback: a difference on the end"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-trace#help-1",
+          "text": "A parameter gets the same list, not a copy."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes. scores and mine label the same list, so the append is visible through mine.",
+                "text": "[50, 100]"
+              },
+              {
+                "reaction": "Passing a list doesn't copy it: scores is another label on mine's list.",
+                "text": "[50]"
+              },
+              {
+                "reaction": "append adds to the end; 50 is still there.",
+                "text": "[100]"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "add_bonus is about to return. Look at the main box: what does mine hold?",
+          "depth": 0,
+          "frame": 4,
+          "var": "mine"
+        },
+        {
+          "answer": {
+            "expected": "150",
+            "misreadings": [
+              {
+                "reaction": "add_bonus changed the shared list, so sum sees both items.",
+                "text": "50"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The program ended. What number does total hold?",
+          "frame": 6,
+          "var": "total"
+        }
+      ],
+      "code": [
+        "def add_bonus(scores):",
+        "    scores.append(100)",
+        "mine = [50]",
+        "add_bonus(mine)",
+        "total = sum(mine)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "mine": "[50]"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "mine": "[50]"
+              }
+            },
+            {
+              "fn": "add_bonus",
+              "vars": {
+                "scores": "[50]"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 2,
+          "out": "",
+          "returns": "None",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "mine": "[50, 100]"
+              }
+            },
+            {
+              "fn": "add_bonus",
+              "vars": {
+                "scores": "[50, 100]"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "mine": "[50, 100]"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "mine": "[50, 100]",
+                "total": "150"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "ld-i-trace",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "add_bonus is stored. Line 3 makes a list.",
+        "Line 4 calls add_bonus with mine.",
+        "In add_bonus's box, scores labels the list that was passed in.",
+        "add_bonus is about to return. It has no return line, so it gives back None.",
+        "Back in the main program. Line 5 adds up the list.",
+        "Finished."
+      ],
+      "outcomes": [
+        "ld-o3"
+      ],
+      "prompt": "Step through and fill in each hidden value. Watch both boxes.",
+      "title": "On your own: a list passed to a function"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-trace-cb#help-1",
+          "text": "Two names, one dict."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: one dict, two names.",
+                "text": "{'gem': 5}"
+              },
+              {
+                "reaction": "alias = inv didn't copy; changing alias's dict changes inv's.",
+                "text": "{'gem': 1}"
+              },
+              {
+                "reaction": "Line 3 changes the value for the key 'gem'.",
+                "text": "{'gem': 1, 'alias': 5}"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "Line 3 just ran. What does inv hold?",
+          "frame": 3,
+          "var": "inv"
+        },
+        {
+          "answer": {
+            "expected": "10",
+            "misreadings": [
+              {
+                "reaction": "inv['gem'] is 5 by now.",
+                "text": "2"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The program ended. What number does n hold?",
+          "frame": 4,
+          "var": "n"
+        }
+      ],
+      "code": [
+        "inv = {\"gem\": 1}",
+        "alias = inv",
+        "alias[\"gem\"] = 5",
+        "n = inv[\"gem\"] * 2"
+      ],
+      "comebackFor": "ld-i-trace",
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "inv": "{'gem': 1}"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "alias": "{'gem': 1}",
+                "inv": "{'gem': 1}"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "alias": "{'gem': 5}",
+                "inv": "{'gem': 5}"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "alias": "{'gem': 5}",
+                "inv": "{'gem': 5}",
+                "n": "10"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "ld-i-trace-cb",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "inv labels a dict. Line 2 adds a second name.",
+        "Line 3 changes a value through alias.",
+        "Line 4 reads through inv.",
+        "Finished."
+      ],
+      "outcomes": [
+        "ld-o3"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "Comeback: the alias"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-fix#help-1",
+          "text": "The valid positions of a 3-item list are 0, 1, 2."
+        }
+      ],
+      "bugLine": 2,
+      "code": [
+        "names = [\"Ana\", \"Bo\", \"Cy\"]",
+        "for i in range(1, len(names) + 1):",
+        "    print(names[i])"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "for i in range(len(names)):",
+          "output": "Ana\nBo\nCy\n",
+          "reaction": "Yes: positions 0, 1, 2, exactly the valid ones."
+        },
+        {
+          "fixLine": "for i in range(1, len(names)):",
+          "output": "Bo\nCy\n",
+          "reaction": "No more IndexError, but it starts at 1 and still skips Ana."
+        },
+        {
+          "fixLine": "for i in range(0, len(names) + 1):",
+          "output": "Ana\nBo\nCy\n",
+          "raises": "IndexError",
+          "reaction": "Now Ana prints, but i reaches 3, which is past the end."
+        }
+      ],
+      "id": "ld-i-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "The list is fine.",
+        "3": "names[i] is right; which values of i does the loop give?"
+      },
+      "mode": "independent",
+      "outcomes": [
+        "ld-o1"
+      ],
+      "prompt": "This should print all three names, but it skips Ana and then stops with an IndexError. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "Bo\nCy\n",
+        "expected": "Ana\nBo\nCy",
+        "raises": "IndexError"
+      },
+      "title": "On your own: roll call"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-fix-cb#help-1",
+          "text": "Square brackets on a dict take a key. What are the keys here?"
+        }
+      ],
+      "bugLine": 2,
+      "code": [
+        "ages = {\"Ana\": 30, \"Bo\": 25}",
+        "print(ages[30])"
+      ],
+      "comebackFor": "ld-i-fix",
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "print(ages[\"Ana\"])",
+          "output": "30\n",
+          "reaction": "Yes: you look up by key, and get the value."
+        },
+        {
+          "fixLine": "print(ages[0])",
+          "output": "",
+          "raises": "KeyError",
+          "reaction": "Dicts don't have positions; 0 isn't a key."
+        },
+        {
+          "fixLine": "print(ages.get(30))",
+          "output": "None\n",
+          "reaction": "No error now, but 30 isn't a key, so .get gives None."
+        }
+      ],
+      "id": "ld-i-fix-cb",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "The dict is fine: names are keys, ages are values."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "ld-o2"
+      ],
+      "prompt": "This should print Ana's age, 30, but it stops with a KeyError. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "",
+        "expected": "30",
+        "raises": "KeyError"
+      },
+      "title": "Comeback: look up by key"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        [
+          "b",
+          "a",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-parsons#help-1",
+          "text": "The dict exists before the loop; each pass adds one to that letter's count."
+        }
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    seen[ch] = 1",
+          "reaction": "That resets each letter to 1 instead of adding to its count."
+        }
+      ],
+      "id": "ld-i-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "letters = \"aba\""
+        },
+        {
+          "id": "b",
+          "line": "seen = {}"
+        },
+        {
+          "id": "c",
+          "line": "for ch in letters:"
+        },
+        {
+          "id": "d",
+          "line": "    seen[ch] = seen.get(ch, 0) + 1"
+        },
+        {
+          "id": "e",
+          "line": "print(seen)"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "ld-o2"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints {'a': 2, 'b': 1}. One line isn't needed.",
+      "start": [
+        "d",
+        "e",
+        "x",
+        "b",
+        "c",
+        "a"
+      ],
+      "target": "{'a': 2, 'b': 1}",
+      "title": "On your own: letter counts"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-parsons-cb#help-1",
+          "text": "Keep the biggest seen so far; replace it when a bigger one appears."
+        }
+      ],
+      "comebackFor": "ld-i-parsons",
+      "distractors": [
+        {
+          "id": "x",
+          "line": "        best = best + v",
+          "reaction": "That adds scores together; the program wants the biggest one."
+        }
+      ],
+      "id": "ld-i-parsons-cb",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "best = 0"
+        },
+        {
+          "id": "b",
+          "line": "for v in [3, 6, 2]:"
+        },
+        {
+          "id": "c",
+          "line": "    if v > best:"
+        },
+        {
+          "id": "d",
+          "line": "        best = v"
+        },
+        {
+          "id": "e",
+          "line": "print(best)"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "ld-o1"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 6. One line isn't needed.",
+      "start": [
+        "e",
+        "x",
+        "c",
+        "a",
+        "d",
+        "b"
+      ],
+      "target": "6",
+      "title": "Comeback: the best score"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "ld-i-explain#help-1",
+          "text": "Think of one job for each, then compare t[1] and t.missing in Lua with Python."
+        }
+      ],
+      "grading": "self-check",
+      "id": "ld-i-explain",
+      "kind": "explain",
+      "mode": "independent",
+      "model": "Use a list when order and position matter (scores in order, names in a line). Use a dict when you look things up by a name (a word's count, a person's age). Two traps from Lua: lists start at 0, so xs[0] is the first item and xs[-1] the last; and reading a missing key stops with a KeyError instead of giving nil, so check with k in d or use d.get(k, default).",
+      "outcomes": [
+        "ld-o2"
+      ],
+      "prompt": "A Lua table does the job of both a list and a dict. Explain how to pick between a Python list and a dict, and the two indexing differences that trip up Lua programmers.",
+      "rubric": [
+        {
+          "id": "ld-i-explain#k1",
+          "idea": "A list is an ordered sequence looked up by position; a dict maps keys to values."
+        },
+        {
+          "id": "ld-i-explain#k2",
+          "idea": "List positions start at 0 (Lua tables used as arrays start at 1)."
+        },
+        {
+          "id": "ld-i-explain#k3",
+          "idea": "A missing key is an error in Python (KeyError), where Lua gives nil; use in or .get."
+        }
+      ],
+      "title": "On your own: Lua tables, Python lists and dicts"
+    }
+  ],
+  "bridge": {
+    "rows": [
+      {
+        "concept": "First item",
+        "lua": "t[1]",
+        "note": "Python counts positions from 0.",
+        "python": "xs[0]"
+      },
+      {
+        "concept": "Last item",
+        "lua": "t[#t]",
+        "python": "xs[-1]"
+      },
+      {
+        "concept": "Length",
+        "lua": "#t",
+        "python": "len(xs)"
+      },
+      {
+        "concept": "Add to end",
+        "lua": "table.insert(t, x)",
+        "python": "xs.append(x)"
+      },
+      {
+        "concept": "Map",
+        "lua": "t = {apple = 3}",
+        "note": "Keys are written as values: strings need quotes.",
+        "python": "d = {\"apple\": 3}"
+      },
+      {
+        "concept": "Field shortcut",
+        "lua": "t.apple",
+        "note": "d.apple is an AttributeError on a dict.",
+        "python": "d[\"apple\"]"
+      },
+      {
+        "concept": "Missing key",
+        "lua": "t.pear --> nil",
+        "note": "Use \"pear\" in d or d.get(\"pear\", 0).",
+        "python": "d[\"pear\"]  # KeyError"
+      },
+      {
+        "concept": "Each key and value",
+        "lua": "for k, v in pairs(t) do",
+        "note": "Python dicts keep insertion order; Lua's pairs order isn't specified.",
+        "python": "for k, v in d.items():"
+      },
+      {
+        "concept": "Shared, not copied",
+        "lua": "u = t  -- same table",
+        "note": "Same as Lua. a.copy() makes a separate one.",
+        "python": "b = a  # same list"
+      }
+    ],
+    "title": "Lua → Python: tables become lists and dicts"
+  },
+  "format": "morrowdock-code-gym-foundations-lesson",
+  "id": "cg-found-lists-dicts-v1",
+  "nextLesson": "cg-found-recursion-v1",
+  "order": 5,
+  "outcomes": [
+    {
+      "id": "ld-o1",
+      "text": "Index a list from 0 (and -1 from the end), use len and append, and loop over a list."
+    },
+    {
+      "id": "ld-o2",
+      "text": "Use a dict: look up by key, add or update a key, check with in, and count with .get."
+    },
+    {
+      "id": "ld-o3",
+      "text": "Predict aliasing: two names (or a parameter) for one list or dict both see a change."
+    }
+  ],
+  "referenceCard": {
+    "points": [
+      "xs[0] is first, xs[-1] is last, valid positions are 0 … len(xs) − 1.",
+      "range(len(xs)) gives every valid position.",
+      "append changes the list in place; no = needed.",
+      "d[k] reads (KeyError if missing); d.get(k, default) never stops; k in d asks.",
+      "Count with d[k] = d.get(k, 0) + 1.",
+      "b = a shares the list; changes through either name show in both. Use .copy() to separate."
+    ],
+    "title": "Lists and dicts"
+  },
+  "subtitle": "Many values under one name: in order (list) or by key (dict). And two names can share one.",
+  "teach": [
+    {
+      "body": "xs = [5, 8, 3] is a list. Positions start at 0: xs[0] is 5, xs[2] is 3, and xs[-1] counts from the end (3). len(xs) is 3, so the valid positions are 0 to len(xs) − 1; xs[3] stops with an IndexError. xs.append(4) adds to the end, changing the list in place. for x in xs: visits each item.",
+      "id": "ld-t1",
+      "title": "Lists: in order, by position"
+    },
+    {
+      "body": "ages = {\"Ana\": 30} maps keys to values. ages[\"Ana\"] reads 30; ages[\"Bo\"] = 25 adds or updates a key. Reading a key that isn't there stops with a KeyError, so ask first with \"Bo\" in ages, or read with a default: ages.get(\"Bo\", 0). Counting pattern: d[k] = d.get(k, 0) + 1.\n\nA related Python habit: and / or hand back one of their two values, not always True or False. name or \"guest\" gives name unless it's empty, so it's a quick default; 3 or 0 is 3 and 0 and 5 is 0.",
+      "id": "ld-t2",
+      "title": "Dicts: by key"
+    },
+    {
+      "body": "b = a never copies anything, numbers included: both names label the same object. The difference is that lists and dicts can be changed in place (append, d[k] = v), and that change is visible through every name for them. a = a + 1 doesn't change a number; it moves a to a new one. Passing a list to a function works the same way: the parameter is another label on your list. a = something_new moves only a. For a separate copy, use a.copy().",
+      "id": "ld-t3",
+      "title": "Two names, one list"
+    }
+  ],
+  "title": "Lists and dicts",
+  "version": 1
+}

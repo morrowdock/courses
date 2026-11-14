@@ -1,0 +1,3104 @@
+{
+  "id": "git-course-v1",
+  "title": "Git Lab: version control, taught",
+  "outcomes": [
+    "Predict the state of the working tree, staging area, history and branch labels after any sequence of the taught commands.",
+    "Build focused commits, branch, merge, rebase and reset deliberately, choosing between alternatives and saying why.",
+    "Recover committed work after a bad reset or rebase, and say which losses Git cannot undo.",
+    "Repair a messy repository from a written plan and document it in a reproducible repair log."
+  ],
+  "format": "morrowdock-git-learner-course",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "git-course-snapshots-v1",
+      "title": "Snapshots: working tree, staging area, commit",
+      "order": 1,
+      "outcomes": [
+        "Name the three places a file version can live: the working tree, the staging area (index) and a commit.",
+        "Predict exactly which version of a file a commit will hold, given a sequence of edits and adds.",
+        "Build focused commits by staging only the changes that belong together.",
+        "Read `git status`, `git diff` and `git diff --cached` to see which of the three places differ."
+      ],
+      "prerequisites": [
+        "entry-files",
+        "entry-shell-basics"
+      ],
+      "learn": {
+        "concept": [
+          "A commit is a snapshot: a complete copy of every tracked file, frozen with a message and a link to the commit before it. It is not a list of edits.",
+          "Git keeps three copies of each tracked file. The working tree is what you edit. The staging area (also called the index) is the draft of your next snapshot. The last commit is the snapshot you already saved.",
+          "`git add file` copies the file's current contents from the working tree into the staging area. `git commit -m message` freezes the staging area into a new commit. Edits you make after `git add` stay in the working tree until you add again.",
+          "`git status` compares the three places. `git diff` shows working tree vs staging area. `git diff --cached` shows staging area vs last commit. If both are empty, all three copies agree.",
+          "Because you choose what to stage, one messy afternoon of edits can become several small, honest commits. That is what reviewers and your future self read."
+        ],
+        "assumptions": [
+          "You are in the Git Lab's virtual shell. Nothing touches a real disk, network or account.",
+          "Commit ids here are short labels (c1, c2 …) given in creation order. Real Git uses 40-character hashes of the content; the idea of 'one id per snapshot' is the same.",
+          "The repository is the folder where you ran `git init` (here, /home)."
+        ],
+        "walkthrough": {
+          "title": "Two commits for a harbor plan",
+          "setup": [
+            "echo Ship the dock > plan.txt",
+            "echo crane: idle > status.txt"
+          ],
+          "steps": [
+            {
+              "command": "git init",
+              "narration": "Start a repository in /home. There are no commits yet, and the branch name main is waiting for its first one."
+            },
+            {
+              "command": "git status",
+              "narration": "Both files are untracked: Git sees them in the working tree but has never staged or committed them."
+            },
+            {
+              "command": "git add plan.txt",
+              "narration": "Copy plan.txt into the staging area. status.txt stays untracked."
+            },
+            {
+              "command": "git status",
+              "narration": "Something is staged. Nothing tracked differs from what is staged. status.txt is still untracked."
+            },
+            {
+              "command": "git commit -m \"Add the plan\"",
+              "narration": "Freeze the staging area as commit c1. main now points at c1. The commit holds only plan.txt."
+            },
+            {
+              "command": "echo Ship the dock by Friday > plan.txt",
+              "narration": "Edit the working tree. The staging area and c1 still hold the old line."
+            },
+            {
+              "command": "git diff",
+              "narration": "Working tree vs staging area. plan.txt: the - line is the staged version, the + line is the working version. This lab also lists the untracked status.txt with an empty old side; real Git's plain `git diff` leaves untracked files out."
+            },
+            {
+              "command": "git add .",
+              "narration": "Stage everything in the repository: the new plan line and the untracked status.txt."
+            },
+            {
+              "command": "git diff --cached",
+              "narration": "Staging area vs last commit: this is exactly what the next commit will change."
+            },
+            {
+              "command": "git commit -m \"Set a deadline and track crane status\"",
+              "narration": "Commit c2 points back to its parent c1. All three places agree again."
+            },
+            {
+              "command": "git log",
+              "narration": "History, newest first. Each line is a snapshot you can return to."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "git-course-snapshots-v1.predict",
+            "prompt": "note.txt said 'draft two' when you ran `git add`, and you then changed it to 'draft three'. You now run `git commit -m \"Revise note\"`. What does the new commit hold for note.txt?",
+            "setup": [
+              "echo draft one > note.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Start note\"",
+              "echo draft two > note.txt",
+              "git add note.txt",
+              "echo draft three > note.txt"
+            ],
+            "commands": [
+              "git commit -m \"Revise note\""
+            ],
+            "choices": [
+              "draft three",
+              "draft two",
+              "draft one",
+              "Nothing: the commit is refused because the file changed"
+            ],
+            "answer": 1,
+            "why": [
+              "The working tree says draft three, but a commit is built from the staging area, not the working tree.",
+              "Right: `git add` copied draft two into the staging area, and commit freezes the staging area.",
+              "draft one is in the previous commit c1; the staging area moved past it when you added.",
+              "Commit only needs a staged change that differs from the last commit. Later working-tree edits don't block it; they simply aren't included."
+            ]
+          },
+          {
+            "id": "git-course-snapshots-v1.check",
+            "prompt": "`git diff` prints nothing, but `git diff --cached` shows a change to map.txt. What will `git commit -m \"Update map\"` do?",
+            "choices": [
+              "Commit the map.txt change; working tree, staging area and the new commit then all agree",
+              "Refuse, because the working tree has no changes",
+              "Commit nothing, because diff was empty",
+              "Commit map.txt and also any untracked files"
+            ],
+            "answer": 0,
+            "why": [
+              "Right: empty `git diff` means working tree = staging area; the cached diff is exactly what the commit adds.",
+              "Commit compares the staging area with the last commit, not the working tree.",
+              "`git diff` without --cached only compares working tree and staging area.",
+              "Untracked files are never included until you add them."
+            ]
+          }
+        ],
+        "misconceptions": [
+          {
+            "id": "git-course-snapshots-v1.m-commit-saves-all",
+            "claim": "“git commit saves every file I changed.”",
+            "setup": [
+              "echo red > a.txt",
+              "echo blue > b.txt",
+              "git init",
+              "git add .",
+              "git commit -m Colors",
+              "echo crimson > a.txt",
+              "echo navy > b.txt"
+            ],
+            "commands": [
+              "git add a.txt",
+              "git commit -m \"Darker red\""
+            ],
+            "truth": "Only staged changes go in. b.txt's edit is still only in the working tree, and status says so (Unstaged: yes). This is a feature: it is how you keep unrelated edits out of a commit."
+          },
+          {
+            "id": "git-course-snapshots-v1.m-add-once",
+            "claim": "“Once a file is added, Git keeps tracking my edits automatically.”",
+            "setup": [
+              "echo v1 > log.txt",
+              "git init",
+              "git add log.txt",
+              "git commit -m First",
+              "echo v2 > log.txt"
+            ],
+            "commands": [
+              "git commit -m Second"
+            ],
+            "truth": "Tracking means Git compares the file; it does not stage new versions for you. Each new version has to be added again before a commit can include it."
+          }
+        ],
+        "realGit": [
+          {
+            "here": "Commit ids c1, c2 …",
+            "realGit": "40-character hashes such as 3f9a1c…; you can type a unique prefix.",
+            "note": "Same idea: one id per snapshot."
+          },
+          {
+            "here": "`git status` prints Staged / Unstaged / Untracked lines",
+            "realGit": "Longer output: 'Changes to be committed', 'Changes not staged for commit', 'Untracked files', with per-file names.",
+            "note": "Read it the same way: three comparisons."
+          },
+          {
+            "here": "`git diff` prints the path and whole old/new text, and also lists untracked files",
+            "realGit": "Unified diff with @@ hunks and line numbers; plain `git diff` ignores untracked files (use `git status` to see them).",
+            "note": "Same pair of places compared for tracked files."
+          },
+          {
+            "here": "No author setup needed",
+            "realGit": "Set `git config --global user.name` and `user.email` once before your first commit.",
+            "note": ""
+          },
+          {
+            "here": "Whole-file staging only",
+            "realGit": "`git add -p` stages part of a file; `git restore --staged file` unstages.",
+            "note": "Unstaging appears here in the Reset lesson as `git reset --mixed`."
+          },
+          {
+            "here": "`git init` names the first branch main",
+            "realGit": "Older setups name it master. Use `git init -b main`, or set `git config --global init.defaultBranch main`.",
+            "note": ""
+          }
+        ]
+      },
+      "referenceCard": {
+        "recognise": "You want to save a checkpoint, or you need to know which version of a file a commit holds.",
+        "commands": [
+          "git init",
+          "git status",
+          "git add <file> | git add .",
+          "git commit -m \"message\"",
+          "git diff (working vs staged)",
+          "git diff --cached (staged vs last commit)",
+          "git log"
+        ],
+        "pitfalls": [
+          "Editing after `git add` and expecting the new edit to be committed.",
+          "`git add .` sweeping in scratch files.",
+          "Vague messages: say what changed and why."
+        ],
+        "model": "working tree --add--> staging area --commit--> history"
+      },
+      "tasks": [
+        {
+          "id": "git-course-snapshots-v1.g1",
+          "setup": [
+            "echo 06:00 tide high > tides.txt",
+            "echo Berth 4 free > berths.txt"
+          ],
+          "kind": "guided",
+          "title": "First snapshot of the harbor log",
+          "instruction": "The harbor log has two files and no repository. Make one commit named exactly “Start the harbor log” that holds both files, and leave nothing unstaged or untracked.",
+          "goals": [
+            {
+              "log": [
+                "Start the harbor log"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-snapshots-v1.g1.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Three things have to happen: a repository, a staging step, a commit."
+            },
+            {
+              "id": "git-course-snapshots-v1.g1.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "A commit only holds what is staged. Stage both files before committing."
+            },
+            {
+              "id": "git-course-snapshots-v1.g1.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git init → git add <both files or .> → git commit -m \"<the exact message>\""
+            },
+            {
+              "id": "git-course-snapshots-v1.g1.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git init\ngit add .\ngit commit -m \"Start the harbor log\"\nThis is shown in full, so this attempt counts as practice with help and a fresh variant returns later."
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-snapshots-v1.g2",
+          "setup": [
+            "echo 06:00 tide high > tides.txt",
+            "echo Berth 4 free > berths.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Start the harbor log\"",
+            "echo Berth 5 free > berths.txt",
+            "echo 06:00 tide high, check > tides.txt"
+          ],
+          "kind": "guided",
+          "title": "Commit only the finished edit",
+          "instruction": "You fixed the berth number in berths.txt (finished) and started a half-written note in tides.txt (not finished). Commit only the berth fix as “Fix berth number”. Keep your tides.txt edit in the working tree, uncommitted and unstaged.",
+          "goals": [
+            {
+              "log": [
+                "Fix berth number",
+                "Start the harbor log"
+              ]
+            },
+            {
+              "headMessage": "Fix berth number"
+            },
+            {
+              "committed": [
+                "/home/berths.txt",
+                "Berth 5 free\n"
+              ]
+            },
+            {
+              "committed": [
+                "/home/tides.txt",
+                "06:00 tide high\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/tides.txt",
+                "06:00 tide high, check\n"
+              ]
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-snapshots-v1.g2.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Run `git status` and `git diff`: which file belongs in this commit?"
+            },
+            {
+              "id": "git-course-snapshots-v1.g2.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "Stage by name. `git add .` would stage the unfinished note too."
+            },
+            {
+              "id": "git-course-snapshots-v1.g2.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git add <the finished file> → git commit -m \"Fix berth number\""
+            },
+            {
+              "id": "git-course-snapshots-v1.g2.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git add berths.txt\ngit commit -m \"Fix berth number\"\nThis is shown in full, so this attempt counts as practice with help and a fresh variant returns later."
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-snapshots-v1.debug",
+          "setup": [
+            "echo teh crane > crane.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Add crane\"",
+            "echo the crane > crane.txt"
+          ],
+          "kind": "debug",
+          "title": "Debug the command",
+          "instruction": "A teammate fixed a typo and ran the command below. Git refused. Read the message, explain why, and fix it with the fewest commands.",
+          "goals": [
+            {
+              "headMessage": "Fix typo"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": [],
+          "broken": [
+            "git commit -m \"Fix typo\""
+          ]
+        },
+        {
+          "id": "git-course-snapshots-v1.o1",
+          "setup": [
+            "echo 12 t steel > cargo.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Log cargo\"",
+            "echo Ada, Kofi > crew.txt",
+            "echo 14 t steel > cargo.txt",
+            "echo maybe 15? > scratch.txt"
+          ],
+          "explain": "In two sentences: why did scratch.txt stay out of both commits, and what single command would have let it in?",
+          "kind": "independent",
+          "title": "Two focused commits",
+          "instruction": "The repository already has one commit. You added a new file crew.txt and edited cargo.txt. scratch.txt is your private scratchpad. Make two commits in this order: first “Add crew list” (only crew.txt), then “Update cargo weight” (only cargo.txt). scratch.txt must stay untracked.",
+          "goals": [
+            {
+              "log": [
+                "Update cargo weight",
+                "Add crew list",
+                "Log cargo"
+              ]
+            },
+            {
+              "untracked": "/home/scratch.txt"
+            },
+            {
+              "trackedClean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-snapshots-v1.o1.after1",
+              "exposure": "practiced-with-help",
+              "text": "Look at `git log` and `git status`: which commit picked up an extra file, and which `git add` put it there?"
+            },
+            {
+              "id": "git-course-snapshots-v1.o1.after2",
+              "exposure": "returns-later",
+              "text": "Worked answer: add crew.txt, commit “Add crew list”; add cargo.txt, commit “Update cargo weight”. Seeing this sends a comeback with a different shape your way."
+            }
+          ],
+          "rubric": [
+            {
+              "criterion": "Result",
+              "evidence": "The history reads Update cargo weight → Add crew list → Log cargo and each commit holds only its own file."
+            },
+            {
+              "criterion": "Reasoning",
+              "evidence": "You can say which of the three places each file was in before each command."
+            },
+            {
+              "criterion": "Care",
+              "evidence": "scratch.txt stayed yours: never staged, never committed, never deleted."
+            }
+          ],
+          "comebackID": "git-course-snapshots-v1.o1.comeback.v2"
+        },
+        {
+          "id": "git-course-snapshots-v1.o1.comeback.v2",
+          "setup": [
+            "echo fuel 60% > fuel.txt",
+            "echo dear crew > draft.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Check fuel\"",
+            "echo north then east > route.txt",
+            "echo fuel 95% > fuel.txt",
+            "echo dear crew, we leave at > draft.txt"
+          ],
+          "kind": "comeback",
+          "title": "Comeback: Two focused commits",
+          "instruction": "Fresh variant. route.txt is new and fuel.txt changed; together they are one change, so commit both as a single commit “Plan the trip”. draft.txt is tracked and has an unfinished edit: keep that edit in your working tree, out of the commit.",
+          "goals": [
+            {
+              "log": [
+                "Plan the trip",
+                "Check fuel"
+              ]
+            },
+            {
+              "committed": [
+                "/home/route.txt",
+                "north then east\n"
+              ]
+            },
+            {
+              "committed": [
+                "/home/fuel.txt",
+                "fuel 95%\n"
+              ]
+            },
+            {
+              "committed": [
+                "/home/draft.txt",
+                "dear crew\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/draft.txt",
+                "dear crew, we leave at\n"
+              ]
+            }
+          ],
+          "hints": [],
+          "rubric": []
+        }
+      ]
+    },
+    {
+      "id": "git-course-branches-v1",
+      "title": "Branches: movable labels on history",
+      "order": 2,
+      "outcomes": [
+        "Explain a branch as a named label that points at one commit and moves forward when you commit on it.",
+        "Say which branch HEAD is on and predict which commit a new commit's parent will be.",
+        "Predict how `git switch` changes the working tree, and why files 'vanish' and come back.",
+        "Start a branch from the right place, so unrelated work doesn't leak between branches."
+      ],
+      "prerequisites": [
+        "git-course-snapshots-v1"
+      ],
+      "learn": {
+        "concept": [
+          "A branch is not a folder or a copy of your files. It is a name that points at one commit. Creating a branch costs nothing: no files are copied.",
+          "HEAD means 'the branch you are on'. When you commit, the new commit's parent is the commit your current branch points at, and only that branch label moves forward to the new commit.",
+          "`git switch name` moves HEAD to another branch and rewrites the tracked files in the working tree to match that branch's snapshot. A file that only exists on another branch disappears from the folder, but it is safe inside that branch's commit.",
+          "Untracked files belong to no branch, so switching leaves them where they are.",
+          "Where you stand when you create a branch matters: `git switch -c new` starts the new label at the current commit. Start from the wrong branch and the new branch quietly includes work it should not."
+        ],
+        "assumptions": [
+          "In this lab you can switch only when no tracked file has uncommitted changes. Real Git is more permissive (see the Real Git table), but committing or undoing first is the safe habit in both.",
+          "There is no detached HEAD here: HEAD is always on a named branch."
+        ],
+        "walkthrough": {
+          "title": "A lighthouse branch and a pier branch",
+          "setup": [
+            "echo coastline > map.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Start the map\""
+          ],
+          "steps": [
+            {
+              "command": "git branch lighthouse",
+              "narration": "Make a new label lighthouse pointing at c1, the commit you are on. No files are copied, and you are still on main."
+            },
+            {
+              "command": "git branch",
+              "narration": "List the labels; the star marks HEAD."
+            },
+            {
+              "command": "git switch lighthouse",
+              "narration": "HEAD moves to lighthouse. Both labels point at c1, so no files change."
+            },
+            {
+              "command": "echo beam on > lamp.txt",
+              "narration": "Write a new file on the lighthouse branch."
+            },
+            {
+              "command": "git add lamp.txt",
+              "narration": "Stage it."
+            },
+            {
+              "command": "git commit -m \"Add the lamp\"",
+              "narration": "c2's parent is c1. Only the current label, lighthouse, moves to c2; main stays at c1."
+            },
+            {
+              "command": "git switch main",
+              "narration": "Back to main. Its snapshot c1 has no lamp.txt, so the file leaves the working tree. It is still safe in c2."
+            },
+            {
+              "command": "git switch -c pier",
+              "narration": "Create pier at main's commit c1 and switch to it in one step."
+            },
+            {
+              "command": "echo planks > pier.txt",
+              "narration": "Work for the pier branch."
+            },
+            {
+              "command": "git add pier.txt",
+              "narration": "Stage it."
+            },
+            {
+              "command": "git commit -m \"Build the pier\"",
+              "narration": "c3 also has parent c1. History has forked: lighthouse and pier have diverged from main."
+            },
+            {
+              "command": "git switch lighthouse",
+              "narration": "lamp.txt returns and pier.txt leaves. Each branch shows its own snapshot; nothing was lost."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "git-course-branches-v1.predict",
+            "prompt": "You are on main and you have edited map.txt but not committed. lighthouse points at the same commit as main. What happens in this lab when you run `git switch lighthouse`?",
+            "setup": [
+              "echo coastline > map.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Start the map\"",
+              "git branch lighthouse",
+              "echo coastline and reefs > map.txt"
+            ],
+            "commands": [
+              "git switch lighthouse"
+            ],
+            "choices": [
+              "It switches and your edit is lost",
+              "It refuses and changes nothing, so you can commit or undo first",
+              "It switches and commits your edit to lighthouse",
+              "It switches and your edit comes along"
+            ],
+            "answer": 1,
+            "why": [
+              "Git never silently throws away uncommitted work on a switch.",
+              "Right for this lab: any uncommitted tracked change blocks the switch, and nothing changes. Real Git would carry this edit along, because both branches hold the same map.txt (see Real Git). It refuses only when the edit would be overwritten.",
+              "Switching never makes a commit.",
+              "That is what real Git does here. This lab is stricter, so you form the habit of saving work before moving."
+            ]
+          },
+          {
+            "id": "git-course-branches-v1.check",
+            "prompt": "main and docs both point at c4. You are on docs and commit c5. Then you run `git switch -c fix`. Where does fix point?",
+            "choices": [
+              "c4, because branches start where main is",
+              "c5, the commit you are on",
+              "Nowhere until you commit on it",
+              "c4, because new branches start at the first commit"
+            ],
+            "answer": 1,
+            "why": [
+              "New branches start at HEAD, not at main.",
+              "Right: you were on docs at c5, so fix starts at c5 and includes that commit.",
+              "A branch always points at a commit; it starts at HEAD's commit.",
+              "Branches start at the current commit, not at the root."
+            ]
+          }
+        ],
+        "misconceptions": [
+          {
+            "id": "git-course-branches-v1.m-copy",
+            "claim": "“Making a branch copies my project.”",
+            "setup": [
+              "echo 3 ships > fleet.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Count ships\""
+            ],
+            "commands": [
+              "git branch spare"
+            ],
+            "truth": "No new commit and no new files: just a second name for c1. Branches are cheap, so make one for every experiment."
+          },
+          {
+            "id": "git-course-branches-v1.m-vanish",
+            "claim": "“Switching branches deleted my file.”",
+            "setup": [
+              "echo coastline > map.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Start the map\"",
+              "git switch -c lighthouse",
+              "echo beam on > lamp.txt",
+              "git add .",
+              "git commit -m \"Add the lamp\"",
+              "git switch main"
+            ],
+            "commands": [
+              "git switch lighthouse"
+            ],
+            "truth": "On main the file was absent because main's snapshot doesn't contain it. Switching back restores it from c2."
+          },
+          {
+            "id": "git-course-branches-v1.m-untracked-branch",
+            "claim": "“My untracked notes belong to the branch I wrote them on.”",
+            "setup": [
+              "echo coastline > map.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Start the map\"",
+              "git branch lighthouse",
+              "echo ideas > notes.txt"
+            ],
+            "commands": [
+              "git switch lighthouse"
+            ],
+            "truth": "Git never stored notes.txt, so it travels with the folder, not with a branch. Commit it on the branch where it belongs."
+          }
+        ],
+        "realGit": [
+          {
+            "here": "Any uncommitted tracked change blocks `git switch`",
+            "realGit": "Switch succeeds and carries edits along if the target branch has the same version of those files; it refuses only if an edit would be overwritten. `git stash` can set edits aside.",
+            "note": "Checked: the prediction scenario really differs from real Git."
+          },
+          {
+            "here": "No detached HEAD",
+            "realGit": "`git switch --detach c1` (or checking out a commit id) puts HEAD on a commit with no branch; new commits there are easy to lose.",
+            "note": "The Recovery lesson shows how to get lost commits back."
+          },
+          {
+            "here": "`git branch name` starts at the current commit",
+            "realGit": "`git branch name <commit>` can start anywhere; `git branch -d name` deletes a label.",
+            "note": ""
+          },
+          {
+            "here": "`git checkout` and `git switch` both switch",
+            "realGit": "Same; `switch` is the newer, clearer command. `checkout` also restores files.",
+            "note": ""
+          }
+        ]
+      },
+      "referenceCard": {
+        "recognise": "You want to try something without disturbing main, or keep two lines of work apart.",
+        "commands": [
+          "git branch (list)",
+          "git branch <name> (label here, stay put)",
+          "git switch <name>",
+          "git switch -c <name> (label here and move)"
+        ],
+        "pitfalls": [
+          "`git branch x` does not switch.",
+          "Creating a branch while standing on the wrong branch.",
+          "Thinking a switched-away file is deleted."
+        ],
+        "model": "branch = label → commit; HEAD = the label you're on; commit moves only HEAD's label"
+      },
+      "tasks": [
+        {
+          "id": "git-course-branches-v1.g1",
+          "setup": [
+            "echo day: Ada > roster.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Start roster\""
+          ],
+          "kind": "guided",
+          "title": "A night-shift branch",
+          "instruction": "Start a branch named night-shift, commit night.txt (any text) on it as “Add night roster”, then return to main. main must still point at “Start roster”.",
+          "goals": [
+            {
+              "tipMessage": [
+                "night-shift",
+                "Add night roster"
+              ]
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Start roster"
+              ]
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "absent": "/home/night.txt"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-branches-v1.g1.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Which label moves when you commit? Make sure it's the new one."
+            },
+            {
+              "id": "git-course-branches-v1.g1.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "Switch to the new branch before you commit, then switch back."
+            },
+            {
+              "id": "git-course-branches-v1.g1.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git switch -c <name> → write the file → add → commit -m \"Add night roster\" → git switch main"
+            },
+            {
+              "id": "git-course-branches-v1.g1.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git switch -c night-shift\necho night: Kofi > night.txt\ngit add night.txt\ngit commit -m \"Add night roster\"\ngit switch main"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-branches-v1.g2",
+          "setup": [
+            "echo dock > yard.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Open the yard\"",
+            "git switch -c repairs",
+            "echo patch port side > hull.txt",
+            "git add .",
+            "git commit -m \"Patch the hull\"",
+            "git switch main"
+          ],
+          "kind": "guided",
+          "title": "Where did hull.txt go?",
+          "instruction": "A teammate says hull.txt was lost. It was committed on the repairs branch. Get hull.txt back into the working tree without making any new commit.",
+          "goals": [
+            {
+              "branch": "repairs"
+            },
+            {
+              "file": [
+                "/home/hull.txt",
+                "patch port side\n"
+              ]
+            },
+            {
+              "log": [
+                "Patch the hull",
+                "Open the yard"
+              ]
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Open the yard"
+              ]
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-branches-v1.g2.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Run `git branch`. Which branches exist, and which one are you on?"
+            },
+            {
+              "id": "git-course-branches-v1.g2.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "The file isn't lost; it lives in the snapshot of another branch."
+            },
+            {
+              "id": "git-course-branches-v1.g2.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git switch <the branch that has it>"
+            },
+            {
+              "id": "git-course-branches-v1.g2.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git switch repairs"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-branches-v1.debug",
+          "setup": [
+            "echo read me > guide.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Add guide\"",
+            "git branch docs",
+            "echo read me first > guide.txt"
+          ],
+          "kind": "debug",
+          "title": "Debug the command",
+          "instruction": "You edited guide.txt on main and tried to move to docs. The lab refused. Keep the edit on main as “Clarify the guide” and then get onto docs.",
+          "goals": [
+            {
+              "branch": "docs"
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Clarify the guide"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": [],
+          "broken": [
+            "git switch docs"
+          ]
+        },
+        {
+          "id": "git-course-branches-v1.o1",
+          "setup": [
+            "echo bay > survey.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Survey the bay\""
+          ],
+          "explain": "Draw (or describe) the commit graph you made. Which commit is the parent of “Chart west”, and which command decided that?",
+          "kind": "independent",
+          "title": "Two independent routes",
+          "instruction": "From main, make two branches that each start at “Survey the bay”: east (commit east.txt as “Chart east”) and west (commit west.txt as “Chart west”). west must not contain east's commit. Finish on main with main unchanged.",
+          "goals": [
+            {
+              "tipMessage": [
+                "east",
+                "Chart east"
+              ]
+            },
+            {
+              "tipMessage": [
+                "west",
+                "Chart west"
+              ]
+            },
+            {
+              "notIn": [
+                "west",
+                "Chart east"
+              ]
+            },
+            {
+              "notIn": [
+                "east",
+                "Chart west"
+              ]
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Survey the bay"
+              ]
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-branches-v1.o1.after1",
+              "exposure": "practiced-with-help",
+              "text": "Draw the graph from `git log` on each branch. Where does west's first commit attach?"
+            },
+            {
+              "id": "git-course-branches-v1.o1.after2",
+              "exposure": "returns-later",
+              "text": "Worked answer: switch -c east, commit; switch main; switch -c west, commit; switch main. The comeback asks for a branch that deliberately starts from another branch."
+            }
+          ],
+          "rubric": [
+            {
+              "criterion": "Result",
+              "evidence": "east and west each have one commit whose parent is “Survey the bay”; main is unchanged; you end on main."
+            },
+            {
+              "criterion": "Reasoning",
+              "evidence": "You can explain why returning to main before `switch -c west` decided west's starting point."
+            },
+            {
+              "criterion": "Care",
+              "evidence": "No stray files or commits on main."
+            }
+          ],
+          "comebackID": "git-course-branches-v1.o1.comeback.v2"
+        },
+        {
+          "id": "git-course-branches-v1.o1.comeback.v2",
+          "setup": [
+            "echo soil > garden.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Plant the garden\""
+          ],
+          "kind": "comeback",
+          "title": "Comeback: Two independent routes",
+          "instruction": "Fresh variant. roses needs the soil work from herbs. Make herbs from main (commit herbs.txt as “Plant herbs”), then make roses so that it starts from herbs' commit (commit roses.txt as “Plant roses”). Finish on main with main unchanged.",
+          "goals": [
+            {
+              "tipMessage": [
+                "herbs",
+                "Plant herbs"
+              ]
+            },
+            {
+              "tipMessage": [
+                "roses",
+                "Plant roses"
+              ]
+            },
+            {
+              "parentsOf": [
+                "roses",
+                "Plant roses",
+                [
+                  "Plant herbs"
+                ]
+              ]
+            },
+            {
+              "notIn": [
+                "herbs",
+                "Plant roses"
+              ]
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Plant the garden"
+              ]
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": []
+        }
+      ]
+    },
+    {
+      "id": "git-course-merge-v1",
+      "title": "Merge: bringing lines of work together",
+      "order": 3,
+      "outcomes": [
+        "Tell a fast-forward merge from a merge commit by looking at the graph before you merge.",
+        "Predict which label moves when you merge, and in which direction to merge.",
+        "Predict when two branches conflict, and resolve a conflict by agreeing the shared file on the feature branch first.",
+        "Read a merge commit: two parents, a snapshot containing both lines of work."
+      ],
+      "prerequisites": [
+        "git-course-branches-v1"
+      ],
+      "learn": {
+        "concept": [
+          "`git merge other` brings the work of other into the branch you are on. Only your current label moves; other stays where it was.",
+          "If your branch hasn't moved since other started, nothing needs combining: Git just slides your label forward to other's commit. That is a fast-forward and it creates no new commit.",
+          "If both branches have new commits, Git finds their common ancestor (the last commit both share) and compares each side with it. A file changed on only one side takes that side's version. The result is saved as a merge commit with two parents.",
+          "A conflict happens when the same file changed on both sides in different ways. Git cannot know which version you want. In real Git you edit the file to the final text and commit. In this lab the merge refuses and changes nothing, so you decide the shared file on one side first.",
+          "Direction matters. On main, `git merge feature` updates main. On feature, `git merge main` updates feature and leaves main untouched."
+        ],
+        "assumptions": [
+          "This lab compares whole files. Real Git compares line by line, so edits to different lines of one file usually merge cleanly there. Here any differing edits to the same file count as a conflict.",
+          "Merges here need a clean working tree, and the merge commit message is always “Merge <branch>”."
+        ],
+        "walkthrough": {
+          "title": "A café's menu and hours",
+          "setup": [
+            "echo soup > menu.txt",
+            "echo 9 to 5 > hours.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Open the cafe\"",
+            "git switch -c summer",
+            "echo 8 to 8 > hours.txt",
+            "git add .",
+            "git commit -m \"Summer hours\"",
+            "git switch main"
+          ],
+          "steps": [
+            {
+              "command": "git merge summer",
+              "narration": "main hasn't moved since summer branched off c1. Nothing to combine, so main slides forward to c2. No new commit."
+            },
+            {
+              "command": "git branch winter",
+              "narration": "Start winter at c2."
+            },
+            {
+              "command": "echo soup and bread > menu.txt",
+              "narration": "Meanwhile main changes the menu."
+            },
+            {
+              "command": "git add menu.txt",
+              "narration": "Stage it."
+            },
+            {
+              "command": "git commit -m \"Add bread\"",
+              "narration": "main moves to c3."
+            },
+            {
+              "command": "git switch winter",
+              "narration": "On winter (c2), the menu is still just soup."
+            },
+            {
+              "command": "echo 10 to 4 > hours.txt",
+              "narration": "winter changes a different file: the hours."
+            },
+            {
+              "command": "git add hours.txt",
+              "narration": "Stage it."
+            },
+            {
+              "command": "git commit -m \"Winter hours\"",
+              "narration": "c4's parent is c2. main (c3) and winter (c4) have diverged from their common ancestor c2."
+            },
+            {
+              "command": "git switch main",
+              "narration": "Go to the branch that should receive the work."
+            },
+            {
+              "command": "git merge winter",
+              "narration": "Compared with c2, main changed only menu.txt and winter changed only hours.txt. No overlap, so Git writes merge commit c5 with two parents, c3 and c4, holding both changes. winter's label stays at c4."
+            },
+            {
+              "command": "git log",
+              "narration": "main's history now includes both lines of work."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "git-course-merge-v1.predict",
+            "prompt": "From the common ancestor (price 4), main changed price.txt to 5 and sale changed it to 3. On main you run `git merge sale`. What happens in this lab?",
+            "setup": [
+              "echo price 4 > price.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Set price\"",
+              "git switch -c sale",
+              "echo price 3 > price.txt",
+              "git add .",
+              "git commit -m \"Sale price\"",
+              "git switch main",
+              "echo price 5 > price.txt",
+              "git add .",
+              "git commit -m \"Raise price\""
+            ],
+            "commands": [
+              "git merge sale"
+            ],
+            "choices": [
+              "main gets price 3 (the branch you merge in wins)",
+              "main keeps price 5 (your branch wins)",
+              "The merge refuses with a conflict and nothing changes",
+              "Git averages them to price 4"
+            ],
+            "answer": 2,
+            "why": [
+              "Neither side wins automatically. Both changed the same file differently.",
+              "Git won't silently drop the other side's change.",
+              "Right: same file, two different changes from the ancestor. You must decide the final text. Real Git also stops here, writes conflict markers into price.txt and waits for you.",
+              "Git never invents content."
+            ]
+          },
+          {
+            "id": "git-course-merge-v1.check",
+            "prompt": "feature has 2 new commits and main has 0 new commits since feature started. On main you run `git merge feature`. How many new commits does the merge create?",
+            "choices": [
+              "0, it's a fast-forward",
+              "1 merge commit",
+              "2 copies of feature's commits",
+              "It refuses until main has a commit"
+            ],
+            "answer": 0,
+            "why": [
+              "Right: main's label just moves to feature's tip.",
+              "A merge commit needs new work on both sides.",
+              "Merge never copies commits; rebase does (next lesson).",
+              "Nothing needs combining, so there is nothing to refuse."
+            ]
+          }
+        ],
+        "misconceptions": [
+          {
+            "id": "git-course-merge-v1.m-always-commit",
+            "claim": "“Every merge makes a merge commit.”",
+            "setup": [
+              "echo v1 > app.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"First build\"",
+              "git switch -c polish",
+              "echo v2 > app.txt",
+              "git add .",
+              "git commit -m \"Polish build\"",
+              "git switch main"
+            ],
+            "commands": [
+              "git merge polish"
+            ],
+            "truth": "main had no new commits, so the label just moved forward. A merge commit only appears when both sides have new work."
+          },
+          {
+            "id": "git-course-merge-v1.m-direction",
+            "claim": "“`git merge` direction doesn't matter: both branches end up the same.”",
+            "setup": [
+              "echo v1 > app.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"First build\"",
+              "git switch -c polish",
+              "echo v2 > app.txt",
+              "git add .",
+              "git commit -m \"Polish build\"",
+              "git switch main",
+              "echo notes > readme.txt",
+              "git add .",
+              "git commit -m \"Add readme\"",
+              "git switch polish"
+            ],
+            "commands": [
+              "git merge main"
+            ],
+            "truth": "Only the branch you are on moves. Here polish now contains main's work, but main still lacks polish's. To update main, switch to main first."
+          },
+          {
+            "id": "git-course-merge-v1.m-same-change",
+            "claim": "“If both branches touch the same file, it's always a conflict.”",
+            "setup": [
+              "echo draft > title.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Draft title\"",
+              "git switch -c edit",
+              "echo Final Title > title.txt",
+              "echo extra > credits.txt",
+              "git add .",
+              "git commit -m \"Edit title and credits\"",
+              "git switch main",
+              "echo Final Title > title.txt",
+              "git add .",
+              "git commit -m \"Agree title\""
+            ],
+            "commands": [
+              "git merge edit"
+            ],
+            "truth": "Both sides made the same change, so there is nothing to choose between. Conflicts happen only when the two results differ. That is also how you resolve one in this lab: agree the file on one side first."
+          }
+        ],
+        "realGit": [
+          {
+            "here": "Same file changed differently on both sides → refuse, nothing changes",
+            "realGit": "Git merges line by line. Overlapping lines stop the merge with <<<<<<< ======= >>>>>>> markers. You edit the file, then `git add` it and `git commit`; or `git merge --abort` to back out.",
+            "note": "Resolution with markers is not practised in this lab."
+          },
+          {
+            "here": "Merge commit message is “Merge <branch>”",
+            "realGit": "Default is “Merge branch '<branch>'” and opens an editor; `--no-edit` keeps the default.",
+            "note": "The parity check maps one to the other."
+          },
+          {
+            "here": "Merge needs a clean working tree",
+            "realGit": "Allowed if the merge doesn't touch your edited files, but a clean tree is the safe habit.",
+            "note": ""
+          },
+          {
+            "here": "Fast-forward when possible",
+            "realGit": "Same; `git merge --no-ff` forces a merge commit to record that a branch existed.",
+            "note": ""
+          }
+        ]
+      },
+      "referenceCard": {
+        "recognise": "Work on another branch is ready to join the branch you're on.",
+        "commands": [
+          "git switch <receiving branch>",
+          "git merge <other>"
+        ],
+        "pitfalls": [
+          "Merging in the wrong direction.",
+          "Expecting a merge commit after a fast-forward.",
+          "Resolving a conflict by discarding the other side's unrelated work."
+        ],
+        "model": "merge = compare both sides with their common ancestor; one-sided changes combine; two-sided differences conflict"
+      },
+      "tasks": [
+        {
+          "id": "git-course-merge-v1.g1",
+          "setup": [
+            "echo dark > street.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Map the street\"",
+            "git switch -c lanterns",
+            "echo lit > street.txt",
+            "git add .",
+            "git commit -m \"Light the lanterns\"",
+            "git switch main"
+          ],
+          "kind": "guided",
+          "title": "Land a finished feature",
+          "instruction": "The lanterns branch is finished and main hasn't changed since it started. Bring it into main. main's history should stay a straight line.",
+          "goals": [
+            {
+              "tipMessage": [
+                "main",
+                "Light the lanterns"
+              ]
+            },
+            {
+              "linear": "main"
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "file": [
+                "/home/street.txt",
+                "lit\n"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-merge-v1.g1.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Which branch should change? Are you on it?"
+            },
+            {
+              "id": "git-course-merge-v1.g1.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "main has no new commits, so this will be a fast-forward."
+            },
+            {
+              "id": "git-course-merge-v1.g1.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git merge <the finished branch>"
+            },
+            {
+              "id": "git-course-merge-v1.g1.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git merge lanterns"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-merge-v1.g2",
+          "setup": [
+            "echo 2 coins > fares.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Set fares\"",
+            "git switch -c fares",
+            "echo 3 coins > fares.txt",
+            "git add .",
+            "git commit -m \"Raise fares\"",
+            "git switch main",
+            "echo every 10 min > timetable.txt",
+            "git add .",
+            "git commit -m \"Add timetable\""
+          ],
+          "kind": "guided",
+          "title": "Combine diverged work",
+          "instruction": "main added a timetable while the fares branch changed fares.txt. Bring fares into main so main holds both, with a merge commit.",
+          "goals": [
+            {
+              "mergeTip": "main"
+            },
+            {
+              "in": [
+                "main",
+                "Raise fares"
+              ]
+            },
+            {
+              "in": [
+                "main",
+                "Add timetable"
+              ]
+            },
+            {
+              "file": [
+                "/home/fares.txt",
+                "3 coins\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/timetable.txt",
+                "every 10 min\n"
+              ]
+            },
+            {
+              "tipMessage": [
+                "fares",
+                "Raise fares"
+              ]
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-merge-v1.g2.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Did both branches change the same file?"
+            },
+            {
+              "id": "git-course-merge-v1.g2.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "They changed different files, so a merge from main will combine cleanly into a merge commit."
+            },
+            {
+              "id": "git-course-merge-v1.g2.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "Stay on main, then git merge <the other branch>"
+            },
+            {
+              "id": "git-course-merge-v1.g2.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git merge fares"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-merge-v1.debug",
+          "setup": [
+            "echo grey > colour.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Paint grey\"",
+            "git switch -c sign",
+            "echo green > colour.txt",
+            "echo large > size.txt",
+            "git add .",
+            "git commit -m \"New sign\"",
+            "git switch main",
+            "echo blue > colour.txt",
+            "git add .",
+            "git commit -m \"Paint blue\""
+          ],
+          "kind": "debug",
+          "title": "Debug the command",
+          "instruction": "Merging sign into main refuses with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. Resolve it on the sign branch, then merge.",
+          "goals": [
+            {
+              "mergeTip": "main"
+            },
+            {
+              "file": [
+                "/home/colour.txt",
+                "blue\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/size.txt",
+                "large\n"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": [],
+          "broken": [
+            "git merge sign"
+          ]
+        },
+        {
+          "id": "git-course-merge-v1.o1",
+          "setup": [
+            "echo wood > gate.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Build gate\"",
+            "git switch -c ramp",
+            "echo concrete > ramp.txt",
+            "git add .",
+            "git commit -m \"Pour ramp\"",
+            "git switch main",
+            "git switch -c paint",
+            "echo red > gate.txt",
+            "echo amber > lamp.txt",
+            "git add .",
+            "git commit -m \"Paint and light\"",
+            "git switch main",
+            "echo white > gate.txt",
+            "git add .",
+            "git commit -m \"Paint gate white\""
+          ],
+          "explain": "ramp merged without a conflict. Was that merge a fast-forward? Use the graph (where main pointed when you merged) to say why or why not.",
+          "kind": "independent",
+          "title": "Integrate two features, one with a conflict",
+          "instruction": "main must end with both features. ramp (adds ramp.txt) can merge directly. paint changed gate.txt to red, but main has since changed it to white, and the decision is white. Bring ramp and paint into main, keep gate.txt white, and keep paint's lamp.txt.",
+          "goals": [
+            {
+              "in": [
+                "main",
+                "Pour ramp"
+              ]
+            },
+            {
+              "in": [
+                "main",
+                "Paint and light"
+              ]
+            },
+            {
+              "file": [
+                "/home/gate.txt",
+                "white\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/lamp.txt",
+                "amber\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/ramp.txt",
+                "concrete\n"
+              ]
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-merge-v1.o1.after1",
+              "exposure": "practiced-with-help",
+              "text": "Which file did both main and paint change since “Build gate”? Make one side agree with the decision before merging."
+            },
+            {
+              "id": "git-course-merge-v1.o1.after2",
+              "exposure": "returns-later",
+              "text": "Worked answer: merge ramp (a merge commit, because main had already moved); switch paint, set gate.txt to white, commit; switch main; merge paint. The comeback has a different shape."
+            }
+          ],
+          "rubric": [
+            {
+              "criterion": "Result",
+              "evidence": "main contains both features, gate.txt is white, lamp.txt and ramp.txt are present."
+            },
+            {
+              "criterion": "Reasoning",
+              "evidence": "You name the common ancestor and explain why ramp merged cleanly and paint did not."
+            },
+            {
+              "criterion": "Care",
+              "evidence": "You resolved by recording the decision as a commit, not by deleting either side's other work."
+            }
+          ],
+          "comebackID": "git-course-merge-v1.o1.comeback.v2"
+        },
+        {
+          "id": "git-course-merge-v1.o1.comeback.v2",
+          "setup": [
+            "echo dirt > paths.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Lay paths\"",
+            "git switch -c benches",
+            "echo oak > benches.txt",
+            "echo brick > paths.txt",
+            "git add .",
+            "git commit -m \"Benches and brick\"",
+            "git switch main",
+            "git switch -c signs",
+            "echo gravel > paths.txt",
+            "echo left > arrow.txt",
+            "git add .",
+            "git commit -m \"Signs and gravel\"",
+            "git switch main"
+          ],
+          "kind": "comeback",
+          "title": "Comeback: Integrate two features, one with a conflict",
+          "instruction": "Fresh variant. main hasn't moved since benches and signs started. Both branches changed paths.txt (benches to brick, signs to gravel), and the decision is gravel. benches also adds benches.txt; signs also adds arrow.txt. Land benches first, then signs, recording the decision on main. main must end with gravel, both new files, and a merge commit for signs.",
+          "goals": [
+            {
+              "in": [
+                "main",
+                "Benches and brick"
+              ]
+            },
+            {
+              "in": [
+                "main",
+                "Signs and gravel"
+              ]
+            },
+            {
+              "mergeTip": "main"
+            },
+            {
+              "file": [
+                "/home/paths.txt",
+                "gravel\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/arrow.txt",
+                "left\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/benches.txt",
+                "oak\n"
+              ]
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": []
+        }
+      ]
+    },
+    {
+      "id": "git-course-rebase-v1",
+      "title": "Rebase: replaying work on a new base",
+      "order": 4,
+      "outcomes": [
+        "Explain rebase as copying your branch's commits, in order, onto another commit, which produces new commits with new ids.",
+        "Use rebase then a fast-forward merge to land a feature with a straight-line history.",
+        "Predict what happens to the old commits, and why rebasing a branch someone else uses creates duplicates.",
+        "Choose between merge and rebase for a given situation and say why."
+      ],
+      "prerequisites": [
+        "git-course-merge-v1"
+      ],
+      "learn": {
+        "concept": [
+          "On feature, `git rebase main` finds the commits feature has that main doesn't. It replays each one's change, in order, on top of main's tip, then moves feature's label to the last copy.",
+          "The copies are new commits: same message and same change, but a different parent, so a different id. The originals are not edited. They still exist, but no branch points at them any more.",
+          "After a rebase, feature sits directly on top of main, so `git merge feature` from main is a fast-forward and history stays a straight line. That is easier to read, bisect and review.",
+          "Merge keeps history exactly as it happened. Rebase rewrites your branch's history to look as if you started later. Rule of thumb: rebase your own unshared branch to tidy it; merge anything others have already built on.",
+          "Rebase compares files just as merge does, so a two-sided change to the same file still conflicts."
+        ],
+        "assumptions": [
+          "This lab's rebase is meant for a simple feature branch whose own history is a straight line. It doesn't preserve merges inside the branch.",
+          "Each replayed commit applies its whole-file changes, so the conflict rule from the Merge lesson applies."
+        ],
+        "walkthrough": {
+          "title": "Rebasing a detour onto the new bridge",
+          "setup": [
+            "echo north > route.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Plan route\"",
+            "git switch -c detour",
+            "echo via the hills > detour.txt",
+            "git add .",
+            "git commit -m \"Add detour\"",
+            "git switch main",
+            "echo stone > bridge.txt",
+            "git add .",
+            "git commit -m \"Build bridge\""
+          ],
+          "steps": [
+            {
+              "command": "git switch detour",
+              "narration": "detour (c2) and main (c3) diverged at c1."
+            },
+            {
+              "command": "git log",
+              "narration": "detour's history doesn't include the bridge yet."
+            },
+            {
+              "command": "git rebase main",
+              "narration": "Copy detour's one commit (c2) onto main's tip c3. The copy is c4: same message and change, new parent c3, new id. detour moves to c4. c2 still exists, but nothing points at it."
+            },
+            {
+              "command": "git log",
+              "narration": "detour now reads as if it started after the bridge."
+            },
+            {
+              "command": "git switch main",
+              "narration": "Go to main to land the feature."
+            },
+            {
+              "command": "git merge detour",
+              "narration": "detour sits directly on main's tip, so this is a fast-forward. No merge commit; main's history is one straight line."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "git-course-rebase-v1.predict",
+            "prompt": "topic's commit is c2 (parent c1). main moved to c3. On topic you run `git rebase main`. Afterwards, which commit does topic point at?",
+            "setup": [
+              "echo a > a.txt",
+              "git init",
+              "git add .",
+              "git commit -m Base",
+              "git switch -c topic",
+              "echo b > b.txt",
+              "git add .",
+              "git commit -m \"Topic work\"",
+              "git switch main",
+              "echo c > c.txt",
+              "git add .",
+              "git commit -m \"Main work\"",
+              "git switch topic"
+            ],
+            "commands": [
+              "git rebase main"
+            ],
+            "choices": [
+              "c2, edited so its parent is c3",
+              "A new commit c4 whose parent is c3; c2 still exists, unpointed",
+              "A merge commit with parents c2 and c3",
+              "c3, and c2's change is dropped"
+            ],
+            "answer": 1,
+            "why": [
+              "Commits are never edited. Changing the parent means a new commit.",
+              "Right: rebase copies. The original c2 is left behind with no label.",
+              "That's what merge would do.",
+              "Rebase keeps your changes; it replays them."
+            ]
+          },
+          {
+            "id": "git-course-rebase-v1.check",
+            "prompt": "Your teammate opened a pull request from branch shared-fix, and two others have committed on top of it. main moved. Which is the safer way to bring main's changes into shared-fix?",
+            "choices": [
+              "`git merge main` on shared-fix",
+              "`git rebase main` on shared-fix",
+              "Delete shared-fix and start again",
+              "Copy main's files in by hand"
+            ],
+            "answer": 0,
+            "why": [
+              "Right: merge adds a commit and rewrites nothing others have built on.",
+              "Rebase would replace commits others have, causing duplicates like in the demo.",
+              "That throws away other people's work.",
+              "Hand copies lose history and invite mistakes."
+            ]
+          }
+        ],
+        "misconceptions": [
+          {
+            "id": "git-course-rebase-v1.m-moves",
+            "claim": "“Rebase moves my commits.”",
+            "setup": [
+              "echo a > a.txt",
+              "git init",
+              "git add .",
+              "git commit -m Base",
+              "git switch -c topic",
+              "echo b > b.txt",
+              "git add .",
+              "git commit -m \"Topic work\"",
+              "git switch main",
+              "echo c > c.txt",
+              "git add .",
+              "git commit -m \"Main work\"",
+              "git switch topic"
+            ],
+            "commands": [
+              "git rebase main"
+            ],
+            "truth": "It copies them. The old commit c2 is still in the graph (the lab dims it as unreachable). That's why a rebase can be undone, as the Recovery lesson shows."
+          },
+          {
+            "id": "git-course-rebase-v1.m-shared",
+            "claim": "“Rebasing is harmless even if a teammate already has my branch.”",
+            "setup": [
+              "echo a > a.txt",
+              "git init",
+              "git add .",
+              "git commit -m Base",
+              "git switch -c topic",
+              "echo b > b.txt",
+              "git add .",
+              "git commit -m \"Topic work\"",
+              "git branch teammate",
+              "git switch main",
+              "echo c > c.txt",
+              "git add .",
+              "git commit -m \"Main work\"",
+              "git switch topic"
+            ],
+            "commands": [
+              "git rebase main",
+              "git switch teammate",
+              "git merge topic"
+            ],
+            "truth": "teammate still had the old c2. Merging the rebased topic brings in c4, a second copy of the same work, so “Topic work” appears twice in history. Only rebase commits nobody else has built on."
+          },
+          {
+            "id": "git-course-rebase-v1.m-no-conflicts",
+            "claim": "“Rebase avoids conflicts that merge would hit.”",
+            "setup": [
+              "echo price 4 > price.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Set price\"",
+              "git switch -c sale",
+              "echo price 3 > price.txt",
+              "git add .",
+              "git commit -m \"Sale price\"",
+              "git switch main",
+              "echo price 5 > price.txt",
+              "git add .",
+              "git commit -m \"Raise price\"",
+              "git switch sale"
+            ],
+            "commands": [
+              "git rebase main"
+            ],
+            "truth": "Same two-sided change, same conflict. Rebase only changes the shape of history, not whether two edits disagree."
+          }
+        ],
+        "realGit": [
+          {
+            "here": "Copies get the next lab id (c4 …)",
+            "realGit": "Copies get new hashes; `git log` on the old branch name shows the new ones.",
+            "note": ""
+          },
+          {
+            "here": "Conflict → refuse, nothing changes",
+            "realGit": "Rebase stops at the conflicting commit. Fix the file, `git add`, then `git rebase --continue`, or `git rebase --abort` to go back.",
+            "note": "Not practised in this lab."
+          },
+          {
+            "here": "No interactive rebase",
+            "realGit": "`git rebase -i` lets you reorder, squash or reword commits before sharing.",
+            "note": "A later optional topic."
+          },
+          {
+            "here": "Rebased branches stay local",
+            "realGit": "If you already pushed, the remote rejects the rewritten branch unless you `git push --force-with-lease`. Only do that on a branch only you use.",
+            "note": "No remotes in this lab."
+          }
+        ]
+      },
+      "referenceCard": {
+        "recognise": "Your unshared feature branch is behind main and you want a clean, linear history.",
+        "commands": [
+          "git switch <feature>",
+          "git rebase <base>",
+          "git switch <base>",
+          "git merge <feature> (fast-forward)"
+        ],
+        "pitfalls": [
+          "Rebasing a branch others have built on.",
+          "Running rebase from the wrong branch.",
+          "Forgetting the old commits still exist (useful for undo)."
+        ],
+        "model": "rebase = copy my commits onto a new parent; new ids; old ones left unpointed"
+      },
+      "tasks": [
+        {
+          "id": "git-course-rebase-v1.g1",
+          "setup": [
+            "echo track > rail.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Lay rail\"",
+            "git switch -c signal",
+            "echo green > signal.txt",
+            "git add .",
+            "git commit -m \"Add signal\"",
+            "git switch main",
+            "echo brick > station.txt",
+            "git add .",
+            "git commit -m \"Build station\"",
+            "git switch signal"
+          ],
+          "kind": "guided",
+          "title": "Land a feature in a straight line",
+          "instruction": "main has moved on since you started signal. Rebase signal onto main, then bring it into main so main's history is a straight line ending in “Add signal”.",
+          "goals": [
+            {
+              "linear": "main"
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Add signal"
+              ]
+            },
+            {
+              "in": [
+                "main",
+                "Build station"
+              ]
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-rebase-v1.g1.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Two steps: put signal on top of main, then move main forward."
+            },
+            {
+              "id": "git-course-rebase-v1.g1.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "Rebase from the feature branch; then a merge from main will be a fast-forward."
+            },
+            {
+              "id": "git-course-rebase-v1.g1.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "(on signal) git rebase <base> → git switch <base> → git merge <feature>"
+            },
+            {
+              "id": "git-course-rebase-v1.g1.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git rebase main\ngit switch main\ngit merge signal"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-rebase-v1.g2",
+          "setup": [
+            "echo empty > hall.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Open hall\"",
+            "git switch -c kiosk",
+            "echo pine > kiosk.txt",
+            "git add .",
+            "git commit -m \"Frame kiosk\"",
+            "echo cables > wires.txt",
+            "git add .",
+            "git commit -m \"Wire kiosk\"",
+            "git switch main",
+            "echo cream > paint.txt",
+            "git add .",
+            "git commit -m \"Paint hall\"",
+            "git switch kiosk"
+          ],
+          "kind": "guided",
+          "title": "Keep the order of a two-commit feature",
+          "instruction": "kiosk has two commits (“Frame kiosk” then “Wire kiosk”). Rebase kiosk onto main. kiosk's history must read Wire kiosk → Frame kiosk → Paint hall → Open hall.",
+          "goals": [
+            {
+              "branch": "kiosk"
+            },
+            {
+              "log": [
+                "Wire kiosk",
+                "Frame kiosk",
+                "Paint hall",
+                "Open hall"
+              ]
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Paint hall"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-rebase-v1.g2.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Which branch should be replayed, and onto which?"
+            },
+            {
+              "id": "git-course-rebase-v1.g2.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "Stay on kiosk. Rebase copies its commits in their original order."
+            },
+            {
+              "id": "git-course-rebase-v1.g2.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git rebase <the branch to build on>"
+            },
+            {
+              "id": "git-course-rebase-v1.g2.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git rebase main"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-rebase-v1.debug",
+          "setup": [
+            "echo soup > menu.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Start menu\"",
+            "git switch -c menu",
+            "echo soup, salad > menu.txt",
+            "git add .",
+            "git commit -m \"Add salad\"",
+            "git switch main",
+            "echo 9-5 > hours.txt",
+            "git add .",
+            "git commit -m \"Set hours\"",
+            "git switch menu",
+            "echo soup, salad, pie > menu.txt"
+          ],
+          "kind": "debug",
+          "title": "Debug the command",
+          "instruction": "You tried to rebase menu onto main with an unsaved edit to menu.txt. It refused. The edit belongs to the feature: save it as “Add dessert”, then rebase.",
+          "goals": [
+            {
+              "log": [
+                "Add dessert",
+                "Add salad",
+                "Set hours",
+                "Start menu"
+              ]
+            },
+            {
+              "file": [
+                "/home/menu.txt",
+                "soup, salad, pie\n"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": [],
+          "broken": [
+            "git rebase main"
+          ]
+        },
+        {
+          "id": "git-course-rebase-v1.o1",
+          "setup": [
+            "echo room > studio.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Set up studio\"",
+            "git switch -c audio",
+            "echo mic > audio.txt",
+            "git add .",
+            "git commit -m \"Add audio\"",
+            "git switch main",
+            "git switch -c video",
+            "echo camera > video.txt",
+            "git add .",
+            "git commit -m \"Add video\"",
+            "git switch main",
+            "echo foam > walls.txt",
+            "git add .",
+            "git commit -m \"Soundproof\""
+          ],
+          "explain": "Your history is linear. Name one thing a reader of this history can no longer see that a merge-based history would have shown.",
+          "kind": "independent",
+          "title": "Line up two features",
+          "instruction": "audio and video both started from “Set up studio”, and main has since gained “Soundproof”. Make main a straight line reading video → audio → Soundproof → Set up studio (newest first): land audio first, then video.",
+          "goals": [
+            {
+              "log": [
+                "Add video",
+                "Add audio",
+                "Soundproof",
+                "Set up studio"
+              ]
+            },
+            {
+              "linear": "main"
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-rebase-v1.o1.after1",
+              "exposure": "practiced-with-help",
+              "text": "After landing audio, main moved. Where must video be replayed so that its merge is a fast-forward?"
+            },
+            {
+              "id": "git-course-rebase-v1.o1.after2",
+              "exposure": "returns-later",
+              "text": "Worked answer: rebase audio onto main and fast-forward main; then rebase video onto the new main and fast-forward again. The comeback has a different shape."
+            }
+          ],
+          "rubric": [
+            {
+              "criterion": "Result",
+              "evidence": "main's log is exactly video → audio → Soundproof → Set up studio with no merge commits."
+            },
+            {
+              "criterion": "Reasoning",
+              "evidence": "You explain why video had to be rebased after audio landed, not before."
+            },
+            {
+              "criterion": "Care",
+              "evidence": "You only rebased branches that nobody else was using, and can say so."
+            }
+          ],
+          "comebackID": "git-course-rebase-v1.o1.comeback.v2"
+        },
+        {
+          "id": "git-course-rebase-v1.o1.comeback.v2",
+          "setup": [
+            "echo doors > museum.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Open museum\"",
+            "git switch -c tour",
+            "echo hall A > route.txt",
+            "git add .",
+            "git commit -m \"Draft route\"",
+            "echo fossils > stops.txt",
+            "git add .",
+            "git commit -m \"Add stops\"",
+            "echo 10am > times.txt",
+            "git add .",
+            "git commit -m \"Add times\"",
+            "git switch main",
+            "echo Ada > guide.txt",
+            "git add .",
+            "git commit -m \"Hire guide\"",
+            "echo floor plan > maps.txt",
+            "git add .",
+            "git commit -m \"Print maps\""
+          ],
+          "kind": "comeback",
+          "title": "Comeback: Line up two features",
+          "instruction": "Fresh variant. tour has three commits (Draft route, Add stops, Add times) and main has gained two (Hire guide, Print maps) since tour started. Make main a straight line ending Add times → Add stops → Draft route → Print maps → Hire guide → Open museum.",
+          "goals": [
+            {
+              "log": [
+                "Add times",
+                "Add stops",
+                "Draft route",
+                "Print maps",
+                "Hire guide",
+                "Open museum"
+              ]
+            },
+            {
+              "linear": "main"
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": []
+        }
+      ]
+    },
+    {
+      "id": "git-course-reset-v1",
+      "title": "Reset: moving the branch, the staging area and the files",
+      "order": 5,
+      "outcomes": [
+        "State exactly which of the three places `--soft`, `--mixed` and `--hard` change.",
+        "Pick the reset mode that undoes a commit, unstages a file, or throws away edits, and no more than that.",
+        "Predict what a hard reset does to untracked files, and to the commits it moves away from.",
+        "Combine reset with add and commit to squash or split commits."
+      ],
+      "prerequisites": [
+        "git-course-snapshots-v1",
+        "git-course-branches-v1"
+      ],
+      "learn": {
+        "concept": [
+          "`git reset <mode> <commit>` always moves your current branch label to that commit. The mode decides how much else follows.",
+          "--soft moves only the label. The staging area and the files keep the newer content, so the undone commit's changes sit there staged, ready to commit again.",
+          "--mixed (Git's default) moves the label and resets the staging area to match. Your files are untouched, but the changes are now unstaged.",
+          "--hard moves the label, the staging area and the tracked files. Uncommitted changes to tracked files are gone. Untracked files Git never saw are left alone.",
+          "Reset doesn't destroy the commits it moves away from. They stay in the graph with no label. The next lesson uses that to recover them.",
+          "In the lab, `HEAD~1` means 'the parent of the commit I'm on'. With no commit named, reset uses the commit you're on, which is how `git reset --mixed` unstages everything and `git reset --hard` throws away edits."
+        ],
+        "assumptions": [
+          "The lab names commits as c1, c2 … or `HEAD~1`. Real Git also accepts `HEAD~2`, `HEAD^` and branch names.",
+          "--mixed resets the whole staging area. Real Git can unstage a single file with `git restore --staged file`."
+        ],
+        "walkthrough": {
+          "title": "Three resets on an essay",
+          "setup": [
+            "echo draft > essay.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Draft essay\"",
+            "echo draft with intro > essay.txt",
+            "git add .",
+            "git commit -m \"Add intro\"",
+            "echo draft with intro and typo > essay.txt",
+            "echo junk > junk.txt",
+            "git add .",
+            "git commit -m \"Rushed edit\""
+          ],
+          "steps": [
+            {
+              "command": "git reset --soft HEAD~1",
+              "narration": "--soft: main moves back from c3 to c2. The staging area and the files still hold c3's content, so the undone changes are staged."
+            },
+            {
+              "command": "git reset --mixed",
+              "narration": "--mixed on the current commit (c2): the staging area goes back to c2. The files keep the edits, now unstaged. junk.txt was never in c2, so it's untracked again."
+            },
+            {
+              "command": "git reset --hard",
+              "narration": "--hard on c2: the tracked file essay.txt goes back to c2's text. junk.txt is untracked, so the reset leaves it alone."
+            },
+            {
+              "command": "git log",
+              "narration": "main's history no longer shows “Rushed edit”..."
+            },
+            {
+              "command": "rm junk.txt",
+              "narration": "...but c3 still exists in the graph with no label (the lab draws it dimmed). Tidy the untracked file by hand."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "git-course-reset-v1.predict",
+            "prompt": "notes.txt was never added. You run `git reset --hard HEAD~1`. What happens to code.txt and notes.txt?",
+            "setup": [
+              "echo v1 > code.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"First version\"",
+              "echo v2 > code.txt",
+              "git add .",
+              "git commit -m \"Second version\"",
+              "echo my ideas > notes.txt"
+            ],
+            "commands": [
+              "git reset --hard HEAD~1"
+            ],
+            "choices": [
+              "code.txt goes back to v1; notes.txt is deleted",
+              "code.txt goes back to v1; notes.txt is left alone",
+              "Both are left alone; only the branch moves",
+              "The reset refuses because notes.txt is untracked"
+            ],
+            "answer": 1,
+            "why": [
+              "A hard reset only rewrites files Git tracks. It has no saved version of notes.txt to go back to.",
+              "Right: tracked files match the target, untracked files survive.",
+              "That's --soft.",
+              "Untracked files only matter when the target commit has a file at the same path."
+            ]
+          },
+          {
+            "id": "git-course-reset-v1.check",
+            "prompt": "Your last commit had the right files but a bad message. Which reset lets you commit the exact same changes again with a new message in one command after it?",
+            "choices": [
+              "git reset --soft HEAD~1",
+              "git reset --mixed HEAD~1",
+              "git reset --hard HEAD~1",
+              "No reset can help"
+            ],
+            "answer": 0,
+            "why": [
+              "Right: the changes stay staged, so `git commit -m \"better\"` recreates the commit.",
+              "You'd need to `git add` again first: two commands.",
+              "That throws the changes away.",
+              "--soft is exactly this. Real Git also offers `git commit --amend`."
+            ]
+          }
+        ],
+        "misconceptions": [
+          {
+            "id": "git-course-reset-v1.m-soft-undoes",
+            "claim": "“`reset --soft HEAD~1` undoes the change in my file.”",
+            "setup": [
+              "echo good > config.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Good config\"",
+              "echo bad > config.txt",
+              "git add .",
+              "git commit -m \"Bad config\""
+            ],
+            "commands": [
+              "git reset --soft HEAD~1"
+            ],
+            "truth": "Only the label moved. The bad line is still in your file and staged. To throw the change away you need --hard."
+          },
+          {
+            "id": "git-course-reset-v1.m-deletes-commit",
+            "claim": "“Reset deletes the commits I reset past.”",
+            "setup": [
+              "echo good > config.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Good config\"",
+              "echo bad > config.txt",
+              "git add .",
+              "git commit -m \"Bad config\""
+            ],
+            "commands": [
+              "git reset --hard HEAD~1"
+            ],
+            "truth": "c2 is still there; no branch points at it any more. In real Git it stays recoverable for weeks via the reflog before cleanup."
+          },
+          {
+            "id": "git-course-reset-v1.m-mixed-loses",
+            "claim": "“`reset --mixed` throws away my edits.”",
+            "setup": [
+              "echo plan A > plan.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Plan A\"",
+              "echo plan B > plan.txt",
+              "git add plan.txt"
+            ],
+            "commands": [
+              "git reset --mixed"
+            ],
+            "truth": "--mixed only unstages. The edit is still in your file; `git add` puts it back."
+          }
+        ],
+        "realGit": [
+          {
+            "here": "`git reset --mixed` unstages everything",
+            "realGit": "`git reset` (no flag) is --mixed; `git restore --staged file` unstages one file.",
+            "note": ""
+          },
+          {
+            "here": "`git reset --hard` with no commit throws away tracked edits",
+            "realGit": "Same; `git restore file` discards edits to one file.",
+            "note": "Both are permanent for uncommitted work: it was never saved."
+          },
+          {
+            "here": "Untracked files survive a hard reset",
+            "realGit": "Same. `git clean -n` lists untracked files and `git clean -f` deletes them (careful).",
+            "note": "Checked against real Git."
+          },
+          {
+            "here": "Reset only your own unshared history",
+            "realGit": "Resetting a pushed branch rewrites history others have, just like rebase. Use `git revert` to undo a shared commit with a new commit.",
+            "note": "revert isn't modelled in the lab."
+          }
+        ]
+      },
+      "referenceCard": {
+        "recognise": "You need to undo a commit, unstage, squash, split, or throw away edits.",
+        "commands": [
+          "git reset --soft <c>: label only",
+          "git reset --mixed <c>: label + staging area",
+          "git reset --hard <c>: label + staging area + tracked files",
+          "HEAD~1 = parent of the current commit"
+        ],
+        "pitfalls": [
+          "Using --hard when you meant to keep edits (uncommitted work can't be recovered).",
+          "Resetting a shared branch.",
+          "Expecting --hard to delete untracked files.",
+          "`--hard` also removes a new file that was only staged: staging made it tracked, and the target commit doesn't have it."
+        ],
+        "model": "soft ⊂ mixed ⊂ hard: each mode changes one more place"
+      },
+      "tasks": [
+        {
+          "id": "git-course-reset-v1.g2",
+          "setup": [
+            "echo cover > book.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Start book\"",
+            "echo Chapter One > title.txt",
+            "git add .",
+            "git commit -m \"Add chapter title\"",
+            "echo It began at the dock. > body.txt",
+            "git add .",
+            "git commit -m \"Add chapter body\""
+          ],
+          "kind": "guided",
+          "title": "Squash two commits into one",
+          "instruction": "“Add chapter title” and “Add chapter body” should be one commit called “Add chapter one”, sitting on top of “Start book”.",
+          "goals": [
+            {
+              "log": [
+                "Add chapter one",
+                "Start book"
+              ]
+            },
+            {
+              "committed": [
+                "/home/title.txt",
+                "Chapter One\n"
+              ]
+            },
+            {
+              "committed": [
+                "/home/body.txt",
+                "It began at the dock.\n"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-reset-v1.g2.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Use `git log` to find the commit you want to sit on top of."
+            },
+            {
+              "id": "git-course-reset-v1.g2.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "Move the label back two commits but keep both changes staged, then commit once."
+            },
+            {
+              "id": "git-course-reset-v1.g2.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git reset --soft <id of Start book> → git commit -m \"Add chapter one\""
+            },
+            {
+              "id": "git-course-reset-v1.g2.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git reset --soft c1\ngit commit -m \"Add chapter one\""
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-reset-v1.debug",
+          "setup": [
+            "echo good > config.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Good config\"",
+            "echo bad > config.txt",
+            "git add .",
+            "git commit -m \"Bad config\""
+          ],
+          "kind": "debug",
+          "title": "Debug the command",
+          "instruction": "A teammate wanted to throw away a bad last commit completely and ran `git reset --soft HEAD~1`. The bad text is still in their file. Undo the bad change properly, leaving main at “Good config” with the good file.",
+          "goals": [
+            {
+              "file": [
+                "/home/config.txt",
+                "good\n"
+              ]
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Good config"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": [],
+          "broken": [
+            "git reset --soft HEAD~1"
+          ]
+        },
+        {
+          "id": "git-course-reset-v1.o1",
+          "setup": [
+            "echo off > lights.txt",
+            "echo stuck > doors.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Open garage\"",
+            "echo on > lights.txt",
+            "echo sliding > doors.txt",
+            "git add .",
+            "git commit -m \"Lights and doors\""
+          ],
+          "explain": "Fill the table for the reset you used: did the branch, the staging area and the files each change?",
+          "kind": "independent",
+          "title": "Split a commit in two",
+          "instruction": "Your last commit, “Lights and doors”, mixed two unrelated changes. Replace it with two commits: “Fix lights” (lights.txt only), then “Fix doors” (doors.txt only), on top of “Open garage”.",
+          "goals": [
+            {
+              "log": [
+                "Fix doors",
+                "Fix lights",
+                "Open garage"
+              ]
+            },
+            {
+              "committed": [
+                "/home/lights.txt",
+                "on\n"
+              ]
+            },
+            {
+              "committed": [
+                "/home/doors.txt",
+                "sliding\n"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-reset-v1.o1.after1",
+              "exposure": "practiced-with-help",
+              "text": "After your reset, run `git status`. Are the two changes staged, unstaged, or gone? You need them unstaged."
+            },
+            {
+              "id": "git-course-reset-v1.o1.after2",
+              "exposure": "returns-later",
+              "text": "Worked answer: git reset --mixed HEAD~1; add lights.txt, commit “Fix lights”; add doors.txt, commit “Fix doors”. The comeback has a different shape."
+            }
+          ],
+          "rubric": [
+            {
+              "criterion": "Result",
+              "evidence": "History is Fix doors → Fix lights → Open garage; each commit holds one change."
+            },
+            {
+              "criterion": "Reasoning",
+              "evidence": "You explain why --mixed (not --soft or --hard) was the right mode."
+            },
+            {
+              "criterion": "Care",
+              "evidence": "No change was lost along the way; the old combined commit is unreachable, not destroyed."
+            }
+          ],
+          "comebackID": "git-course-reset-v1.o1.comeback.v2"
+        },
+        {
+          "id": "git-course-reset-v1.o1.comeback.v2",
+          "setup": [
+            "echo furled > sails.txt",
+            "echo loose > rudder.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Launch boat\"",
+            "echo raised > sails.txt",
+            "echo tight > rudder.txt",
+            "git add .",
+            "git commit -m \"Sails and rudder\""
+          ],
+          "kind": "comeback",
+          "title": "Comeback: Split a commit in two",
+          "instruction": "Fresh variant. Your last commit, “Sails and rudder”, included a rudder change that isn't finished. Replace it with one commit “Raise sails” (sails.txt only) on top of “Launch boat”, and keep the rudder change in your working tree, uncommitted.",
+          "goals": [
+            {
+              "log": [
+                "Raise sails",
+                "Launch boat"
+              ]
+            },
+            {
+              "committed": [
+                "/home/sails.txt",
+                "raised\n"
+              ]
+            },
+            {
+              "committed": [
+                "/home/rudder.txt",
+                "loose\n"
+              ]
+            },
+            {
+              "file": [
+                "/home/rudder.txt",
+                "tight\n"
+              ]
+            }
+          ],
+          "hints": [],
+          "rubric": []
+        }
+      ]
+    },
+    {
+      "id": "git-course-recovery-v1",
+      "title": "Recovery: getting lost work back",
+      "order": 6,
+      "outcomes": [
+        "Explain why a commit that vanished from `git log` after a reset or rebase is usually still recoverable.",
+        "Recover an exact earlier commit, as opposed to retyping a copy, after a bad reset or an unwanted rebase.",
+        "Save a lost commit onto a new branch without moving the branch you're on.",
+        "Tell recoverable situations (anything once committed) from unrecoverable ones (edits never committed), and use a backup branch before risky steps."
+      ],
+      "prerequisites": [
+        "git-course-rebase-v1",
+        "git-course-reset-v1"
+      ],
+      "learn": {
+        "concept": [
+          "`git log` only shows commits reachable from the branch you're on. A reset or rebase moves a label, and the commits it leaves behind drop out of the log. They aren't deleted.",
+          "To recover one, you need its id. In this lab the commit graph shows every commit and dims the unreachable ones. In real Git, `git reflog` lists every commit HEAD has pointed at, newest first.",
+          "`git reset --hard <id>` moves your current branch back onto that exact commit, the same snapshot with the same id. Retyping the change makes a new commit that only looks the same.",
+          "To keep your branch where it is and still save the lost commit, make a new branch and reset that one: `git switch -c rescue`, then `git reset --hard <id>`.",
+          "What Git can't give back is anything it never saved. Uncommitted edits discarded by `--hard` are gone. So is a new file that was only staged, never committed, when `--hard` removes it. Before a risky rebase or reset, `git branch backup` costs nothing."
+        ],
+        "assumptions": [
+          "The lab has no reflog. Read ids from the commit graph, or from earlier `git log` output.",
+          "The lab never garbage-collects. Real Git eventually removes unreachable commits (by default after weeks), so recover soon."
+        ],
+        "walkthrough": {
+          "title": "Losing and finding the sails",
+          "setup": [
+            "echo keel > hull.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Build hull\"",
+            "echo pine > mast.txt",
+            "git add .",
+            "git commit -m \"Raise mast\"",
+            "echo canvas > sails.txt",
+            "git add .",
+            "git commit -m \"Add sails\""
+          ],
+          "steps": [
+            {
+              "command": "git reset --hard HEAD~1",
+              "narration": "An accident: main jumps back to c2 and sails.txt leaves the folder. c3 is now unreachable (dimmed in the graph)."
+            },
+            {
+              "command": "git log",
+              "narration": "The log has no trace of c3. This is the moment people think the work is gone."
+            },
+            {
+              "command": "git reset --hard c3",
+              "narration": "Point main back at the exact commit c3 (its id is in the graph). sails.txt returns."
+            },
+            {
+              "command": "git branch backup",
+              "narration": "Before experimenting, add a backup label. It costs nothing and keeps c3 reachable whatever main does."
+            },
+            {
+              "command": "git reset --hard c1",
+              "narration": "Experiment: start again from the hull. main moves to c1, but backup still holds c3, so nothing is unreachable."
+            },
+            {
+              "command": "git reset --hard backup",
+              "narration": "Changed your mind: reset accepts a branch name too. main is back at c3."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "git-course-recovery-v1.predict",
+            "prompt": "You rebased topic (its old commit was c2; the copy is c4) and regret it. Which command puts topic back exactly as it was before the rebase?",
+            "setup": [
+              "echo a > a.txt",
+              "git init",
+              "git add .",
+              "git commit -m Base",
+              "git switch -c topic",
+              "echo b > b.txt",
+              "git add .",
+              "git commit -m \"Topic work\"",
+              "git switch main",
+              "echo c > c.txt",
+              "git add .",
+              "git commit -m \"Main work\"",
+              "git switch topic",
+              "git rebase main"
+            ],
+            "commands": [
+              "git reset --hard c2"
+            ],
+            "choices": [
+              "git reset --hard HEAD~1",
+              "git reset --hard c2",
+              "git merge main",
+              "Nothing can: the rebase replaced c2"
+            ],
+            "answer": 1,
+            "why": [
+              "HEAD~1 is c4's parent, c3: that is main's tip, not your old work.",
+              "Right: c2 is still in the graph, and resetting topic onto it restores the pre-rebase branch exactly.",
+              "That adds a merge on top of the rebased branch.",
+              "Rebase copies; the original c2 was never removed."
+            ]
+          },
+          {
+            "id": "git-course-recovery-v1.check",
+            "prompt": "Which of these can you recover with Git alone?",
+            "choices": [
+              "A commit your branch no longer points at after `reset --hard`",
+              "Edits you never staged, discarded by `reset --hard`",
+              "A file you created and never added, then deleted with rm",
+              "Text you typed and never saved to the file"
+            ],
+            "answer": 0,
+            "why": [
+              "Right: it's a commit, so it still exists unreachable; find its id and reset or branch to it.",
+              "Never committed, so no snapshot holds it.",
+              "Git never saw the file.",
+              "Git only knows what's in files, and only what you commit."
+            ]
+          }
+        ],
+        "misconceptions": [
+          {
+            "id": "git-course-recovery-v1.m-log-means-gone",
+            "claim": "“If `git log` doesn't show it, it's deleted.”",
+            "setup": [
+              "echo 1 > ledger.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Open ledger\"",
+              "echo 2 > ledger.txt",
+              "git add .",
+              "git commit -m \"Record sale\"",
+              "git reset --hard HEAD~1"
+            ],
+            "commands": [
+              "git reset --hard c2"
+            ],
+            "truth": "The log only walks back from your branch. c2 was there all along."
+          },
+          {
+            "id": "git-course-recovery-v1.m-everything",
+            "claim": "“Git can recover anything I lose.”",
+            "setup": [
+              "echo 1 > ledger.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Open ledger\"",
+              "echo 1 and 2 and 3 > ledger.txt"
+            ],
+            "commands": [
+              "git reset --hard"
+            ],
+            "truth": "The edit “1 and 2 and 3” was never committed, so no commit holds it, and no reset or reflog can bring it back. Commit (even as “WIP”) before anything risky."
+          },
+          {
+            "id": "git-course-recovery-v1.m-staged-safe",
+            "claim": "“A staged new file is safe from a hard reset.”",
+            "setup": [
+              "echo 1 > ledger.txt",
+              "git init",
+              "git add .",
+              "git commit -m \"Open ledger\"",
+              "echo totals > summary.txt",
+              "git add summary.txt"
+            ],
+            "commands": [
+              "git reset --hard"
+            ],
+            "truth": "Staging made summary.txt tracked, and the target commit doesn't have it, so --hard removes it. Real Git keeps the staged content as a loose object that only `git fsck --lost-found` can dig out. Treat it as lost, and commit first."
+          }
+        ],
+        "realGit": [
+          {
+            "here": "Read ids from the commit graph",
+            "realGit": "`git reflog` lists where HEAD has been. After a reset, `git reset --hard HEAD@{1}` goes back one step. A rebase writes one reflog entry per replayed commit, so HEAD@{1} is still the rebased copy: use the branch's own reflog (`git reset --hard topic@{1}`) or `ORIG_HEAD`, or read the reflog for the entry just before `rebase (start)`.",
+            "note": "Checked in real Git (2.50): after a two-commit rebase, topic@{1} and ORIG_HEAD are the pre-rebase tip and HEAD@{1} is not. The reflog is local and isn't pushed."
+          },
+          {
+            "here": "Rescue = new branch, then reset it",
+            "realGit": "One step: `git branch rescue <hash>` or `git switch -c rescue <hash>`.",
+            "note": ""
+          },
+          {
+            "here": "Unreachable commits stay forever",
+            "realGit": "`git gc` prunes them after the reflog expires (default 90 days for reachable entries, 30 for unreachable).",
+            "note": "Recover soon."
+          },
+          {
+            "here": "Deleted tracked file → `git reset --hard` brings it back",
+            "realGit": "`git restore file` copies the staged version back over your edit; `git restore --source=HEAD --staged --worktree file` returns both to the last commit.",
+            "note": ""
+          }
+        ]
+      },
+      "referenceCard": {
+        "recognise": "Work vanished after reset, rebase or a wrong branch move.",
+        "commands": [
+          "Find the id: commit graph (lab) / `git reflog` (real Git)",
+          "git reset --hard <id>: move this branch back onto it",
+          "git switch -c rescue → git reset --hard <id>: save it without moving your branch",
+          "git branch backup: before anything risky"
+        ],
+        "pitfalls": [
+          "Retyping instead of recovering the original commit.",
+          "Confusing a rebased copy with its original: compare parents.",
+          "Expecting to recover edits that were never committed."
+        ],
+        "model": "committed = recoverable (until garbage collection); never committed = gone"
+      },
+      "tasks": [
+        {
+          "id": "git-course-recovery-v1.g1",
+          "setup": [
+            "echo keel > hull.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Build hull\"",
+            "echo pine > mast.txt",
+            "git add .",
+            "git commit -m \"Raise mast\"",
+            "echo canvas > sails.txt",
+            "git add .",
+            "git commit -m \"Add sails\"",
+            "git reset --hard HEAD~1"
+          ],
+          "kind": "guided",
+          "title": "Undo an accidental hard reset",
+          "instruction": "You meant to unstage something but ran `git reset --hard HEAD~1`, and “Add sails” vanished. Bring main back to that exact commit. Retyping the file doesn't count: the original commit must be restored.",
+          "goals": [
+            {
+              "tipIs": [
+                "main",
+                "c3"
+              ]
+            },
+            {
+              "file": [
+                "/home/sails.txt",
+                "canvas\n"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-recovery-v1.g1.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Look at the commit graph, not the log. Is “Add sails” still there?"
+            },
+            {
+              "id": "git-course-recovery-v1.g1.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "Move main back onto the unreachable commit's id with the mode that also restores files."
+            },
+            {
+              "id": "git-course-recovery-v1.g1.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git reset --hard <id of Add sails>"
+            },
+            {
+              "id": "git-course-recovery-v1.g1.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git reset --hard c3"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-recovery-v1.g2",
+          "setup": [
+            "echo quay > quay.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Build quay\"",
+            "git switch -c crane",
+            "echo hook > crane.txt",
+            "git add .",
+            "git commit -m \"Install crane\"",
+            "git switch main",
+            "echo rope > bollard.txt",
+            "git add .",
+            "git commit -m \"Add bollard\"",
+            "git switch crane",
+            "git rebase main"
+          ],
+          "kind": "guided",
+          "title": "Undo a rebase",
+          "instruction": "You rebased crane onto main but the team wants crane exactly as it was. Put crane back on its original pre-rebase commit.",
+          "goals": [
+            {
+              "tipIs": [
+                "crane",
+                "c2"
+              ]
+            },
+            {
+              "branch": "crane"
+            },
+            {
+              "absent": "/home/bollard.txt"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-recovery-v1.g2.h1",
+              "tier": "nudge",
+              "exposure": "practiced-with-help",
+              "text": "Two commits are called “Install crane”. Which one is the original?"
+            },
+            {
+              "id": "git-course-recovery-v1.g2.h2",
+              "tier": "strategy",
+              "exposure": "practiced-with-help",
+              "text": "The original has the old parent (Build quay). Reset crane onto it."
+            },
+            {
+              "id": "git-course-recovery-v1.g2.h3",
+              "tier": "skeleton",
+              "exposure": "practiced-with-help",
+              "text": "git reset --hard <id of the original Install crane>"
+            },
+            {
+              "id": "git-course-recovery-v1.g2.h4",
+              "tier": "walkthrough",
+              "exposure": "returns-later",
+              "text": "git reset --hard c2"
+            }
+          ],
+          "rubric": []
+        },
+        {
+          "id": "git-course-recovery-v1.debug",
+          "setup": [
+            "echo keel > hull.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Build hull\"",
+            "echo pine > mast.txt",
+            "git add .",
+            "git commit -m \"Raise mast\"",
+            "echo canvas > sails.txt",
+            "git add .",
+            "git commit -m \"Add sails\"",
+            "git reset --hard HEAD~1"
+          ],
+          "kind": "debug",
+          "title": "Debug the command",
+          "instruction": "Goal: keep main where it is (at “Raise mast”) and save the lost “Add sails” commit on a branch called rescue. Your teammate's command recovered the commit but moved main. Do it without moving main.",
+          "goals": [
+            {
+              "tipIs": [
+                "rescue",
+                "c3"
+              ]
+            },
+            {
+              "tipIs": [
+                "main",
+                "c2"
+              ]
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": [],
+          "broken": [
+            "git reset --hard c3"
+          ]
+        },
+        {
+          "id": "git-course-recovery-v1.o1",
+          "setup": [
+            "echo tarmac > runway.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Pave runway\"",
+            "git switch -c wing",
+            "echo left > left.txt",
+            "git add .",
+            "git commit -m \"Left wing\"",
+            "echo right > right.txt",
+            "git add .",
+            "git commit -m \"Right wing\"",
+            "git switch main",
+            "echo red > lights.txt",
+            "git add .",
+            "git commit -m \"Runway lights\"",
+            "git switch wing",
+            "git rebase main",
+            "git reset --hard c4"
+          ],
+          "explain": "Which commits are still unreachable at the end, and is that a problem? What would real Git eventually do with them?",
+          "kind": "independent",
+          "title": "Recover a rebased feature after a bad reset",
+          "instruction": "You rebased wing onto main (its copies are the two newest commits), then, while still on wing, mistakenly ran `git reset --hard c4`. Restore wing to its rebased tip, then land it on main with a straight-line history. Use the commit graph to find ids; unreachable commits are dimmed.",
+          "goals": [
+            {
+              "tipIs": [
+                "wing",
+                "c6"
+              ]
+            },
+            {
+              "tipIs": [
+                "main",
+                "c6"
+              ]
+            },
+            {
+              "linear": "main"
+            },
+            {
+              "branch": "main"
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [
+            {
+              "id": "git-course-recovery-v1.o1.after1",
+              "exposure": "practiced-with-help",
+              "text": "There are two “Right wing” commits. One has parent “Left wing” on top of “Pave runway”, the other sits on top of “Runway lights”. Which is the rebased tip?"
+            },
+            {
+              "id": "git-course-recovery-v1.o1.after2",
+              "exposure": "returns-later",
+              "text": "Worked answer: git reset --hard c6 on wing; switch main; git merge wing (fast-forward). The comeback asks for a different recovery: saving an original, pre-rebase tip on its own branch."
+            }
+          ],
+          "rubric": [
+            {
+              "criterion": "Result",
+              "evidence": "wing and main both point at the rebased tip; main is linear."
+            },
+            {
+              "criterion": "Reasoning",
+              "evidence": "You explain how you told the original commits from their rebased copies (parents, not messages)."
+            },
+            {
+              "criterion": "Care",
+              "evidence": "You name the one-command habit that would have made this recovery trivial (a backup branch before rebasing)."
+            }
+          ],
+          "comebackID": "git-course-recovery-v1.o1.comeback.v2"
+        },
+        {
+          "id": "git-course-recovery-v1.o1.comeback.v2",
+          "setup": [
+            "echo frame > hangar.txt",
+            "git init",
+            "git add .",
+            "git commit -m \"Frame hangar\"",
+            "git switch -c cabin",
+            "echo leather > seats.txt",
+            "git add .",
+            "git commit -m \"Fit seats\"",
+            "echo glass > windows.txt",
+            "git add .",
+            "git commit -m \"Fit windows\"",
+            "git switch main",
+            "echo steel > doors.txt",
+            "git add .",
+            "git commit -m \"Hang doors\"",
+            "git switch cabin",
+            "git rebase main"
+          ],
+          "kind": "comeback",
+          "title": "Comeback: Recover a rebased feature after a bad reset",
+          "instruction": "Fresh variant. You rebased cabin onto main and want to keep the rebase, but also keep the original, pre-rebase work on a branch named before-rebase. cabin must stay on its rebased tip, and you must finish on cabin. Use the commit graph to find ids.",
+          "goals": [
+            {
+              "tipIs": [
+                "before-rebase",
+                "c3"
+              ]
+            },
+            {
+              "tipIs": [
+                "cabin",
+                "c6"
+              ]
+            },
+            {
+              "branch": "cabin"
+            },
+            {
+              "tipMessage": [
+                "main",
+                "Hang doors"
+              ]
+            },
+            {
+              "clean": true
+            }
+          ],
+          "hints": [],
+          "rubric": []
+        }
+      ]
+    }
+  ],
+  "startingKnowledge": [
+    "Know what a file and a folder are, and that a file's contents can change.",
+    "Type a command in the Terminal Lab and use echo text > file, cat, ls and rm (the Terminal Lab missions teach these)."
+  ],
+  "capstoneFollowUp": "The harbor repair capstone is not available here yet. It needs a saved, exportable repair log and rubric review. The real-Git follow-on is not run or checked by the app."
+}

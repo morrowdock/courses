@@ -1,0 +1,39 @@
+{
+  "format": "morrowdock-code-gym-foundations-course",
+  "id": "cg-foundations-v1",
+  "lessons": [
+    {
+      "id": "cg-found-names-values-v1",
+      "order": 1,
+      "resource": "cg-foundations-01-names-values.json"
+    },
+    {
+      "id": "cg-found-conditionals-v1",
+      "order": 2,
+      "resource": "cg-foundations-02-conditionals.json"
+    },
+    {
+      "id": "cg-found-loops-v1",
+      "order": 3,
+      "resource": "cg-foundations-03-loops.json"
+    },
+    {
+      "id": "cg-found-functions-v1",
+      "order": 4,
+      "resource": "cg-foundations-04-functions.json"
+    },
+    {
+      "id": "cg-found-lists-dicts-v1",
+      "order": 5,
+      "resource": "cg-foundations-05-lists-dicts.json"
+    },
+    {
+      "id": "cg-found-recursion-v1",
+      "order": 6,
+      "resource": "cg-foundations-06-recursion.json"
+    }
+  ],
+  "subtitle": "Read code, trace it, fix it, build it, explain it. No quizzes-only, no code running in the app.",
+  "title": "Programming foundations",
+  "version": 1
+}

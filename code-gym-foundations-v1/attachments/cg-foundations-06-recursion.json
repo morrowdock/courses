@@ -1,0 +1,2335 @@
+{
+  "activities": [
+    {
+      "code": [
+        "def fact(n):",
+        "    if n == 1:",
+        "        return 1",
+        "    return n * fact(n - 1)",
+        "r = fact(3)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "2"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "2"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 3,
+          "out": "",
+          "returns": "1",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "2"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "2",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "6",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "fact",
+              "vars": {
+                "n": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "r": "6"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "rc-l-watch",
+      "kind": "trace",
+      "mode": "learn",
+      "narration": [
+        "Line 1 is next. def stores fact.",
+        "Line 5 calls fact(3).",
+        "A fact box with n = 3. Is n == 1? No.",
+        "So fact(3) needs 3 * fact(2). It can't finish until fact(2) answers, so it waits.",
+        "A second fact box on top, n = 2. The first box is still there, waiting.",
+        "fact(2) needs 2 * fact(1). It waits too.",
+        "A third box, n = 1. Is n == 1? Yes: this is the base case.",
+        "The base case answers directly, with no more calls.",
+        "fact(1) returns 1. Its box is about to go.",
+        "fact(2) gets its answer: 2 * 1 = 2, and returns.",
+        "fact(3) gets its answer: 3 * 2 = 6, and returns.",
+        "r is 6. The boxes came off in the reverse order they went on: last in, first out."
+      ],
+      "outcomes": [
+        "rc-o1",
+        "rc-o2"
+      ],
+      "prompt": "Step through. Watch the stack panel grow one fact box per call, then shrink as each one returns.",
+      "title": "Watch it: the stack piles up, then unwinds"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Yes. Each call prints its own n first, then calls with one less. n = 0 is the base case and prints nothing.",
+            "text": "3\n2\n1"
+          },
+          {
+            "reaction": "That's what you'd get if print came after the call. Here print runs first, on the way in.",
+            "text": "1\n2\n3"
+          },
+          {
+            "reaction": "show(0) hits the base case and returns before reaching print.",
+            "text": "3\n2\n1\n0"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "def show(n):",
+        "    if n == 0:",
+        "        return",
+        "    print(n)",
+        "    show(n - 1)",
+        "show(3)"
+      ],
+      "id": "rc-l-order",
+      "kind": "predict",
+      "mode": "learn",
+      "outcomes": [
+        "rc-o2"
+      ],
+      "output": "3\n2\n1\n",
+      "prompt": "Guess first; it's free. What does show(3) print?",
+      "reveal": "3, 2, 1. Print happens on the way in, before the smaller call. Move print below the call and it would happen on the way out: 1, 2, 3.",
+      "title": "Predict before you peek: print before the call"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Right: 4 + 3 + 2 + 1 + 0.",
+            "text": "10"
+          },
+          {
+            "reaction": "total(4) doesn't stop at 4; it adds total(3), which adds total(2), and so on.",
+            "text": "4"
+          },
+          {
+            "reaction": "That's 4 × 3 × 2 × 1. This function adds with +.",
+            "text": "24"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "def total(n):",
+        "    if n == 0:",
+        "        return 0",
+        "    return n + total(n - 1)",
+        "print(total(4))"
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-total#hint-1",
+          "text": "Write total(0) first, then total(1) = 1 + total(0), and build up.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-total#hint-2",
+          "text": "total(0)=0, total(1)=1, total(2)=3, total(3)=6, total(4)=?",
+          "tier": "strategy"
+        }
+      ],
+      "id": "rc-g-total",
+      "kind": "predict",
+      "mode": "guided",
+      "outcomes": [
+        "rc-o1"
+      ],
+      "output": "10\n",
+      "prompt": "What does this print?",
+      "title": "Add down to zero"
+    },
+    {
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: anything to the power 0 is 1, and that's what the base case says.",
+                "text": "1"
+              },
+              {
+                "reaction": "Look at line 3: the base case returns 1.",
+                "text": "0"
+              },
+              {
+                "reaction": "The base case doesn't multiply; it answers 1 directly.",
+                "text": "2"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The base case, power(2, 0), is about to return. What does it return?",
+          "frame": 10,
+          "var": "@return"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right: 2 × 2 × 2 × 1.",
+                "text": "8"
+              },
+              {
+                "reaction": "Each level multiplies by b: 2 × 4.",
+                "text": "6"
+              },
+              {
+                "reaction": "There are three multiplications, not four: e goes 3, 2, 1, then the base case.",
+                "text": "16"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The first call, power(2, 3), is about to return. What does it return?",
+          "frame": 13,
+          "var": "@return"
+        }
+      ],
+      "code": [
+        "def power(b, e):",
+        "    if e == 0:",
+        "        return 1",
+        "    return b * power(b, e - 1)",
+        "p = power(2, 3)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "1"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "1"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 3,
+          "out": "",
+          "returns": "1",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "1"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "2",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "4",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "8",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "power",
+              "vars": {
+                "b": "2",
+                "e": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "p": "8"
+              }
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-trace#hint-1",
+          "text": "Each box returns b times whatever the box above it returned.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-trace#hint-2",
+          "text": "Unwinding: 1 → 2 → 4 → ?",
+          "tier": "strategy"
+        }
+      ],
+      "id": "rc-g-trace",
+      "kind": "trace",
+      "mode": "guided",
+      "narration": [
+        "Line 1 is next.",
+        "Line 5 calls power(2, 3).",
+        "e is 3, not 0.",
+        "power(2, 3) waits on power(2, 2).",
+        "A new box, e = 2.",
+        "It waits on power(2, 1).",
+        "A new box, e = 1.",
+        "It waits on power(2, 0).",
+        "A fourth box, e = 0: the base case.",
+        "The base case answers directly.",
+        "The base case is about to return.",
+        "The e = 1 box gets its answer and returns.",
+        "The e = 2 box returns.",
+        "The first box, e = 3, is about to return.",
+        "Finished."
+      ],
+      "outcomes": [
+        "rc-o2"
+      ],
+      "prompt": "Step through. Fill in each hidden return value before moving on.",
+      "title": "Trace: powers of two"
+    },
+    {
+      "bugLine": 4,
+      "code": [
+        "def countdown(n):",
+        "    if n == 0:",
+        "        return \"go\"",
+        "    return countdown(n)",
+        "print(countdown(3))"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "    return countdown(n - 1)",
+          "output": "go\n",
+          "reaction": "Yes. Each call must move closer to the base case; n - 1 eventually reaches 0."
+        },
+        {
+          "fixLine": "    return countdown(n + 1)",
+          "output": "",
+          "raises": "RecursionError",
+          "reaction": "That moves away from 0, so the base case is never reached: still a RecursionError."
+        },
+        {
+          "fixLine": "    return n - 1",
+          "output": "2\n",
+          "reaction": "No more recursion error, but it returns 2 instead of counting down to go."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-fix#hint-1",
+          "text": "What is n in the second call? The third? Does it ever reach 0?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "rc-g-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "2": "The base case is right: at 0 we're done.",
+        "3": "This is what should come back at the end.",
+        "5": "The call is fine. The problem is what happens inside."
+      },
+      "mode": "guided",
+      "outcomes": [
+        "rc-o3"
+      ],
+      "prompt": "This should print go, but it stops with a RecursionError. Tap the wrong line, then pick the repair.",
+      "symptom": {
+        "actual": "",
+        "expected": "go",
+        "raises": "RecursionError"
+      },
+      "title": "The countdown that never lands"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    return length(xs[1:])",
+          "reaction": "Without the 1 +, nothing counts the item you removed, so it returns 0."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-parsons#hint-1",
+          "text": "Base case first: an empty list has length 0.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-parsons#hint-2",
+          "text": "Otherwise, it's one item plus the length of the rest.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "rc-g-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "def length(xs):"
+        },
+        {
+          "id": "b",
+          "line": "    if xs == []:"
+        },
+        {
+          "id": "c",
+          "line": "        return 0"
+        },
+        {
+          "id": "d",
+          "line": "    return 1 + length(xs[1:])"
+        },
+        {
+          "id": "e",
+          "line": "print(length([4, 4, 4, 4, 4]))"
+        }
+      ],
+      "mode": "guided",
+      "outcomes": [
+        "rc-o1"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 5. xs[1:] is the list without its first item. One line isn't needed.",
+      "start": [
+        "e",
+        "d",
+        "x",
+        "b",
+        "a",
+        "c"
+      ],
+      "target": "5",
+      "title": "Put it in order: length without len"
+    },
+    {
+      "grading": "self-check",
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "rc-g-explain#hint-1",
+          "text": "Which call finishes first?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "rc-g-explain",
+      "kind": "explain",
+      "mode": "guided",
+      "model": "show(3) prints 3 and only then calls show(2), which prints 2 and calls show(1), and so on: printing happens on the way in. If print came after the call, show(3) would first wait for show(2) to finish, which waits for show(1). show(1) prints first once show(0) returns, then show(2), then show(3): 1, 2, 3.",
+      "outcomes": [
+        "rc-o2"
+      ],
+      "prompt": "In your own words: show(3) printed 3, 2, 1. Why that order? What would print if print(n) moved below show(n - 1), and why?",
+      "rubric": [
+        {
+          "id": "rc-g-explain#k1",
+          "idea": "Each call runs its own lines in order, with its own n."
+        },
+        {
+          "id": "rc-g-explain#k2",
+          "idea": "Lines before the recursive call run on the way in (biggest n first)."
+        },
+        {
+          "id": "rc-g-explain#k3",
+          "idea": "Lines after it run on the way out, as calls return in reverse (smallest n first): 1, 2, 3."
+        }
+      ],
+      "title": "Explain it back: in and out"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-digits#help-1",
+          "text": "4071 → 407 → 40 → 4. How many calls is that, and what does each add?"
+        }
+      ],
+      "answer": {
+        "expected": "4",
+        "misreadings": [
+          {
+            "reaction": "The base case counts too: the last single digit returns 1.",
+            "text": "3"
+          },
+          {
+            "reaction": "digits returns a count, not the number.",
+            "text": "4071"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "def digits(n):",
+        "    if n < 10:",
+        "        return 1",
+        "    return 1 + digits(n // 10)",
+        "print(digits(4071))"
+      ],
+      "id": "rc-i-digits",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "rc-o1"
+      ],
+      "output": "4\n",
+      "prompt": "Type exactly what this prints. n // 10 drops the last digit (4071 // 10 is 407).",
+      "title": "On your own: counting digits"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-digits-cb#help-1",
+          "text": "16 → 8 → 4 → 2 → 1."
+        }
+      ],
+      "answer": {
+        "expected": "4",
+        "misreadings": [
+          {
+            "reaction": "The base case (n = 1) adds 0, not 1.",
+            "text": "5"
+          },
+          {
+            "reaction": "Each call halves n: 16 → 8 → 4 → 2 → 1.",
+            "text": "8"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "def halvings(n):",
+        "    if n <= 1:",
+        "        return 0",
+        "    return 1 + halvings(n // 2)",
+        "print(halvings(16))"
+      ],
+      "comebackFor": "rc-i-digits",
+      "id": "rc-i-digits-cb",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "rc-o1"
+      ],
+      "output": "4\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "Comeback: how many halvings?"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-trace#help-1",
+          "text": "Unwind from the base case: '' → 'c' → 'cb' → ?"
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: the call below returned the reversed rest, then this box adds its own first character at the end.",
+                "text": "'cb'"
+              },
+              {
+                "reaction": "Each box puts its first character after the reversed rest, so b goes last here.",
+                "text": "'bc'"
+              },
+              {
+                "reaction": "It adds b to what the call below returned, and that wasn't empty.",
+                "text": "'b'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The rev('bc') box is about to return. What does it return?",
+          "frame": 12,
+          "var": "@return"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right: each box puts its first character after the reversed rest.",
+                "text": "'cba'"
+              },
+              {
+                "reaction": "Each box adds its first character at the end, so 'a' ends up last.",
+                "text": "'abc'"
+              },
+              {
+                "reaction": "It returns rev('bc') + 'a', and rev('bc') isn't empty.",
+                "text": "'a'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The first box, rev('abc'), is about to return. What does it return?",
+          "frame": 13,
+          "var": "@return"
+        }
+      ],
+      "code": [
+        "def rev(s):",
+        "    if s == \"\":",
+        "        return \"\"",
+        "    return rev(s[1:]) + s[0]",
+        "r = rev(\"abc\")"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'c'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'c'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'c'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "''"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'c'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "''"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 3,
+          "out": "",
+          "returns": "''",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'c'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "''"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "'c'",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'c'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "'cb'",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'bc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "'cba'",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "rev",
+              "vars": {
+                "s": "'abc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "r": "'cba'"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "rc-i-trace",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "Line 5 calls rev with 'abc'.",
+        "s isn't empty.",
+        "This call waits on rev of the rest of s.",
+        "A new box.",
+        "It waits too.",
+        "A new box.",
+        "It waits too.",
+        "A fourth box: s is empty, the base case.",
+        "The base case answers directly.",
+        "The base case is about to return.",
+        "The rev('c') box is about to return: rev('') gave '', plus 'c'.",
+        "The next box is about to return.",
+        "The first box is about to return.",
+        "Finished."
+      ],
+      "outcomes": [
+        "rc-o2"
+      ],
+      "prompt": "Step through and fill in each hidden return value. s[0] is the first character; s[1:] is the rest.",
+      "title": "On your own: reversing a word"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-trace-cb#help-1",
+          "text": "Unwind: 0 → 4 → 8 → ?"
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "8",
+            "misreadings": [
+              {
+                "reaction": "That's what the box above it returned. This box adds its own a on top.",
+                "text": "4"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The b = 2 box is about to return. What number does it return?",
+          "frame": 12,
+          "var": "@return"
+        },
+        {
+          "answer": {
+            "expected": "12",
+            "misreadings": [
+              {
+                "reaction": "Three boxes each add 4: 4 + 4 + 4 + 0.",
+                "text": "8"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The first box is about to return. What number does it return?",
+          "frame": 13,
+          "var": "@return"
+        }
+      ],
+      "code": [
+        "def mult(a, b):",
+        "    if b == 0:",
+        "        return 0",
+        "    return a + mult(a, b - 1)",
+        "m = mult(4, 3)"
+      ],
+      "comebackFor": "rc-i-trace",
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "1"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "1"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 3,
+          "out": "",
+          "returns": "0",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "1"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "4",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "8",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "12",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "mult",
+              "vars": {
+                "a": "4",
+                "b": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "m": "12"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "rc-i-trace-cb",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "Line 5 calls mult(4, 3).",
+        "b isn't 0.",
+        "This call waits on mult(4, 2).",
+        "A new box.",
+        "It waits on mult(4, 1).",
+        "A new box.",
+        "It waits on mult(4, 0).",
+        "A fourth box: b is 0, the base case.",
+        "The base case answers directly.",
+        "The base case is about to return.",
+        "The b = 1 box is about to return a + 0.",
+        "The b = 2 box is about to return.",
+        "The first box is about to return.",
+        "Finished."
+      ],
+      "outcomes": [
+        "rc-o2"
+      ],
+      "prompt": "Step through and fill in each hidden return value.",
+      "title": "Comeback: multiplying by adding"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-fix#help-1",
+          "text": "Every result is multiplied by whatever the base case returns. What is anything times 0?"
+        }
+      ],
+      "bugLine": 3,
+      "code": [
+        "def product(xs):",
+        "    if xs == []:",
+        "        return 0",
+        "    return xs[0] * product(xs[1:])",
+        "print(product([2, 3, 5]))"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "        return 1",
+          "output": "30\n",
+          "reaction": "Yes: the product of nothing is 1, just as the sum of nothing is 0."
+        },
+        {
+          "fixLine": "        return xs",
+          "output": "[]\n",
+          "reaction": "That returns an empty list, and multiplying numbers by a list doesn't give 30."
+        },
+        {
+          "fixLine": "        return xs[0]",
+          "output": "",
+          "raises": "IndexError",
+          "reaction": "xs is empty here, so there's no position 0: IndexError."
+        }
+      ],
+      "id": "rc-i-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "2": "Stopping at the empty list is the right base case.",
+        "4": "First item times the product of the rest: that's right. What does the bottom of the chain return?",
+        "5": "The call is fine."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "rc-o3"
+      ],
+      "prompt": "This should print 30 (2 × 3 × 5), but it prints 0. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "0\n",
+        "expected": "30"
+      },
+      "title": "On your own: the product that's always zero"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-fix-cb#help-1",
+          "text": "What does a function give back if a path through it has no return?"
+        }
+      ],
+      "bugLine": 4,
+      "code": [
+        "def sum_down(n):",
+        "    if n == 0:",
+        "        return 0",
+        "    n + sum_down(n - 1)",
+        "print(sum_down(3))"
+      ],
+      "comebackFor": "rc-i-fix",
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "    return n + sum_down(n - 1)",
+          "output": "6\n",
+          "reaction": "Yes. Without return, the call gives back None, and the call above can't add None."
+        },
+        {
+          "fixLine": "    print(n + sum_down(n - 1))",
+          "output": "1\n",
+          "raises": "TypeError",
+          "reaction": "Printing doesn't hand the value back, so the call above still gets None."
+        },
+        {
+          "fixLine": "    return sum_down(n - 1)",
+          "output": "0\n",
+          "reaction": "That runs, but drops n each time, so it returns 0."
+        }
+      ],
+      "id": "rc-i-fix-cb",
+      "kind": "fix",
+      "lineReactions": {
+        "2": "Stopping at 0 is right.",
+        "3": "The base case returns a value; fine.",
+        "5": "The call is fine."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "rc-o1",
+        "rc-o3"
+      ],
+      "prompt": "This should print 6 (3 + 2 + 1), but it stops with a TypeError. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "",
+        "expected": "6",
+        "raises": "TypeError"
+      },
+      "title": "Comeback: the result that gets lost"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-parsons#help-1",
+          "text": "To print smallest first, print on the way out: after the smaller call."
+        }
+      ],
+      "id": "rc-i-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "def up(n):"
+        },
+        {
+          "id": "b",
+          "line": "    if n == 0:"
+        },
+        {
+          "id": "c",
+          "line": "        return"
+        },
+        {
+          "id": "d",
+          "line": "    up(n - 1)"
+        },
+        {
+          "id": "e",
+          "line": "    print(n)"
+        },
+        {
+          "id": "f",
+          "line": "up(3)"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "rc-o2"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 2 and 3 on separate lines.",
+      "start": [
+        "f",
+        "e",
+        "c",
+        "a",
+        "d",
+        "b"
+      ],
+      "target": "1\n2\n3",
+      "title": "On your own: count up by recursion"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-parsons-cb#help-1",
+          "text": "What does doubles(0) need to return for doubles(3) to be 8?"
+        }
+      ],
+      "comebackFor": "rc-i-parsons",
+      "distractors": [
+        {
+          "id": "x",
+          "line": "        return 0",
+          "reaction": "A base case of 0 makes every result 0, since everything above multiplies it."
+        }
+      ],
+      "id": "rc-i-parsons-cb",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "def doubles(n):"
+        },
+        {
+          "id": "b",
+          "line": "    if n == 0:"
+        },
+        {
+          "id": "c",
+          "line": "        return 1"
+        },
+        {
+          "id": "d",
+          "line": "    return 2 * doubles(n - 1)"
+        },
+        {
+          "id": "e",
+          "line": "print(doubles(3))"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "rc-o1"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 8. One line isn't needed.",
+      "start": [
+        "e",
+        "x",
+        "d",
+        "a",
+        "c",
+        "b"
+      ],
+      "target": "8",
+      "title": "Comeback: doubling"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "rc-i-explain#help-1",
+          "text": "Use the stack panel from the first trace in this lesson as your picture."
+        }
+      ],
+      "grading": "self-check",
+      "id": "rc-i-explain",
+      "kind": "explain",
+      "mode": "independent",
+      "model": "A base case is the smallest version of the problem, answered directly (fact(1) is 1). Without one, or if each call doesn't get closer to it, the function keeps calling itself until Python runs out of stack and raises a RecursionError. fact(3) can't finish until fact(2) does, which waits on fact(1). Each waiting call keeps its own n in its own box on the call stack. fact(1) answers 1, then fact(2) finishes 2 × 1, then fact(3) finishes 3 × 2. The newest box always finishes first.",
+      "outcomes": [
+        "rc-o1",
+        "rc-o3"
+      ],
+      "prompt": "Explain to a friend: what is a base case, what happens without one (or if calls never reach it), and how the call stack lets fact(3) work out 3 × 2 × 1 when no single call knows the whole answer.",
+      "rubric": [
+        {
+          "id": "rc-i-explain#k1",
+          "idea": "The base case answers directly, without calling itself again."
+        },
+        {
+          "id": "rc-i-explain#k2",
+          "idea": "Every recursive call must move closer to the base case, or calls pile up until RecursionError."
+        },
+        {
+          "id": "rc-i-explain#k3",
+          "idea": "Each waiting call keeps its own n on the stack; results come back last-in, first-out and combine on the way out."
+        }
+      ],
+      "title": "On your own: base case and stack"
+    }
+  ],
+  "bridge": {
+    "rows": [
+      {
+        "concept": "Recursive function",
+        "lua": "local function fact(n)\n  if n == 1 then return 1 end\n  return n * fact(n - 1)\nend",
+        "note": "With local function (or a global function) the name is visible inside its own body, unlike local fact = function ... end; Python's def always is.",
+        "python": "def fact(n):\n    if n == 1:\n        return 1\n    return n * fact(n - 1)"
+      },
+      {
+        "concept": "Too deep",
+        "lua": "stack overflow",
+        "note": "Lua does proper tail calls; Python doesn't, so very deep recursion needs a loop instead.",
+        "python": "RecursionError (about 1000 calls deep by default)"
+      },
+      {
+        "concept": "Rest of a list",
+        "lua": "{table.unpack(t, 2)}",
+        "python": "xs[1:]"
+      },
+      {
+        "concept": "First character",
+        "lua": "s:sub(1, 1)",
+        "python": "s[0]"
+      }
+    ],
+    "title": "Lua → Python: recursion"
+  },
+  "format": "morrowdock-code-gym-foundations-lesson",
+  "id": "cg-found-recursion-v1",
+  "nextCourse": "swe-course-v1",
+  "nextLesson": null,
+  "order": 6,
+  "outcomes": [
+    {
+      "id": "rc-o1",
+      "text": "Name the base case and the recursive case, and predict the result of a small recursive call."
+    },
+    {
+      "id": "rc-o2",
+      "text": "Trace the call stack: calls pile up on the way in, and return values unwind in reverse on the way out."
+    },
+    {
+      "id": "rc-o3",
+      "text": "Spot a missing or wrong base case, or a call that never gets closer to it, and repair it."
+    }
+  ],
+  "referenceCard": {
+    "points": [
+      "Base case: answers directly, no further call. Recursive case: calls itself on a smaller input.",
+      "Every call must get closer to the base case, or you get a RecursionError.",
+      "Each call has its own box on the call stack; the newest finishes first.",
+      "Work before the call happens on the way in; work after it happens on the way out.",
+      "Sums start from a base case of 0; products from 1.",
+      "Every path must return its result."
+    ],
+    "title": "Recursion"
+  },
+  "subtitle": "A function that calls a smaller version of itself, until a base case answers directly.",
+  "teach": [
+    {
+      "body": "Some problems contain a smaller copy of themselves. 3 × 2 × 1 is 3 times (2 × 1). So fact(n) can be n * fact(n - 1). That's the recursive case. It needs a stopping point that answers directly, the base case: fact(1) is 1. Every recursive call must move closer to the base case.",
+      "id": "rc-t1",
+      "title": "Solve a smaller version"
+    },
+    {
+      "body": "When fact(3) calls fact(2), fact(3) isn't finished. Its box stays on the call stack, waiting, with its own n = 3. The newest box is always on top and always the one running. When the base case returns, the boxes come off one at a time, newest first, each finishing its own multiplication. Last in, first out: the call stack is a stack (the SWE track's stack lesson, swe-course-stack-v1, uses the same idea on purpose).\n\nFor strings and lists: s[0] is the first item and s[1:] is everything after it.",
+      "id": "rc-t2",
+      "title": "The call stack does the remembering"
+    },
+    {
+      "body": "No base case, or calls that never reach it (n + 1 instead of n - 1, or a step that jumps over it), means the boxes pile up until Python stops with a RecursionError. A wrong base case value spreads to every answer: a product whose base case returns 0 is always 0. And every path has to return its result, or the call above gets None.",
+      "id": "rc-t3",
+      "title": "When it goes wrong"
+    }
+  ],
+  "title": "Recursion and the call stack",
+  "version": 1
+}

@@ -1,0 +1,1613 @@
+{
+  "activities": [
+    {
+      "code": [
+        "def double(x):",
+        "    y = x * 2",
+        "    return y",
+        "a = double(5)",
+        "print(a + 1)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "double",
+              "vars": {
+                "x": "5"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "double",
+              "vars": {
+                "x": "5",
+                "y": "10"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 3,
+          "out": "",
+          "returns": "10",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "double",
+              "vars": {
+                "x": "5",
+                "y": "10"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "a": "10"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "11\n",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "a": "10"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "fn-l-watch",
+      "kind": "trace",
+      "mode": "learn",
+      "narration": [
+        "Line 1 is next. def only teaches Python the recipe; nothing inside runs yet.",
+        "Python skipped the body. Line 4 calls double with 5.",
+        "A new box for double appears on the stack. The parameter x holds the 5 that was passed in.",
+        "y is worked out inside double's box. It's double's own name; the main program can't see it.",
+        "return hands y's value back to the line that called. double's box is about to disappear.",
+        "Line 4 finished: the call double(5) was replaced by 10, so a is 10. x and y are gone. Line 5 is next.",
+        "Printed 11."
+      ],
+      "outcomes": [
+        "fn-o1"
+      ],
+      "prompt": "Step through. The stack panel grows a new box when a function is called and drops it when the function returns.",
+      "title": "Watch it: a call and its return"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Yes. shout prints, but returns nothing, so r gets None.",
+            "text": "hey!\nNone"
+          },
+          {
+            "reaction": "print shows text on screen; it doesn't hand a value back. Only return does.",
+            "text": "hey!\nhey!"
+          },
+          {
+            "reaction": "The last line still runs. It prints r, and r is None.",
+            "text": "hey!"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "def shout(w):",
+        "    print(w + \"!\")",
+        "r = shout(\"hey\")",
+        "print(r)"
+      ],
+      "id": "fn-l-print-return",
+      "kind": "predict",
+      "mode": "learn",
+      "outcomes": [
+        "fn-o2"
+      ],
+      "output": "hey!\nNone\n",
+      "prompt": "Guess first; it's free. What does this print?",
+      "reveal": "hey! then None. A function with no return gives back None. Printing is for people; returning is for the rest of the program.",
+      "title": "Predict before you peek: print isn't return"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Right: each call is replaced by its return value, 12 + 2.",
+            "text": "14"
+          },
+          {
+            "reaction": "Both calls run: area(1, 2) adds 2 more.",
+            "text": "12"
+          },
+          {
+            "reaction": "area returns its values instead of printing them, so there's one print: the sum.",
+            "text": "12\n2"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "def area(w, h):",
+        "    return w * h",
+        "print(area(3, 4) + area(1, 2))"
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-area#hint-1",
+          "text": "Work out each call on its own, then replace the call with its result.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-area#hint-2",
+          "text": "area(3, 4) → 12. area(1, 2) → 2.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "fn-g-area",
+      "kind": "predict",
+      "mode": "guided",
+      "outcomes": [
+        "fn-o1"
+      ],
+      "output": "14\n",
+      "prompt": "What does this print?",
+      "title": "Two calls in one line"
+    },
+    {
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: 50 // 10.",
+                "text": "5"
+              },
+              {
+                "reaction": "tax is price // 10, a tenth of the price.",
+                "text": "50"
+              },
+              {
+                "reaction": "50 // 10 is 5; // only drops a remainder, and there isn't one here.",
+                "text": "0"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "Inside the first call. What does tax hold?",
+          "frame": 3,
+          "var": "tax"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right: price + tax.",
+                "text": "55"
+              },
+              {
+                "reaction": "It returns price + tax, not just tax.",
+                "text": "5"
+              },
+              {
+                "reaction": "It adds tax on before returning.",
+                "text": "50"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "What will this call return?",
+          "frame": 4,
+          "var": "@return"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: 55 + 22.",
+                "text": "77"
+              },
+              {
+                "reaction": "The second call adds its own tax: 20 + 2 = 22.",
+                "text": "75"
+              },
+              {
+                "reaction": "Line 5 adds the second call's result to cost.",
+                "text": "55"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The program ended. What does total hold?",
+          "frame": 9,
+          "var": "total"
+        }
+      ],
+      "code": [
+        "def add_tax(price):",
+        "    tax = price // 10",
+        "    return price + tax",
+        "cost = add_tax(50)",
+        "total = cost + add_tax(20)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "add_tax",
+              "vars": {
+                "price": "50"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "add_tax",
+              "vars": {
+                "price": "50",
+                "tax": "5"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 3,
+          "out": "",
+          "returns": "55",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "add_tax",
+              "vars": {
+                "price": "50",
+                "tax": "5"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "cost": "55"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "cost": "55"
+              }
+            },
+            {
+              "fn": "add_tax",
+              "vars": {
+                "price": "20"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "cost": "55"
+              }
+            },
+            {
+              "fn": "add_tax",
+              "vars": {
+                "price": "20",
+                "tax": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 3,
+          "out": "",
+          "returns": "22",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "cost": "55"
+              }
+            },
+            {
+              "fn": "add_tax",
+              "vars": {
+                "price": "20",
+                "tax": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "cost": "55",
+                "total": "77"
+              }
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-trace#hint-1",
+          "text": "Each call gets its own box; work out price and tax inside it.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-trace#hint-2",
+          "text": "First call: 50 + 5. Second call: 20 + 2.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "fn-g-trace",
+      "kind": "trace",
+      "mode": "guided",
+      "narration": [
+        "Line 1 is next. def stores the function; its body waits.",
+        "Line 4 calls add_tax with 50.",
+        "add_tax's box: price is 50. Line 2 works out a tenth of it.",
+        "tax lives in add_tax's box.",
+        "add_tax is about to hand back its answer.",
+        "Back in the main program: cost holds what came back. add_tax's box, and its tax, are gone.",
+        "A second call, with a brand-new box: price is 20 this time.",
+        "This call's tax is separate from the first one.",
+        "Handing back 22.",
+        "total is cost plus what the second call returned."
+      ],
+      "outcomes": [
+        "fn-o1",
+        "fn-o3"
+      ],
+      "prompt": "Step through. Fill in each hidden value before moving on.",
+      "title": "Trace: tax added twice"
+    },
+    {
+      "bugLine": 2,
+      "code": [
+        "def square(n):",
+        "    print(n * n)",
+        "total = square(3) + 1",
+        "print(total)"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "    return n * n",
+          "output": "10\n",
+          "reaction": "Yes. return hands 9 back to line 3, so total is 10. Nothing prints 9 any more."
+        },
+        {
+          "fixLine": "    print(n * n + 1)",
+          "output": "10\n",
+          "raises": "TypeError",
+          "reaction": "That prints 10, but square still returns None, so line 3 still stops with an error."
+        },
+        {
+          "fixLine": "    n = n * n",
+          "output": "",
+          "raises": "TypeError",
+          "reaction": "n changes inside the box, but nothing is returned, so it's still None."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-fix#hint-1",
+          "text": "What does a function give back if it never says return?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "fn-g-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "The function and its parameter are fine.",
+        "3": "This is where it stops: square(3) gave back None, and None + 1 is an error. Why was it None?",
+        "4": "Python never gets here."
+      },
+      "mode": "guided",
+      "outcomes": [
+        "fn-o2"
+      ],
+      "prompt": "This should print 10, but it prints 9 and then stops with an error. Tap the wrong line, then pick the repair.",
+      "symptom": {
+        "actual": "9\n",
+        "expected": "10",
+        "raises": "TypeError"
+      },
+      "title": "The square that won't add"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    print(b)",
+          "reaction": "This prints b, but then bigger returns None, so the last line would show None."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-parsons#hint-1",
+          "text": "The def line comes first, its body is indented under it, and the call goes at the end.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-parsons#hint-2",
+          "text": "return a belongs under the if; return b runs when the if was False.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "fn-g-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "def bigger(a, b):"
+        },
+        {
+          "id": "b",
+          "line": "    if a > b:"
+        },
+        {
+          "id": "c",
+          "line": "        return a"
+        },
+        {
+          "id": "d",
+          "line": "    return b"
+        },
+        {
+          "id": "e",
+          "line": "print(bigger(3, 7), bigger(9, 2))"
+        }
+      ],
+      "mode": "guided",
+      "outcomes": [
+        "fn-o1"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 7 9. One line isn't needed.",
+      "start": [
+        "e",
+        "c",
+        "x",
+        "a",
+        "d",
+        "b"
+      ],
+      "target": "7 9",
+      "title": "Put it in order: the bigger one"
+    },
+    {
+      "grading": "self-check",
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "fn-g-explain#hint-1",
+          "text": "What does r = shout(\"hey\") store: what was shown, or what came back?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "fn-g-explain",
+      "kind": "explain",
+      "mode": "guided",
+      "model": "print puts text on the screen and that's all. return is what the call turns into: r = shout(\"hey\") stores whatever shout returns. shout has no return, so it returned None, even though it printed hey! along the way.",
+      "outcomes": [
+        "fn-o2"
+      ],
+      "prompt": "In your own words: in the shout program, hey! appeared on screen, but r was None. What's the difference between print and return?",
+      "rubric": [
+        {
+          "id": "fn-g-explain#k1",
+          "idea": "print shows text to a person; it doesn't hand a value back."
+        },
+        {
+          "id": "fn-g-explain#k2",
+          "idea": "return sends a value back to where the function was called."
+        },
+        {
+          "id": "fn-g-explain#k3",
+          "idea": "A function that never returns gives back None."
+        }
+      ],
+      "title": "Explain it back: why r was None"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-scope#help-1",
+          "text": "Draw two boxes: one for the main program, one for f. Each has its own n."
+        },
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-scope#help-2",
+          "text": "Inside f: n 1 → 11, returns 22. Outside, n is still 1."
+        }
+      ],
+      "answer": {
+        "expected": "22 1",
+        "misreadings": [
+          {
+            "reaction": "The n inside f is f's own name. Changing it doesn't touch the main program's n.",
+            "text": "22 11"
+          },
+          {
+            "reaction": "f returns n * 2 after adding 10: (1 + 10) * 2.",
+            "text": "11 1"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "def f(n):",
+        "    n = n + 10",
+        "    return n * 2",
+        "n = 1",
+        "print(f(n), n)"
+      ],
+      "id": "fn-i-scope",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "fn-o3"
+      ],
+      "output": "22 1\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "On your own: two n's"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-scope-cb#help-1",
+          "text": "Two boxes, two k's."
+        }
+      ],
+      "answer": {
+        "expected": "5 2",
+        "misreadings": [
+          {
+            "reaction": "g changes its own k, not the main program's.",
+            "text": "5 6"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "def g(k):",
+        "    k = k * 3",
+        "    return k - 1",
+        "k = 2",
+        "print(g(k), k)"
+      ],
+      "comebackFor": "fn-i-scope",
+      "id": "fn-i-scope-cb",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "fn-o3"
+      ],
+      "output": "5 2\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "Comeback: two k's"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-trace#help-1",
+          "text": "The innermost call runs first; its answer becomes the next call's argument."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "6",
+            "misreadings": [
+              {
+                "reaction": "inc returns v + 1.",
+                "text": "5"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "What will the inner inc return?",
+          "frame": 5,
+          "var": "@return"
+        },
+        {
+          "answer": {
+            "expected": "7",
+            "misreadings": [
+              {
+                "reaction": "The outer inc gets the inner one's result, 6, and adds 1.",
+                "text": "6"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "What will the outer inc return?",
+          "frame": 7,
+          "var": "@return"
+        }
+      ],
+      "code": [
+        "def inc(v):",
+        "    return v + 1",
+        "def twice(v):",
+        "    return inc(inc(v))",
+        "r = twice(5)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "twice",
+              "vars": {
+                "v": "5"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "twice",
+              "vars": {
+                "v": "5"
+              }
+            },
+            {
+              "fn": "inc",
+              "vars": {
+                "v": "5"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 2,
+          "out": "",
+          "returns": "6",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "twice",
+              "vars": {
+                "v": "5"
+              }
+            },
+            {
+              "fn": "inc",
+              "vars": {
+                "v": "5"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "twice",
+              "vars": {
+                "v": "5"
+              }
+            },
+            {
+              "fn": "inc",
+              "vars": {
+                "v": "6"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 2,
+          "out": "",
+          "returns": "7",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "twice",
+              "vars": {
+                "v": "5"
+              }
+            },
+            {
+              "fn": "inc",
+              "vars": {
+                "v": "6"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 4,
+          "out": "",
+          "returns": "7",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "twice",
+              "vars": {
+                "v": "5"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "r": "7"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "fn-i-trace",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "inc is stored. Line 3 stores twice.",
+        "Line 5 calls twice with 5.",
+        "twice's box. To work out inc(inc(v)), Python calls the inner inc first.",
+        "An inc box on top of twice's box. Three boxes: main, twice, inc.",
+        "The inner inc is about to return.",
+        "Its result is passed straight into the outer inc: a new inc box.",
+        "The outer inc is about to return.",
+        "twice hands that result back.",
+        "Finished."
+      ],
+      "outcomes": [
+        "fn-o1"
+      ],
+      "prompt": "Step through and fill in each hidden value. Watch the stack grow three boxes tall.",
+      "title": "On your own: a call inside a call"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-trace-cb#help-1",
+          "text": "Work out each call in its own box, from the top of the stack down."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "10",
+            "misreadings": [
+              {
+                "reaction": "half returns v // 2.",
+                "text": "20"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "What will this first half call return?",
+          "frame": 5,
+          "var": "@return"
+        },
+        {
+          "answer": {
+            "expected": "5",
+            "misreadings": [
+              {
+                "reaction": "The second call gets h, which is 10, and halves it.",
+                "text": "10"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "What will the second half call return?",
+          "frame": 8,
+          "var": "@return"
+        }
+      ],
+      "code": [
+        "def half(v):",
+        "    return v // 2",
+        "def quarter(v):",
+        "    h = half(v)",
+        "    return half(h)",
+        "q = quarter(20)"
+      ],
+      "comebackFor": "fn-i-trace",
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 6,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "quarter",
+              "vars": {
+                "v": "20"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "quarter",
+              "vars": {
+                "v": "20"
+              }
+            },
+            {
+              "fn": "half",
+              "vars": {
+                "v": "20"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 2,
+          "out": "",
+          "returns": "10",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "quarter",
+              "vars": {
+                "v": "20"
+              }
+            },
+            {
+              "fn": "half",
+              "vars": {
+                "v": "20"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "quarter",
+              "vars": {
+                "h": "10",
+                "v": "20"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "quarter",
+              "vars": {
+                "h": "10",
+                "v": "20"
+              }
+            },
+            {
+              "fn": "half",
+              "vars": {
+                "v": "10"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 2,
+          "out": "",
+          "returns": "5",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "quarter",
+              "vars": {
+                "h": "10",
+                "v": "20"
+              }
+            },
+            {
+              "fn": "half",
+              "vars": {
+                "v": "10"
+              }
+            }
+          ]
+        },
+        {
+          "event": "return",
+          "line": 5,
+          "out": "",
+          "returns": "5",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            },
+            {
+              "fn": "quarter",
+              "vars": {
+                "h": "10",
+                "v": "20"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "q": "5"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "fn-i-trace-cb",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "half is stored. Line 3 stores quarter.",
+        "Line 6 calls quarter with 20.",
+        "quarter's box. Line 4 calls half.",
+        "A half box on top.",
+        "half is about to return.",
+        "Back in quarter: h holds what came back. Line 5 calls half again with h.",
+        "A new half box.",
+        "half is about to return.",
+        "quarter hands that result back.",
+        "Finished."
+      ],
+      "outcomes": [
+        "fn-o1"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "Comeback: half of a half"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-fix#help-1",
+          "text": "The function returns 12. What's missing to make it the average?"
+        }
+      ],
+      "bugLine": 3,
+      "code": [
+        "def avg(a, b):",
+        "    total = a + b",
+        "    return total",
+        "print(avg(4, 8))"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "    return total // 2",
+          "output": "6\n",
+          "reaction": "Yes: the average is the total split in two."
+        },
+        {
+          "fixLine": "    return a + b // 2",
+          "output": "8\n",
+          "reaction": "// happens before +, so this is 4 + (8 // 2), which is 8."
+        },
+        {
+          "fixLine": "    return total / 2",
+          "output": "6.0\n",
+          "reaction": "/ always gives a decimal number: 6.0, not 6. // keeps it whole."
+        }
+      ],
+      "id": "fn-i-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "Two parameters, a and b: fine.",
+        "2": "Adding them first is right.",
+        "4": "This prints whatever avg returns. What does it return?"
+      },
+      "mode": "independent",
+      "outcomes": [
+        "fn-o2"
+      ],
+      "prompt": "The average of 4 and 8 should print as 6. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "12\n",
+        "expected": "6"
+      },
+      "title": "On your own: the average"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-fix-cb#help-1",
+          "text": "greet hands back a string. What does line 3 do with it?"
+        }
+      ],
+      "bugLine": 3,
+      "code": [
+        "def greet(name):",
+        "    return \"Hi \" + name",
+        "greet(\"Mo\")",
+        "print(\"done\")"
+      ],
+      "comebackFor": "fn-i-fix",
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "print(greet(\"Mo\"))",
+          "output": "Hi Mo\ndone\n",
+          "reaction": "Yes: the returned value has to be printed (or stored) to be seen."
+        },
+        {
+          "fixLine": "greet(\"Mo\") + \"\"",
+          "output": "done\n",
+          "reaction": "The joined string is worked out and then thrown away; nothing shows it."
+        },
+        {
+          "fixLine": "return greet(\"Mo\")",
+          "output": "",
+          "raises": "SyntaxError",
+          "reaction": "return only makes sense inside a function; here the program won't even start."
+        }
+      ],
+      "id": "fn-i-fix-cb",
+      "kind": "fix",
+      "lineReactions": {
+        "2": "greet returns the right string. Where does that string go?",
+        "4": "This line works."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "fn-o2"
+      ],
+      "prompt": "This should show Hi Mo and then done, but only done appears. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "done\n",
+        "expected": "Hi Mo\ndone"
+      },
+      "title": "Comeback: the silent greeting"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-parsons#help-1",
+          "text": "The return goes after the loop has finished, at the function's own indentation."
+        }
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "        return s",
+          "reaction": "Indented this far, return is inside the loop: the function would hand back after the first pass."
+        }
+      ],
+      "id": "fn-i-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "def sum_to(n):"
+        },
+        {
+          "id": "b",
+          "line": "    s = 0"
+        },
+        {
+          "id": "c",
+          "line": "    for i in range(1, n + 1):"
+        },
+        {
+          "id": "d",
+          "line": "        s = s + i"
+        },
+        {
+          "id": "e",
+          "line": "    return s"
+        },
+        {
+          "id": "f",
+          "line": "print(sum_to(3) + 3)"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "fn-o1"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 9. One line isn't needed.",
+      "start": [
+        "f",
+        "d",
+        "x",
+        "a",
+        "e",
+        "c",
+        "b"
+      ],
+      "target": "9",
+      "title": "On your own: sum to n"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-parsons-cb#help-1",
+          "text": "The last line prints whatever count_down returns."
+        }
+      ],
+      "comebackFor": "fn-i-parsons",
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    print(\"go\")",
+          "reaction": "Then count_down returns None, so the last line would print None after go."
+        }
+      ],
+      "id": "fn-i-parsons-cb",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "def count_down(n):"
+        },
+        {
+          "id": "b",
+          "line": "    while n > 0:"
+        },
+        {
+          "id": "c",
+          "line": "        print(n)"
+        },
+        {
+          "id": "d",
+          "line": "        n = n - 1"
+        },
+        {
+          "id": "e",
+          "line": "    return \"go\""
+        },
+        {
+          "id": "f",
+          "line": "print(count_down(2))"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "fn-o1",
+        "fn-o2"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 2, 1 and go on separate lines. One line isn't needed.",
+      "start": [
+        "d",
+        "f",
+        "x",
+        "b",
+        "e",
+        "a",
+        "c"
+      ],
+      "target": "2\n1\ngo",
+      "title": "Comeback: countdown function"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "fn-i-explain#help-1",
+          "text": "Think about the stack panel: how many n's existed while f ran?"
+        }
+      ],
+      "grading": "self-check",
+      "id": "fn-i-explain",
+      "kind": "explain",
+      "mode": "independent",
+      "model": "When f(n) was called, f got its own box with its own n, starting at 1. n = n + 10 changed that box only, and the box vanished when f returned. In Lua, x = 5 inside a function without local writes a global; Python flips the default: any name you assign inside a function is local to it. To get a value out, return it.",
+      "outcomes": [
+        "fn-o3"
+      ],
+      "prompt": "Explain to a Lua programmer why f(n) didn't change the main program's n. In Lua, what happens if you assign to a name inside a function without writing local? What does Python do instead?",
+      "rubric": [
+        {
+          "id": "fn-i-explain#k1",
+          "idea": "Each call has its own box (frame); parameters and names assigned inside it are local."
+        },
+        {
+          "id": "fn-i-explain#k2",
+          "idea": "In Lua, assigning without local creates or changes a global."
+        },
+        {
+          "id": "fn-i-explain#k3",
+          "idea": "In Python, assigning inside a function makes a local unless you say global; return is how a value gets out."
+        }
+      ],
+      "title": "On your own: local by default"
+    }
+  ],
+  "bridge": {
+    "rows": [
+      {
+        "concept": "Define",
+        "lua": "function double(x) ... end",
+        "note": "Colon and indentation instead of end.",
+        "python": "def double(x):\n    ..."
+      },
+      {
+        "concept": "Local by default?",
+        "lua": "x = 5  -- global unless you write local",
+        "note": "Python flips Lua's default.",
+        "python": "x = 5  # local inside a function"
+      },
+      {
+        "concept": "No return value",
+        "lua": "returns nil",
+        "python": "returns None"
+      },
+      {
+        "concept": "Several results",
+        "lua": "return a, b",
+        "note": "Python packs them into a tuple; a, b = f() unpacks it.",
+        "python": "return a, b"
+      },
+      {
+        "concept": "Function as a value",
+        "lua": "local f = function(x) return x * 2 end",
+        "note": "Use def for anything longer than one expression.",
+        "python": "f = lambda x: x * 2"
+      }
+    ],
+    "title": "Lua → Python: functions"
+  },
+  "format": "morrowdock-code-gym-foundations-lesson",
+  "id": "cg-found-functions-v1",
+  "nextLesson": "cg-found-lists-dicts-v1",
+  "order": 4,
+  "outcomes": [
+    {
+      "id": "fn-o1",
+      "text": "Trace a call: arguments become parameters in a new box, the body runs, and return sends a value back to the call."
+    },
+    {
+      "id": "fn-o2",
+      "text": "Tell return from print, and know a function with no return gives back None."
+    },
+    {
+      "id": "fn-o3",
+      "text": "Predict scope: names assigned inside a function are local to that call."
+    }
+  ],
+  "referenceCard": {
+    "points": [
+      "def stores the recipe; calling it runs the body in a new box.",
+      "Arguments go into parameters in order: area(3, 4) sets w = 3, h = 4.",
+      "return ends the call and the call becomes that value. No return means None.",
+      "print shows text; return hands a value back. They're not the same.",
+      "Names assigned inside a function are local to that call.",
+      "/ gives a decimal; with whole numbers, // gives a whole number."
+    ],
+    "title": "Functions"
+  },
+  "subtitle": "Name a recipe once, use it many times. Values go in as arguments and come back with return.",
+  "teach": [
+    {
+      "body": "def double(x): followed by an indented body teaches Python a new command. Nothing in the body runs yet. Later, double(5) calls it: Python makes a new box (a frame) on the call stack, puts 5 into the parameter x, and runs the body.",
+      "id": "fn-t1",
+      "title": "def stores a recipe"
+    },
+    {
+      "body": "return y ends the call and hands y's value back. The call expression is replaced by that value, so a = double(5) stores 10. If a function never reaches a return, it gives back None. print is different: it only shows text on screen.\n\n/ always gives a decimal number (8 / 2 is 4.0); with whole numbers, // gives a whole number (8 // 2 is 4).",
+      "id": "fn-t2",
+      "title": "return hands a value back"
+    },
+    {
+      "body": "Parameters and any name assigned inside a function live in that call's box. They vanish when the call returns, and they don't touch names outside, even ones with the same spelling. Calls inside calls stack up: the newest box is on top, and it's always the one running. That pile is called the call stack; it works like the stack you'll meet in the SWE track.",
+      "id": "fn-t3",
+      "title": "Each call has its own names"
+    }
+  ],
+  "title": "Functions: def, return, scope",
+  "version": 1
+}

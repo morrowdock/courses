@@ -1,0 +1,1184 @@
+{
+  "activities": [
+    {
+      "code": [
+        "hp = 10",
+        "hp = hp - 3",
+        "name = \"Ada\"",
+        "print(name, hp)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "10"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "7"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "7",
+                "name": "'Ada'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "Ada 7\n",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "7",
+                "name": "'Ada'"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "nv-l-watch",
+      "kind": "trace",
+      "mode": "learn",
+      "narration": [
+        "Nothing has run yet. Line 1 is next.",
+        "hp now labels 10. Line 2 reads hp, which is 10, and works out 10 - 3.",
+        "hp now labels 7. The old 10 is gone. Line 3 makes a new name.",
+        "name labels the string 'Ada'. Line 4 prints both values with one space between.",
+        "The program printed Ada 7. No quotes: print shows the text inside a string."
+      ],
+      "outcomes": [
+        "nv-o1",
+        "nv-o3"
+      ],
+      "prompt": "Step through. The arrow marks the line about to run; the panel shows every name after the lines above it ran.",
+      "title": "Watch it: labels moving"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Yes. Numbers add; strings join, character by character.",
+            "text": "7\n34"
+          },
+          {
+            "reaction": "The second line has quotes, so those are strings. + joins strings: \"3\" then \"4\" gives \"34\".",
+            "text": "7\n7"
+          },
+          {
+            "reaction": "The first line has no quotes, so those are numbers and + adds them: 7.",
+            "text": "34\n34"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "print(3 + 4)",
+        "print(\"3\" + \"4\")"
+      ],
+      "id": "nv-l-plus",
+      "kind": "predict",
+      "mode": "learn",
+      "outcomes": [
+        "nv-o2"
+      ],
+      "output": "7\n34\n",
+      "prompt": "Make a guess first. It's free. What do these two lines print?",
+      "reveal": "7, then 34. Quotes make a string, and + joins strings instead of adding them.",
+      "title": "Predict before you peek: two kinds of +"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Right. b took a's value, 5, when line 2 ran. Line 3 moves only a.",
+            "text": "6 5"
+          },
+          {
+            "reaction": "b got its value when line 2 ran, and a was 5 then. Changing a later doesn't change b.",
+            "text": "6 6"
+          },
+          {
+            "reaction": "Line 3 does change a: a is on the left of =, so it gets 5 + 1.",
+            "text": "5 5"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "a = 5",
+        "b = a",
+        "a = a + 1",
+        "print(a, b)"
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-copy#hint-1",
+          "text": "Write a box for a and a box for b. Update one box per line.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-copy#hint-2",
+          "text": "On line 2, copy the number that's in a right now into b. Then line 3 only touches a.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "nv-g-copy",
+      "kind": "predict",
+      "mode": "guided",
+      "outcomes": [
+        "nv-o1",
+        "nv-o3"
+      ],
+      "output": "6 5\n",
+      "prompt": "What does this print?",
+      "title": "Does b follow a?"
+    },
+    {
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: the right side used the old 4, then gold moved to 8.",
+                "text": "8"
+              },
+              {
+                "reaction": "gold is on the left of =, so line 2 gives it a new value: 4 * 2.",
+                "text": "4"
+              },
+              {
+                "reaction": "That's 4 + 2. The operator here is *, so it's 4 times 2.",
+                "text": "6"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "Line 2 just ran. What does gold hold now?",
+          "frame": 2,
+          "var": "gold"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right. str(gold) made the string '8', and + joined it on.",
+                "text": "'gold: 8'"
+              },
+              {
+                "reaction": "gold has no quotes on line 3, so Python uses its value, not the word gold.",
+                "text": "'gold: gold'"
+              },
+              {
+                "reaction": "Line 2 already moved gold to 8 before line 3 ran.",
+                "text": "'gold: 4'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "Line 3 just ran. What does label hold?",
+          "frame": 3,
+          "var": "label"
+        }
+      ],
+      "code": [
+        "gold = 4",
+        "gold = gold * 2",
+        "label = \"gold: \" + str(gold)",
+        "print(label)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "gold": "4"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "gold": "8"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "gold": "8",
+                "label": "'gold: 8'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "gold: 8\n",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "gold": "8",
+                "label": "'gold: 8'"
+              }
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-trace#hint-1",
+          "text": "The right side of = is worked out first, using the values from the line before.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-trace#hint-2",
+          "text": "str(8) is the string '8'. Joining 'gold: ' and '8' puts them side by side.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "nv-g-trace",
+      "kind": "trace",
+      "mode": "guided",
+      "narration": [
+        "Line 1 is next.",
+        "gold labels 4. Line 2 doubles it.",
+        "Line 2 ran. Line 3 turns gold into a string so + can join it.",
+        "label holds the joined string. Line 4 prints it.",
+        "The program printed gold: 8."
+      ],
+      "outcomes": [
+        "nv-o1",
+        "nv-o2"
+      ],
+      "prompt": "Step through. When the panel asks, fill in the hidden value before moving on.",
+      "title": "Trace the treasure"
+    },
+    {
+      "bugLine": 2,
+      "code": [
+        "score = 0",
+        "score + 5",
+        "print(score)"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "score = score + 5",
+          "output": "5\n",
+          "reaction": "Yes. Without = the sum is worked out and then thrown away. = stores it back in score."
+        },
+        {
+          "fixLine": "score == score + 5",
+          "output": "0\n",
+          "reaction": "== asks a question (is score equal to score + 5?). It doesn't change score, so this still prints 0."
+        },
+        {
+          "fixLine": "print(score + 5)",
+          "output": "5\n0\n",
+          "reaction": "That prints 5, but score is still 0, so the last line prints 0 too. The value never got stored."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-fix#hint-1",
+          "text": "Which line is meant to change score? Does it actually have an = ?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "nv-g-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "Starting at 0 is fine. Something later should raise it to 5.",
+        "3": "print shows what score holds. The question is why score is still 0 when it gets here."
+      },
+      "mode": "guided",
+      "outcomes": [
+        "nv-o1"
+      ],
+      "prompt": "This should print 5 but prints 0. Tap the line that's wrong, then pick the repair.",
+      "symptom": {
+        "actual": "0\n",
+        "expected": "5"
+      },
+      "title": "The score that won't go up"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c"
+        ]
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "coins = coins * 2",
+          "reaction": "Doubling 1 gives 2, not 3. This program needs + 2."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-parsons#hint-1",
+          "text": "A name has to exist before a line can use it. Which line creates coins?",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-parsons#hint-2",
+          "text": "print goes last: it should show coins after it's been raised to 3.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "nv-g-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "coins = 1"
+        },
+        {
+          "id": "b",
+          "line": "coins = coins + 2"
+        },
+        {
+          "id": "c",
+          "line": "print(\"Ada has\", coins, \"coins\")"
+        }
+      ],
+      "mode": "guided",
+      "outcomes": [
+        "nv-o1",
+        "nv-o3"
+      ],
+      "prompt": "Drag the lines so the program prints exactly: Ada has 3 coins. One line isn't needed.",
+      "start": [
+        "c",
+        "x",
+        "b",
+        "a"
+      ],
+      "target": "Ada has 3 coins",
+      "title": "Put it in order: Ada's coins"
+    },
+    {
+      "grading": "self-check",
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "nv-g-explain#hint-1",
+          "text": "Say what a holds at the exact moment line 2 runs.",
+          "tier": "nudge"
+        }
+      ],
+      "id": "nv-g-explain",
+      "kind": "explain",
+      "mode": "guided",
+      "model": "When line 2 ran, a held 5, so b got 5. Line 3 put a new value on a only. Names don't watch each other; b keeps the value it was given.",
+      "outcomes": [
+        "nv-o1"
+      ],
+      "prompt": "In your own words (type, dictate or write with Pencil): in the 'Does b follow a?' program, why does b still hold 5 after a changes?",
+      "rubric": [
+        {
+          "id": "nv-g-explain#k1",
+          "idea": "Lines run top to bottom, one at a time."
+        },
+        {
+          "id": "nv-g-explain#k2",
+          "idea": "b = a copies the value a has at that moment."
+        },
+        {
+          "id": "nv-g-explain#k3",
+          "idea": "A later a = ... changes only a; b isn't linked to a."
+        }
+      ],
+      "title": "Explain it back: why b kept 5"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-predict#help-1",
+          "text": "Keep a box for x and one for y. After line 2: x 2, y 5. Line 3 reads y."
+        },
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-predict#help-2",
+          "text": "Worked: x = 2; y = 2 + 3 = 5; x = 5 * 2 = 10. print shows 10 5."
+        }
+      ],
+      "answer": {
+        "expected": "10 5",
+        "misreadings": [
+          {
+            "reaction": "y was set on line 2 and nothing changes it afterwards. Only x moves on line 3.",
+            "text": "10 10"
+          },
+          {
+            "reaction": "Line 3 uses y, which is 5 by then, not x.",
+            "text": "4 5"
+          },
+          {
+            "reaction": "Right numbers. print separates values with a space, not a comma.",
+            "text": "10,5"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "x = 2",
+        "y = x + 3",
+        "x = y * 2",
+        "print(x, y)"
+      ],
+      "id": "nv-i-predict",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "nv-o1",
+        "nv-o3"
+      ],
+      "output": "10 5\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "On your own: two names, three lines"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-predict-cb#help-1",
+          "text": "m 3 → n 6 → m 6 - 1."
+        }
+      ],
+      "answer": {
+        "expected": "5 6",
+        "misreadings": [
+          {
+            "reaction": "n was set on line 2 and isn't changed again.",
+            "text": "5 5"
+          },
+          {
+            "reaction": "Line 3 uses n (6), not m.",
+            "text": "2 6"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "m = 3",
+        "n = m * 2",
+        "m = n - 1",
+        "print(m, n)"
+      ],
+      "comebackFor": "nv-i-predict",
+      "id": "nv-i-predict-cb",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "nv-o1",
+        "nv-o3"
+      ],
+      "output": "5 6\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "Comeback: a fresh pair of names"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-trace#help-1",
+          "text": "After line 2 word is 'abc', which has 3 characters."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "3",
+            "misreadings": [
+              {
+                "reaction": "That's len('ab'). Line 2 already joined a third character on.",
+                "text": "2"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "Line 3 just ran. What number does size hold?",
+          "frame": 3,
+          "var": "size"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: string * 2 repeats the whole string.",
+                "text": "'abcabc'"
+              },
+              {
+                "reaction": "* repeats the whole string end to end, not each character.",
+                "text": "'aabbcc'"
+              },
+              {
+                "reaction": "* with a number repeats; it doesn't join the digit on.",
+                "text": "'abc2'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The program ended. What does word hold?",
+          "frame": 4,
+          "var": "word"
+        }
+      ],
+      "code": [
+        "word = \"ab\"",
+        "word = word + \"c\"",
+        "size = len(word)",
+        "word = word * 2"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "word": "'ab'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "word": "'abc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "size": "3",
+                "word": "'abc'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "size": "3",
+                "word": "'abcabc'"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "nv-i-trace",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "word labels 'ab'. Line 2 joins on another character.",
+        "Line 3 measures word.",
+        "Line 4 repeats word: a string times a number repeats it.",
+        "The program ended. It printed nothing; the panel shows the final values."
+      ],
+      "outcomes": [
+        "nv-o2"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "On your own: growing a word"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-trace-cb#help-1",
+          "text": "After line 2, t is 'xxx'."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "4",
+            "misreadings": [
+              {
+                "reaction": "t isn't 'x' any more: line 2 made it three characters long.",
+                "text": "2"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "Line 3 just ran. What number does n hold?",
+          "frame": 3,
+          "var": "n"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes.",
+                "text": "'xxx!'"
+              },
+              {
+                "reaction": "Line 2 already repeated t to 'xxx'.",
+                "text": "'x!'"
+              },
+              {
+                "reaction": "The ! was joined after the repeat, not before.",
+                "text": "'x!x!x!'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The program ended. What does t hold?",
+          "frame": 4,
+          "var": "t"
+        }
+      ],
+      "code": [
+        "t = \"x\"",
+        "t = t * 3",
+        "n = len(t) + 1",
+        "t = t + \"!\""
+      ],
+      "comebackFor": "nv-i-trace",
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "t": "'x'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "t": "'xxx'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "4",
+                "t": "'xxx'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "4",
+                "t": "'xxx!'"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "nv-i-trace-cb",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "t labels 'x'. Line 2 repeats it.",
+        "Line 3 measures t and adds one.",
+        "Line 4 joins on an exclamation mark.",
+        "The program ended; the panel shows the final values."
+      ],
+      "outcomes": [
+        "nv-o2"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "Comeback: shouting"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-fix#help-1",
+          "text": "7 is 4 + 3. What operation turns 4 and 3 into 12?"
+        }
+      ],
+      "bugLine": 3,
+      "code": [
+        "price = 4",
+        "count = 3",
+        "total = price + count",
+        "print(\"total:\", total)"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "total = price * count",
+          "output": "total: 12\n",
+          "reaction": "Yes: price for each of count things is multiplication."
+        },
+        {
+          "fixLine": "total = price + count * 1",
+          "output": "total: 7\n",
+          "reaction": "Times 1 changes nothing, so it's still 4 + 3."
+        },
+        {
+          "fixLine": "total = price ** count",
+          "output": "total: 64\n",
+          "reaction": "** is power: 4 * 4 * 4. We want 4 three times added up, which is 4 * 3."
+        }
+      ],
+      "id": "nv-i-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "4 coins each is right.",
+        "2": "3 things is right.",
+        "4": "print shows total correctly. The value in total is what's off."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "nv-o2",
+        "nv-o3"
+      ],
+      "prompt": "Three things at 4 coins each should cost 12. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "total: 7\n",
+        "expected": "total: 12"
+      },
+      "title": "On your own: the shop total"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-fix-cb#help-1",
+          "text": "Quotes mean 'this exact text'. Which part should be the value of a name instead?"
+        }
+      ],
+      "bugLine": 2,
+      "code": [
+        "name = \"Sam\"",
+        "greeting = \"Hi \" + \"name\"",
+        "print(greeting)"
+      ],
+      "comebackFor": "nv-i-fix",
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "greeting = \"Hi \" + name",
+          "output": "Hi Sam\n",
+          "reaction": "Yes. Without quotes Python uses the name's value."
+        },
+        {
+          "fixLine": "greeting = \"Hi\" + name",
+          "output": "HiSam\n",
+          "reaction": "Close: + joins with no space, so the space has to be inside \"Hi \"."
+        },
+        {
+          "fixLine": "greeting = \"Hi \" + 'name'",
+          "output": "Hi name\n",
+          "reaction": "Single quotes still make a string: the word name, not its value."
+        }
+      ],
+      "id": "nv-i-fix-cb",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "name holds 'Sam'; that part works.",
+        "3": "print shows greeting. What went into greeting?"
+      },
+      "mode": "independent",
+      "outcomes": [
+        "nv-o2",
+        "nv-o3"
+      ],
+      "prompt": "This should greet Sam by name. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "Hi name\n",
+        "expected": "Hi Sam"
+      },
+      "title": "Comeback: the greeting"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        [
+          "a",
+          "d",
+          "c",
+          "b"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-parsons#help-1",
+          "text": "Print once before n changes and once after."
+        }
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "m = n + 2",
+          "reaction": "In place of n = n + 2, this makes a new name m and leaves n at 7, so the second print would still show 7. The program uses exactly four lines."
+        }
+      ],
+      "id": "nv-i-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "n = 7"
+        },
+        {
+          "id": "b",
+          "line": "print(n)"
+        },
+        {
+          "id": "c",
+          "line": "n = n + 2"
+        },
+        {
+          "id": "d",
+          "line": "print(n)"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "nv-o1",
+        "nv-o3"
+      ],
+      "prompt": "Arrange the lines so the program prints 7 on one line and 9 on the next. One line isn't needed.",
+      "start": [
+        "d",
+        "c",
+        "x",
+        "b",
+        "a"
+      ],
+      "target": "7\n9",
+      "title": "On your own: before and after"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        [
+          "a",
+          "d",
+          "c",
+          "b"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-parsons-cb#help-1",
+          "text": "s has to exist first; print it, change it, print again."
+        }
+      ],
+      "comebackFor": "nv-i-parsons",
+      "id": "nv-i-parsons-cb",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "s = \"hi\""
+        },
+        {
+          "id": "b",
+          "line": "print(s)"
+        },
+        {
+          "id": "c",
+          "line": "s = s + \"!\""
+        },
+        {
+          "id": "d",
+          "line": "print(s)"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "nv-o1",
+        "nv-o3"
+      ],
+      "prompt": "Arrange the lines so the program prints hi, then hi! on the next line.",
+      "start": [
+        "c",
+        "d",
+        "a",
+        "b"
+      ],
+      "target": "hi\nhi!",
+      "title": "Comeback: a louder hello"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "nv-i-explain#help-1",
+          "text": "Compare the type of each side of + in the two lines."
+        }
+      ],
+      "grading": "self-check",
+      "id": "nv-i-explain",
+      "kind": "explain",
+      "mode": "independent",
+      "model": "\"3\" and \"4\" are both strings, so + joins them into \"34\". In 3 + \"4\", one side is a number and the other a string. Python refuses to guess, so it raises a TypeError. Lua would coerce \"4\" to a number here; in Python you write int(\"4\") or str(3) yourself.",
+      "outcomes": [
+        "nv-o2"
+      ],
+      "prompt": "Explain to a friend who knows Lua why print(\"3\" + \"4\") shows 34 in Python, while print(3 + \"4\") stops with an error.",
+      "rubric": [
+        {
+          "id": "nv-i-explain#k1",
+          "idea": "Quotes make a string; without quotes 3 is a number."
+        },
+        {
+          "id": "nv-i-explain#k2",
+          "idea": "+ joins two strings but adds two numbers."
+        },
+        {
+          "id": "nv-i-explain#k3",
+          "idea": "Python won't mix a number and a string with + (Lua's .. and coercion differ); convert with int() or str()."
+        }
+      ],
+      "title": "On your own: explain the two plusses"
+    }
+  ],
+  "bridge": {
+    "rows": [
+      {
+        "concept": "Make a name",
+        "lua": "local hp = 10",
+        "note": "No local keyword. A name assigned inside a function is local to that function; one assigned at the top level is a global.",
+        "python": "hp = 10"
+      },
+      {
+        "concept": "Join text",
+        "lua": "\"Hi \" .. name",
+        "note": "Python uses + for both adding and joining.",
+        "python": "\"Hi \" + name"
+      },
+      {
+        "concept": "Number + string",
+        "lua": "\"3\" + 4  --> 7 (coerces)",
+        "note": "Python never converts silently. Use int(\"3\") + 4.",
+        "python": "\"3\" + 4  # TypeError"
+      },
+      {
+        "concept": "Length of a string",
+        "lua": "#s",
+        "python": "len(s)"
+      },
+      {
+        "concept": "Print several values",
+        "lua": "print(a, b)  -- tab between",
+        "python": "print(a, b)  # one space between"
+      },
+      {
+        "concept": "Nothing",
+        "lua": "nil",
+        "python": "None"
+      }
+    ],
+    "title": "Lua → Python: names and values"
+  },
+  "format": "morrowdock-code-gym-foundations-lesson",
+  "id": "cg-found-names-values-v1",
+  "nextLesson": "cg-found-conditionals-v1",
+  "order": 1,
+  "outcomes": [
+    {
+      "id": "nv-o1",
+      "text": "Predict what each name holds after a run of assignments, top to bottom."
+    },
+    {
+      "id": "nv-o2",
+      "text": "Tell numbers from strings and predict what + does with each."
+    },
+    {
+      "id": "nv-o3",
+      "text": "Read exactly what print shows, including spaces between several values."
+    }
+  ],
+  "referenceCard": {
+    "points": [
+      "= works out the right side, then puts the name on that value.",
+      "Lines run top to bottom; a line uses each name's value at that moment.",
+      "\"3\" is a string, 3 is a number. + joins strings and adds numbers. Never mix them without int() or str().",
+      "print(a, b) puts one space between values; strings print without quotes.",
+      "len(s) is a string's length; s * 3 repeats it."
+    ],
+    "title": "Names and values"
+  },
+  "subtitle": "A name is a label on a value. = moves the label; print shows what's there.",
+  "teach": [
+    {
+      "body": "x = 5 means: work out the right side, then stick the name x on that value. Python runs lines top to bottom, one at a time. When it reaches a line that uses a name, it uses whatever that name holds at that moment.\n\nSo after\n  a = 5\n  b = a\n  a = 6\nb is still 5. b was given a's value when line 2 ran. It doesn't follow a around afterwards.",
+      "id": "nv-t1",
+      "title": "= is an instruction, not an equation"
+    },
+    {
+      "body": "3 is a number. \"3\" is a string: text that happens to contain the character 3. + adds numbers but joins strings, so 3 + 4 is 7 while \"3\" + \"4\" is \"34\". Mixing them, as in 3 + \"4\", stops the program with a TypeError. Convert first with int(\"4\") or str(3).",
+      "id": "nv-t2",
+      "title": "Numbers and strings"
+    },
+    {
+      "body": "print(a, b) shows a, then one space, then b, and ends the line. Strings appear without their quotes. Inside the trace panel you'll see repr values, where strings keep their quotes ('Ada'), so you can tell \"7\" from 7.",
+      "id": "nv-t3",
+      "title": "What print shows"
+    }
+  ],
+  "title": "Names, values and print",
+  "version": 1
+}

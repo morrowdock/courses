@@ -1,0 +1,243 @@
+{
+  "format": "morrowdock-course-bundle",
+  "version": 1,
+  "course": {
+    "id": "git-course-v1",
+    "title": "Git Lab: version control, taught"
+  },
+  "topics": [
+    {
+      "id": "git-course-snapshots-v1",
+      "title": "Snapshots: working tree, staging area, commit"
+    },
+    {
+      "id": "git-course-branches-v1",
+      "title": "Branches: movable labels on history"
+    },
+    {
+      "id": "git-course-merge-v1",
+      "title": "Merge: bringing lines of work together"
+    },
+    {
+      "id": "git-course-rebase-v1",
+      "title": "Rebase: replaying work on a new base"
+    },
+    {
+      "id": "git-course-reset-v1",
+      "title": "Reset: moving the branch, the staging area and the files"
+    },
+    {
+      "id": "git-course-recovery-v1",
+      "title": "Recovery: getting lost work back"
+    }
+  ],
+  "materials": [
+    {
+      "id": "git-course-snapshots-v1-material",
+      "title": "Snapshots: working tree, staging area, commit",
+      "ref": "attachments/learner.json"
+    },
+    {
+      "id": "git-course-branches-v1-material",
+      "title": "Branches: movable labels on history",
+      "ref": "attachments/learner.json"
+    },
+    {
+      "id": "git-course-merge-v1-material",
+      "title": "Merge: bringing lines of work together",
+      "ref": "attachments/learner.json"
+    },
+    {
+      "id": "git-course-rebase-v1-material",
+      "title": "Rebase: replaying work on a new base",
+      "ref": "attachments/learner.json"
+    },
+    {
+      "id": "git-course-reset-v1-material",
+      "title": "Reset: moving the branch, the staging area and the files",
+      "ref": "attachments/learner.json"
+    },
+    {
+      "id": "git-course-recovery-v1-material",
+      "title": "Recovery: getting lost work back",
+      "ref": "attachments/learner.json"
+    }
+  ],
+  "assignments": [],
+  "questions": [
+    {
+      "id": "git-course-snapshots-v1-predict",
+      "topicID": "git-course-snapshots-v1",
+      "prompt": "note.txt said 'draft two' when you ran `git add`, and you then changed it to 'draft three'. You now run `git commit -m \"Revise note\"`. What does the new commit hold for note.txt?\n\nStarting commands:\necho draft one > note.txt\ngit init\ngit add .\ngit commit -m \"Start note\"\necho draft two > note.txt\ngit add note.txt\necho draft three > note.txt\n\nThen run:\ngit commit -m \"Revise note\"",
+      "choices": [
+        "draft three",
+        "draft two",
+        "draft one",
+        "Nothing: the commit is refused because the file changed"
+      ],
+      "answer": 1,
+      "explanation": "Right: `git add` copied draft two into the staging area, and commit freezes the staging area.",
+      "materialID": "git-course-snapshots-v1-material"
+    },
+    {
+      "id": "git-course-snapshots-v1-check",
+      "topicID": "git-course-snapshots-v1",
+      "prompt": "`git diff` prints nothing, but `git diff --cached` shows a change to map.txt. What will `git commit -m \"Update map\"` do?",
+      "choices": [
+        "Commit the map.txt change; working tree, staging area and the new commit then all agree",
+        "Refuse, because the working tree has no changes",
+        "Commit nothing, because diff was empty",
+        "Commit map.txt and also any untracked files"
+      ],
+      "answer": 0,
+      "explanation": "Right: empty `git diff` means working tree = staging area; the cached diff is exactly what the commit adds.",
+      "materialID": "git-course-snapshots-v1-material"
+    },
+    {
+      "id": "git-course-branches-v1-predict",
+      "topicID": "git-course-branches-v1",
+      "prompt": "You are on main and you have edited map.txt but not committed. lighthouse points at the same commit as main. What happens in this lab when you run `git switch lighthouse`?\n\nStarting commands:\necho coastline > map.txt\ngit init\ngit add .\ngit commit -m \"Start the map\"\ngit branch lighthouse\necho coastline and reefs > map.txt\n\nThen run:\ngit switch lighthouse",
+      "choices": [
+        "It switches and your edit is lost",
+        "It refuses and changes nothing, so you can commit or undo first",
+        "It switches and commits your edit to lighthouse",
+        "It switches and your edit comes along"
+      ],
+      "answer": 1,
+      "explanation": "Right for this lab: any uncommitted tracked change blocks the switch, and nothing changes. Real Git would carry this edit along, because both branches hold the same map.txt (see Real Git). It refuses only when the edit would be overwritten.",
+      "materialID": "git-course-branches-v1-material"
+    },
+    {
+      "id": "git-course-branches-v1-check",
+      "topicID": "git-course-branches-v1",
+      "prompt": "main and docs both point at c4. You are on docs and commit c5. Then you run `git switch -c fix`. Where does fix point?",
+      "choices": [
+        "c4, because branches start where main is",
+        "c5, the commit you are on",
+        "Nowhere until you commit on it",
+        "c4, because new branches start at the first commit"
+      ],
+      "answer": 1,
+      "explanation": "Right: you were on docs at c5, so fix starts at c5 and includes that commit.",
+      "materialID": "git-course-branches-v1-material"
+    },
+    {
+      "id": "git-course-merge-v1-predict",
+      "topicID": "git-course-merge-v1",
+      "prompt": "From the common ancestor (price 4), main changed price.txt to 5 and sale changed it to 3. On main you run `git merge sale`. What happens in this lab?\n\nStarting commands:\necho price 4 > price.txt\ngit init\ngit add .\ngit commit -m \"Set price\"\ngit switch -c sale\necho price 3 > price.txt\ngit add .\ngit commit -m \"Sale price\"\ngit switch main\necho price 5 > price.txt\ngit add .\ngit commit -m \"Raise price\"\n\nThen run:\ngit merge sale",
+      "choices": [
+        "main gets price 3 (the branch you merge in wins)",
+        "main keeps price 5 (your branch wins)",
+        "The merge refuses with a conflict and nothing changes",
+        "Git averages them to price 4"
+      ],
+      "answer": 2,
+      "explanation": "Right: same file, two different changes from the ancestor. You must decide the final text. Real Git also stops here, writes conflict markers into price.txt and waits for you.",
+      "materialID": "git-course-merge-v1-material"
+    },
+    {
+      "id": "git-course-merge-v1-check",
+      "topicID": "git-course-merge-v1",
+      "prompt": "feature has 2 new commits and main has 0 new commits since feature started. On main you run `git merge feature`. How many new commits does the merge create?",
+      "choices": [
+        "0, it's a fast-forward",
+        "1 merge commit",
+        "2 copies of feature's commits",
+        "It refuses until main has a commit"
+      ],
+      "answer": 0,
+      "explanation": "Right: main's label just moves to feature's tip.",
+      "materialID": "git-course-merge-v1-material"
+    },
+    {
+      "id": "git-course-rebase-v1-predict",
+      "topicID": "git-course-rebase-v1",
+      "prompt": "topic's commit is c2 (parent c1). main moved to c3. On topic you run `git rebase main`. Afterwards, which commit does topic point at?\n\nStarting commands:\necho a > a.txt\ngit init\ngit add .\ngit commit -m Base\ngit switch -c topic\necho b > b.txt\ngit add .\ngit commit -m \"Topic work\"\ngit switch main\necho c > c.txt\ngit add .\ngit commit -m \"Main work\"\ngit switch topic\n\nThen run:\ngit rebase main",
+      "choices": [
+        "c2, edited so its parent is c3",
+        "A new commit c4 whose parent is c3; c2 still exists, unpointed",
+        "A merge commit with parents c2 and c3",
+        "c3, and c2's change is dropped"
+      ],
+      "answer": 1,
+      "explanation": "Right: rebase copies. The original c2 is left behind with no label.",
+      "materialID": "git-course-rebase-v1-material"
+    },
+    {
+      "id": "git-course-rebase-v1-check",
+      "topicID": "git-course-rebase-v1",
+      "prompt": "Your teammate opened a pull request from branch shared-fix, and two others have committed on top of it. main moved. Which is the safer way to bring main's changes into shared-fix?",
+      "choices": [
+        "`git merge main` on shared-fix",
+        "`git rebase main` on shared-fix",
+        "Delete shared-fix and start again",
+        "Copy main's files in by hand"
+      ],
+      "answer": 0,
+      "explanation": "Right: merge adds a commit and rewrites nothing others have built on.",
+      "materialID": "git-course-rebase-v1-material"
+    },
+    {
+      "id": "git-course-reset-v1-predict",
+      "topicID": "git-course-reset-v1",
+      "prompt": "notes.txt was never added. You run `git reset --hard HEAD~1`. What happens to code.txt and notes.txt?\n\nStarting commands:\necho v1 > code.txt\ngit init\ngit add .\ngit commit -m \"First version\"\necho v2 > code.txt\ngit add .\ngit commit -m \"Second version\"\necho my ideas > notes.txt\n\nThen run:\ngit reset --hard HEAD~1",
+      "choices": [
+        "code.txt goes back to v1; notes.txt is deleted",
+        "code.txt goes back to v1; notes.txt is left alone",
+        "Both are left alone; only the branch moves",
+        "The reset refuses because notes.txt is untracked"
+      ],
+      "answer": 1,
+      "explanation": "Right: tracked files match the target, untracked files survive.",
+      "materialID": "git-course-reset-v1-material"
+    },
+    {
+      "id": "git-course-reset-v1-check",
+      "topicID": "git-course-reset-v1",
+      "prompt": "Your last commit had the right files but a bad message. Which reset lets you commit the exact same changes again with a new message in one command after it?",
+      "choices": [
+        "git reset --soft HEAD~1",
+        "git reset --mixed HEAD~1",
+        "git reset --hard HEAD~1",
+        "No reset can help"
+      ],
+      "answer": 0,
+      "explanation": "Right: the changes stay staged, so `git commit -m \"better\"` recreates the commit.",
+      "materialID": "git-course-reset-v1-material"
+    },
+    {
+      "id": "git-course-recovery-v1-predict",
+      "topicID": "git-course-recovery-v1",
+      "prompt": "You rebased topic (its old commit was c2; the copy is c4) and regret it. Which command puts topic back exactly as it was before the rebase?\n\nStarting commands:\necho a > a.txt\ngit init\ngit add .\ngit commit -m Base\ngit switch -c topic\necho b > b.txt\ngit add .\ngit commit -m \"Topic work\"\ngit switch main\necho c > c.txt\ngit add .\ngit commit -m \"Main work\"\ngit switch topic\ngit rebase main\n\nThen run:\ngit reset --hard c2",
+      "choices": [
+        "git reset --hard HEAD~1",
+        "git reset --hard c2",
+        "git merge main",
+        "Nothing can: the rebase replaced c2"
+      ],
+      "answer": 1,
+      "explanation": "Right: c2 is still in the graph, and resetting topic onto it restores the pre-rebase branch exactly.",
+      "materialID": "git-course-recovery-v1-material"
+    },
+    {
+      "id": "git-course-recovery-v1-check",
+      "topicID": "git-course-recovery-v1",
+      "prompt": "Which of these can you recover with Git alone?",
+      "choices": [
+        "A commit your branch no longer points at after `reset --hard`",
+        "Edits you never staged, discarded by `reset --hard`",
+        "A file you created and never added, then deleted with rm",
+        "Text you typed and never saved to the file"
+      ],
+      "answer": 0,
+      "explanation": "Right: it's a commit, so it still exists unreachable; find its id and reset or branch to it.",
+      "materialID": "git-course-recovery-v1-material"
+    }
+  ],
+  "examBlueprint": {
+    "questionCount": 12,
+    "minutes": 30,
+    "points": 12
+  },
+  "equationSheet": null
+}

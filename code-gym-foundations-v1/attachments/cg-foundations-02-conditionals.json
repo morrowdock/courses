@@ -1,0 +1,1256 @@
+{
+  "activities": [
+    {
+      "code": [
+        "temp = 30",
+        "if temp > 25:",
+        "    print(\"hot\")",
+        "elif temp > 15:",
+        "    print(\"warm\")",
+        "else:",
+        "    print(\"cold\")",
+        "print(\"done\")"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "temp": "30"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "temp": "30"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 8,
+          "out": "hot\n",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "temp": "30"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "hot\ndone\n",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "temp": "30"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "cd-l-watch",
+      "kind": "trace",
+      "mode": "learn",
+      "narration": [
+        "Line 1 is next.",
+        "temp is 30. Python asks: is 30 > 25? Yes, True.",
+        "True, so the indented line under if runs.",
+        "One branch already ran, so Python skips elif and else entirely and jumps to line 8. Line 8 isn't indented, so it always runs.",
+        "Printed hot, then done. temp > 15 was never checked, even though it's also true."
+      ],
+      "outcomes": [
+        "cd-o1",
+        "cd-o3"
+      ],
+      "prompt": "Step through. Watch the arrow skip the branches that don't run.",
+      "title": "Watch it: which branch runs?"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Yes. Python checks top to bottom and stops at the first True. elif is never even asked.",
+            "text": "big"
+          },
+          {
+            "reaction": "n > 40 is true, but Python never gets there: n > 10 was checked first and was already True.",
+            "text": "huge"
+          },
+          {
+            "reaction": "if/elif picks one branch at most. Once one runs, the rest of the chain is skipped.",
+            "text": "big\nhuge"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "n = 50",
+        "if n > 10:",
+        "    print(\"big\")",
+        "elif n > 40:",
+        "    print(\"huge\")"
+      ],
+      "id": "cd-l-order",
+      "kind": "predict",
+      "mode": "learn",
+      "outcomes": [
+        "cd-o1"
+      ],
+      "output": "big\n",
+      "prompt": "Guess first; it's free. 50 is bigger than 10 and bigger than 40. What prints?",
+      "reveal": "big. The first True condition wins; put the most specific test first if you want it to win.",
+      "title": "Predict before you peek: the order trap"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Right: 15 >= 13 is True and 15 < 20 is True, so and gives True.",
+            "text": "teen"
+          },
+          {
+            "reaction": "and needs both sides True. Check each: 15 >= 13? 15 < 20?",
+            "text": "not teen"
+          },
+          {
+            "reaction": "if and else never both run; exactly one of them does.",
+            "text": "teen\nnot teen"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "age = 15",
+        "if age >= 13 and age < 20:",
+        "    print(\"teen\")",
+        "else:",
+        "    print(\"not teen\")"
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-teen#hint-1",
+          "text": "Work out each side of and separately: True or False?",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-teen#hint-2",
+          "text": "15 >= 13 → True. 15 < 20 → True. True and True → True.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "cd-g-teen",
+      "kind": "predict",
+      "mode": "guided",
+      "outcomes": [
+        "cd-o2"
+      ],
+      "output": "teen\n",
+      "prompt": "What does this print?",
+      "title": "Two conditions at once"
+    },
+    {
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: the condition was True, so 8 + 5.",
+                "text": "13"
+              },
+              {
+                "reaction": "Check the condition again: 8 < 10 is True and not False is True, so line 4 does run.",
+                "text": "8"
+              },
+              {
+                "reaction": "hp = hp + 5 adds to the old value; it doesn't replace it with 5.",
+                "text": "5"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "Line 4 just ran. What does hp hold?",
+          "frame": 4,
+          "var": "hp"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right: the second if sees hp at 13.",
+                "text": "'full'"
+              },
+              {
+                "reaction": "The second if checks hp after it was healed: 13 > 12.",
+                "text": "'ok'"
+              },
+              {
+                "reaction": "if and else never both run.",
+                "text": "'full' and 'ok'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The program ended. What does status hold?",
+          "frame": 6,
+          "var": "status"
+        }
+      ],
+      "code": [
+        "hp = 8",
+        "shield = False",
+        "if hp < 10 and not shield:",
+        "    hp = hp + 5",
+        "if hp > 12:",
+        "    status = \"full\"",
+        "else:",
+        "    status = \"ok\""
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "8"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "8",
+                "shield": "False"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "8",
+                "shield": "False"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "13",
+                "shield": "False"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 6,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "13",
+                "shield": "False"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "hp": "13",
+                "shield": "False",
+                "status": "'full'"
+              }
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-trace#hint-1",
+          "text": "not flips True and False. What is not shield when shield is False?",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-trace#hint-2",
+          "text": "Each if is checked on its own, using the values at that moment.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "cd-g-trace",
+      "kind": "trace",
+      "mode": "guided",
+      "narration": [
+        "Line 1 is next.",
+        "hp is 8. Line 2 sets shield.",
+        "shield is False, so not shield is True. And 8 < 10 is True too.",
+        "Both True, so the indented line runs and heals hp.",
+        "A second, separate if. It doesn't care what the first one did; it checks hp as it is now.",
+        "Python checked hp > 12 using hp as it is now. The arrow shows which block it chose; the other one is skipped.",
+        "Finished."
+      ],
+      "outcomes": [
+        "cd-o2",
+        "cd-o3"
+      ],
+      "prompt": "Step through. Fill in each hidden value before moving on.",
+      "title": "Trace the shield"
+    },
+    {
+      "bugLine": 3,
+      "code": [
+        "coins = 5",
+        "price = 5",
+        "if coins > price:",
+        "    print(\"bought\")",
+        "else:",
+        "    print(\"not enough\")"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "if coins >= price:",
+          "output": "bought\n",
+          "reaction": "Yes. > means strictly more; >= also allows equal."
+        },
+        {
+          "fixLine": "if coins == price + 1:",
+          "output": "not enough\n",
+          "reaction": "That's only True for exactly 6 coins. 5 still prints not enough."
+        },
+        {
+          "fixLine": "if coins < price:",
+          "output": "not enough\n",
+          "reaction": "That flips the test: now having too little would buy it."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-fix#hint-1",
+          "text": "Is 5 > 5 True or False?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "cd-g-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "5 coins is the situation we're testing.",
+        "2": "The price is right.",
+        "6": "This line runs because the test above came out False. Look at the test."
+      },
+      "mode": "guided",
+      "outcomes": [
+        "cd-o2"
+      ],
+      "prompt": "5 coins should buy a 5-coin item, but this says not enough. Tap the wrong line, then pick the repair.",
+      "symptom": {
+        "actual": "not enough\n",
+        "expected": "bought"
+      },
+      "title": "Exactly enough coins"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    print(\"odd\")",
+          "reaction": "4 % 2 is 0, so the if is True and this would print odd for an even number."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-parsons#hint-1",
+          "text": "n has to exist before the if can test it.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-parsons#hint-2",
+          "text": "The indented print belongs right under the if. The unindented one always runs, so it goes last.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "cd-g-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "n = 4"
+        },
+        {
+          "id": "b",
+          "line": "if n % 2 == 0:"
+        },
+        {
+          "id": "c",
+          "line": "    print(\"even\")"
+        },
+        {
+          "id": "d",
+          "line": "print(\"done\")"
+        }
+      ],
+      "mode": "guided",
+      "outcomes": [
+        "cd-o3"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints even, then done. One line isn't needed.",
+      "start": [
+        "d",
+        "c",
+        "x",
+        "b",
+        "a"
+      ],
+      "target": "even\ndone",
+      "title": "Put it in order: even or odd"
+    },
+    {
+      "grading": "self-check",
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "cd-g-explain#hint-1",
+          "text": "Which condition did Python check first, and what happens after one is True?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "cd-g-explain",
+      "kind": "explain",
+      "mode": "guided",
+      "model": "Python asked n > 10 first. That was True, so it printed big and skipped the rest of the chain without checking n > 40. Swap them: test n > 40 first, then elif n > 10.",
+      "outcomes": [
+        "cd-o1"
+      ],
+      "prompt": "In your own words: in the order trap, n was 50 and n > 40 is true. Why didn't huge print, and how would you change the program so it does?",
+      "rubric": [
+        {
+          "id": "cd-g-explain#k1",
+          "idea": "Python checks if, then each elif, top to bottom."
+        },
+        {
+          "id": "cd-g-explain#k2",
+          "idea": "Only the first True branch runs; the rest are skipped."
+        },
+        {
+          "id": "cd-g-explain#k3",
+          "idea": "Put the more specific test (n > 40) before the general one (n > 10)."
+        }
+      ],
+      "title": "Explain it back: why huge never printed"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-grade#help-1",
+          "text": "Ask each condition in order. Stop at the first True."
+        },
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-grade#help-2",
+          "text": "72 >= 90 False; 72 >= 70 True → B. Stop."
+        }
+      ],
+      "answer": {
+        "expected": "B",
+        "misreadings": [
+          {
+            "reaction": "Only the first True branch runs. After B, the rest of the chain is skipped.",
+            "text": "B\nC"
+          },
+          {
+            "reaction": "72 >= 70 is True, and that's checked before 72 >= 50.",
+            "text": "C"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "score = 72",
+        "if score >= 90:",
+        "    print(\"A\")",
+        "elif score >= 70:",
+        "    print(\"B\")",
+        "elif score >= 50:",
+        "    print(\"C\")",
+        "else:",
+        "    print(\"D\")"
+      ],
+      "id": "cd-i-grade",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "cd-o1"
+      ],
+      "output": "B\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "On your own: the grade ladder"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-grade-cb#help-1",
+          "text": "8 < 5? 8 < 12?"
+        }
+      ],
+      "answer": {
+        "expected": "morning",
+        "misreadings": [
+          {
+            "reaction": "One branch at most. After the first True, Python leaves the chain.",
+            "text": "morning\nafternoon"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "t = 8",
+        "if t < 5:",
+        "    print(\"early\")",
+        "elif t < 12:",
+        "    print(\"morning\")",
+        "elif t < 18:",
+        "    print(\"afternoon\")",
+        "else:",
+        "    print(\"night\")"
+      ],
+      "comebackFor": "cd-i-grade",
+      "id": "cd-i-grade-cb",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "cd-o1"
+      ],
+      "output": "morning\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "Comeback: what part of the day?"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-trace#help-1",
+          "text": "x > y is False, but y > 8 is True. False or True is True."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "8",
+            "misreadings": [
+              {
+                "reaction": "or needs only one True side. 9 > 8 is True, so line 4 runs.",
+                "text": "4"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "Line 4 just ran. What number does x hold?",
+          "frame": 4,
+          "var": "x"
+        },
+        {
+          "answer": {
+            "expected": "1",
+            "misreadings": [
+              {
+                "reaction": "x is 8 by line 5, so x == 8 is True and y changes.",
+                "text": "9"
+              },
+              {
+                "reaction": "Line 6 uses x after it was doubled to 8.",
+                "text": "5"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The program ended. What number does y hold?",
+          "frame": 6,
+          "var": "y"
+        }
+      ],
+      "code": [
+        "x = 4",
+        "y = 9",
+        "if x > y or y > 8:",
+        "    x = x * 2",
+        "if x == 8:",
+        "    y = y - x"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "x": "4"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "x": "4",
+                "y": "9"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "x": "4",
+                "y": "9"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "x": "8",
+                "y": "9"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 6,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "x": "8",
+                "y": "9"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "x": "8",
+                "y": "1"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "cd-i-trace",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "x is 4. Line 2 sets y.",
+        "Python checks the or: is either side True?",
+        "The body of the first if runs.",
+        "A second if checks x as it is now.",
+        "The body of the second if runs.",
+        "Finished."
+      ],
+      "outcomes": [
+        "cd-o2",
+        "cd-o3"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "On your own: or"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-trace-cb#help-1",
+          "text": "6 < 2 is False. False and anything is False."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "8",
+            "misreadings": [
+              {
+                "reaction": "The else block runs because the and was False, so b changes.",
+                "text": "2"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The program ended. What number does b hold?",
+          "frame": 4,
+          "var": "b"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right: a = 0 is in the if block, which didn't run.",
+                "text": "6"
+              },
+              {
+                "reaction": "a = 0 only runs if the and is True. Is 6 < 2?",
+                "text": "0"
+              },
+              {
+                "reaction": "b got 8, not a.",
+                "text": "8"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "And what does a hold?",
+          "frame": 4,
+          "var": "a"
+        }
+      ],
+      "code": [
+        "a = 6",
+        "b = 2",
+        "if a < b and b > 0:",
+        "    a = 0",
+        "else:",
+        "    b = a + b"
+      ],
+      "comebackFor": "cd-i-trace",
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "a": "6"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "a": "6",
+                "b": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 6,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "a": "6",
+                "b": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "a": "6",
+                "b": "8"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "cd-i-trace-cb",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "a is 6. Line 2 sets b.",
+        "Python checks the and: both sides must be True.",
+        "The condition was False, so Python jumped to the else block.",
+        "Finished."
+      ],
+      "outcomes": [
+        "cd-o2",
+        "cd-o3"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "Comeback: and with an else"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-fix#help-1",
+          "text": "One symbol stores a value, another compares two values. Which one does an if need?"
+        }
+      ],
+      "bugLine": 2,
+      "code": [
+        "temp = 20",
+        "if temp = 20:",
+        "    print(\"just right\")"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "if temp == 20:",
+          "output": "just right\n",
+          "reaction": "Yes: == asks 'are these equal?'; = stores a value."
+        },
+        {
+          "fixLine": "if (temp = 20):",
+          "output": "",
+          "raises": "SyntaxError",
+          "reaction": "Brackets don't help: = still can't be used as a question, so it still won't start."
+        },
+        {
+          "fixLine": "if temp != 20:",
+          "output": "",
+          "reaction": "!= means 'not equal', so it's False for 20 and nothing prints."
+        }
+      ],
+      "id": "cd-i-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "Here = is right: it stores 20 in temp.",
+        "3": "This line is fine. With a SyntaxError, Python won't run any line, not even line 1."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "cd-o2"
+      ],
+      "prompt": "This should print just right when temp is 20, but it won't even start. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "",
+        "expected": "just right",
+        "raises": "SyntaxError"
+      },
+      "title": "On your own: the thermostat"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-fix-cb#help-1",
+          "text": "Is 0 < 0 True?"
+        }
+      ],
+      "bugLine": 4,
+      "code": [
+        "lives = 0",
+        "if lives > 0:",
+        "    print(\"keep playing\")",
+        "if lives < 0:",
+        "    print(\"game over\")"
+      ],
+      "comebackFor": "cd-i-fix",
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "if lives <= 0:",
+          "output": "game over\n",
+          "reaction": "Yes: 0 counts as out."
+        },
+        {
+          "fixLine": "if lives < -1:",
+          "output": "",
+          "reaction": "0 < -1 is False, so it still prints nothing."
+        },
+        {
+          "fixLine": "if lives > 0:",
+          "output": "",
+          "reaction": "That's the keep-playing test again; it's False for 0."
+        }
+      ],
+      "id": "cd-i-fix-cb",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "0 lives is the case we're testing.",
+        "2": "This is right: 0 lives shouldn't keep playing."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "cd-o2"
+      ],
+      "prompt": "With 0 lives this should print game over, but prints nothing. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "",
+        "expected": "game over"
+      },
+      "title": "Comeback: out of lives"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-parsons#help-1",
+          "text": "The if comes before its elif, and each print sits under the test it belongs to."
+        }
+      ],
+      "id": "cd-i-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "t = 18"
+        },
+        {
+          "id": "b",
+          "line": "if t > 25:"
+        },
+        {
+          "id": "c",
+          "line": "    print(\"hot\")"
+        },
+        {
+          "id": "d",
+          "line": "elif t > 15:"
+        },
+        {
+          "id": "e",
+          "line": "    print(\"warm\")"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "cd-o1",
+        "cd-o3"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints warm.",
+      "start": [
+        "e",
+        "b",
+        "d",
+        "a",
+        "c"
+      ],
+      "target": "warm",
+      "title": "On your own: build the chain"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-parsons-cb#help-1",
+          "text": "else needs an if above it; each print goes under its own test."
+        }
+      ],
+      "comebackFor": "cd-i-parsons",
+      "id": "cd-i-parsons-cb",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "k = 3"
+        },
+        {
+          "id": "b",
+          "line": "if k > 10:"
+        },
+        {
+          "id": "c",
+          "line": "    print(\"big\")"
+        },
+        {
+          "id": "d",
+          "line": "else:"
+        },
+        {
+          "id": "e",
+          "line": "    print(\"small\")"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "cd-o1",
+        "cd-o3"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints small.",
+      "start": [
+        "d",
+        "e",
+        "a",
+        "c",
+        "b"
+      ],
+      "target": "small",
+      "title": "Comeback: big or small"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "cd-i-explain#help-1",
+          "text": "List what Lua treats as false, then what Python treats as false."
+        }
+      ],
+      "grading": "self-check",
+      "id": "cd-i-explain",
+      "kind": "explain",
+      "mode": "independent",
+      "model": "Python treats zero, empty strings, empty collections and None as false, so if 0: skips. Lua treats only nil and false as false, so 0 is true there. It bites when a value can legitimately be 0, like a score: if score: would skip a real score of 0. Say what you mean, e.g. if score is not None.",
+      "outcomes": [
+        "cd-o2"
+      ],
+      "prompt": "Explain to a Lua programmer why if 0: skips its block in Python, even though if 0 then runs its block in Lua. When would that difference bite you?",
+      "rubric": [
+        {
+          "id": "cd-i-explain#k1",
+          "idea": "In Lua only nil and false are false; 0 and \"\" are true."
+        },
+        {
+          "id": "cd-i-explain#k2",
+          "idea": "In Python 0, 0.0, \"\", empty lists/dicts and None are all falsy."
+        },
+        {
+          "id": "cd-i-explain#k3",
+          "idea": "Write the comparison you mean (if count > 0, if name != \"\") when the difference matters."
+        }
+      ],
+      "title": "On your own: what counts as false?"
+    }
+  ],
+  "bridge": {
+    "rows": [
+      {
+        "concept": "If block",
+        "lua": "if x > 0 then ... end",
+        "note": "A colon and indentation replace then and end.",
+        "python": "if x > 0:\n    ..."
+      },
+      {
+        "concept": "Else-if",
+        "lua": "elseif",
+        "python": "elif"
+      },
+      {
+        "concept": "Not equal",
+        "lua": "~=",
+        "python": "!="
+      },
+      {
+        "concept": "Combine",
+        "lua": "and / or / not",
+        "note": "Same words.",
+        "python": "and / or / not"
+      },
+      {
+        "concept": "What is false",
+        "lua": "only nil and false",
+        "note": "0 and \"\" are true in Lua but false in Python.",
+        "python": "False, None, 0, 0.0, \"\", [], {}"
+      }
+    ],
+    "title": "Lua → Python: decisions"
+  },
+  "format": "morrowdock-code-gym-foundations-lesson",
+  "id": "cg-found-conditionals-v1",
+  "nextLesson": "cg-found-loops-v1",
+  "order": 2,
+  "outcomes": [
+    {
+      "id": "cd-o1",
+      "text": "Predict which branch of an if / elif / else chain runs (the first True one, at most one)."
+    },
+    {
+      "id": "cd-o2",
+      "text": "Work out comparisons and and / or / not to True or False."
+    },
+    {
+      "id": "cd-o3",
+      "text": "Read indentation: which lines belong to a branch and which always run."
+    }
+  ],
+  "referenceCard": {
+    "points": [
+      "== compares; = stores. if temp = 20: won't even start.",
+      "In an if / elif / else chain, the first True branch runs and the rest are skipped.",
+      "Put the most specific test first.",
+      "and: both True. or: at least one True. not: flips.",
+      "Indented lines belong to the branch above; unindented lines always run.",
+      "0, \"\", empty collections and None are falsy in Python (not in Lua)."
+    ],
+    "title": "Conditionals"
+  },
+  "subtitle": "A program that decides. First True wins; indentation shows what belongs.",
+  "teach": [
+    {
+      "body": "A comparison is a question with a True or False answer: 5 > 3 is True, 5 == 3 is False. == asks 'equal?'; = stores a value. Others: != (not equal), <, <=, >, >=.\n\nif condition: runs the indented lines below it only when the condition is True. % gives a remainder, so n % 2 == 0 asks 'is n even?'.",
+      "id": "cd-t1",
+      "title": "Asking a question"
+    },
+    {
+      "body": "if a: … elif b: … else: … is one chain. Python checks a; if it's True, that block runs and the rest of the chain is skipped. Only if a is False does it check b, and so on. else runs when nothing above was True. So at most one block in a chain runs, and order matters.\n\nTwo separate if statements are two separate questions; both can run.",
+      "id": "cd-t2",
+      "title": "Chains: first True wins"
+    },
+    {
+      "body": "x and y is True only when both are. x or y is True when at least one is. not x flips it. Python works out the left side first; if that already decides the answer, the right side is skipped (False and … is False whatever follows). Lua's and / or skip the same way.\n\nIndentation is the structure. Lines indented under if belong to it; the first line back at the left edge is outside and always runs.",
+      "id": "cd-t3",
+      "title": "Combining with and, or, not"
+    }
+  ],
+  "title": "Conditionals: if, elif, else",
+  "version": 1
+}

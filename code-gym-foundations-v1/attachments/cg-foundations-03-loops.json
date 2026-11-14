@@ -1,0 +1,1519 @@
+{
+  "activities": [
+    {
+      "code": [
+        "total = 0",
+        "for n in range(1, 4):",
+        "    total = total + n",
+        "print(total)"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "total": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "1",
+                "total": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "1",
+                "total": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "2",
+                "total": "1"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "2",
+                "total": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "3",
+                "total": "3"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "3",
+                "total": "6"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "3",
+                "total": "6"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "6\n",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "n": "3",
+                "total": "6"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "lp-l-watch",
+      "kind": "trace",
+      "mode": "learn",
+      "narration": [
+        "Line 1 is next.",
+        "total starts at 0. The for line hands out the next value from range(1, 4): 1, 2, 3. Stop (4) is never handed out.",
+        "n is 1. The body adds it to total.",
+        "Back to the for line for the next value.",
+        "n is 2. total is 1 so far.",
+        "Back to the for line.",
+        "n is 3, the last value. total is 3 so far.",
+        "Back to the for line, but range has nothing left, so the loop ends.",
+        "Line 4 is outside the loop (not indented), so it runs once, after the loop.",
+        "Printed 6: 0 + 1 + 2 + 3."
+      ],
+      "outcomes": [
+        "lp-o2",
+        "lp-o3"
+      ],
+      "prompt": "Step through. Notice the arrow jumping back up to the for line after each pass.",
+      "title": "Watch it: a running total"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Yes. range(3) starts at 0 and stops before 3: three values.",
+            "text": "0\n1\n2"
+          },
+          {
+            "reaction": "That's Lua's for i = 1, 3. Python's range starts at 0 unless you give a start.",
+            "text": "1\n2\n3"
+          },
+          {
+            "reaction": "range stops before its stop value, so 3 isn't included.",
+            "text": "0\n1\n2\n3"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "for i in range(3):",
+        "    print(i)"
+      ],
+      "id": "lp-l-range",
+      "kind": "predict",
+      "mode": "learn",
+      "outcomes": [
+        "lp-o2"
+      ],
+      "output": "0\n1\n2\n",
+      "prompt": "Guess first; it's free. What does this print?",
+      "reveal": "0, 1, 2. range(n) gives n values starting at 0, which is exactly the valid positions of a list of length n.",
+      "title": "Predict before you peek: range(3)"
+    },
+    {
+      "answer": {
+        "choices": [
+          {
+            "correct": true,
+            "reaction": "Right. When n reaches 0, the while checks 0 > 0, which is False, so the body doesn't run again.",
+            "text": "3\n2\n1\ngo"
+          },
+          {
+            "reaction": "The condition is checked before every pass. Once n is 0, 0 > 0 is False and the loop stops before printing.",
+            "text": "3\n2\n1\n0\ngo"
+          },
+          {
+            "reaction": "print(n) comes before n = n - 1 in the body, so the first print shows 3.",
+            "text": "2\n1\n0\ngo"
+          }
+        ],
+        "type": "choice"
+      },
+      "code": [
+        "n = 3",
+        "while n > 0:",
+        "    print(n)",
+        "    n = n - 1",
+        "print(\"go\")"
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "lp-g-countdown#hint-1",
+          "text": "Make a table: n, is n > 0?, what prints.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "lp-g-countdown#hint-2",
+          "text": "n 3 → True, print 3. n 2 → True, print 2. n 1 → True, print 1. n 0 → False, stop.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "lp-g-countdown",
+      "kind": "predict",
+      "mode": "guided",
+      "outcomes": [
+        "lp-o1"
+      ],
+      "output": "3\n2\n1\ngo\n",
+      "prompt": "What does this print?",
+      "title": "The countdown"
+    },
+    {
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: the second character of 'loop'.",
+                "text": "'o'"
+              },
+              {
+                "reaction": "That was the first pass. Each pass gets the next character.",
+                "text": "'l'"
+              },
+              {
+                "reaction": "for ch in word gives one character at a time, not the whole string.",
+                "text": "'loop'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "Second pass. What does ch hold?",
+          "frame": 5,
+          "var": "ch"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Right: two o's.",
+                "text": "2"
+              },
+              {
+                "reaction": "count only goes up when ch == 'o', not on every pass.",
+                "text": "4"
+              },
+              {
+                "reaction": "Both o's were counted: count goes up on pass 2 and pass 3.",
+                "text": "1"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The program ended. What does count hold?",
+          "frame": 13,
+          "var": "count"
+        }
+      ],
+      "code": [
+        "word = \"loop\"",
+        "count = 0",
+        "for ch in word:",
+        "    if ch == \"o\":",
+        "        count = count + 1"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "count": "0",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'l'",
+                "count": "0",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'l'",
+                "count": "0",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'o'",
+                "count": "0",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'o'",
+                "count": "0",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'o'",
+                "count": "1",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'o'",
+                "count": "1",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 5,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'o'",
+                "count": "1",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'o'",
+                "count": "2",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 4,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'p'",
+                "count": "2",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'p'",
+                "count": "2",
+                "word": "'loop'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "ch": "'p'",
+                "count": "2",
+                "word": "'loop'"
+              }
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "lp-g-trace#hint-1",
+          "text": "Each pass, ch is the next character. count only changes when the if is True.",
+          "tier": "nudge"
+        }
+      ],
+      "id": "lp-g-trace",
+      "kind": "trace",
+      "mode": "guided",
+      "narration": [
+        "Line 1 is next.",
+        "word is 'loop'. Line 2 starts a counter.",
+        "for ch in word hands out one character at a time.",
+        "ch is 'l'. Is it 'o'?",
+        "No, so the body skipped the count. Back to the for line.",
+        "Second pass: the for line handed out the next character. Is it a match?",
+        "Yes, so the counter goes up.",
+        "Back to the for line.",
+        "Third character. Is it 'o'?",
+        "Yes again.",
+        "Back to the for line.",
+        "Fourth character, 'p'. Is it 'o'?",
+        "No. Back to the for line, which has no characters left.",
+        "Finished."
+      ],
+      "outcomes": [
+        "lp-o2",
+        "lp-o3"
+      ],
+      "prompt": "Step through. Fill in each hidden value before moving on.",
+      "title": "Trace: counting o's"
+    },
+    {
+      "bugLine": 1,
+      "code": [
+        "for i in range(1, 5):",
+        "    print(i)"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "for i in range(1, 6):",
+          "output": "1\n2\n3\n4\n5\n",
+          "reaction": "Yes. range stops before its stop value, so to include 5 you stop at 6. (Lua's for i = 1, 5 includes 5; that's the trap.)"
+        },
+        {
+          "fixLine": "for i in range(0, 5):",
+          "output": "0\n1\n2\n3\n4\n",
+          "reaction": "That's five values, but 0 to 4."
+        },
+        {
+          "fixLine": "for i in range(1, 5 + 0):",
+          "output": "1\n2\n3\n4\n",
+          "reaction": "5 + 0 is still 5, so it still stops before 5."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "lp-g-fix#hint-1",
+          "text": "Which numbers does range(1, 5) give? Is 5 one of them?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "lp-g-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "2": "print(i) shows each value it's given. The question is which values the loop gives."
+      },
+      "mode": "guided",
+      "outcomes": [
+        "lp-o2"
+      ],
+      "prompt": "This should print 1 to 5 but stops at 4. Tap the wrong line, then pick the repair.",
+      "symptom": {
+        "actual": "1\n2\n3\n4\n",
+        "expected": "1\n2\n3\n4\n5"
+      },
+      "title": "One short"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    print(total)",
+          "reaction": "Indented, this print is inside the loop and would print the running total each pass (2, 6, 12)."
+        }
+      ],
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "lp-g-parsons#hint-1",
+          "text": "The total has to start before the loop.",
+          "tier": "nudge"
+        },
+        {
+          "exposure": "practiced-with-help",
+          "id": "lp-g-parsons#hint-2",
+          "text": "Print once, after the loop: not indented.",
+          "tier": "strategy"
+        }
+      ],
+      "id": "lp-g-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "total = 0"
+        },
+        {
+          "id": "b",
+          "line": "for n in range(2, 7, 2):"
+        },
+        {
+          "id": "c",
+          "line": "    total = total + n"
+        },
+        {
+          "id": "d",
+          "line": "print(total)"
+        }
+      ],
+      "mode": "guided",
+      "outcomes": [
+        "lp-o3"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 12. One line isn't needed.",
+      "start": [
+        "d",
+        "x",
+        "c",
+        "a",
+        "b"
+      ],
+      "target": "12",
+      "title": "Put it in order: sum the evens"
+    },
+    {
+      "grading": "self-check",
+      "hints": [
+        {
+          "exposure": "practiced-with-help",
+          "id": "lp-g-explain#hint-1",
+          "text": "What's the value of n the last time the condition is asked?",
+          "tier": "nudge"
+        }
+      ],
+      "id": "lp-g-explain",
+      "kind": "explain",
+      "mode": "guided",
+      "model": "A while loop asks its question before each pass. After printing 1, n became 0. Python asked 0 > 0, got False, and left the loop without running print again. The n = n - 1 line is what eventually makes the question False.",
+      "outcomes": [
+        "lp-o1"
+      ],
+      "prompt": "In your own words: the countdown printed 3, 2, 1 and then go. Why didn't it print 0, and when exactly does a while loop stop?",
+      "rubric": [
+        {
+          "id": "lp-g-explain#k1",
+          "idea": "The condition is checked before every pass, including the first."
+        },
+        {
+          "id": "lp-g-explain#k2",
+          "idea": "When n became 0, 0 > 0 was False, so the body didn't run again."
+        },
+        {
+          "id": "lp-g-explain#k3",
+          "idea": "Something in the body has to change the condition, or the loop never ends."
+        }
+      ],
+      "title": "Explain it back: why no 0?"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-triple#help-1",
+          "text": "Make a table of x and whether x < 20 at each check."
+        },
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-triple#help-2",
+          "text": "1 → 3 → 9 → 27. At 27 the check is False."
+        }
+      ],
+      "answer": {
+        "expected": "27",
+        "misreadings": [
+          {
+            "reaction": "After x becomes 9, Python asks 9 < 20 again. True, so one more pass.",
+            "text": "9"
+          },
+          {
+            "reaction": "x only ever holds powers of 3; the loop stops after the first one that isn't below 20.",
+            "text": "20"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "x = 1",
+        "while x < 20:",
+        "    x = x * 3",
+        "print(x)"
+      ],
+      "id": "lp-i-triple",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "lp-o1"
+      ],
+      "output": "27\n",
+      "prompt": "Type exactly what this prints.",
+      "title": "On your own: tripling"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-triple-cb#help-1",
+          "text": "100 → 50 → 25 → 12 → ?"
+        }
+      ],
+      "answer": {
+        "expected": "6",
+        "misreadings": [
+          {
+            "reaction": "12 > 10 is still True, so it halves once more.",
+            "text": "12"
+          },
+          {
+            "reaction": "// drops the remainder, so values stay whole numbers.",
+            "text": "6.25"
+          }
+        ],
+        "type": "typed"
+      },
+      "code": [
+        "k = 100",
+        "while k > 10:",
+        "    k = k // 2",
+        "print(k)"
+      ],
+      "comebackFor": "lp-i-triple",
+      "id": "lp-i-triple-cb",
+      "kind": "predict",
+      "mode": "independent",
+      "outcomes": [
+        "lp-o1"
+      ],
+      "output": "6\n",
+      "prompt": "Type exactly what this prints. // divides and drops any remainder (7 // 2 is 3).",
+      "title": "Comeback: halving"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-trace#help-1",
+          "text": "range(3) gives 0, 1, 2. Each pass adds twice that."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "expected": "2",
+            "misreadings": [
+              {
+                "reaction": "The second pass has i = 1 (range starts at 0), so it adds 1 * 2.",
+                "text": "4"
+              },
+              {
+                "reaction": "That's more than the first two passes add. List i for each pass so far.",
+                "text": "6"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The second pass just finished. What number does total hold?",
+          "frame": 5,
+          "var": "total"
+        },
+        {
+          "answer": {
+            "expected": "6",
+            "misreadings": [
+              {
+                "reaction": "i takes 0, 1, 2, not 1, 2, 3.",
+                "text": "12"
+              },
+              {
+                "reaction": "Three passes: 0 + 2 + 4.",
+                "text": "4"
+              }
+            ],
+            "type": "typed"
+          },
+          "ask": "The program ended. What number does total hold?",
+          "frame": 8,
+          "var": "total"
+        }
+      ],
+      "code": [
+        "total = 0",
+        "for i in range(3):",
+        "    total = total + i * 2"
+      ],
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "total": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "i": "0",
+                "total": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "i": "0",
+                "total": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "i": "1",
+                "total": "0"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "i": "1",
+                "total": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "i": "2",
+                "total": "2"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "i": "2",
+                "total": "6"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "i": "2",
+                "total": "6"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "lp-i-trace",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "total starts at 0. The for line hands out the next value.",
+        "First pass: the body adds i * 2.",
+        "Back to the for line.",
+        "Second pass.",
+        "Back to the for line.",
+        "Third pass.",
+        "Back to the for line; nothing left.",
+        "Finished."
+      ],
+      "outcomes": [
+        "lp-o2",
+        "lp-o3"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "On your own: doubles"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-trace-cb#help-1",
+          "text": "Write s after each pass."
+        }
+      ],
+      "checkpoints": [
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: c + s puts the new character in front.",
+                "text": "'ba'"
+              },
+              {
+                "reaction": "Look at the order in c + s: the new character comes first.",
+                "text": "'ab'"
+              },
+              {
+                "reaction": "s isn't replaced; it's the new character plus what s already held.",
+                "text": "'b'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The second pass just finished. What does s hold?",
+          "frame": 5,
+          "var": "s"
+        },
+        {
+          "answer": {
+            "choices": [
+              {
+                "correct": true,
+                "reaction": "Yes: the string comes out reversed.",
+                "text": "'cba'"
+              },
+              {
+                "reaction": "Each new character goes in front, so the order flips.",
+                "text": "'abc'"
+              },
+              {
+                "reaction": "s keeps what it had and adds to it.",
+                "text": "'c'"
+              }
+            ],
+            "type": "choice"
+          },
+          "ask": "The program ended. What does s hold?",
+          "frame": 8,
+          "var": "s"
+        }
+      ],
+      "code": [
+        "s = \"\"",
+        "for c in \"abc\":",
+        "    s = c + s"
+      ],
+      "comebackFor": "lp-i-trace",
+      "frames": [
+        {
+          "event": "line",
+          "line": 1,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {}
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "s": "''"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "c": "'a'",
+                "s": "''"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "c": "'a'",
+                "s": "'a'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "c": "'b'",
+                "s": "'a'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "c": "'b'",
+                "s": "'ba'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 3,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "c": "'c'",
+                "s": "'ba'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "line",
+          "line": 2,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "c": "'c'",
+                "s": "'cba'"
+              }
+            }
+          ]
+        },
+        {
+          "event": "end",
+          "line": null,
+          "out": "",
+          "stack": [
+            {
+              "fn": "<module>",
+              "vars": {
+                "c": "'c'",
+                "s": "'cba'"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "lp-i-trace-cb",
+      "kind": "trace",
+      "mode": "independent",
+      "narration": [
+        "Line 1 is next.",
+        "s starts empty. The for line hands out one character.",
+        "First pass: c goes in front of s.",
+        "Back to the for line.",
+        "Second pass.",
+        "Back to the for line.",
+        "Third pass.",
+        "Back to the for line; nothing left.",
+        "Finished."
+      ],
+      "outcomes": [
+        "lp-o2",
+        "lp-o3"
+      ],
+      "prompt": "Step through and fill in each hidden value.",
+      "title": "Comeback: building backwards"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-fix#help-1",
+          "text": "After the loop, total only remembers the last n. Which line throws away the earlier ones?"
+        }
+      ],
+      "bugLine": 3,
+      "code": [
+        "total = 0",
+        "for n in [4, 5, 6]:",
+        "    total = n",
+        "print(total)"
+      ],
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "    total = total + n",
+          "output": "15\n",
+          "reaction": "Yes: keep what you had and add this pass's n."
+        },
+        {
+          "fixLine": "    total = n + n",
+          "output": "12\n",
+          "reaction": "That doubles this pass's n and still throws away the earlier ones."
+        },
+        {
+          "fixLine": "    total = total * n",
+          "output": "0\n",
+          "reaction": "Times 0 stays 0. A sum needs +."
+        }
+      ],
+      "id": "lp-i-fix",
+      "kind": "fix",
+      "lineReactions": {
+        "1": "Starting at 0 is right for a sum.",
+        "2": "The loop visits 4, 5 and 6; that's right.",
+        "4": "This prints after the loop, which is what we want."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "lp-o3"
+      ],
+      "prompt": "This should add up 4, 5 and 6 to make 15. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "6\n",
+        "expected": "15"
+      },
+      "title": "On your own: the total that forgets"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-fix-cb#help-1",
+          "text": "What is 0 times anything?"
+        }
+      ],
+      "bugLine": 1,
+      "code": [
+        "product = 0",
+        "for n in [2, 3, 4]:",
+        "    product = product * n",
+        "print(product)"
+      ],
+      "comebackFor": "lp-i-fix",
+      "fixes": [
+        {
+          "correct": true,
+          "fixLine": "product = 1",
+          "output": "24\n",
+          "reaction": "Yes: 1 is the starting point for multiplying, the way 0 is for adding."
+        },
+        {
+          "fixLine": "product = 2",
+          "output": "48\n",
+          "reaction": "That multiplies the first 2 in twice: 48."
+        },
+        {
+          "fixLine": "product = None",
+          "output": "",
+          "raises": "TypeError",
+          "reaction": "None can't be multiplied, so the program stops with a TypeError."
+        }
+      ],
+      "id": "lp-i-fix-cb",
+      "kind": "fix",
+      "lineReactions": {
+        "3": "Multiplying into the running product is right. What's it multiplying from?",
+        "4": "print is after the loop; fine."
+      },
+      "mode": "independent",
+      "outcomes": [
+        "lp-o3"
+      ],
+      "prompt": "This should multiply 2 × 3 × 4 to make 24. Find the wrong line and repair it.",
+      "symptom": {
+        "actual": "0\n",
+        "expected": "24"
+      },
+      "title": "Comeback: the product that stays zero"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-parsons#help-1",
+          "text": "Lua's for i = 3, 1, -1 needs a step in Python too: the third number in range."
+        }
+      ],
+      "distractors": [
+        {
+          "id": "x",
+          "line": "for i in range(3, 0):",
+          "reaction": "Without a step of -1, range counts up from 3 and stops before 0, so it gives nothing at all."
+        }
+      ],
+      "id": "lp-i-parsons",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "for i in range(3, 0, -1):"
+        },
+        {
+          "id": "b",
+          "line": "    print(i)"
+        },
+        {
+          "id": "c",
+          "line": "print(\"liftoff\")"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "lp-o2"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 3, 2, 1 on separate lines and then liftoff. One line isn't needed.",
+      "start": [
+        "c",
+        "x",
+        "b",
+        "a"
+      ],
+      "target": "3\n2\n1\nliftoff",
+      "title": "On your own: liftoff"
+    },
+    {
+      "accepted": [
+        [
+          "a",
+          "b",
+          "c"
+        ]
+      ],
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-parsons-cb#help-1",
+          "text": "Work out sq before printing it."
+        }
+      ],
+      "comebackFor": "lp-i-parsons",
+      "distractors": [
+        {
+          "id": "x",
+          "line": "    print(k)",
+          "reaction": "That prints k itself (1, 2, 3), not its square."
+        }
+      ],
+      "id": "lp-i-parsons-cb",
+      "kind": "parsons",
+      "lines": [
+        {
+          "id": "a",
+          "line": "for k in range(1, 4):"
+        },
+        {
+          "id": "b",
+          "line": "    sq = k * k"
+        },
+        {
+          "id": "c",
+          "line": "    print(sq)"
+        }
+      ],
+      "mode": "independent",
+      "outcomes": [
+        "lp-o2"
+      ],
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 4 and 9 on separate lines. One line isn't needed.",
+      "start": [
+        "c",
+        "x",
+        "a",
+        "b"
+      ],
+      "target": "1\n4\n9",
+      "title": "Comeback: squares"
+    },
+    {
+      "afterAttemptHelp": [
+        {
+          "exposure": "returns-later",
+          "id": "lp-i-explain#help-1",
+          "text": "Write out the values each loop gives."
+        }
+      ],
+      "grading": "self-check",
+      "id": "lp-i-explain",
+      "kind": "explain",
+      "mode": "independent",
+      "model": "Lua's for i = 1, 5 runs with 1, 2, 3, 4, 5. Python's range(1, 5) stops before 5, so it gives 1 to 4: one fewer. To match Lua you write range(1, 6). Python counts this way because lists start at position 0: range(len(xs)) is exactly the positions you can use, and range(a, b) always has b − a values.",
+      "outcomes": [
+        "lp-o2"
+      ],
+      "prompt": "Explain to a Lua programmer why for i = 1, 5 do in Lua and for i in range(1, 5): in Python don't loop the same number of times. How do you write Lua's loop in Python, and why is Python's way handy for lists?",
+      "rubric": [
+        {
+          "id": "lp-i-explain#k1",
+          "idea": "Lua's numeric for includes the end value; range stops before it."
+        },
+        {
+          "id": "lp-i-explain#k2",
+          "idea": "Lua's 1..5 is range(1, 6) in Python."
+        },
+        {
+          "id": "lp-i-explain#k3",
+          "idea": "range(len(xs)) gives exactly the valid positions 0 … len(xs) − 1 of a list."
+        }
+      ],
+      "title": "On your own: Lua for vs Python range"
+    }
+  ],
+  "bridge": {
+    "rows": [
+      {
+        "concept": "While",
+        "lua": "while n > 0 do ... end",
+        "note": "Colon and indentation instead of do / end.",
+        "python": "while n > 0:\n    ..."
+      },
+      {
+        "concept": "Count 1 to 5",
+        "lua": "for i = 1, 5 do",
+        "note": "Lua includes the end; range stops before it.",
+        "python": "for i in range(1, 6):"
+      },
+      {
+        "concept": "Count down",
+        "lua": "for i = 5, 1, -1 do",
+        "python": "for i in range(5, 0, -1):"
+      },
+      {
+        "concept": "Each item",
+        "lua": "for _, x in ipairs(t) do",
+        "note": "for i, x in enumerate(t) when you need the position too (it starts at 0).",
+        "python": "for x in t:"
+      },
+      {
+        "concept": "Add to a total",
+        "lua": "total = total + x",
+        "note": "Python has +=; Lua doesn't.",
+        "python": "total = total + x  # or total += x"
+      },
+      {
+        "concept": "Leave early",
+        "lua": "break",
+        "python": "break"
+      },
+      {
+        "concept": "Skip to next pass",
+        "lua": "goto continue",
+        "note": "Lua needs a ::continue:: label at the end of the loop body (Lua 5.2+ or LuaJIT); Python's continue needs no label.",
+        "python": "continue"
+      }
+    ],
+    "title": "Lua → Python: loops"
+  },
+  "format": "morrowdock-code-gym-foundations-lesson",
+  "id": "cg-found-loops-v1",
+  "nextLesson": "cg-found-functions-v1",
+  "order": 3,
+  "outcomes": [
+    {
+      "id": "lp-o1",
+      "text": "Trace a while loop: the condition is checked before every pass, and the loop ends when it's False."
+    },
+    {
+      "id": "lp-o2",
+      "text": "Predict the values of range(start, stop, step) and how many times a for loop runs (stop is excluded)."
+    },
+    {
+      "id": "lp-o3",
+      "text": "Use an accumulator (start a total, update it each pass) and predict its final value."
+    }
+  ],
+  "referenceCard": {
+    "points": [
+      "while checks its condition before every pass; something in the body must change it.",
+      "range(a, b) gives a, a+1, …, b−1: b − a values when b ≥ a (none otherwise). range(n) starts at 0.",
+      "Lua's for i = 1, n is range(1, n + 1).",
+      "Count down with a negative step: range(5, 0, -1).",
+      "Accumulator: total = 0 before, total = total + x inside, use it after. Products start at 1.",
+      "Indented lines repeat; the first unindented line after the loop runs once."
+    ],
+    "title": "Loops"
+  },
+  "subtitle": "Do it again: until a question turns False, or once for each value.",
+  "teach": [
+    {
+      "body": "while condition: checks the condition. If it's True, the indented body runs, then Python goes back and checks again. When the check is False, Python skips past the loop. Something inside the body has to change the condition, or the loop never ends.\n\nk // 2 divides and rounds down, which for positive numbers drops the remainder (7 // 2 is 3).",
+      "id": "lp-t1",
+      "title": "while: repeat while a question is True"
+    },
+    {
+      "body": "for x in something: runs the body once per value, with x set to that value: each character of a string, each item of a list, or each number from range.\n\nrange(stop) gives 0 up to stop − 1. range(start, stop) gives start up to stop − 1. range(start, stop, step) counts by step; a negative step counts down. The stop value is never included.",
+      "id": "lp-t2",
+      "title": "for: once for each value"
+    },
+    {
+      "body": "To add things up: start total = 0 before the loop, do total = total + x inside, and use total after the loop. For multiplying, start at 1. Indentation decides what repeats: indented lines run every pass; the first unindented line after the loop runs once, at the end.\n\nbreak leaves a loop early; you'll meet it again in later lessons.",
+      "id": "lp-t3",
+      "title": "The accumulator pattern"
+    }
+  ],
+  "title": "Loops: while, for and range",
+  "version": 1
+}

@@ -1,0 +1,231 @@
+{
+  "format": "morrowdock-course-bundle",
+  "version": 1,
+  "course": {
+    "id": "cg-foundations-v1",
+    "title": "Programming foundations"
+  },
+  "topics": [
+    {
+      "id": "cg-found-names-values-v1",
+      "title": "Names, values and print"
+    },
+    {
+      "id": "cg-found-conditionals-v1",
+      "title": "Conditionals: if, elif, else"
+    },
+    {
+      "id": "cg-found-loops-v1",
+      "title": "Loops: while, for and range"
+    },
+    {
+      "id": "cg-found-functions-v1",
+      "title": "Functions: def, return, scope"
+    },
+    {
+      "id": "cg-found-lists-dicts-v1",
+      "title": "Lists and dicts"
+    },
+    {
+      "id": "cg-found-recursion-v1",
+      "title": "Recursion and the call stack"
+    }
+  ],
+  "materials": [
+    {
+      "id": "cg-found-names-values-v1-material",
+      "title": "Names, values and print",
+      "ref": "attachments/cg-foundations-01-names-values.json"
+    },
+    {
+      "id": "cg-found-conditionals-v1-material",
+      "title": "Conditionals: if, elif, else",
+      "ref": "attachments/cg-foundations-02-conditionals.json"
+    },
+    {
+      "id": "cg-found-loops-v1-material",
+      "title": "Loops: while, for and range",
+      "ref": "attachments/cg-foundations-03-loops.json"
+    },
+    {
+      "id": "cg-found-functions-v1-material",
+      "title": "Functions: def, return, scope",
+      "ref": "attachments/cg-foundations-04-functions.json"
+    },
+    {
+      "id": "cg-found-lists-dicts-v1-material",
+      "title": "Lists and dicts",
+      "ref": "attachments/cg-foundations-05-lists-dicts.json"
+    },
+    {
+      "id": "cg-found-recursion-v1-material",
+      "title": "Recursion and the call stack",
+      "ref": "attachments/cg-foundations-06-recursion.json"
+    }
+  ],
+  "assignments": [],
+  "questions": [
+    {
+      "id": "nv-l-plus",
+      "topicID": "cg-found-names-values-v1",
+      "prompt": "Make a guess first. It's free. What do these two lines print?\n\nprint(3 + 4)\nprint(\"3\" + \"4\")",
+      "choices": [
+        "7\n34",
+        "7\n7",
+        "34\n34"
+      ],
+      "answer": 0,
+      "explanation": "Yes. Numbers add; strings join, character by character.",
+      "materialID": "cg-found-names-values-v1-material"
+    },
+    {
+      "id": "nv-g-copy",
+      "topicID": "cg-found-names-values-v1",
+      "prompt": "What does this print?\n\na = 5\nb = a\na = a + 1\nprint(a, b)",
+      "choices": [
+        "6 5",
+        "6 6",
+        "5 5"
+      ],
+      "answer": 0,
+      "explanation": "Right. b took a's value, 5, when line 2 ran. Line 3 moves only a.",
+      "materialID": "cg-found-names-values-v1-material"
+    },
+    {
+      "id": "cd-l-order",
+      "topicID": "cg-found-conditionals-v1",
+      "prompt": "Guess first; it's free. 50 is bigger than 10 and bigger than 40. What prints?\n\nn = 50\nif n > 10:\n    print(\"big\")\nelif n > 40:\n    print(\"huge\")",
+      "choices": [
+        "big",
+        "huge",
+        "big\nhuge"
+      ],
+      "answer": 0,
+      "explanation": "Yes. Python checks top to bottom and stops at the first True. elif is never even asked.",
+      "materialID": "cg-found-conditionals-v1-material"
+    },
+    {
+      "id": "cd-g-teen",
+      "topicID": "cg-found-conditionals-v1",
+      "prompt": "What does this print?\n\nage = 15\nif age >= 13 and age < 20:\n    print(\"teen\")\nelse:\n    print(\"not teen\")",
+      "choices": [
+        "teen",
+        "not teen",
+        "teen\nnot teen"
+      ],
+      "answer": 0,
+      "explanation": "Right: 15 >= 13 is True and 15 < 20 is True, so and gives True.",
+      "materialID": "cg-found-conditionals-v1-material"
+    },
+    {
+      "id": "lp-l-range",
+      "topicID": "cg-found-loops-v1",
+      "prompt": "Guess first; it's free. What does this print?\n\nfor i in range(3):\n    print(i)",
+      "choices": [
+        "0\n1\n2",
+        "1\n2\n3",
+        "0\n1\n2\n3"
+      ],
+      "answer": 0,
+      "explanation": "Yes. range(3) starts at 0 and stops before 3: three values.",
+      "materialID": "cg-found-loops-v1-material"
+    },
+    {
+      "id": "lp-g-countdown",
+      "topicID": "cg-found-loops-v1",
+      "prompt": "What does this print?\n\nn = 3\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint(\"go\")",
+      "choices": [
+        "3\n2\n1\ngo",
+        "3\n2\n1\n0\ngo",
+        "2\n1\n0\ngo"
+      ],
+      "answer": 0,
+      "explanation": "Right. When n reaches 0, the while checks 0 > 0, which is False, so the body doesn't run again.",
+      "materialID": "cg-found-loops-v1-material"
+    },
+    {
+      "id": "fn-l-print-return",
+      "topicID": "cg-found-functions-v1",
+      "prompt": "Guess first; it's free. What does this print?\n\ndef shout(w):\n    print(w + \"!\")\nr = shout(\"hey\")\nprint(r)",
+      "choices": [
+        "hey!\nNone",
+        "hey!\nhey!",
+        "hey!"
+      ],
+      "answer": 0,
+      "explanation": "Yes. shout prints, but returns nothing, so r gets None.",
+      "materialID": "cg-found-functions-v1-material"
+    },
+    {
+      "id": "fn-g-area",
+      "topicID": "cg-found-functions-v1",
+      "prompt": "What does this print?\n\ndef area(w, h):\n    return w * h\nprint(area(3, 4) + area(1, 2))",
+      "choices": [
+        "14",
+        "12",
+        "12\n2"
+      ],
+      "answer": 0,
+      "explanation": "Right: each call is replaced by its return value, 12 + 2.",
+      "materialID": "cg-found-functions-v1-material"
+    },
+    {
+      "id": "ld-l-alias",
+      "topicID": "cg-found-lists-dicts-v1",
+      "prompt": "Guess first; it's free. What does this print?\n\na = [1, 2]\nb = a\na.append(3)\nprint(b)",
+      "choices": [
+        "[1, 2, 3]",
+        "[1, 2]",
+        "[1, 2, 3, 3]"
+      ],
+      "answer": 0,
+      "explanation": "Yes. b = a didn't copy the list; both names label the same list, so b sees the change.",
+      "materialID": "cg-found-lists-dicts-v1-material"
+    },
+    {
+      "id": "ld-g-index",
+      "topicID": "cg-found-lists-dicts-v1",
+      "prompt": "What does this print?\n\npets = [\"cat\", \"dog\", \"eel\"]\nprint(pets[1], len(pets))",
+      "choices": [
+        "dog 3",
+        "cat 3",
+        "dog 2"
+      ],
+      "answer": 0,
+      "explanation": "Right: position 1 is the second item, and there are 3 items.",
+      "materialID": "cg-found-lists-dicts-v1-material"
+    },
+    {
+      "id": "rc-l-order",
+      "topicID": "cg-found-recursion-v1",
+      "prompt": "Guess first; it's free. What does show(3) print?\n\ndef show(n):\n    if n == 0:\n        return\n    print(n)\n    show(n - 1)\nshow(3)",
+      "choices": [
+        "3\n2\n1",
+        "1\n2\n3",
+        "3\n2\n1\n0"
+      ],
+      "answer": 0,
+      "explanation": "Yes. Each call prints its own n first, then calls with one less. n = 0 is the base case and prints nothing.",
+      "materialID": "cg-found-recursion-v1-material"
+    },
+    {
+      "id": "rc-g-total",
+      "topicID": "cg-found-recursion-v1",
+      "prompt": "What does this print?\n\ndef total(n):\n    if n == 0:\n        return 0\n    return n + total(n - 1)\nprint(total(4))",
+      "choices": [
+        "10",
+        "4",
+        "24"
+      ],
+      "answer": 0,
+      "explanation": "Right: 4 + 3 + 2 + 1 + 0.",
+      "materialID": "cg-found-recursion-v1-material"
+    }
+  ],
+  "examBlueprint": {
+    "questionCount": 12,
+    "minutes": 30,
+    "points": 12
+  },
+  "equationSheet": null
+}

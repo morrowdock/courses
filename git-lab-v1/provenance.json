@@ -1,0 +1,35 @@
+{
+  "author": "Collin Craig",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0-draft",
+  "sources": [
+    "Owner-authorized original AI-authored course: content/git-lab/course-v1; source commit cc40e0a6315a9f86d21496f268b34aa8547786d3; permission 2026-11-14",
+    "Item audit: docs/provenance/git-lab-v1.md"
+  ],
+  "assets": [
+    {
+      "path": "attachments/learner.json",
+      "sha256": "e620d02d06941d6e10d95b265fc160496920cd6a40e3a72affeb08c9f932a3b0",
+      "origin": "original by owner AI agents",
+      "rightsHolder": "Collin Craig",
+      "license": "CC-BY-SA-4.0",
+      "changes": "Learner-safe export; public metadata and CourseBundle index; one unsafe example task excluded"
+    },
+    {
+      "path": "bundle.json",
+      "sha256": "8a7e79fe92fe292ee0afb9eb92363b84588a4169a2f877f4a09b672b4bc7c558",
+      "origin": "original by owner AI agents",
+      "rightsHolder": "Collin Craig",
+      "license": "CC-BY-SA-4.0",
+      "changes": "Learner-safe export; public metadata and CourseBundle index; one unsafe example task excluded"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "d33e1cabe3c3af73eaf1c2870b7fd781a044e5f1e41a0c5adc47120f9103e57d",
+      "origin": "original by owner AI agents",
+      "rightsHolder": "Collin Craig",
+      "license": "CC-BY-SA-4.0",
+      "changes": "Learner-safe export; public metadata and CourseBundle index; one unsafe example task excluded"
+    }
+  ]
+}

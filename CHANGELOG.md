@@ -14,3 +14,9 @@ Implementation work dated 2026-11-14.
 - Submission template, review/status labels and a review process requiring two independent external AI fact-check files followed by human maintainer approval.
 - Linux CI schema, provenance/licence, media-integrity, registry/review and regression checks, plus a PR changelog gate with a maintainer `no-changelog` exception.
 - Format, review, versioning and dependency documentation and regression tests. No app ingestion, independent factual approval or public launch is claimed.
+
+### Fixed
+
+- Support maintainer withdrawal/restoration with a recorded reason and preserved review evidence; require fresh review whenever the course content digest changes.
+- Reject credentials in CI using checksum-pinned Gitleaks 8.24.3, with clearly synthetic detection/clean-course regression fixtures.
+- Require a new non-empty parsed Unreleased changelog entry rather than accepting any change to CHANGELOG.md.

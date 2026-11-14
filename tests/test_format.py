@@ -323,6 +323,66 @@ class FormatTests(unittest.TestCase):
         self.course["review"]["status"] = "draft"
         self.reject()
 
+    def withdraw(self, previous="draft"):
+        self.course["review"]["status"] = "withdrawn"
+        self.course["review"]["withdrawal"] = {
+            "by": "Synthetic maintainer", "reason": "Synthetic withdrawal test",
+            "at": "2026-11-14T14:00:00Z", "previousStatus": previous}
+
+    def test_withdrawn_draft_and_registry(self):
+        self.withdraw()
+        self.check()
+        registry = self.registry()
+        registry["entries"][0].update(self.course["review"])
+        self.check_registry_value(registry)
+
+    def test_withdrawn_reviewed_preserves_evidence(self):
+        self.reviewed()
+        earlier = copy.deepcopy(self.course["review"])
+        pinned = content_digest(self.course)
+        self.withdraw("reviewed")
+        self.check()
+        self.assertEqual(self.course["review"]["reviewers"], earlier["reviewers"])
+        self.assertEqual(self.course["review"]["reviewedAt"], earlier["reviewedAt"])
+        self.assertEqual(content_digest(self.course), pinned)
+        registry = self.registry()
+        registry["entries"][0].update(self.course["review"])
+        self.check_registry_value(registry)
+        del self.course["review"]["withdrawal"]
+        self.course["review"]["status"] = "reviewed"
+        self.check()  # Same digest may be restored with the preserved reports.
+
+    def test_withdrawn_requires_maintainer_reason(self):
+        self.withdraw()
+        for key in ("by", "reason", "at", "previousStatus"):
+            saved = self.course["review"]["withdrawal"].pop(key)
+            self.reject()
+            self.course["review"]["withdrawal"][key] = saved
+        self.course["review"]["withdrawal"]["reason"] = "  "
+        self.reject()
+
+    def test_withdrawal_record_only_on_withdrawn(self):
+        self.withdraw()
+        self.course["review"]["status"] = "draft"
+        self.reject()
+
+    def test_content_change_invalidates_withdrawn_evidence(self):
+        self.reviewed()
+        self.withdraw("reviewed")
+        self.course["summary"] += " changed"
+        self.reject("stale")
+        self.course["review"]["status"] = "reviewed"
+        del self.course["review"]["withdrawal"]
+        self.reject("stale")
+
+    def test_withdrawal_registry_reason_must_match(self):
+        self.withdraw()
+        registry = self.registry()
+        registry["entries"][0].update(copy.deepcopy(self.course["review"]))
+        registry["entries"][0]["withdrawal"]["reason"] = "Different reason"
+        with self.assertRaisesRegex(ValueError, "withdrawal mismatch"):
+            self.check_registry_value(registry)
+
     def test_stale_review(self):
         self.reviewed()
         self.course["summary"] += " Changed."

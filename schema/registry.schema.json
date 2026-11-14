@@ -73,7 +73,8 @@
             "enum": [
               "draft",
               "in-review",
-              "reviewed"
+              "reviewed",
+              "withdrawn"
             ]
           },
           "reviewedAt": {
@@ -156,6 +157,41 @@
               "humanApprover"
             ],
             "additionalProperties": false
+          },
+          "withdrawal": {
+            "type": "object",
+            "properties": {
+              "by": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "^[^@\\r\\n]+$"
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000,
+                "pattern": "\\S"
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "previousStatus": {
+                "enum": [
+                  "draft",
+                  "in-review",
+                  "reviewed"
+                ]
+              }
+            },
+            "required": [
+              "by",
+              "reason",
+              "at",
+              "previousStatus"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -203,11 +239,32 @@
         "allOf": [
           {
             "if": {
-              "properties": {
-                "status": {
-                  "const": "reviewed"
+              "anyOf": [
+                {
+                  "properties": {
+                    "status": {
+                      "const": "reviewed"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "status": {
+                      "const": "withdrawn"
+                    },
+                    "withdrawal": {
+                      "properties": {
+                        "previousStatus": {
+                          "const": "reviewed"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "withdrawal"
+                  ]
                 }
-              }
+              ]
             },
             "then": {
               "properties": {
@@ -238,6 +295,27 @@
                     }
                   }
                 }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "withdrawn"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "withdrawal"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "withdrawal"
+                ]
               }
             }
           }

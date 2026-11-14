@@ -31,7 +31,7 @@ The Python semantic checks and existing Swift validator also apply. JSON must be
 | `bundle` | `{path: "bundle.json", sha256, size}`; size is bytes, SHA-256 is lowercase hex. |
 | `sources`, `provenance` | Rights/source declarations and complete per-item mappings. |
 | `lessons`, `activities`, `answerChecks`, `media` | Authored structure described below; arrays may be empty except lessons. |
-| `review` | `{status, reviewedAt, reviewers}`; see [REVIEW.md](REVIEW.md). |
+| `review` | `{status, reviewedAt, reviewers, withdrawal?}`; see [REVIEW.md](REVIEW.md). |
 
 ### Bundle compatibility
 
@@ -88,12 +88,12 @@ The v1 profile accepts only the three declared content licences. A CC-BY-SA-4.0 
 
 ## Registry v1
 
-`registry.json` is `{format:"morrowdock-registry-v1",entries:[...]}`. An entry requires `id,version,creators,licence,status,reviewedAt,reviewers`, plus exactly one location:
+`registry.json` is `{format:"morrowdock-registry-v1",entries:[...]}`. An entry requires `id,version,creators,licence,status,reviewedAt,reviewers`, with `status` in `draft`, `in-review`, `reviewed`, `withdrawn`. Withdrawn entries also require a matching `withdrawal` record and retain previous review evidence; see [REVIEW.md](REVIEW.md). Each entry has exactly one location:
 
 - `path`: repository-relative `courses/<id>/<version>/course.json`. All identity, creator, licence and review fields must match the manifest. Git pins local source bytes; the manifest pins bundle/media bytes.
 - `url` and `sha256`: an HTTPS URL for the manifest bytes and their lowercase SHA-256. No `path` is allowed alongside them. Use an immutable full-commit URL, not a moving tag, where the host supports it.
 
-Identity/version pairs are unique. Every local course version must have one entry. Remote entries are **draft proposals only** in this stage; CI does not fetch URLs or claim to verify their bytes. Vendor the package into `courses/` and replace its location with `path` for review. This avoids an untrusted network fetch and makes all evidence reviewable in the PR. Hosted retrieval, digest-checked downloading, archive ingestion and catalog ingestion are pending; a future consumer must fail closed on digest mismatch. The only current entry is the synthetic draft demo.
+Identity/version pairs are unique. Every local course version must have one entry. Remote entries are **draft proposals only** (which a maintainer may withdraw and restore as drafts) in this stage; CI does not fetch URLs or claim to verify their bytes. Vendor the package into `courses/` and replace its location with `path` for review. This avoids an untrusted network fetch and makes all evidence reviewable in the PR. Hosted retrieval, digest-checked downloading, archive ingestion and catalog ingestion are pending; a future consumer must fail closed on digest mismatch. The only current entry is the synthetic draft demo.
 
 ## Versioning
 

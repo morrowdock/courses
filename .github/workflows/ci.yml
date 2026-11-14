@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container: swift:6.0
     steps:
-      - run: apt-get update && apt-get install -y python3 python3-venv git
+      - run: apt-get update && apt-get install -y python3 python3-venv git curl ca-certificates
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
@@ -20,6 +20,12 @@ jobs:
         run: |
           python3 -m venv .venv
           .venv/bin/pip install --require-hashes --only-binary=:all: -r requirements.txt
+      - name: Install checksum-pinned Gitleaks 8.24.3
+        run: bash tools/install_gitleaks.sh /usr/local/bin
+      - name: Reject credentials in tracked Git history
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          gitleaks git --redact --no-banner --config .gitleaks.toml --log-opts="--all" .
       # Validate all courses, including changed courses and shared-schema dependants.
       - name: Schemas, provenance, licences, media, registry and Swift validator
         run: .venv/bin/python tools/validate.py

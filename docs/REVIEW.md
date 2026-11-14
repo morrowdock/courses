@@ -11,6 +11,16 @@ Status: implemented repository checks and documented human review process, 2026-
 
 `draft` and `in-review` use `reviewedAt: null`, `humanApprover: null` and zero to two reports. Reports can record unresolved findings. `reviewed` requires exactly two reports with passing verdicts, distinct reviewer names and provider/run pairs, matching course ID/version/content digest, checked no later than the approval time, and a human approval record. The review fields must agree in manifest and registry. These requirements are enforced structurally; a fabricated report can only be rejected by review and repository protections.
 
+## Withdrawal and restoration
+
+Only a **human maintainer** may withdraw or restore an entry, through a reviewed PR. Record the decision and its reason in the PR, including the affected course ID/version and content digest. Withdrawal is a catalog-availability decision, not a deletion or revocation of a valid CC grant. Consumers must exclude `withdrawn` entries from the active catalog.
+
+To withdraw, set both manifest and registry status to `withdrawn` and add matching `withdrawal` records: `{by, reason, at, previousStatus}`. `by` is the maintainer's public display name (no email), `reason` is nonblank public text, `at` is an RFC 3339 timestamp, and `previousStatus` is `draft`, `in-review` or `reviewed`. Keep private takedown details out of the public reason. Retain the existing bundle/media pins, report files, report hashes, `reviewedAt` and human approval record unchanged. A previously reviewed entry must still have its two passing reports and human approval; a draft or in-review entry keeps null approval fields. Schema/semantic checks enforce the shape and digest consistency; maintainers verify authority and preservation against the PR base.
+
+A maintainer may restore unchanged content to its previous status after resolving the withdrawal reason and explicitly approving restoration in the PR. Remove the current `withdrawal` record from manifest and registry together; the withdrawal/restoration reasons and earlier evidence remain in Git/PR history. Preserve all existing review evidence. Restoring unchanged reviewed content does not require new AI reports, but requires a new human restoration decision with a recorded reason.
+
+**Any content digest change requires fresh review**, including corrections, media replacements or changed answers. Never reuse old reports to restore changed content as reviewed. Preserve the withdrawn version and its evidence, submit the changed content as a new version starting at `draft` or `in-review`, and obtain two fresh independent fact-checks plus human approval. Withdrawal and restoration metadata alone do not change the content digest. Evidence in deleted/unsafe content cases remains in reviewed repository history; follow the private takedown process rather than republishing sensitive evidence.
+
 ## Pinning review content
 
 Print the report's `contentSha256` with:
@@ -52,6 +62,12 @@ Reports in automated unit tests are synthetic fixtures, never real reviews. No r
 
 The repository labels are declared in [.github/labels.json](../.github/labels.json): `draft`, `in-review`, `reviewed` and `no-changelog`. Maintainers apply them to issues/PRs and remove obsolete status labels. Labels are workflow signals; they do not automatically change catalog status. Do not infer approval from a label alone.
 
-The PR CI job fails when any added, modified, deleted or renamed path under `courses/`, `schema/` or `tools/` changes without `CHANGELOG.md` changing, unless a maintainer applies `no-changelog`. Label addition/removal reruns the check. Maintainers review the substance of the changelog and exceptions. The check uses the pinned PR base/head merge-base diff; filenames and PR text are not interpolated as shell commands. It needs no model API key or write token and runs on fork PRs through `pull_request`, never `pull_request_target`.
+The PR CI job fails when any added, modified, deleted or renamed path under `courses/`, `schema/` or `tools/` changes without a **new non-empty bullet entry** in `CHANGELOG.md` under `[Unreleased]` and a standard category (`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`), unless a maintainer applies `no-changelog`. The check parses merge-base and head Git blobs and compares normalized entry text across all base releases. Blank lines, headings, arbitrary prose, comments, fenced examples, duplicate entries, cosmetic changes and moving an old entry do not count. Label addition/removal reruns the check. Maintainers review the substance of the changelog and exceptions. The check uses the pinned PR base/head merge-base diff; filenames and PR text are not interpolated as shell commands. It needs no model API key or write token and runs on fork PRs through `pull_request`, never `pull_request_target`.
 
 Keep a Changelog entries should describe meaningful content/tooling changes under `Unreleased`. A human maintainer owns release dates and versions. Never auto-publish or merge. Copyright concerns follow [COPYRIGHT.md](../COPYRIGHT.md), including private reporting and delisting; preserve prior safe version pins for rollback.
+
+## Credential scanning
+
+CI installs Gitleaks **8.24.3** using the exact Linux x64 archive SHA-256 pinned in `tools/install_gitleaks.sh`; checksum failure aborts installation. It scans tracked Git history with default rules and fails on detected credentials, with findings redacted. No moving release, model key or secret-scanning service token is used. This is detection, not a guarantee that every secret format is recognized.
+
+`.gitleaks.toml` allowlists only `tests/fixtures/secrets/synthetic-positive.txt`, a clearly marked deterministic fake token fixture. The scanner tests copy it into an ordinary course path and require detection; a normal course must pass. Another fixture filename is not allowlisted. Do not expand the exception to course content or the entire test directory. The full unit suite requires the pinned scanner on PATH or an explicit `GITLEAKS_BIN` path; absence is an error, never a skipped test.

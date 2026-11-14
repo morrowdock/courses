@@ -10,17 +10,18 @@ Morrowdock is an open learning studio where anyone can learn and teach anything.
 
 ## Validate locally
 
-Use Swift 6 and Python 3.12+ on Linux or macOS:
+Use Swift 6 and Python 3.12+ on Linux. The scanner installer below targets Linux x64; macOS requires a separately verified Gitleaks 8.24.3 binary on PATH (not provided by this installer):
 
 ```sh
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install --require-hashes --only-binary=:all: -r requirements.txt
+bash tools/install_gitleaks.sh .venv/bin  # Linux x64; version/checksum pinned
 python tools/validate.py
 python -m unittest discover -s tests -v
 ```
 
-CI uses a Swift 6 Linux container. It checks all local courses, including changed courses, with schemas, provenance/licence rules, media hashes, registry consistency and the original Swift validator. `python tools/validate.py --python-only` is a diagnostic when Swift is unavailable; it does **not** replace the full CI gate. Dependency versions, source and hashes are recorded in [THIRD-PARTY.md](THIRD-PARTY.md).
+CI uses a Swift 6 Linux container. It checks all local courses, including changed courses, with schemas, provenance/licence rules, media hashes, registry consistency and the original Swift validator, plus checksum-pinned Gitleaks credential scanning. Maintainers can withdraw and restore catalog entries with a recorded reason while retaining review evidence. `python tools/validate.py --python-only` is a diagnostic when Swift is unavailable; it does **not** replace the full CI gate. Dependency versions, source and hashes are recorded in [THIRD-PARTY.md](THIRD-PARTY.md).
 
 ## Submit a course
 

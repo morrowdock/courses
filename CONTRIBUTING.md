@@ -8,4 +8,6 @@ Use synthetic tests only. No keys, private URLs, owner configuration, instructor
 
 Dependencies require exact version/source/hash/license and transitive distribution review. No GPL/AGPL/LGPL/MPL/custom-license runtimes; Pyodide and CheerpJ are excluded. CPython/PSF is a future permissive Python option subject to binary review. Preserve vendor notices. Never auto-merge or auto-publish. AI does not verify rights, award quality labels or merge.
 
-Add a Keep a Changelog entry when changing courses, schemas or tools. A maintainer may apply `no-changelog` for a justified exception. The synthetic-only restriction applies to tests and examples; actual submissions may contain original or appropriately licensed public educational content with per-item provenance. Never include private course material.
+Every merged user-facing change needs a new non-empty Keep a Changelog entry under `[Unreleased]` in this repository’s CHANGELOG.md. CI compares parsed base/head entries for course, schema and tooling changes; arbitrary added lines do not count. A maintainer may apply `no-changelog` for a justified exception. The synthetic-only restriction applies to tests and examples; actual submissions may contain original or appropriately licensed public educational content with per-item provenance. Never include private course material.
+
+Release tags require an appropriate changelog entry and maintainer review; no release/deployment automation is introduced here. Batch releases rather than publishing each change.

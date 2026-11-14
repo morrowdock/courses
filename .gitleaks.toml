@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0
+[extend]
+useDefault = true
+
+[allowlist]
+description = "One explicitly synthetic scanner fixture; never a course or whole tests directory"
+paths = ['''(^|/)tests/fixtures/secrets/synthetic-positive\.txt$''']

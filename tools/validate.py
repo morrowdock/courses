@@ -134,7 +134,8 @@ def check_review(root, course):
             require(finding["item"] in {p["item"] for p in course["provenance"]}, "unknown reviewed item")
             for url in finding["sources"]:
                 check_url(url)
-        if review["status"] == "reviewed":
+        if review["status"] == "reviewed" or (review["status"] == "withdrawn"
+                and review["withdrawal"]["previousStatus"] == "reviewed"):
             require(receipt["verdict"] == "pass", "reviewed requires two passing AI checks")
             require(datetime.fromisoformat(receipt["checkedAt"].replace("Z", "+00:00"))
                     <= datetime.fromisoformat(review["reviewedAt"].replace("Z", "+00:00")),
@@ -225,7 +226,9 @@ def check_registry(root, courses):
         identities.add(identity)
         if "path" not in entry:
             # Remote pins are declarations only. CI never fetches contributor-controlled URLs.
-            require(entry["status"] == "draft" and not entry["reviewers"]["aiChecks"],
+            require((entry["status"] == "draft" or (entry["status"] == "withdrawn"
+                    and entry["withdrawal"]["previousStatus"] == "draft"))
+                    and not entry["reviewers"]["aiChecks"],
                     "remote entries remain draft until locally vendored for review")
             continue
         path = safe_file(root, entry["path"])
@@ -235,6 +238,8 @@ def check_registry(root, courses):
             require(entry[field] == course[field], f"registry {field} mismatch: {path}")
         for field in ("status", "reviewedAt", "reviewers"):
             require(entry[field] == course["review"][field], f"registry review mismatch: {path}")
+        require(entry.get("withdrawal") == course["review"].get("withdrawal"),
+                "registry withdrawal mismatch")
         paths.add(entry["path"])
     require(paths == set(courses), "every local course must have exactly one registry entry")
     return registry

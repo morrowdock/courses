@@ -21,15 +21,19 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "39234d48b590f837798bd0e248cc57fb711df324b7922d462c2430a5093dd095"
+      "sha256": "4c9647c59101812c8f37fdcc2265495ba7923fa63dde25a0bbc39be45d3a7d12"
     },
     {
       "path": ".gitignore",
       "sha256": "fa3789407a8137a8cd505b86494926534dfe71fcd64ce86c7a3fb5253867c6d0"
     },
     {
+      "path": ".gitleaks.toml",
+      "sha256": "cb1cb9a9521e8af05eb39bbcbb42adc7f436fb08dc7e8443c82393b34d2239ad"
+    },
+    {
       "path": "CHANGELOG.md",
-      "sha256": "82475f7dfd31aee9df065438c7523bb6c176c3968592536230b5d590e50df388"
+      "sha256": "d2989d5ed574c54e3bec2f4ec93d7d3e48d3f9c5035550c939201749aa589d5c"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -37,7 +41,7 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "49d5b022c6dad7416728f898b8666a87cb450b00ab345dafdd676a1c7fb2de4c"
+      "sha256": "102dfbb53e7e942cf8c6a1a41c0856a96df7432769cb44fb9c4d97d128397044"
     },
     {
       "path": "COPYRIGHT.md",
@@ -65,7 +69,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "37125ba53fea05d2e5ee5a0b9c65401fd4f1e26942e77fe06b2ec08f36ca06b5"
+      "sha256": "7848298bd280ab542c5d75eb5215717d92bc23f6a33635374dec06ab2a75614b"
     },
     {
       "path": "SECURITY.md",
@@ -73,7 +77,7 @@
     },
     {
       "path": "THIRD-PARTY.md",
-      "sha256": "5411a5202cfc1da9022bac43cdad6100a5897d3486f6bd7858704e4654445959"
+      "sha256": "9a3b43f45e7ac4ec7605c790f23f4bf62628d4455748a1de580da49abe6682ae"
     },
     {
       "path": "TRADEMARKS.md",
@@ -101,11 +105,11 @@
     },
     {
       "path": "docs/FORMAT.md",
-      "sha256": "b26084b020fd9503548b541865bf45470eb6745fbbf4ff9ebb3443f8d00d8990"
+      "sha256": "639e265b32beff128bd5ca112d6f59d9aa6a94b234d742d3cf564e941df3f8bc"
     },
     {
       "path": "docs/REVIEW.md",
-      "sha256": "1ddee832508d124fe7eb0c16048690922c03e5d9263b4ba238141f158651594c"
+      "sha256": "8d46e03202a082cd70f28d247fc11b2d5f45d402fda338e36d0bb2b4efb71270"
     },
     {
       "path": "registry.json",
@@ -125,15 +129,19 @@
     },
     {
       "path": "schema/course.schema.json",
-      "sha256": "30be2aff257555fccbf302750f68d9af5f49a70fc202725a2a17761a9f343985"
+      "sha256": "bc9bb663ed79102ae4f10c586158df4910c247d8e6adfb23d7d3fcbfbd10b88f"
     },
     {
       "path": "schema/registry.schema.json",
-      "sha256": "15968c08aaf91a4ec4a5f43ce25b3e6e1e07a823aac56766f1ba693ca4451923"
+      "sha256": "2f6f3a0aa9a679909420f8d344dc250f10091fe07656efd0996361d1664f430b"
+    },
+    {
+      "path": "tests/fixtures/secrets/synthetic-positive.txt",
+      "sha256": "fe8c494f774eba88bca350458ee74a1d181852ede24942d3b063731cf9cf0712"
     },
     {
       "path": "tests/test_changelog.py",
-      "sha256": "4c1e59d1b6748ae1f3f452de4e9e95ef4bb9c97788fe22a0b3e0a13596f64a23"
+      "sha256": "f277227e5757119ec67411f205bfd3c7da2d88ea947767253f1ac716263b1aa8"
     },
     {
       "path": "tests/test_courses.py",
@@ -141,19 +149,27 @@
     },
     {
       "path": "tests/test_format.py",
-      "sha256": "bf01b72bd67537a6c23e7cfb9c51b55465c2b066c44c1cd1a90571b386d23129"
+      "sha256": "edd82e62033e84767614c7d4ffaacfebd7020ca6545cd479e63bb6f12f31fe72"
+    },
+    {
+      "path": "tests/test_secrets.py",
+      "sha256": "bbf0e44d151e126d1acd2ff5c6a275fab0d31e4e7663fcca6b6a0616cb347e79"
     },
     {
       "path": "tools/check_changelog.py",
-      "sha256": "2678da0bfdd4d2ebdabff9e9a2bb6060f22e2aab6e950a5926f95a7dce9fc310"
+      "sha256": "dca671a237e9bebe2d234b998f4388b4afdb6f57c6c028877fdc24eb81bd07f3"
     },
     {
       "path": "tools/check_dco.py",
       "sha256": "d6f3693eebbc82a50402b89e4cbab9c3f8c73deae45fc30109cb4b10cfe1141f"
     },
     {
+      "path": "tools/install_gitleaks.sh",
+      "sha256": "e869dc0377210e6c954c988eebe2a6844c8242db6432cbd0a995cdb5cb64936b"
+    },
+    {
       "path": "tools/validate.py",
-      "sha256": "d4fdd4bc06f588cc72328031e0a3d9dbd14bf38944bc8bd002f535f171b01807"
+      "sha256": "02ecd1520e1c4d778f62c49f0b50632faad6205849423c75fd24e009b30c6075"
     },
     {
       "path": "validator/CourseBundle.swift",

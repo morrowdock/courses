@@ -99,6 +99,15 @@ class ParsedChangelogTests(unittest.TestCase):
         old = "## [1.0.0] - 2026-11-14\n### Added\n- Existing feature.\n"
         self.assertTrue(needs_changelog(self.paths, base_text=old, head_text=self.baseline))
 
+    def test_edited_old_entry_fails(self):
+        self.rejected("## [Unreleased]\n### Added\n- Existing feature corrected.\n")
+        self.rejected("## [Unreleased]\n### Added\n- Existing feature corrected.\n- New regression coverage.\n")
+
+    def test_released_old_entry_kept_with_new_entry_passes(self):
+        old = "## [1.0.0] - 2026-11-14\n### Added\n- Existing feature.\n"
+        head = "## [Unreleased]\n### Fixed\n- New fix.\n\n" + old
+        self.assertFalse(needs_changelog(self.paths, base_text=old, head_text=head))
+
     def test_new_entry_outside_unreleased_fails(self):
         self.rejected(self.baseline + "## [1.0.0] - 2026-11-14\n### Fixed\n- New but already released.\n")
 

@@ -71,7 +71,12 @@ def needs_changelog(paths, labels=(), *, base_text="", head_text=""):
     protected = any(path.startswith(("courses/", "schema/", "tools/")) for path in paths)
     if not protected or "no-changelog" in labels:
         return False
-    new_entries = entries(head_text, unreleased_only=True) - entries(base_text)
+    base_entries = entries(base_text)
+    # Existing entries must stay (in any release or category): editing an old bullet must
+    # not count as a new one.
+    if base_entries - entries(head_text):
+        return True
+    new_entries = entries(head_text, unreleased_only=True) - base_entries
     return "CHANGELOG.md" not in paths or not new_entries
 
 

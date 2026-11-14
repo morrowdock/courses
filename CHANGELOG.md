@@ -20,3 +20,4 @@ Implementation work dated 2026-11-14.
 - Support maintainer withdrawal/restoration with a recorded reason and preserved review evidence; require fresh review whenever the course content digest changes.
 - Reject credentials in CI using checksum-pinned Gitleaks 8.24.3, with clearly synthetic detection/clean-course regression fixtures.
 - Require a new non-empty parsed Unreleased changelog entry rather than accepting any change to CHANGELOG.md.
+- Keep existing changelog entries: editing an old entry no longer counts as a new one.

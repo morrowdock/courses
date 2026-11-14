@@ -1,0 +1,6 @@
+[
+  {"name": "draft", "color": "ededed", "description": "Course submission is being prepared; not reviewed"},
+  {"name": "in-review", "color": "fbca04", "description": "Course awaits independent fact-checks and human approval"},
+  {"name": "reviewed", "color": "0e8a16", "description": "Maintainer confirmed checks and approved pinned course content"},
+  {"name": "no-changelog", "color": "c5def5", "description": "Maintainer-approved exemption from the changelog requirement"}
+]

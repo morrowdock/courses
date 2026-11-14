@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-11",
-  "status": "early-preview candidate inventory; release gates recorded 2026-11-11; visibility change is owner/coordinator-only",
+  "date": "2026-11-14",
+  "status": "Stage 1+2 implementation candidate; human review and release approval pending",
   "note": "Lists every tracked file except FILES.json itself.",
   "files": [
     {
@@ -9,19 +9,27 @@
     },
     {
       "path": ".github/ISSUE_TEMPLATE/course.md",
-      "sha256": "1e50725dcdfdf0f6ba2a4afbf147a76d2d6539cf03039e4bd23cb86188b2a473"
+      "sha256": "00b92ada7a58935d9288e41fce027a5bbbc1152af9b625b055b9d3a8e4bd2957"
+    },
+    {
+      "path": ".github/labels.json",
+      "sha256": "5ec05128c36114ce6035e8b2b54b4fcff95bf53de5701cdd4fa68fcf0f59c201"
     },
     {
       "path": ".github/pull_request_template.md",
-      "sha256": "a2147908156e05a52b6d63be3587bede7b9465a5d28d8e12419c2b46b876954c"
+      "sha256": "d5f50fb01a88b35678844290b23edae356187772520d6c202dd32f56ac41a86d"
     },
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "a6d75a56cf07c5b20634eb2fabdd8615b85bf30eca7cd2d94302929c87ff9c33"
+      "sha256": "39234d48b590f837798bd0e248cc57fb711df324b7922d462c2430a5093dd095"
     },
     {
       "path": ".gitignore",
       "sha256": "fa3789407a8137a8cd505b86494926534dfe71fcd64ce86c7a3fb5253867c6d0"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "82475f7dfd31aee9df065438c7523bb6c176c3968592536230b5d590e50df388"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -29,11 +37,11 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "ead0408d5552adf13e839ebbcb6b1c38174e6b5d8c659dcf8e7bba3aeea7319c"
+      "sha256": "49d5b022c6dad7416728f898b8666a87cb450b00ab345dafdd676a1c7fb2de4c"
     },
     {
       "path": "COPYRIGHT.md",
-      "sha256": "0796d93e7301b4f1c64d0241e62076781909389154eaf146b7f717bc8d26b267"
+      "sha256": "5220abf0028508d7434eab9751e1e51eaf39c332f9e86fde99df4f87c5bb1bb8"
     },
     {
       "path": "DCO",
@@ -49,15 +57,15 @@
     },
     {
       "path": "NOTICE",
-      "sha256": "8eb54c20bdc5c9cb99152bb552e282e0a1b3fc886858f4fc447c575f8d461b40"
+      "sha256": "6d4afb7b555dc81d9c258013caf38465a892a9d002c85fecb72204b1c237272a"
     },
     {
       "path": "QUALITY.md",
-      "sha256": "5f4579ce6a9d725443c530db108f3d841092b359027e35a4b05d56111f51ae8f"
+      "sha256": "fd4308da056921bc2eddfed0406f0a55fe8d9b43cec43859abfd743318decfdf"
     },
     {
       "path": "README.md",
-      "sha256": "d082a9b67f0ab4bbb3b82ee3ca1b1414c9e9b581ba0ea8c0d17bd23b10f1e1a4"
+      "sha256": "37125ba53fea05d2e5ee5a0b9c65401fd4f1e26942e77fe06b2ec08f36ca06b5"
     },
     {
       "path": "SECURITY.md",
@@ -65,11 +73,23 @@
     },
     {
       "path": "THIRD-PARTY.md",
-      "sha256": "012130a1ee8b3e6da25716d954399670b35d6c6eb9b4e412997d711794c913ac"
+      "sha256": "5411a5202cfc1da9022bac43cdad6100a5897d3486f6bd7858704e4654445959"
     },
     {
       "path": "TRADEMARKS.md",
       "sha256": "adcada3cad9f70d3574c727f887658076599281cbba39f083dc87c57cf293b37"
+    },
+    {
+      "path": "courses/demo/1.0.0/attachments/counting.txt",
+      "sha256": "50907fdf68a16e35babae1c5bccd8e210a80c4451171ad1d85cee275afd8fad2"
+    },
+    {
+      "path": "courses/demo/1.0.0/bundle.json",
+      "sha256": "14fc13475a5010fa0d701099caad4b3d3ae4a358dc74e7252d6ff8bb5479995d"
+    },
+    {
+      "path": "courses/demo/1.0.0/course.json",
+      "sha256": "0a39979ca12b3ff3e4652526877fd926511926770b524379f6c9fd82330913b8"
     },
     {
       "path": "demo/bundle.json",
@@ -80,12 +100,52 @@
       "sha256": "fd15c3b3a67afa9c1be866af68e064c76fe275f702ee65494990e2e375f27543"
     },
     {
+      "path": "docs/FORMAT.md",
+      "sha256": "b26084b020fd9503548b541865bf45470eb6745fbbf4ff9ebb3443f8d00d8990"
+    },
+    {
+      "path": "docs/REVIEW.md",
+      "sha256": "1ddee832508d124fe7eb0c16048690922c03e5d9263b4ba238141f158651594c"
+    },
+    {
       "path": "registry.json",
-      "sha256": "01630716cfdeae6869fed234211b6471c94c19ad2ebaebf2308e41bb79eac809"
+      "sha256": "6c24c046cf355c51ba0a4e13a9f3891aea1905dfdad078d410fb32f694b4ce38"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "48e52c3f7c95f81312c0c464b36e69343efd9eb95ba1ba2d4bc61652aaee0b5c"
+    },
+    {
+      "path": "schema/ai-review.schema.json",
+      "sha256": "4698a39ad3acaa809e368584734d3e4be2aa00d761c64a66fc3276c38d1da04f"
+    },
+    {
+      "path": "schema/bundle.schema.json",
+      "sha256": "cb96c422b15e5aaba26f6fa7d00f5880fa648648eda2b7c644e076150b436b2c"
+    },
+    {
+      "path": "schema/course.schema.json",
+      "sha256": "30be2aff257555fccbf302750f68d9af5f49a70fc202725a2a17761a9f343985"
+    },
+    {
+      "path": "schema/registry.schema.json",
+      "sha256": "15968c08aaf91a4ec4a5f43ce25b3e6e1e07a823aac56766f1ba693ca4451923"
+    },
+    {
+      "path": "tests/test_changelog.py",
+      "sha256": "4c1e59d1b6748ae1f3f452de4e9e95ef4bb9c97788fe22a0b3e0a13596f64a23"
     },
     {
       "path": "tests/test_courses.py",
-      "sha256": "4539ccec396a788cd6daa8b381c733a2e738efa513bce95ed5c00a674d08d332"
+      "sha256": "68c36dc5daeae7b2046c7881d3e37d32496713a386adabcd385ec6acdd0d7548"
+    },
+    {
+      "path": "tests/test_format.py",
+      "sha256": "bf01b72bd67537a6c23e7cfb9c51b55465c2b066c44c1cd1a90571b386d23129"
+    },
+    {
+      "path": "tools/check_changelog.py",
+      "sha256": "2678da0bfdd4d2ebdabff9e9a2bb6060f22e2aab6e950a5926f95a7dce9fc310"
     },
     {
       "path": "tools/check_dco.py",
@@ -93,7 +153,7 @@
     },
     {
       "path": "tools/validate.py",
-      "sha256": "fcc821894913a461239408d2d0cc12c2ffc6e5f0778146813805c10867705fe0"
+      "sha256": "d4fdd4bc06f588cc72328031e0a3d9dbd14bf38944bc8bd002f535f171b01807"
     },
     {
       "path": "validator/CourseBundle.swift",

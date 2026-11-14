@@ -1,0 +1,42 @@
+{
+  "format": "morrowdock-course-bundle",
+  "version": 1,
+  "course": {
+    "id": "demo",
+    "title": "Synthetic addition"
+  },
+  "topics": [
+    {
+      "id": "addition",
+      "title": "Addition"
+    }
+  ],
+  "materials": [
+    {
+      "id": "intro",
+      "title": "Original introduction",
+      "ref": "https://example.invalid/addition"
+    }
+  ],
+  "assignments": [],
+  "questions": [
+    {
+      "id": "one",
+      "topicID": "addition",
+      "prompt": "What is 1 + 1?",
+      "choices": [
+        "2",
+        "3"
+      ],
+      "answer": 0,
+      "explanation": "One item and one item make two.",
+      "materialID": "intro"
+    }
+  ],
+  "examBlueprint": {
+    "questionCount": 1,
+    "minutes": 5,
+    "points": 1
+  },
+  "equationSheet": null
+}

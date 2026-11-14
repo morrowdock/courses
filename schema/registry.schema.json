@@ -1,0 +1,255 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Course registry v1",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "morrowdock-registry-v1"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,80}$"
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 200,
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-((0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*))?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+          },
+          "path": {
+            "type": "string",
+            "maxLength": 2048,
+            "pattern": "^[A-Za-z0-9_-][A-Za-z0-9_./+-]*$"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 2048,
+            "format": "uri",
+            "pattern": "^https://[^/@\\s?#]+(?:[/?#][^\\s]*)?$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "creators": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[^@\\r\\n]+$"
+                },
+                "url": {
+                  "type": "string",
+                  "maxLength": 2048,
+                  "format": "uri",
+                  "pattern": "^https://[^/@\\s?#]+(?:[/?#][^\\s]*)?$"
+                }
+              },
+              "required": [
+                "displayName"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 100
+          },
+          "licence": {
+            "enum": [
+              "CC-BY-SA-4.0",
+              "CC-BY-4.0",
+              "CC0-1.0"
+            ],
+            "default": "CC-BY-SA-4.0"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "in-review",
+              "reviewed"
+            ]
+          },
+          "reviewedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reviewers": {
+            "type": "object",
+            "properties": {
+              "aiChecks": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "reviewer": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[^@\\r\\n]+$"
+                    },
+                    "path": {
+                      "type": "string",
+                      "maxLength": 2048,
+                      "pattern": "^[A-Za-z0-9_-][A-Za-z0-9_./+-]*$"
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "reviewer",
+                    "path",
+                    "sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 2
+              },
+              "humanApprover": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "displayName": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200,
+                        "pattern": "^[^@\\r\\n]+$"
+                      },
+                      "approvalUrl": {
+                        "type": "string",
+                        "maxLength": 2048,
+                        "format": "uri",
+                        "pattern": "^https://[^/@\\s?#]+(?:[/?#][^\\s]*)?$"
+                      }
+                    },
+                    "required": [
+                      "displayName",
+                      "approvalUrl"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "aiChecks",
+              "humanApprover"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "creators",
+          "licence",
+          "status",
+          "reviewedAt",
+          "reviewers"
+        ],
+        "additionalProperties": false,
+        "oneOf": [
+          {
+            "required": [
+              "path"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "url"
+                  ]
+                },
+                {
+                  "required": [
+                    "sha256"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "required": [
+              "url",
+              "sha256"
+            ],
+            "not": {
+              "required": [
+                "path"
+              ]
+            }
+          }
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "reviewed"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "reviewedAt": {
+                  "type": "string"
+                },
+                "reviewers": {
+                  "properties": {
+                    "aiChecks": {
+                      "minItems": 2
+                    },
+                    "humanApprover": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "reviewedAt": {
+                  "type": "null"
+                },
+                "reviewers": {
+                  "properties": {
+                    "humanApprover": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 10000
+    }
+  },
+  "required": [
+    "format",
+    "entries"
+  ],
+  "additionalProperties": false
+}

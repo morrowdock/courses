@@ -1,0 +1,286 @@
+{
+  "format": "morrowdock-open-course",
+  "formatVersion": 1,
+  "id": "demo",
+  "version": "1.0.0",
+  "title": "Synthetic addition",
+  "summary": "An original synthetic example of the open course format, not an approved course.",
+  "level": "beginner",
+  "prerequisites": [],
+  "creators": [
+    {
+      "displayName": "Morrowdock contributors"
+    }
+  ],
+  "licence": "CC-BY-SA-4.0",
+  "language": "en",
+  "bundle": {
+    "path": "bundle.json",
+    "sha256": "14fc13475a5010fa0d701099caad4b3d3ae4a358dc74e7252d6ff8bb5479995d",
+    "size": 756
+  },
+  "sources": [
+    {
+      "id": "original",
+      "title": "Original public synthetic arithmetic bundle (2026-11-02)",
+      "origin": "original",
+      "rightsHolder": "Morrowdock contributors",
+      "licence": "CC-BY-SA-4.0",
+      "changes": "Retained public demo bundle byte for byte.",
+      "url": "https://github.com/morrowdock/courses/blob/89e7fe9ad42fbff632640e58e4dc36b1146fc7a3/demo/bundle.json"
+    },
+    {
+      "id": "synthetic-v1",
+      "title": "AI-assisted synthetic format v1 example (2026-11-14)",
+      "origin": "generated",
+      "rightsHolder": "Morrowdock contributors",
+      "licence": "CC-BY-SA-4.0",
+      "changes": "New synthetic lesson, activities, platform-neutral input declarations and counting aid; no independent factual approval claimed."
+    }
+  ],
+  "provenance": [
+    {
+      "item": "course:demo",
+      "sources": [
+        "original",
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "topic:addition",
+      "sources": [
+        "original"
+      ]
+    },
+    {
+      "item": "material:intro",
+      "sources": [
+        "original"
+      ]
+    },
+    {
+      "item": "question:one",
+      "sources": [
+        "original"
+      ]
+    },
+    {
+      "item": "lesson:addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "media:counting",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "activity:trace-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "activity:predict-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "activity:fix-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "activity:order-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "activity:explain-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "step:read-intro",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "step:step-trace-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "step:step-predict-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "step:step-fix-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "step:step-order-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "step:step-explain-addition",
+      "sources": [
+        "synthetic-v1"
+      ]
+    },
+    {
+      "item": "step:check-one",
+      "sources": [
+        "synthetic-v1"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "addition",
+      "title": "Adding one and one",
+      "steps": [
+        {
+          "id": "read-intro",
+          "kind": "reading",
+          "materialID": "intro"
+        },
+        {
+          "id": "step-trace-addition",
+          "kind": "activity",
+          "activityID": "trace-addition"
+        },
+        {
+          "id": "step-predict-addition",
+          "kind": "activity",
+          "activityID": "predict-addition"
+        },
+        {
+          "id": "step-fix-addition",
+          "kind": "activity",
+          "activityID": "fix-addition"
+        },
+        {
+          "id": "step-order-addition",
+          "kind": "activity",
+          "activityID": "order-addition"
+        },
+        {
+          "id": "step-explain-addition",
+          "kind": "activity",
+          "activityID": "explain-addition"
+        },
+        {
+          "id": "check-one",
+          "kind": "question",
+          "questionID": "one"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "trace-addition",
+      "kind": "trace",
+      "prompt": "Trace the two updates.",
+      "explanation": "The value starts at one and becomes two.",
+      "code": "value = 1\nvalue = value + 1",
+      "language": "pseudocode",
+      "expectedTrace": [
+        "value = 1",
+        "value = 2"
+      ]
+    },
+    {
+      "id": "predict-addition",
+      "kind": "prediction",
+      "prompt": "Predict the final value.",
+      "explanation": "Adding one to one gives two.",
+      "code": "value = 1 + 1",
+      "language": "pseudocode",
+      "expected": "2",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "fix-addition",
+      "kind": "fix",
+      "prompt": "Change the expression so it adds one and one.",
+      "explanation": "Replace subtraction with addition.",
+      "code": "value = 1 - 1",
+      "language": "pseudocode",
+      "solution": "value = 1 + 1",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "order-addition",
+      "kind": "parsons",
+      "prompt": "Order the steps to count two items.",
+      "explanation": "Start with one item, then add one.",
+      "blocks": [
+        "Add one item.",
+        "Start with one item."
+      ],
+      "order": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": "explain-addition",
+      "kind": "explanation",
+      "prompt": "Explain one plus one using items.",
+      "explanation": "One item together with one more item is two items."
+    }
+  ],
+  "answerChecks": [
+    {
+      "questionID": "one",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    }
+  ],
+  "media": [
+    {
+      "id": "counting",
+      "path": "attachments/counting.txt",
+      "sha256": "50907fdf68a16e35babae1c5bccd8e210a80c4451171ad1d85cee275afd8fad2",
+      "size": 61,
+      "mimeType": "text/plain"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "reviewers": {
+      "aiChecks": [],
+      "humanApprover": null
+    }
+  }
+}

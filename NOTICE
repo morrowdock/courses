@@ -1,5 +1,6 @@
 courses
 Copyright 2026 Morrowdock contributors.
-Course content: CC BY-SA 4.0; tooling: Apache-2.0.
+Course content: CC BY-SA 4.0 by default; explicit per-course manifests may
+select CC-BY-4.0 or CC0-1.0. Tooling and JSON Schemas: Apache-2.0.
 Morrowdock and Marty names, the mascot and the logos are reserved and are not licensed;
 see TRADEMARKS.md. No trademark license is granted.

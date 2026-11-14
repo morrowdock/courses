@@ -88,8 +88,17 @@
         "nv-o1",
         "nv-o3"
       ],
-      "prompt": "Step through. The arrow marks the line about to run; the panel shows every name after the lines above it ran.",
-      "title": "Watch it: labels moving"
+      "prompt": "Step through. The arrow marks the line about to run; the panel shows every name after the lines above it ran.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Watch it: labels moving",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -121,9 +130,18 @@
         "nv-o2"
       ],
       "output": "7\n34\n",
-      "prompt": "Make a guess first. It's free. What do these two lines print?",
+      "prompt": "Make a guess first. It's free. What do these two lines print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
       "reveal": "7, then 34. Quotes make a string, and + joins strings instead of adding them.",
-      "title": "Predict before you peek: two kinds of +"
+      "title": "Predict before you peek: two kinds of +",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -172,8 +190,17 @@
         "nv-o3"
       ],
       "output": "6 5\n",
-      "prompt": "What does this print?",
-      "title": "Does b follow a?"
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Does b follow a?",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "checkpoints": [
@@ -325,8 +352,14 @@
         "nv-o1",
         "nv-o2"
       ],
-      "prompt": "Step through. When the panel asks, fill in the hidden value before moving on.",
-      "title": "Trace the treasure"
+      "prompt": "Step through. When the panel asks, fill in the hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Trace the treasure",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "bugLine": 2,
@@ -371,12 +404,21 @@
       "outcomes": [
         "nv-o1"
       ],
-      "prompt": "This should print 5 but prints 0. Tap the line that's wrong, then pick the repair.",
+      "prompt": "This should print 5 but prints 0. Select the line that's wrong, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "0\n",
         "expected": "5"
       },
-      "title": "The score that won't go up"
+      "title": "The score that won't go up",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -428,7 +470,7 @@
         "nv-o1",
         "nv-o3"
       ],
-      "prompt": "Drag the lines so the program prints exactly: Ada has 3 coins. One line isn't needed.",
+      "prompt": "Arrange the lines so the program prints exactly: Ada has 3 coins. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "c",
         "x",
@@ -436,7 +478,16 @@
         "a"
       ],
       "target": "Ada has 3 coins",
-      "title": "Put it in order: Ada's coins"
+      "title": "Put it in order: Ada's coins",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "grading": "self-check",
@@ -455,7 +506,7 @@
       "outcomes": [
         "nv-o1"
       ],
-      "prompt": "In your own words (type, dictate or write with Pencil): in the 'Does b follow a?' program, why does b still hold 5 after a changes?",
+      "prompt": "In your own words (type, dictate or write with Pencil): in the 'Does b follow a?' program, why does b still hold 5 after a changes?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "nv-g-explain#k1",
@@ -470,7 +521,13 @@
           "idea": "A later a = ... changes only a; b isn't linked to a."
         }
       ],
-      "title": "Explain it back: why b kept 5"
+      "title": "Explain it back: why b kept 5",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -517,8 +574,14 @@
         "nv-o3"
       ],
       "output": "10 5\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "On your own: two names, three lines"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: two names, three lines",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -557,8 +620,14 @@
         "nv-o3"
       ],
       "output": "5 6\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "Comeback: a fresh pair of names"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: a fresh pair of names",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -694,8 +763,14 @@
       "outcomes": [
         "nv-o2"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "On your own: growing a word"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: growing a word",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -832,8 +907,14 @@
       "outcomes": [
         "nv-o2"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "Comeback: shouting"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: shouting",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -880,12 +961,21 @@
         "nv-o2",
         "nv-o3"
       ],
-      "prompt": "Three things at 4 coins each should cost 12. Find the wrong line and repair it.",
+      "prompt": "Three things at 4 coins each should cost 12. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "total: 7\n",
         "expected": "total: 12"
       },
-      "title": "On your own: the shop total"
+      "title": "On your own: the shop total",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -931,12 +1021,21 @@
         "nv-o2",
         "nv-o3"
       ],
-      "prompt": "This should greet Sam by name. Find the wrong line and repair it.",
+      "prompt": "This should greet Sam by name. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "Hi name\n",
         "expected": "Hi Sam"
       },
-      "title": "Comeback: the greeting"
+      "title": "Comeback: the greeting",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -992,7 +1091,7 @@
         "nv-o1",
         "nv-o3"
       ],
-      "prompt": "Arrange the lines so the program prints 7 on one line and 9 on the next. One line isn't needed.",
+      "prompt": "Arrange the lines so the program prints 7 on one line and 9 on the next. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "d",
         "c",
@@ -1001,7 +1100,16 @@
         "a"
       ],
       "target": "7\n9",
-      "title": "On your own: before and after"
+      "title": "On your own: before and after",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1051,7 +1159,7 @@
         "nv-o1",
         "nv-o3"
       ],
-      "prompt": "Arrange the lines so the program prints hi, then hi! on the next line.",
+      "prompt": "Arrange the lines so the program prints hi, then hi! on the next line.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "c",
         "d",
@@ -1059,7 +1167,16 @@
         "b"
       ],
       "target": "hi\nhi!",
-      "title": "Comeback: a louder hello"
+      "title": "Comeback: a louder hello",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1077,7 +1194,7 @@
       "outcomes": [
         "nv-o2"
       ],
-      "prompt": "Explain to a friend who knows Lua why print(\"3\" + \"4\") shows 34 in Python, while print(3 + \"4\") stops with an error.",
+      "prompt": "Explain to a friend who knows Lua why print(\"3\" + \"4\") shows 34 in Python, while print(3 + \"4\") stops with an error.\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "nv-i-explain#k1",
@@ -1092,7 +1209,13 @@
           "idea": "Python won't mix a number and a string with + (Lua's .. and coercion differ); convert with int() or str()."
         }
       ],
-      "title": "On your own: explain the two plusses"
+      "title": "On your own: explain the two plusses",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     }
   ],
   "bridge": {

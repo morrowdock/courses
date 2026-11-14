@@ -88,8 +88,17 @@
       "outcomes": [
         "ld-o1"
       ],
-      "prompt": "Step through. Positions start at 0.",
-      "title": "Watch it: a list grows"
+      "prompt": "Step through. Positions start at 0.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Watch it: a list grows",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -123,9 +132,18 @@
         "ld-o3"
       ],
       "output": "[1, 2, 3]\n",
-      "prompt": "Guess first; it's free. What does this print?",
+      "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
       "reveal": "[1, 2, 3]. b = a puts a second label on the same list. Changing the list through either name changes it for both. To get a separate list, use b = a.copy().",
-      "title": "Predict before you peek: two names, one list"
+      "title": "Predict before you peek: two names, one list",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -171,8 +189,17 @@
         "ld-o1"
       ],
       "output": "dog 3\n",
-      "prompt": "What does this print?",
-      "title": "Which pet?"
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Which pet?",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "checkpoints": [
@@ -431,8 +458,14 @@
       "outcomes": [
         "ld-o2"
       ],
-      "prompt": "Step through. Fill in each hidden value before moving on.",
-      "title": "Trace: counting words"
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Trace: counting words",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "bugLine": 2,
@@ -478,13 +511,22 @@
       "outcomes": [
         "ld-o2"
       ],
-      "prompt": "This should add 2 pears to the stock, but it stops with a KeyError. Tap the wrong line, then pick the repair.",
+      "prompt": "This should add 2 pears to the stock, but it stops with a KeyError. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "{'apple': 3, 'pear': 2}",
         "raises": "KeyError"
       },
-      "title": "The missing pear"
+      "title": "The missing pear",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -546,7 +588,7 @@
       "outcomes": [
         "ld-o1"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints [2, 4, 6]. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints [2, 4, 6]. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "e",
         "d",
@@ -556,7 +598,16 @@
         "a"
       ],
       "target": "[2, 4, 6]",
-      "title": "Put it in order: double everything"
+      "title": "Put it in order: double everything",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "grading": "self-check",
@@ -575,7 +626,7 @@
       "outcomes": [
         "ld-o3"
       ],
-      "prompt": "In your own words: in lesson 1, b = a followed by a = a + 1 left b alone. Here, b = a followed by a.append(3) changed b. What's different?",
+      "prompt": "In your own words: in lesson 1, b = a followed by a = a + 1 left b alone. Here, b = a followed by a.append(3) changed b. What's different?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "ld-g-explain#k1",
@@ -590,7 +641,13 @@
           "idea": "a.append(3) changes the shared list itself, so every name for it sees the change. Use .copy() for a separate list."
         }
       ],
-      "title": "Explain it back: why b changed"
+      "title": "Explain it back: why b changed",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -631,8 +688,14 @@
         "ld-o1"
       ],
       "output": "4 5\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "On your own: first plus last"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: first plus last",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -669,8 +732,14 @@
         "ld-o1"
       ],
       "output": "4 10\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "Comeback: a difference on the end"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: a difference on the end",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -846,8 +915,14 @@
       "outcomes": [
         "ld-o3"
       ],
-      "prompt": "Step through and fill in each hidden value. Watch both boxes.",
-      "title": "On your own: a list passed to a function"
+      "prompt": "Step through and fill in each hidden value. Watch both boxes.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: a list passed to a function",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -986,8 +1061,14 @@
       "outcomes": [
         "ld-o3"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "Comeback: the alias"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: the alias",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1032,13 +1113,22 @@
       "outcomes": [
         "ld-o1"
       ],
-      "prompt": "This should print all three names, but it skips Ana and then stops with an IndexError. Find the wrong line and repair it.",
+      "prompt": "This should print all three names, but it skips Ana and then stops with an IndexError. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "Bo\nCy\n",
         "expected": "Ana\nBo\nCy",
         "raises": "IndexError"
       },
-      "title": "On your own: roll call"
+      "title": "On your own: roll call",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1082,13 +1172,22 @@
       "outcomes": [
         "ld-o2"
       ],
-      "prompt": "This should print Ana's age, 30, but it stops with a KeyError. Find the wrong line and repair it.",
+      "prompt": "This should print Ana's age, 30, but it stops with a KeyError. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "30",
         "raises": "KeyError"
       },
-      "title": "Comeback: look up by key"
+      "title": "Comeback: look up by key",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1149,7 +1248,7 @@
       "outcomes": [
         "ld-o2"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints {'a': 2, 'b': 1}. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints {'a': 2, 'b': 1}. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "d",
         "e",
@@ -1159,7 +1258,16 @@
         "a"
       ],
       "target": "{'a': 2, 'b': 1}",
-      "title": "On your own: letter counts"
+      "title": "On your own: letter counts",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1214,7 +1322,7 @@
       "outcomes": [
         "ld-o1"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 6. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 6. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "e",
         "x",
@@ -1224,7 +1332,16 @@
         "b"
       ],
       "target": "6",
-      "title": "Comeback: the best score"
+      "title": "Comeback: the best score",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1242,7 +1359,7 @@
       "outcomes": [
         "ld-o2"
       ],
-      "prompt": "A Lua table does the job of both a list and a dict. Explain how to pick between a Python list and a dict, and the two indexing differences that trip up Lua programmers.",
+      "prompt": "A Lua table does the job of both a list and a dict. Explain how to pick between a Python list and a dict, and the two indexing differences that trip up Lua programmers.\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "ld-i-explain#k1",
@@ -1257,7 +1374,13 @@
           "idea": "A missing key is an error in Python (KeyError), where Lua gives nil; use in or .get."
         }
       ],
-      "title": "On your own: Lua tables, Python lists and dicts"
+      "title": "On your own: Lua tables, Python lists and dicts",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     }
   ],
   "bridge": {

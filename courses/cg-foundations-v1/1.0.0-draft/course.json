@@ -1,0 +1,4259 @@
+{
+  "format": "morrowdock-open-course",
+  "formatVersion": 1,
+  "id": "cg-foundations-v1",
+  "version": "1.0.0-draft",
+  "title": "Programming foundations",
+  "summary": "Six programming-foundations lessons with 96 recorded Python activities and Lua bridges. Runtime-free reading resources with explicit input alternatives and self-checks.",
+  "level": "beginner",
+  "prerequisites": [
+    "Read short text and enter text using a keyboard. No prior Python knowledge is required."
+  ],
+  "creators": [
+    {
+      "displayName": "Collin Craig"
+    }
+  ],
+  "licence": "CC-BY-SA-4.0",
+  "language": "en",
+  "bundle": {
+    "path": "bundle.json",
+    "sha256": "b94c477038b25ae865c90500072a7014826e6ba69f3fb7838d556fb654e84753",
+    "size": 10198
+  },
+  "sources": [
+    {
+      "id": "owner-ai-source",
+      "title": "Owner-authorized original AI-authored cg-foundations-v1; private source commit cc40e0a6315a9f86d21496f268b34aa8547786d3 (2026-11-03 content, 2026-11-14 audit)",
+      "origin": "generated",
+      "rightsHolder": "Collin Craig",
+      "licence": "CC-BY-SA-4.0",
+      "changes": "Learner allowlist export; author metadata withheld. Runtime-free recorded checking data retained as admitted by the learner export.",
+      "permission": "Owner direction dated 2026-11-14 authorizes these original course materials under CC-BY-SA-4.0; independent human review pending."
+    },
+    {
+      "id": "public-v1-revision",
+      "title": "AI-assisted public format-v1 migration and accessibility revision (2026-11-14)",
+      "origin": "generated",
+      "rightsHolder": "Collin Craig",
+      "licence": "CC-BY-SA-4.0",
+      "changes": "Structured lessons, activity wrappers and input declarations; keyboard/remote alternatives; Parsons preserved as self-check explanations because format v1 cannot represent distractors and multiple accepted orders.",
+      "permission": "Prepared for Collin Craig under the owner-authorized course publication and coordinator revision instructions; approval and factual review pending."
+    }
+  ],
+  "provenance": [
+    {
+      "item": "course:cg-foundations-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:cg-found-names-values-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:cg-found-conditionals-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:cg-found-loops-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:cg-found-functions-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:cg-found-lists-dicts-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:cg-found-recursion-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:cg-found-names-values-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:cg-found-conditionals-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:cg-found-loops-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:cg-found-functions-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:cg-found-lists-dicts-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:cg-found-recursion-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:nv-l-plus",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:nv-g-copy",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:cd-l-order",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:cd-g-teen",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:lp-l-range",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:lp-g-countdown",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:fn-l-print-return",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:fn-g-area",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:ld-l-alias",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:ld-g-index",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:rc-l-order",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:rc-g-total",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:cg-found-names-values-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:cg-found-conditionals-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:cg-found-loops-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:cg-found-functions-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:cg-found-lists-dicts-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:cg-found-recursion-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-l-watch",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-l-plus",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-g-copy",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-g-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-g-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-g-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-g-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-predict",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-predict-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-trace-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-fix-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-parsons-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:nv-i-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-l-watch",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-l-order",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-g-teen",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-g-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-g-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-g-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-g-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-grade",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-grade-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-trace-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-fix-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-parsons-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:cd-i-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-l-watch",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-l-range",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-g-countdown",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-g-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-g-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-g-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-g-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-triple",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-triple-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-trace-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-fix-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-parsons-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:lp-i-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-l-watch",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-l-print-return",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-g-area",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-g-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-g-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-g-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-g-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-scope",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-scope-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-trace-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-fix-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-parsons-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:fn-i-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-l-watch",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-l-alias",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-g-index",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-g-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-g-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-g-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-g-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-index",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-index-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-trace-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-fix-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-parsons-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:ld-i-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-l-watch",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-l-order",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-g-total",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-g-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-g-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-g-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-g-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-digits",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-digits-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-trace",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-trace-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-fix",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-fix-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-parsons",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-parsons-cb",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:rc-i-explain",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:authored-code-gym-foundations-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:cg-foundations-01-names-values",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:cg-foundations-02-conditionals",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:cg-foundations-03-loops",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:cg-foundations-04-functions",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:cg-foundations-05-lists-dicts",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:cg-foundations-06-recursion",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cg-found-names-values-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-l-watch-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-l-plus-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-g-copy-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-g-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-g-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-g-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-g-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-predict-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-predict-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-trace-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-fix-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-parsons-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-i-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-l-plus-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:nv-g-copy-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cg-found-conditionals-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-l-watch-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-l-order-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-g-teen-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-g-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-g-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-g-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-g-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-grade-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-grade-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-trace-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-fix-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-parsons-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-i-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-l-order-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cd-g-teen-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cg-found-loops-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-l-watch-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-l-range-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-g-countdown-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-g-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-g-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-g-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-g-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-triple-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-triple-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-trace-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-fix-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-parsons-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-i-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-l-range-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:lp-g-countdown-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cg-found-functions-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-l-watch-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-l-print-return-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-g-area-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-g-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-g-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-g-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-g-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-scope-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-scope-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-trace-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-fix-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-parsons-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-i-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-l-print-return-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:fn-g-area-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cg-found-lists-dicts-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-l-watch-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-l-alias-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-g-index-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-g-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-g-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-g-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-g-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-index-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-index-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-trace-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-fix-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-parsons-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-i-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-l-alias-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:ld-g-index-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:cg-found-recursion-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-l-watch-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-l-order-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-g-total-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-g-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-g-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-g-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-g-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-digits-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-digits-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-trace-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-trace-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-fix-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-fix-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-parsons-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-parsons-cb-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-i-explain-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-l-order-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:rc-g-total-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cg-found-names-values-v1",
+      "title": "Names, values and print",
+      "steps": [
+        {
+          "id": "cg-found-names-values-v1-read",
+          "kind": "reading",
+          "materialID": "cg-found-names-values-v1-material"
+        },
+        {
+          "id": "nv-l-watch-step",
+          "kind": "activity",
+          "activityID": "nv-l-watch"
+        },
+        {
+          "id": "nv-l-plus-step",
+          "kind": "activity",
+          "activityID": "nv-l-plus"
+        },
+        {
+          "id": "nv-g-copy-step",
+          "kind": "activity",
+          "activityID": "nv-g-copy"
+        },
+        {
+          "id": "nv-g-trace-step",
+          "kind": "activity",
+          "activityID": "nv-g-trace"
+        },
+        {
+          "id": "nv-g-fix-step",
+          "kind": "activity",
+          "activityID": "nv-g-fix"
+        },
+        {
+          "id": "nv-g-parsons-step",
+          "kind": "activity",
+          "activityID": "nv-g-parsons"
+        },
+        {
+          "id": "nv-g-explain-step",
+          "kind": "activity",
+          "activityID": "nv-g-explain"
+        },
+        {
+          "id": "nv-i-predict-step",
+          "kind": "activity",
+          "activityID": "nv-i-predict"
+        },
+        {
+          "id": "nv-i-predict-cb-step",
+          "kind": "activity",
+          "activityID": "nv-i-predict-cb"
+        },
+        {
+          "id": "nv-i-trace-step",
+          "kind": "activity",
+          "activityID": "nv-i-trace"
+        },
+        {
+          "id": "nv-i-trace-cb-step",
+          "kind": "activity",
+          "activityID": "nv-i-trace-cb"
+        },
+        {
+          "id": "nv-i-fix-step",
+          "kind": "activity",
+          "activityID": "nv-i-fix"
+        },
+        {
+          "id": "nv-i-fix-cb-step",
+          "kind": "activity",
+          "activityID": "nv-i-fix-cb"
+        },
+        {
+          "id": "nv-i-parsons-step",
+          "kind": "activity",
+          "activityID": "nv-i-parsons"
+        },
+        {
+          "id": "nv-i-parsons-cb-step",
+          "kind": "activity",
+          "activityID": "nv-i-parsons-cb"
+        },
+        {
+          "id": "nv-i-explain-step",
+          "kind": "activity",
+          "activityID": "nv-i-explain"
+        },
+        {
+          "id": "nv-l-plus-question-step",
+          "kind": "question",
+          "questionID": "nv-l-plus"
+        },
+        {
+          "id": "nv-g-copy-question-step",
+          "kind": "question",
+          "questionID": "nv-g-copy"
+        }
+      ]
+    },
+    {
+      "id": "cg-found-conditionals-v1",
+      "title": "Conditionals: if, elif, else",
+      "steps": [
+        {
+          "id": "cg-found-conditionals-v1-read",
+          "kind": "reading",
+          "materialID": "cg-found-conditionals-v1-material"
+        },
+        {
+          "id": "cd-l-watch-step",
+          "kind": "activity",
+          "activityID": "cd-l-watch"
+        },
+        {
+          "id": "cd-l-order-step",
+          "kind": "activity",
+          "activityID": "cd-l-order"
+        },
+        {
+          "id": "cd-g-teen-step",
+          "kind": "activity",
+          "activityID": "cd-g-teen"
+        },
+        {
+          "id": "cd-g-trace-step",
+          "kind": "activity",
+          "activityID": "cd-g-trace"
+        },
+        {
+          "id": "cd-g-fix-step",
+          "kind": "activity",
+          "activityID": "cd-g-fix"
+        },
+        {
+          "id": "cd-g-parsons-step",
+          "kind": "activity",
+          "activityID": "cd-g-parsons"
+        },
+        {
+          "id": "cd-g-explain-step",
+          "kind": "activity",
+          "activityID": "cd-g-explain"
+        },
+        {
+          "id": "cd-i-grade-step",
+          "kind": "activity",
+          "activityID": "cd-i-grade"
+        },
+        {
+          "id": "cd-i-grade-cb-step",
+          "kind": "activity",
+          "activityID": "cd-i-grade-cb"
+        },
+        {
+          "id": "cd-i-trace-step",
+          "kind": "activity",
+          "activityID": "cd-i-trace"
+        },
+        {
+          "id": "cd-i-trace-cb-step",
+          "kind": "activity",
+          "activityID": "cd-i-trace-cb"
+        },
+        {
+          "id": "cd-i-fix-step",
+          "kind": "activity",
+          "activityID": "cd-i-fix"
+        },
+        {
+          "id": "cd-i-fix-cb-step",
+          "kind": "activity",
+          "activityID": "cd-i-fix-cb"
+        },
+        {
+          "id": "cd-i-parsons-step",
+          "kind": "activity",
+          "activityID": "cd-i-parsons"
+        },
+        {
+          "id": "cd-i-parsons-cb-step",
+          "kind": "activity",
+          "activityID": "cd-i-parsons-cb"
+        },
+        {
+          "id": "cd-i-explain-step",
+          "kind": "activity",
+          "activityID": "cd-i-explain"
+        },
+        {
+          "id": "cd-l-order-question-step",
+          "kind": "question",
+          "questionID": "cd-l-order"
+        },
+        {
+          "id": "cd-g-teen-question-step",
+          "kind": "question",
+          "questionID": "cd-g-teen"
+        }
+      ]
+    },
+    {
+      "id": "cg-found-loops-v1",
+      "title": "Loops: while, for and range",
+      "steps": [
+        {
+          "id": "cg-found-loops-v1-read",
+          "kind": "reading",
+          "materialID": "cg-found-loops-v1-material"
+        },
+        {
+          "id": "lp-l-watch-step",
+          "kind": "activity",
+          "activityID": "lp-l-watch"
+        },
+        {
+          "id": "lp-l-range-step",
+          "kind": "activity",
+          "activityID": "lp-l-range"
+        },
+        {
+          "id": "lp-g-countdown-step",
+          "kind": "activity",
+          "activityID": "lp-g-countdown"
+        },
+        {
+          "id": "lp-g-trace-step",
+          "kind": "activity",
+          "activityID": "lp-g-trace"
+        },
+        {
+          "id": "lp-g-fix-step",
+          "kind": "activity",
+          "activityID": "lp-g-fix"
+        },
+        {
+          "id": "lp-g-parsons-step",
+          "kind": "activity",
+          "activityID": "lp-g-parsons"
+        },
+        {
+          "id": "lp-g-explain-step",
+          "kind": "activity",
+          "activityID": "lp-g-explain"
+        },
+        {
+          "id": "lp-i-triple-step",
+          "kind": "activity",
+          "activityID": "lp-i-triple"
+        },
+        {
+          "id": "lp-i-triple-cb-step",
+          "kind": "activity",
+          "activityID": "lp-i-triple-cb"
+        },
+        {
+          "id": "lp-i-trace-step",
+          "kind": "activity",
+          "activityID": "lp-i-trace"
+        },
+        {
+          "id": "lp-i-trace-cb-step",
+          "kind": "activity",
+          "activityID": "lp-i-trace-cb"
+        },
+        {
+          "id": "lp-i-fix-step",
+          "kind": "activity",
+          "activityID": "lp-i-fix"
+        },
+        {
+          "id": "lp-i-fix-cb-step",
+          "kind": "activity",
+          "activityID": "lp-i-fix-cb"
+        },
+        {
+          "id": "lp-i-parsons-step",
+          "kind": "activity",
+          "activityID": "lp-i-parsons"
+        },
+        {
+          "id": "lp-i-parsons-cb-step",
+          "kind": "activity",
+          "activityID": "lp-i-parsons-cb"
+        },
+        {
+          "id": "lp-i-explain-step",
+          "kind": "activity",
+          "activityID": "lp-i-explain"
+        },
+        {
+          "id": "lp-l-range-question-step",
+          "kind": "question",
+          "questionID": "lp-l-range"
+        },
+        {
+          "id": "lp-g-countdown-question-step",
+          "kind": "question",
+          "questionID": "lp-g-countdown"
+        }
+      ]
+    },
+    {
+      "id": "cg-found-functions-v1",
+      "title": "Functions: def, return, scope",
+      "steps": [
+        {
+          "id": "cg-found-functions-v1-read",
+          "kind": "reading",
+          "materialID": "cg-found-functions-v1-material"
+        },
+        {
+          "id": "fn-l-watch-step",
+          "kind": "activity",
+          "activityID": "fn-l-watch"
+        },
+        {
+          "id": "fn-l-print-return-step",
+          "kind": "activity",
+          "activityID": "fn-l-print-return"
+        },
+        {
+          "id": "fn-g-area-step",
+          "kind": "activity",
+          "activityID": "fn-g-area"
+        },
+        {
+          "id": "fn-g-trace-step",
+          "kind": "activity",
+          "activityID": "fn-g-trace"
+        },
+        {
+          "id": "fn-g-fix-step",
+          "kind": "activity",
+          "activityID": "fn-g-fix"
+        },
+        {
+          "id": "fn-g-parsons-step",
+          "kind": "activity",
+          "activityID": "fn-g-parsons"
+        },
+        {
+          "id": "fn-g-explain-step",
+          "kind": "activity",
+          "activityID": "fn-g-explain"
+        },
+        {
+          "id": "fn-i-scope-step",
+          "kind": "activity",
+          "activityID": "fn-i-scope"
+        },
+        {
+          "id": "fn-i-scope-cb-step",
+          "kind": "activity",
+          "activityID": "fn-i-scope-cb"
+        },
+        {
+          "id": "fn-i-trace-step",
+          "kind": "activity",
+          "activityID": "fn-i-trace"
+        },
+        {
+          "id": "fn-i-trace-cb-step",
+          "kind": "activity",
+          "activityID": "fn-i-trace-cb"
+        },
+        {
+          "id": "fn-i-fix-step",
+          "kind": "activity",
+          "activityID": "fn-i-fix"
+        },
+        {
+          "id": "fn-i-fix-cb-step",
+          "kind": "activity",
+          "activityID": "fn-i-fix-cb"
+        },
+        {
+          "id": "fn-i-parsons-step",
+          "kind": "activity",
+          "activityID": "fn-i-parsons"
+        },
+        {
+          "id": "fn-i-parsons-cb-step",
+          "kind": "activity",
+          "activityID": "fn-i-parsons-cb"
+        },
+        {
+          "id": "fn-i-explain-step",
+          "kind": "activity",
+          "activityID": "fn-i-explain"
+        },
+        {
+          "id": "fn-l-print-return-question-step",
+          "kind": "question",
+          "questionID": "fn-l-print-return"
+        },
+        {
+          "id": "fn-g-area-question-step",
+          "kind": "question",
+          "questionID": "fn-g-area"
+        }
+      ]
+    },
+    {
+      "id": "cg-found-lists-dicts-v1",
+      "title": "Lists and dicts",
+      "steps": [
+        {
+          "id": "cg-found-lists-dicts-v1-read",
+          "kind": "reading",
+          "materialID": "cg-found-lists-dicts-v1-material"
+        },
+        {
+          "id": "ld-l-watch-step",
+          "kind": "activity",
+          "activityID": "ld-l-watch"
+        },
+        {
+          "id": "ld-l-alias-step",
+          "kind": "activity",
+          "activityID": "ld-l-alias"
+        },
+        {
+          "id": "ld-g-index-step",
+          "kind": "activity",
+          "activityID": "ld-g-index"
+        },
+        {
+          "id": "ld-g-trace-step",
+          "kind": "activity",
+          "activityID": "ld-g-trace"
+        },
+        {
+          "id": "ld-g-fix-step",
+          "kind": "activity",
+          "activityID": "ld-g-fix"
+        },
+        {
+          "id": "ld-g-parsons-step",
+          "kind": "activity",
+          "activityID": "ld-g-parsons"
+        },
+        {
+          "id": "ld-g-explain-step",
+          "kind": "activity",
+          "activityID": "ld-g-explain"
+        },
+        {
+          "id": "ld-i-index-step",
+          "kind": "activity",
+          "activityID": "ld-i-index"
+        },
+        {
+          "id": "ld-i-index-cb-step",
+          "kind": "activity",
+          "activityID": "ld-i-index-cb"
+        },
+        {
+          "id": "ld-i-trace-step",
+          "kind": "activity",
+          "activityID": "ld-i-trace"
+        },
+        {
+          "id": "ld-i-trace-cb-step",
+          "kind": "activity",
+          "activityID": "ld-i-trace-cb"
+        },
+        {
+          "id": "ld-i-fix-step",
+          "kind": "activity",
+          "activityID": "ld-i-fix"
+        },
+        {
+          "id": "ld-i-fix-cb-step",
+          "kind": "activity",
+          "activityID": "ld-i-fix-cb"
+        },
+        {
+          "id": "ld-i-parsons-step",
+          "kind": "activity",
+          "activityID": "ld-i-parsons"
+        },
+        {
+          "id": "ld-i-parsons-cb-step",
+          "kind": "activity",
+          "activityID": "ld-i-parsons-cb"
+        },
+        {
+          "id": "ld-i-explain-step",
+          "kind": "activity",
+          "activityID": "ld-i-explain"
+        },
+        {
+          "id": "ld-l-alias-question-step",
+          "kind": "question",
+          "questionID": "ld-l-alias"
+        },
+        {
+          "id": "ld-g-index-question-step",
+          "kind": "question",
+          "questionID": "ld-g-index"
+        }
+      ]
+    },
+    {
+      "id": "cg-found-recursion-v1",
+      "title": "Recursion and the call stack",
+      "steps": [
+        {
+          "id": "cg-found-recursion-v1-read",
+          "kind": "reading",
+          "materialID": "cg-found-recursion-v1-material"
+        },
+        {
+          "id": "rc-l-watch-step",
+          "kind": "activity",
+          "activityID": "rc-l-watch"
+        },
+        {
+          "id": "rc-l-order-step",
+          "kind": "activity",
+          "activityID": "rc-l-order"
+        },
+        {
+          "id": "rc-g-total-step",
+          "kind": "activity",
+          "activityID": "rc-g-total"
+        },
+        {
+          "id": "rc-g-trace-step",
+          "kind": "activity",
+          "activityID": "rc-g-trace"
+        },
+        {
+          "id": "rc-g-fix-step",
+          "kind": "activity",
+          "activityID": "rc-g-fix"
+        },
+        {
+          "id": "rc-g-parsons-step",
+          "kind": "activity",
+          "activityID": "rc-g-parsons"
+        },
+        {
+          "id": "rc-g-explain-step",
+          "kind": "activity",
+          "activityID": "rc-g-explain"
+        },
+        {
+          "id": "rc-i-digits-step",
+          "kind": "activity",
+          "activityID": "rc-i-digits"
+        },
+        {
+          "id": "rc-i-digits-cb-step",
+          "kind": "activity",
+          "activityID": "rc-i-digits-cb"
+        },
+        {
+          "id": "rc-i-trace-step",
+          "kind": "activity",
+          "activityID": "rc-i-trace"
+        },
+        {
+          "id": "rc-i-trace-cb-step",
+          "kind": "activity",
+          "activityID": "rc-i-trace-cb"
+        },
+        {
+          "id": "rc-i-fix-step",
+          "kind": "activity",
+          "activityID": "rc-i-fix"
+        },
+        {
+          "id": "rc-i-fix-cb-step",
+          "kind": "activity",
+          "activityID": "rc-i-fix-cb"
+        },
+        {
+          "id": "rc-i-parsons-step",
+          "kind": "activity",
+          "activityID": "rc-i-parsons"
+        },
+        {
+          "id": "rc-i-parsons-cb-step",
+          "kind": "activity",
+          "activityID": "rc-i-parsons-cb"
+        },
+        {
+          "id": "rc-i-explain-step",
+          "kind": "activity",
+          "activityID": "rc-i-explain"
+        },
+        {
+          "id": "rc-l-order-question-step",
+          "kind": "question",
+          "questionID": "rc-l-order"
+        },
+        {
+          "id": "rc-g-total-question-step",
+          "kind": "question",
+          "questionID": "rc-g-total"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "nv-l-watch",
+      "kind": "trace",
+      "prompt": "Step through. The arrow marks the line about to run; the panel shows every name after the lines above it ran.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "explanation": "Read the recorded frames in order. Nothing has run yet. Line 1 is next. hp now labels 10. Line 2 reads hp, which is 10, and works out 10 - 3. hp now labels 7. The old 10 is gone. Line 3 makes a new name. name labels the string 'Ada'. Line 4 prints both values with one space between. The program printed Ada 7. No quotes: print shows the text inside a string.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "hp = 10\nhp = hp - 3\nname = \"Ada\"\nprint(name, hp)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"10\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"7\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"7\", \"name\": \"'Ada'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"Ada 7\\n\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"7\", \"name\": \"'Ada'\"}}]}"
+      ]
+    },
+    {
+      "id": "nv-l-plus",
+      "kind": "prediction",
+      "prompt": "Make a guess first. It's free. What do these two lines print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. 7\n34\n2. 7\n7\n3. 34\n34",
+      "explanation": "7, then 34. Quotes make a string, and + joins strings instead of adding them.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "print(3 + 4)\nprint(\"3\" + \"4\")",
+      "language": "python",
+      "expected": "7\n34"
+    },
+    {
+      "id": "nv-g-copy",
+      "kind": "prediction",
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. 6 5\n2. 6 6\n3. 5 5",
+      "explanation": "Right. b took a's value, 5, when line 2 ran. Line 3 moves only a.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "a = 5\nb = a\na = a + 1\nprint(a, b)",
+      "language": "python",
+      "expected": "6 5"
+    },
+    {
+      "id": "nv-g-trace",
+      "kind": "trace",
+      "prompt": "Step through. When the panel asks, fill in the hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. gold labels 4. Line 2 doubles it. Line 2 ran. Line 3 turns gold into a string so + can join it. label holds the joined string. Line 4 prints it. The program printed gold: 8.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "gold = 4\ngold = gold * 2\nlabel = \"gold: \" + str(gold)\nprint(label)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"gold\": \"4\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"gold\": \"8\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"gold\": \"8\", \"label\": \"'gold: 8'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"gold: 8\\n\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"gold\": \"8\", \"label\": \"'gold: 8'\"}}]}"
+      ]
+    },
+    {
+      "id": "nv-g-fix",
+      "kind": "fix",
+      "prompt": "This should print 5 but prints 0. Select the line that's wrong, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. score = score + 5\n2. score == score + 5\n3. print(score + 5)",
+      "explanation": "Yes. Without = the sum is worked out and then thrown away. = stores it back in score.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "score = 0\nscore + 5\nprint(score)",
+      "language": "python",
+      "solution": "score = 0\nscore = score + 5\nprint(score)"
+    },
+    {
+      "id": "nv-g-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines so the program prints exactly: Ada has 3 coins. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 3 lines):\nc: print(\"Ada has\", coins, \"coins\")\nx: coins = coins * 2\nb: coins = coins + 2\na: coins = 1",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "nv-g-explain",
+      "kind": "explanation",
+      "prompt": "In your own words (type, dictate or write with Pencil): in the 'Does b follow a?' program, why does b still hold 5 after a changes?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "When line 2 ran, a held 5, so b got 5. Line 3 put a new value on a only. Names don't watch each other; b keeps the value it was given.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "nv-i-predict",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 10 5",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "x = 2\ny = x + 3\nx = y * 2\nprint(x, y)",
+      "language": "python",
+      "expected": "10 5"
+    },
+    {
+      "id": "nv-i-predict-cb",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 5 6",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "m = 3\nn = m * 2\nm = n - 1\nprint(m, n)",
+      "language": "python",
+      "expected": "5 6"
+    },
+    {
+      "id": "nv-i-trace",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. word labels 'ab'. Line 2 joins on another character. Line 3 measures word. Line 4 repeats word: a string times a number repeats it. The program ended. It printed nothing; the panel shows the final values.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "word = \"ab\"\nword = word + \"c\"\nsize = len(word)\nword = word * 2",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"word\": \"'ab'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"word\": \"'abc'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"size\": \"3\", \"word\": \"'abc'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"size\": \"3\", \"word\": \"'abcabc'\"}}]}"
+      ]
+    },
+    {
+      "id": "nv-i-trace-cb",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. t labels 'x'. Line 2 repeats it. Line 3 measures t and adds one. Line 4 joins on an exclamation mark. The program ended; the panel shows the final values.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "t = \"x\"\nt = t * 3\nn = len(t) + 1\nt = t + \"!\"",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"t\": \"'x'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"t\": \"'xxx'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"4\", \"t\": \"'xxx'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"4\", \"t\": \"'xxx!'\"}}]}"
+      ]
+    },
+    {
+      "id": "nv-i-fix",
+      "kind": "fix",
+      "prompt": "Three things at 4 coins each should cost 12. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. total = price * count\n2. total = price + count * 1\n3. total = price ** count",
+      "explanation": "Yes: price for each of count things is multiplication.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "price = 4\ncount = 3\ntotal = price + count\nprint(\"total:\", total)",
+      "language": "python",
+      "solution": "price = 4\ncount = 3\ntotal = price * count\nprint(\"total:\", total)"
+    },
+    {
+      "id": "nv-i-fix-cb",
+      "kind": "fix",
+      "prompt": "This should greet Sam by name. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. greeting = \"Hi \" + name\n2. greeting = \"Hi\" + name\n3. greeting = \"Hi \" + 'name'",
+      "explanation": "Yes. Without quotes Python uses the name's value.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "name = \"Sam\"\ngreeting = \"Hi \" + \"name\"\nprint(greeting)",
+      "language": "python",
+      "solution": "name = \"Sam\"\ngreeting = \"Hi \" + name\nprint(greeting)"
+    },
+    {
+      "id": "nv-i-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines so the program prints 7 on one line and 9 on the next. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 4 lines):\nd: print(n)\nc: n = n + 2\nx: m = n + 2\nb: print(n)\na: n = 7",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\"], [\"a\", \"d\", \"c\", \"b\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "nv-i-parsons-cb",
+      "kind": "explanation",
+      "prompt": "Arrange the lines so the program prints hi, then hi! on the next line.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 4 lines):\nc: s = s + \"!\"\nd: print(s)\na: s = \"hi\"\nb: print(s)",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\"], [\"a\", \"d\", \"c\", \"b\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "nv-i-explain",
+      "kind": "explanation",
+      "prompt": "Explain to a friend who knows Lua why print(\"3\" + \"4\") shows 34 in Python, while print(3 + \"4\") stops with an error.\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "\"3\" and \"4\" are both strings, so + joins them into \"34\". In 3 + \"4\", one side is a number and the other a string. Python refuses to guess, so it raises a TypeError. Lua would coerce \"4\" to a number here; in Python you write int(\"4\") or str(3) yourself.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "cd-l-watch",
+      "kind": "trace",
+      "prompt": "Step through. Watch the arrow skip the branches that don't run.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. temp is 30. Python asks: is 30 > 25? Yes, True. True, so the indented line under if runs. One branch already ran, so Python skips elif and else entirely and jumps to line 8. Line 8 isn't indented, so it always runs. Printed hot, then done. temp > 15 was never checked, even though it's also true.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "temp = 30\nif temp > 25:\n    print(\"hot\")\nelif temp > 15:\n    print(\"warm\")\nelse:\n    print(\"cold\")\nprint(\"done\")",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"temp\": \"30\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"temp\": \"30\"}}]}",
+        "{\"event\": \"line\", \"line\": 8, \"out\": \"hot\\n\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"temp\": \"30\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"hot\\ndone\\n\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"temp\": \"30\"}}]}"
+      ]
+    },
+    {
+      "id": "cd-l-order",
+      "kind": "prediction",
+      "prompt": "Guess first; it's free. 50 is bigger than 10 and bigger than 40. What prints?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. big\n2. huge\n3. big\nhuge",
+      "explanation": "big. The first True condition wins; put the most specific test first if you want it to win.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "n = 50\nif n > 10:\n    print(\"big\")\nelif n > 40:\n    print(\"huge\")",
+      "language": "python",
+      "expected": "big"
+    },
+    {
+      "id": "cd-g-teen",
+      "kind": "prediction",
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. teen\n2. not teen\n3. teen\nnot teen",
+      "explanation": "Right: 15 >= 13 is True and 15 < 20 is True, so and gives True.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "age = 15\nif age >= 13 and age < 20:\n    print(\"teen\")\nelse:\n    print(\"not teen\")",
+      "language": "python",
+      "expected": "teen"
+    },
+    {
+      "id": "cd-g-trace",
+      "kind": "trace",
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. hp is 8. Line 2 sets shield. shield is False, so not shield is True. And 8 < 10 is True too. Both True, so the indented line runs and heals hp. A second, separate if. It doesn't care what the first one did; it checks hp as it is now. Python checked hp > 12 using hp as it is now. The arrow shows which block it chose; the other one is skipped. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "hp = 8\nshield = False\nif hp < 10 and not shield:\n    hp = hp + 5\nif hp > 12:\n    status = \"full\"\nelse:\n    status = \"ok\"",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"8\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"8\", \"shield\": \"False\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"8\", \"shield\": \"False\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"13\", \"shield\": \"False\"}}]}",
+        "{\"event\": \"line\", \"line\": 6, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"13\", \"shield\": \"False\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"hp\": \"13\", \"shield\": \"False\", \"status\": \"'full'\"}}]}"
+      ]
+    },
+    {
+      "id": "cd-g-fix",
+      "kind": "fix",
+      "prompt": "5 coins should buy a 5-coin item, but this says not enough. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. if coins >= price:\n2. if coins == price + 1:\n3. if coins < price:",
+      "explanation": "Yes. > means strictly more; >= also allows equal.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "coins = 5\nprice = 5\nif coins > price:\n    print(\"bought\")\nelse:\n    print(\"not enough\")",
+      "language": "python",
+      "solution": "coins = 5\nprice = 5\nif coins >= price:\n    print(\"bought\")\nelse:\n    print(\"not enough\")"
+    },
+    {
+      "id": "cd-g-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints even, then done. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 4 lines):\nd: print(\"done\")\nc:     print(\"even\")\nx:     print(\"odd\")\nb: if n % 2 == 0:\na: n = 4",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "cd-g-explain",
+      "kind": "explanation",
+      "prompt": "In your own words: in the order trap, n was 50 and n > 40 is true. Why didn't huge print, and how would you change the program so it does?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "Python asked n > 10 first. That was True, so it printed big and skipped the rest of the chain without checking n > 40. Swap them: test n > 40 first, then elif n > 10.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "cd-i-grade",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: B",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "score = 72\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelif score >= 50:\n    print(\"C\")\nelse:\n    print(\"D\")",
+      "language": "python",
+      "expected": "B"
+    },
+    {
+      "id": "cd-i-grade-cb",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: morning",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "t = 8\nif t < 5:\n    print(\"early\")\nelif t < 12:\n    print(\"morning\")\nelif t < 18:\n    print(\"afternoon\")\nelse:\n    print(\"night\")",
+      "language": "python",
+      "expected": "morning"
+    },
+    {
+      "id": "cd-i-trace",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. x is 4. Line 2 sets y. Python checks the or: is either side True? The body of the first if runs. A second if checks x as it is now. The body of the second if runs. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "x = 4\ny = 9\nif x > y or y > 8:\n    x = x * 2\nif x == 8:\n    y = y - x",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"x\": \"4\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"x\": \"4\", \"y\": \"9\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"x\": \"4\", \"y\": \"9\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"x\": \"8\", \"y\": \"9\"}}]}",
+        "{\"event\": \"line\", \"line\": 6, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"x\": \"8\", \"y\": \"9\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"x\": \"8\", \"y\": \"1\"}}]}"
+      ]
+    },
+    {
+      "id": "cd-i-trace-cb",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. a is 6. Line 2 sets b. Python checks the and: both sides must be True. The condition was False, so Python jumped to the else block. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "a = 6\nb = 2\nif a < b and b > 0:\n    a = 0\nelse:\n    b = a + b",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"a\": \"6\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"a\": \"6\", \"b\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 6, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"a\": \"6\", \"b\": \"2\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"a\": \"6\", \"b\": \"8\"}}]}"
+      ]
+    },
+    {
+      "id": "cd-i-fix",
+      "kind": "fix",
+      "prompt": "This should print just right when temp is 20, but it won't even start. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. if temp == 20:\n2. if (temp = 20):\n3. if temp != 20:",
+      "explanation": "Yes: == asks 'are these equal?'; = stores a value.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "temp = 20\nif temp = 20:\n    print(\"just right\")",
+      "language": "python",
+      "solution": "temp = 20\nif temp == 20:\n    print(\"just right\")"
+    },
+    {
+      "id": "cd-i-fix-cb",
+      "kind": "fix",
+      "prompt": "With 0 lives this should print game over, but prints nothing. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. if lives <= 0:\n2. if lives < -1:\n3. if lives > 0:",
+      "explanation": "Yes: 0 counts as out.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "lives = 0\nif lives > 0:\n    print(\"keep playing\")\nif lives < 0:\n    print(\"game over\")",
+      "language": "python",
+      "solution": "lives = 0\nif lives > 0:\n    print(\"keep playing\")\nif lives <= 0:\n    print(\"game over\")"
+    },
+    {
+      "id": "cd-i-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints warm.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\ne:     print(\"warm\")\nb: if t > 25:\nd: elif t > 15:\na: t = 18\nc:     print(\"hot\")",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "cd-i-parsons-cb",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints small.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\nd: else:\ne:     print(\"small\")\na: k = 3\nc:     print(\"big\")\nb: if k > 10:",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "cd-i-explain",
+      "kind": "explanation",
+      "prompt": "Explain to a Lua programmer why if 0: skips its block in Python, even though if 0 then runs its block in Lua. When would that difference bite you?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "Python treats zero, empty strings, empty collections and None as false, so if 0: skips. Lua treats only nil and false as false, so 0 is true there. It bites when a value can legitimately be 0, like a score: if score: would skip a real score of 0. Say what you mean, e.g. if score is not None.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "lp-l-watch",
+      "kind": "trace",
+      "prompt": "Step through. Notice the arrow jumping back up to the for line after each pass.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. total starts at 0. The for line hands out the next value from range(1, 4): 1, 2, 3. Stop (4) is never handed out. n is 1. The body adds it to total. Back to the for line for the next value. n is 2. total is 1 so far. Back to the for line. n is 3, the last value. total is 3 so far. Back to the for line, but range has nothing left, so the loop ends. Line 4 is outside the loop (not indented), so it runs once, after the loop. Printed 6: 0 + 1 + 2 + 3.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "total = 0\nfor n in range(1, 4):\n    total = total + n\nprint(total)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"total\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"1\", \"total\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"1\", \"total\": \"1\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"2\", \"total\": \"1\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"2\", \"total\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"3\", \"total\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"3\", \"total\": \"6\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"3\", \"total\": \"6\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"6\\n\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"n\": \"3\", \"total\": \"6\"}}]}"
+      ]
+    },
+    {
+      "id": "lp-l-range",
+      "kind": "prediction",
+      "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. 0\n1\n2\n2. 1\n2\n3\n3. 0\n1\n2\n3",
+      "explanation": "0, 1, 2. range(n) gives n values starting at 0, which is exactly the valid positions of a list of length n.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "for i in range(3):\n    print(i)",
+      "language": "python",
+      "expected": "0\n1\n2"
+    },
+    {
+      "id": "lp-g-countdown",
+      "kind": "prediction",
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. 3\n2\n1\ngo\n2. 3\n2\n1\n0\ngo\n3. 2\n1\n0\ngo",
+      "explanation": "Right. When n reaches 0, the while checks 0 > 0, which is False, so the body doesn't run again.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "n = 3\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint(\"go\")",
+      "language": "python",
+      "expected": "3\n2\n1\ngo"
+    },
+    {
+      "id": "lp-g-trace",
+      "kind": "trace",
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. word is 'loop'. Line 2 starts a counter. for ch in word hands out one character at a time. ch is 'l'. Is it 'o'? No, so the body skipped the count. Back to the for line. Second pass: the for line handed out the next character. Is it a match? Yes, so the counter goes up. Back to the for line. Third character. Is it 'o'? Yes again. Back to the for line. Fourth character, 'p'. Is it 'o'? No. Back to the for line, which has no characters left. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "word = \"loop\"\ncount = 0\nfor ch in word:\n    if ch == \"o\":\n        count = count + 1",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"count\": \"0\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'l'\", \"count\": \"0\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'l'\", \"count\": \"0\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'o'\", \"count\": \"0\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'o'\", \"count\": \"0\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'o'\", \"count\": \"1\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'o'\", \"count\": \"1\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'o'\", \"count\": \"1\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'o'\", \"count\": \"2\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'p'\", \"count\": \"2\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'p'\", \"count\": \"2\", \"word\": \"'loop'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"ch\": \"'p'\", \"count\": \"2\", \"word\": \"'loop'\"}}]}"
+      ]
+    },
+    {
+      "id": "lp-g-fix",
+      "kind": "fix",
+      "prompt": "This should print 1 to 5 but stops at 4. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. for i in range(1, 6):\n2. for i in range(0, 5):\n3. for i in range(1, 5 + 0):",
+      "explanation": "Yes. range stops before its stop value, so to include 5 you stop at 6. (Lua's for i = 1, 5 includes 5; that's the trap.)",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "for i in range(1, 5):\n    print(i)",
+      "language": "python",
+      "solution": "for i in range(1, 6):\n    print(i)"
+    },
+    {
+      "id": "lp-g-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 12. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 4 lines):\nd: print(total)\nx:     print(total)\nc:     total = total + n\na: total = 0\nb: for n in range(2, 7, 2):",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "lp-g-explain",
+      "kind": "explanation",
+      "prompt": "In your own words: the countdown printed 3, 2, 1 and then go. Why didn't it print 0, and when exactly does a while loop stop?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "A while loop asks its question before each pass. After printing 1, n became 0. Python asked 0 > 0, got False, and left the loop without running print again. The n = n - 1 line is what eventually makes the question False.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "lp-i-triple",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 27",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "x = 1\nwhile x < 20:\n    x = x * 3\nprint(x)",
+      "language": "python",
+      "expected": "27"
+    },
+    {
+      "id": "lp-i-triple-cb",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints. // divides and drops any remainder (7 // 2 is 3).\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 6",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "k = 100\nwhile k > 10:\n    k = k // 2\nprint(k)",
+      "language": "python",
+      "expected": "6"
+    },
+    {
+      "id": "lp-i-trace",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. total starts at 0. The for line hands out the next value. First pass: the body adds i * 2. Back to the for line. Second pass. Back to the for line. Third pass. Back to the for line; nothing left. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "total = 0\nfor i in range(3):\n    total = total + i * 2",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"total\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"i\": \"0\", \"total\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"i\": \"0\", \"total\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"i\": \"1\", \"total\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"i\": \"1\", \"total\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"i\": \"2\", \"total\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"i\": \"2\", \"total\": \"6\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"i\": \"2\", \"total\": \"6\"}}]}"
+      ]
+    },
+    {
+      "id": "lp-i-trace-cb",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. s starts empty. The for line hands out one character. First pass: c goes in front of s. Back to the for line. Second pass. Back to the for line. Third pass. Back to the for line; nothing left. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "s = \"\"\nfor c in \"abc\":\n    s = c + s",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"s\": \"''\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"c\": \"'a'\", \"s\": \"''\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"c\": \"'a'\", \"s\": \"'a'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"c\": \"'b'\", \"s\": \"'a'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"c\": \"'b'\", \"s\": \"'ba'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"c\": \"'c'\", \"s\": \"'ba'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"c\": \"'c'\", \"s\": \"'cba'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"c\": \"'c'\", \"s\": \"'cba'\"}}]}"
+      ]
+    },
+    {
+      "id": "lp-i-fix",
+      "kind": "fix",
+      "prompt": "This should add up 4, 5 and 6 to make 15. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1.     total = total + n\n2.     total = n + n\n3.     total = total * n",
+      "explanation": "Yes: keep what you had and add this pass's n.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "total = 0\nfor n in [4, 5, 6]:\n    total = n\nprint(total)",
+      "language": "python",
+      "solution": "total = 0\nfor n in [4, 5, 6]:\n    total = total + n\nprint(total)"
+    },
+    {
+      "id": "lp-i-fix-cb",
+      "kind": "fix",
+      "prompt": "This should multiply 2 × 3 × 4 to make 24. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. product = 1\n2. product = 2\n3. product = None",
+      "explanation": "Yes: 1 is the starting point for multiplying, the way 0 is for adding.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "product = 0\nfor n in [2, 3, 4]:\n    product = product * n\nprint(product)",
+      "language": "python",
+      "solution": "product = 1\nfor n in [2, 3, 4]:\n    product = product * n\nprint(product)"
+    },
+    {
+      "id": "lp-i-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 3, 2, 1 on separate lines and then liftoff. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 3 lines):\nc: print(\"liftoff\")\nx: for i in range(3, 0):\nb:     print(i)\na: for i in range(3, 0, -1):",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "lp-i-parsons-cb",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 4 and 9 on separate lines. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 3 lines):\nc:     print(sq)\nx:     print(k)\na: for k in range(1, 4):\nb:     sq = k * k",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "lp-i-explain",
+      "kind": "explanation",
+      "prompt": "Explain to a Lua programmer why for i = 1, 5 do in Lua and for i in range(1, 5): in Python don't loop the same number of times. How do you write Lua's loop in Python, and why is Python's way handy for lists?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "Lua's for i = 1, 5 runs with 1, 2, 3, 4, 5. Python's range(1, 5) stops before 5, so it gives 1 to 4: one fewer. To match Lua you write range(1, 6). Python counts this way because lists start at position 0: range(len(xs)) is exactly the positions you can use, and range(a, b) always has b − a values.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "fn-l-watch",
+      "kind": "trace",
+      "prompt": "Step through. The stack panel grows a new box when a function is called and drops it when the function returns.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. def only teaches Python the recipe; nothing inside runs yet. Python skipped the body. Line 4 calls double with 5. A new box for double appears on the stack. The parameter x holds the 5 that was passed in. y is worked out inside double's box. It's double's own name; the main program can't see it. return hands y's value back to the line that called. double's box is about to disappear. Line 4 finished: the call double(5) was replaced by 10, so a is 10. x and y are gone. Line 5 is next. Printed 11.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def double(x):\n    y = x * 2\n    return y\na = double(5)\nprint(a + 1)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"double\", \"vars\": {\"x\": \"5\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"double\", \"vars\": {\"x\": \"5\", \"y\": \"10\"}}]}",
+        "{\"event\": \"return\", \"line\": 3, \"out\": \"\", \"returns\": \"10\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"double\", \"vars\": {\"x\": \"5\", \"y\": \"10\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"a\": \"10\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"11\\n\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"a\": \"10\"}}]}"
+      ]
+    },
+    {
+      "id": "fn-l-print-return",
+      "kind": "prediction",
+      "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. hey!\nNone\n2. hey!\nhey!\n3. hey!",
+      "explanation": "hey! then None. A function with no return gives back None. Printing is for people; returning is for the rest of the program.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def shout(w):\n    print(w + \"!\")\nr = shout(\"hey\")\nprint(r)",
+      "language": "python",
+      "expected": "hey!\nNone"
+    },
+    {
+      "id": "fn-g-area",
+      "kind": "prediction",
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. 14\n2. 12\n3. 12\n2",
+      "explanation": "Right: each call is replaced by its return value, 12 + 2.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def area(w, h):\n    return w * h\nprint(area(3, 4) + area(1, 2))",
+      "language": "python",
+      "expected": "14"
+    },
+    {
+      "id": "fn-g-trace",
+      "kind": "trace",
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. def stores the function; its body waits. Line 4 calls add_tax with 50. add_tax's box: price is 50. Line 2 works out a tenth of it. tax lives in add_tax's box. add_tax is about to hand back its answer. Back in the main program: cost holds what came back. add_tax's box, and its tax, are gone. A second call, with a brand-new box: price is 20 this time. This call's tax is separate from the first one. Handing back 22. total is cost plus what the second call returned.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def add_tax(price):\n    tax = price // 10\n    return price + tax\ncost = add_tax(50)\ntotal = cost + add_tax(20)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"add_tax\", \"vars\": {\"price\": \"50\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"add_tax\", \"vars\": {\"price\": \"50\", \"tax\": \"5\"}}]}",
+        "{\"event\": \"return\", \"line\": 3, \"out\": \"\", \"returns\": \"55\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"add_tax\", \"vars\": {\"price\": \"50\", \"tax\": \"5\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"cost\": \"55\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"cost\": \"55\"}}, {\"fn\": \"add_tax\", \"vars\": {\"price\": \"20\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"cost\": \"55\"}}, {\"fn\": \"add_tax\", \"vars\": {\"price\": \"20\", \"tax\": \"2\"}}]}",
+        "{\"event\": \"return\", \"line\": 3, \"out\": \"\", \"returns\": \"22\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"cost\": \"55\"}}, {\"fn\": \"add_tax\", \"vars\": {\"price\": \"20\", \"tax\": \"2\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"cost\": \"55\", \"total\": \"77\"}}]}"
+      ]
+    },
+    {
+      "id": "fn-g-fix",
+      "kind": "fix",
+      "prompt": "This should print 10, but it prints 9 and then stops with an error. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1.     return n * n\n2.     print(n * n + 1)\n3.     n = n * n",
+      "explanation": "Yes. return hands 9 back to line 3, so total is 10. Nothing prints 9 any more.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def square(n):\n    print(n * n)\ntotal = square(3) + 1\nprint(total)",
+      "language": "python",
+      "solution": "def square(n):\n    return n * n\ntotal = square(3) + 1\nprint(total)"
+    },
+    {
+      "id": "fn-g-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 7 9. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\ne: print(bigger(3, 7), bigger(9, 2))\nc:         return a\nx:     print(b)\na: def bigger(a, b):\nd:     return b\nb:     if a > b:",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "fn-g-explain",
+      "kind": "explanation",
+      "prompt": "In your own words: in the shout program, hey! appeared on screen, but r was None. What's the difference between print and return?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "print puts text on the screen and that's all. return is what the call turns into: r = shout(\"hey\") stores whatever shout returns. shout has no return, so it returned None, even though it printed hey! along the way.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "fn-i-scope",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 22 1",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def f(n):\n    n = n + 10\n    return n * 2\nn = 1\nprint(f(n), n)",
+      "language": "python",
+      "expected": "22 1"
+    },
+    {
+      "id": "fn-i-scope-cb",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 5 2",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def g(k):\n    k = k * 3\n    return k - 1\nk = 2\nprint(g(k), k)",
+      "language": "python",
+      "expected": "5 2"
+    },
+    {
+      "id": "fn-i-trace",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value. Watch the stack grow three boxes tall.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. inc is stored. Line 3 stores twice. Line 5 calls twice with 5. twice's box. To work out inc(inc(v)), Python calls the inner inc first. An inc box on top of twice's box. Three boxes: main, twice, inc. The inner inc is about to return. Its result is passed straight into the outer inc: a new inc box. The outer inc is about to return. twice hands that result back. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def inc(v):\n    return v + 1\ndef twice(v):\n    return inc(inc(v))\nr = twice(5)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"twice\", \"vars\": {\"v\": \"5\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"twice\", \"vars\": {\"v\": \"5\"}}, {\"fn\": \"inc\", \"vars\": {\"v\": \"5\"}}]}",
+        "{\"event\": \"return\", \"line\": 2, \"out\": \"\", \"returns\": \"6\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"twice\", \"vars\": {\"v\": \"5\"}}, {\"fn\": \"inc\", \"vars\": {\"v\": \"5\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"twice\", \"vars\": {\"v\": \"5\"}}, {\"fn\": \"inc\", \"vars\": {\"v\": \"6\"}}]}",
+        "{\"event\": \"return\", \"line\": 2, \"out\": \"\", \"returns\": \"7\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"twice\", \"vars\": {\"v\": \"5\"}}, {\"fn\": \"inc\", \"vars\": {\"v\": \"6\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"7\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"twice\", \"vars\": {\"v\": \"5\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"r\": \"7\"}}]}"
+      ]
+    },
+    {
+      "id": "fn-i-trace-cb",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. half is stored. Line 3 stores quarter. Line 6 calls quarter with 20. quarter's box. Line 4 calls half. A half box on top. half is about to return. Back in quarter: h holds what came back. Line 5 calls half again with h. A new half box. half is about to return. quarter hands that result back. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def half(v):\n    return v // 2\ndef quarter(v):\n    h = half(v)\n    return half(h)\nq = quarter(20)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 6, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"quarter\", \"vars\": {\"v\": \"20\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"quarter\", \"vars\": {\"v\": \"20\"}}, {\"fn\": \"half\", \"vars\": {\"v\": \"20\"}}]}",
+        "{\"event\": \"return\", \"line\": 2, \"out\": \"\", \"returns\": \"10\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"quarter\", \"vars\": {\"v\": \"20\"}}, {\"fn\": \"half\", \"vars\": {\"v\": \"20\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"quarter\", \"vars\": {\"h\": \"10\", \"v\": \"20\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"quarter\", \"vars\": {\"h\": \"10\", \"v\": \"20\"}}, {\"fn\": \"half\", \"vars\": {\"v\": \"10\"}}]}",
+        "{\"event\": \"return\", \"line\": 2, \"out\": \"\", \"returns\": \"5\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"quarter\", \"vars\": {\"h\": \"10\", \"v\": \"20\"}}, {\"fn\": \"half\", \"vars\": {\"v\": \"10\"}}]}",
+        "{\"event\": \"return\", \"line\": 5, \"out\": \"\", \"returns\": \"5\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"quarter\", \"vars\": {\"h\": \"10\", \"v\": \"20\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"q\": \"5\"}}]}"
+      ]
+    },
+    {
+      "id": "fn-i-fix",
+      "kind": "fix",
+      "prompt": "The average of 4 and 8 should print as 6. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1.     return total // 2\n2.     return a + b // 2\n3.     return total / 2",
+      "explanation": "Yes: the average is the total split in two.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def avg(a, b):\n    total = a + b\n    return total\nprint(avg(4, 8))",
+      "language": "python",
+      "solution": "def avg(a, b):\n    total = a + b\n    return total // 2\nprint(avg(4, 8))"
+    },
+    {
+      "id": "fn-i-fix-cb",
+      "kind": "fix",
+      "prompt": "This should show Hi Mo and then done, but only done appears. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. print(greet(\"Mo\"))\n2. greet(\"Mo\") + \"\"\n3. return greet(\"Mo\")",
+      "explanation": "Yes: the returned value has to be printed (or stored) to be seen.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def greet(name):\n    return \"Hi \" + name\ngreet(\"Mo\")\nprint(\"done\")",
+      "language": "python",
+      "solution": "def greet(name):\n    return \"Hi \" + name\nprint(greet(\"Mo\"))\nprint(\"done\")"
+    },
+    {
+      "id": "fn-i-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 9. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 6 lines):\nf: print(sum_to(3) + 3)\nd:         s = s + i\nx:         return s\na: def sum_to(n):\ne:     return s\nc:     for i in range(1, n + 1):\nb:     s = 0",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "fn-i-parsons-cb",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 2, 1 and go on separate lines. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 6 lines):\nd:         n = n - 1\nf: print(count_down(2))\nx:     print(\"go\")\nb:     while n > 0:\ne:     return \"go\"\na: def count_down(n):\nc:         print(n)",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "fn-i-explain",
+      "kind": "explanation",
+      "prompt": "Explain to a Lua programmer why f(n) didn't change the main program's n. In Lua, what happens if you assign to a name inside a function without writing local? What does Python do instead?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "When f(n) was called, f got its own box with its own n, starting at 1. n = n + 10 changed that box only, and the box vanished when f returned. In Lua, x = 5 inside a function without local writes a global; Python flips the default: any name you assign inside a function is local to it. To get a value out, return it.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "ld-l-watch",
+      "kind": "trace",
+      "prompt": "Step through. Positions start at 0.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. xs labels a list holding 5 and 8. 5 is at position 0, 8 at position 1. append changed the list in place: 3 joined the end. No = was needed. xs[0] is the item at position 0, the first one. xs[-1] counts from the end: the last item. The list has len(xs) = 3 items, at positions 0, 1 and 2.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "xs = [5, 8]\nxs.append(3)\nfirst = xs[0]\nlast = xs[-1]",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"xs\": \"[5, 8]\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"xs\": \"[5, 8, 3]\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"first\": \"5\", \"xs\": \"[5, 8, 3]\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"first\": \"5\", \"last\": \"3\", \"xs\": \"[5, 8, 3]\"}}]}"
+      ]
+    },
+    {
+      "id": "ld-l-alias",
+      "kind": "prediction",
+      "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. [1, 2, 3]\n2. [1, 2]\n3. [1, 2, 3, 3]",
+      "explanation": "[1, 2, 3]. b = a puts a second label on the same list. Changing the list through either name changes it for both. To get a separate list, use b = a.copy().",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "a = [1, 2]\nb = a\na.append(3)\nprint(b)",
+      "language": "python",
+      "expected": "[1, 2, 3]"
+    },
+    {
+      "id": "ld-g-index",
+      "kind": "prediction",
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. dog 3\n2. cat 3\n3. dog 2",
+      "explanation": "Right: position 1 is the second item, and there are 3 items.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "pets = [\"cat\", \"dog\", \"eel\"]\nprint(pets[1], len(pets))",
+      "language": "python",
+      "expected": "dog 3"
+    },
+    {
+      "id": "ld-g-trace",
+      "kind": "trace",
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. counts is an empty dict. The loop hands out each word. w is 'hi'. Is 'hi' already a key in counts? No, so the else block adds it with 1. Back to the for line. w is 'yo'. Is it a key yet? No: the else block adds it. Back to the for line. w is 'hi' again. Is it a key now? Yes, so its count goes up by one. Back to the for line; no words left. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "counts = {}\nfor w in [\"hi\", \"yo\", \"hi\"]:\n    if w in counts:\n        counts[w] = counts[w] + 1\n    else:\n        counts[w] = 1",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{}\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{}\", \"w\": \"'hi'\"}}]}",
+        "{\"event\": \"line\", \"line\": 6, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{}\", \"w\": \"'hi'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 1}\", \"w\": \"'hi'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 1}\", \"w\": \"'yo'\"}}]}",
+        "{\"event\": \"line\", \"line\": 6, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 1}\", \"w\": \"'yo'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 1, 'yo': 1}\", \"w\": \"'yo'\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 1, 'yo': 1}\", \"w\": \"'hi'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 1, 'yo': 1}\", \"w\": \"'hi'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 2, 'yo': 1}\", \"w\": \"'hi'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"counts\": \"{'hi': 2, 'yo': 1}\", \"w\": \"'hi'\"}}]}"
+      ]
+    },
+    {
+      "id": "ld-g-fix",
+      "kind": "fix",
+      "prompt": "This should add 2 pears to the stock, but it stops with a KeyError. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. stock[\"pear\"] = stock.get(\"pear\", 0) + 2\n2. stock[\"pear\"] = stock[\"apple\"] + 2\n3. stock.pear = 2",
+      "explanation": "Yes. .get(key, 0) gives 0 when the key isn't there yet, instead of stopping.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "stock = {\"apple\": 3}\nstock[\"pear\"] = stock[\"pear\"] + 2\nprint(stock)",
+      "language": "python",
+      "solution": "stock = {\"apple\": 3}\nstock[\"pear\"] = stock.get(\"pear\", 0) + 2\nprint(stock)"
+    },
+    {
+      "id": "ld-g-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints [2, 4, 6]. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\ne: print(out)\nd:     out.append(n * 2)\nx:     out = n * 2\nc: for n in nums:\nb: out = []\na: nums = [1, 2, 3]",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"], [\"b\", \"a\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "ld-g-explain",
+      "kind": "explanation",
+      "prompt": "In your own words: in lesson 1, b = a followed by a = a + 1 left b alone. Here, b = a followed by a.append(3) changed b. What's different?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "In both programs b = a makes b label the same thing a labels. With numbers, a = a + 1 builds a new number and moves only a. With a list, append doesn't move any name; it changes the one list that a and b both label, so b shows it too. b = a.copy() would make a separate list.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "ld-i-index",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 4 5",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "xs = [4, 7, 1]\nxs.append(xs[0] + xs[-1])\nprint(len(xs), xs[3])",
+      "language": "python",
+      "expected": "4 5"
+    },
+    {
+      "id": "ld-i-index-cb",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 4 10",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "ys = [10, 20, 30]\nys.append(ys[1] - ys[0])\nprint(len(ys), ys[-1])",
+      "language": "python",
+      "expected": "4 10"
+    },
+    {
+      "id": "ld-i-trace",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value. Watch both boxes.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. add_bonus is stored. Line 3 makes a list. Line 4 calls add_bonus with mine. In add_bonus's box, scores labels the list that was passed in. add_bonus is about to return. It has no return line, so it gives back None. Back in the main program. Line 5 adds up the list. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def add_bonus(scores):\n    scores.append(100)\nmine = [50]\nadd_bonus(mine)\ntotal = sum(mine)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"mine\": \"[50]\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"mine\": \"[50]\"}}, {\"fn\": \"add_bonus\", \"vars\": {\"scores\": \"[50]\"}}]}",
+        "{\"event\": \"return\", \"line\": 2, \"out\": \"\", \"returns\": \"None\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"mine\": \"[50, 100]\"}}, {\"fn\": \"add_bonus\", \"vars\": {\"scores\": \"[50, 100]\"}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"mine\": \"[50, 100]\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"mine\": \"[50, 100]\", \"total\": \"150\"}}]}"
+      ]
+    },
+    {
+      "id": "ld-i-trace-cb",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. inv labels a dict. Line 2 adds a second name. Line 3 changes a value through alias. Line 4 reads through inv. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "inv = {\"gem\": 1}\nalias = inv\nalias[\"gem\"] = 5\nn = inv[\"gem\"] * 2",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"inv\": \"{'gem': 1}\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"alias\": \"{'gem': 1}\", \"inv\": \"{'gem': 1}\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"alias\": \"{'gem': 5}\", \"inv\": \"{'gem': 5}\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"alias\": \"{'gem': 5}\", \"inv\": \"{'gem': 5}\", \"n\": \"10\"}}]}"
+      ]
+    },
+    {
+      "id": "ld-i-fix",
+      "kind": "fix",
+      "prompt": "This should print all three names, but it skips Ana and then stops with an IndexError. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. for i in range(len(names)):\n2. for i in range(1, len(names)):\n3. for i in range(0, len(names) + 1):",
+      "explanation": "Yes: positions 0, 1, 2, exactly the valid ones.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "names = [\"Ana\", \"Bo\", \"Cy\"]\nfor i in range(1, len(names) + 1):\n    print(names[i])",
+      "language": "python",
+      "solution": "names = [\"Ana\", \"Bo\", \"Cy\"]\nfor i in range(len(names)):\n    print(names[i])"
+    },
+    {
+      "id": "ld-i-fix-cb",
+      "kind": "fix",
+      "prompt": "This should print Ana's age, 30, but it stops with a KeyError. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1. print(ages[\"Ana\"])\n2. print(ages[0])\n3. print(ages.get(30))",
+      "explanation": "Yes: you look up by key, and get the value.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "ages = {\"Ana\": 30, \"Bo\": 25}\nprint(ages[30])",
+      "language": "python",
+      "solution": "ages = {\"Ana\": 30, \"Bo\": 25}\nprint(ages[\"Ana\"])"
+    },
+    {
+      "id": "ld-i-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints {'a': 2, 'b': 1}. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\nd:     seen[ch] = seen.get(ch, 0) + 1\ne: print(seen)\nx:     seen[ch] = 1\nb: seen = {}\nc: for ch in letters:\na: letters = \"aba\"",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"], [\"b\", \"a\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "ld-i-parsons-cb",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 6. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\ne: print(best)\nx:         best = best + v\nc:     if v > best:\na: best = 0\nd:         best = v\nb: for v in [3, 6, 2]:",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "ld-i-explain",
+      "kind": "explanation",
+      "prompt": "A Lua table does the job of both a list and a dict. Explain how to pick between a Python list and a dict, and the two indexing differences that trip up Lua programmers.\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "Use a list when order and position matter (scores in order, names in a line). Use a dict when you look things up by a name (a word's count, a person's age). Two traps from Lua: lists start at 0, so xs[0] is the first item and xs[-1] the last; and reading a missing key stops with a KeyError instead of giving nil, so check with k in d or use d.get(k, default).",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "rc-l-watch",
+      "kind": "trace",
+      "prompt": "Step through. Watch the stack panel grow one fact box per call, then shrink as each one returns.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. def stores fact. Line 5 calls fact(3). A fact box with n = 3. Is n == 1? No. So fact(3) needs 3 * fact(2). It can't finish until fact(2) answers, so it waits. A second fact box on top, n = 2. The first box is still there, waiting. fact(2) needs 2 * fact(1). It waits too. A third box, n = 1. Is n == 1? Yes: this is the base case. The base case answers directly, with no more calls. fact(1) returns 1. Its box is about to go. fact(2) gets its answer: 2 * 1 = 2, and returns. fact(3) gets its answer: 3 * 2 = 6, and returns. r is 6. The boxes came off in the reverse order they went on: last in, first out.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def fact(n):\n    if n == 1:\n        return 1\n    return n * fact(n - 1)\nr = fact(3)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"2\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"1\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"2\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"1\"}}]}",
+        "{\"event\": \"return\", \"line\": 3, \"out\": \"\", \"returns\": \"1\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"2\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"1\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"2\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"2\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"6\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"fact\", \"vars\": {\"n\": \"3\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"r\": \"6\"}}]}"
+      ]
+    },
+    {
+      "id": "rc-l-order",
+      "kind": "prediction",
+      "prompt": "Guess first; it's free. What does show(3) print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. 3\n2\n1\n2. 1\n2\n3\n3. 3\n2\n1\n0",
+      "explanation": "3, 2, 1. Print happens on the way in, before the smaller call. Move print below the call and it would happen on the way out: 1, 2, 3.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def show(n):\n    if n == 0:\n        return\n    print(n)\n    show(n - 1)\nshow(3)",
+      "language": "python",
+      "expected": "3\n2\n1"
+    },
+    {
+      "id": "rc-g-total",
+      "kind": "prediction",
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nChoices:\n1. 10\n2. 4\n3. 24",
+      "explanation": "Right: 4 + 3 + 2 + 1 + 0.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def total(n):\n    if n == 0:\n        return 0\n    return n + total(n - 1)\nprint(total(4))",
+      "language": "python",
+      "expected": "10"
+    },
+    {
+      "id": "rc-g-trace",
+      "kind": "trace",
+      "prompt": "Step through. Fill in each hidden return value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. Line 5 calls power(2, 3). e is 3, not 0. power(2, 3) waits on power(2, 2). A new box, e = 2. It waits on power(2, 1). A new box, e = 1. It waits on power(2, 0). A fourth box, e = 0: the base case. The base case answers directly. The base case is about to return. The e = 1 box gets its answer and returns. The e = 2 box returns. The first box, e = 3, is about to return. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def power(b, e):\n    if e == 0:\n        return 1\n    return b * power(b, e - 1)\np = power(2, 3)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"1\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"1\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"1\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"1\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"0\"}}]}",
+        "{\"event\": \"return\", \"line\": 3, \"out\": \"\", \"returns\": \"1\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"1\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"0\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"2\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"1\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"4\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"2\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"8\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"power\", \"vars\": {\"b\": \"2\", \"e\": \"3\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"p\": \"8\"}}]}"
+      ]
+    },
+    {
+      "id": "rc-g-fix",
+      "kind": "fix",
+      "prompt": "This should print go, but it stops with a RecursionError. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1.     return countdown(n - 1)\n2.     return countdown(n + 1)\n3.     return n - 1",
+      "explanation": "Yes. Each call must move closer to the base case; n - 1 eventually reaches 0.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def countdown(n):\n    if n == 0:\n        return \"go\"\n    return countdown(n)\nprint(countdown(3))",
+      "language": "python",
+      "solution": "def countdown(n):\n    if n == 0:\n        return \"go\"\n    return countdown(n - 1)\nprint(countdown(3))"
+    },
+    {
+      "id": "rc-g-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 5. xs[1:] is the list without its first item. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\ne: print(length([4, 4, 4, 4, 4]))\nd:     return 1 + length(xs[1:])\nx:     return length(xs[1:])\nb:     if xs == []:\na: def length(xs):\nc:         return 0",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "rc-g-explain",
+      "kind": "explanation",
+      "prompt": "In your own words: show(3) printed 3, 2, 1. Why that order? What would print if print(n) moved below show(n - 1), and why?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "show(3) prints 3 and only then calls show(2), which prints 2 and calls show(1), and so on: printing happens on the way in. If print came after the call, show(3) would first wait for show(2) to finish, which waits for show(1). show(1) prints first once show(0) returns, then show(2), then show(3): 1, 2, 3.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "rc-i-digits",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints. n // 10 drops the last digit (4071 // 10 is 407).\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 4",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def digits(n):\n    if n < 10:\n        return 1\n    return 1 + digits(n // 10)\nprint(digits(4071))",
+      "language": "python",
+      "expected": "4"
+    },
+    {
+      "id": "rc-i-digits-cb",
+      "kind": "prediction",
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Compare your prediction with the recorded output after your attempt: 4",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def halvings(n):\n    if n <= 1:\n        return 0\n    return 1 + halvings(n // 2)\nprint(halvings(16))",
+      "language": "python",
+      "expected": "4"
+    },
+    {
+      "id": "rc-i-trace",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden return value. s[0] is the first character; s[1:] is the rest.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. Line 5 calls rev with 'abc'. s isn't empty. This call waits on rev of the rest of s. A new box. It waits too. A new box. It waits too. A fourth box: s is empty, the base case. The base case answers directly. The base case is about to return. The rev('c') box is about to return: rev('') gave '', plus 'c'. The next box is about to return. The first box is about to return. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def rev(s):\n    if s == \"\":\n        return \"\"\n    return rev(s[1:]) + s[0]\nr = rev(\"abc\")",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'c'\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'c'\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'c'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"''\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'c'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"''\"}}]}",
+        "{\"event\": \"return\", \"line\": 3, \"out\": \"\", \"returns\": \"''\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'c'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"''\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"'c'\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'c'\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"'cb'\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'bc'\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"'cba'\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"rev\", \"vars\": {\"s\": \"'abc'\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"r\": \"'cba'\"}}]}"
+      ]
+    },
+    {
+      "id": "rc-i-trace-cb",
+      "kind": "trace",
+      "prompt": "Step through and fill in each hidden return value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "explanation": "Read the recorded frames in order. Line 1 is next. Line 5 calls mult(4, 3). b isn't 0. This call waits on mult(4, 2). A new box. It waits on mult(4, 1). A new box. It waits on mult(4, 0). A fourth box: b is 0, the base case. The base case answers directly. The base case is about to return. The b = 1 box is about to return a + 0. The b = 2 box is about to return. The first box is about to return. Finished.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      },
+      "code": "def mult(a, b):\n    if b == 0:\n        return 0\n    return a + mult(a, b - 1)\nm = mult(4, 3)",
+      "language": "python",
+      "expectedTrace": [
+        "{\"event\": \"line\", \"line\": 1, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 5, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"1\"}}]}",
+        "{\"event\": \"line\", \"line\": 4, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"1\"}}]}",
+        "{\"event\": \"line\", \"line\": 2, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"1\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"0\"}}]}",
+        "{\"event\": \"line\", \"line\": 3, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"1\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"0\"}}]}",
+        "{\"event\": \"return\", \"line\": 3, \"out\": \"\", \"returns\": \"0\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"1\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"0\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"4\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"1\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"8\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"2\"}}]}",
+        "{\"event\": \"return\", \"line\": 4, \"out\": \"\", \"returns\": \"12\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {}}, {\"fn\": \"mult\", \"vars\": {\"a\": \"4\", \"b\": \"3\"}}]}",
+        "{\"event\": \"end\", \"line\": null, \"out\": \"\", \"stack\": [{\"fn\": \"<module>\", \"vars\": {\"m\": \"12\"}}]}"
+      ]
+    },
+    {
+      "id": "rc-i-fix",
+      "kind": "fix",
+      "prompt": "This should print 30 (2 × 3 × 5), but it prints 0. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1.         return 1\n2.         return xs\n3.         return xs[0]",
+      "explanation": "Yes: the product of nothing is 1, just as the sum of nothing is 0.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def product(xs):\n    if xs == []:\n        return 0\n    return xs[0] * product(xs[1:])\nprint(product([2, 3, 5]))",
+      "language": "python",
+      "solution": "def product(xs):\n    if xs == []:\n        return 1\n    return xs[0] * product(xs[1:])\nprint(product([2, 3, 5]))"
+    },
+    {
+      "id": "rc-i-fix-cb",
+      "kind": "fix",
+      "prompt": "This should print 6 (3 + 2 + 1), but it stops with a TypeError. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.\n\nRepair choices:\n1.     return n + sum_down(n - 1)\n2.     print(n + sum_down(n - 1))\n3.     return sum_down(n - 1)",
+      "explanation": "Yes. Without return, the call gives back None, and the call above can't add None.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      },
+      "code": "def sum_down(n):\n    if n == 0:\n        return 0\n    n + sum_down(n - 1)\nprint(sum_down(3))",
+      "language": "python",
+      "solution": "def sum_down(n):\n    if n == 0:\n        return 0\n    return n + sum_down(n - 1)\nprint(sum_down(3))"
+    },
+    {
+      "id": "rc-i-parsons",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 2 and 3 on separate lines.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 6 lines):\nf: up(3)\ne:     print(n)\nc:         return\na: def up(n):\nd:     up(n - 1)\nb:     if n == 0:",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "rc-i-parsons-cb",
+      "kind": "explanation",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 8. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\ne: print(doubles(3))\nx:         return 0\nd:     return 2 * doubles(n - 1)\na: def doubles(n):\nc:         return 1\nb:     if n == 0:",
+      "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
+    },
+    {
+      "id": "rc-i-explain",
+      "kind": "explanation",
+      "prompt": "Explain to a friend: what is a base case, what happens without one (or if calls never reach it), and how the call stack lets fact(3) work out 3 × 2 × 1 when no single call knows the whole answer.\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "explanation": "A base case is the smallest version of the problem, answered directly (fact(1) is 1). Without one, or if each call doesn't get closer to it, the function keeps calling itself until Python runs out of stack and raises a RecursionError. fact(3) can't finish until fact(2) does, which waits on fact(1). Each waiting call keeps its own n in its own box on the call stack. fact(1) answers 1, then fact(2) finishes 2 × 1, then fact(3) finishes 3 × 2. The newest box always finishes first.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    }
+  ],
+  "answerChecks": [
+    {
+      "questionID": "nv-l-plus",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "nv-g-copy",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "cd-l-order",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "cd-g-teen",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "lp-l-range",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "lp-g-countdown",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "fn-l-print-return",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "fn-g-area",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "ld-l-alias",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "ld-g-index",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "rc-l-order",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "rc-g-total",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    }
+  ],
+  "media": [
+    {
+      "path": "attachments/authored-code-gym-foundations-v1.json",
+      "sha256": "910898696e830dd53da74ba4a68b8ddeec2481de13ae5c239985b879fd5d5a72",
+      "size": 1006,
+      "id": "authored-code-gym-foundations-v1",
+      "mimeType": "application/json"
+    },
+    {
+      "path": "attachments/cg-foundations-01-names-values.json",
+      "sha256": "018a7e5f5f64b4c8ec2b24727101c7e1c78998cada5c2830315dcdc9de788bd0",
+      "size": 38179,
+      "id": "cg-foundations-01-names-values",
+      "mimeType": "application/json"
+    },
+    {
+      "path": "attachments/cg-foundations-02-conditionals.json",
+      "sha256": "a4799bd7ecd540fc27f8ecf00865faf16112c7d0b4a6345b121539a55eb6fd8f",
+      "size": 39576,
+      "id": "cg-foundations-02-conditionals",
+      "mimeType": "application/json"
+    },
+    {
+      "path": "attachments/cg-foundations-03-loops.json",
+      "sha256": "c706b6d342cdefde80731b0b73553b003ddd9bd37513887359ce52c543aab391",
+      "size": 46059,
+      "id": "cg-foundations-03-loops",
+      "mimeType": "application/json"
+    },
+    {
+      "path": "attachments/cg-foundations-04-functions.json",
+      "sha256": "12584bcb0b6a3b670134bcfedb10ed00394632ecdbe04e9243656d3baecef69a",
+      "size": 47844,
+      "id": "cg-foundations-04-functions",
+      "mimeType": "application/json"
+    },
+    {
+      "path": "attachments/cg-foundations-05-lists-dicts.json",
+      "sha256": "4d244c5dff41b6a991fee79efa624134032c495414cc132cb0eb93ef4a9ac925",
+      "size": 43330,
+      "id": "cg-foundations-05-lists-dicts",
+      "mimeType": "application/json"
+    },
+    {
+      "path": "attachments/cg-foundations-06-recursion.json",
+      "sha256": "692710cf64e6fb23f06fec73945866bf854876f0a10dcb9b55905df8118d1424",
+      "size": 63833,
+      "id": "cg-foundations-06-recursion",
+      "mimeType": "application/json"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "reviewers": {
+      "aiChecks": [],
+      "humanApprover": null
+    }
+  }
+}

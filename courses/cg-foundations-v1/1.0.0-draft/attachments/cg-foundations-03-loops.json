@@ -164,8 +164,17 @@
         "lp-o2",
         "lp-o3"
       ],
-      "prompt": "Step through. Notice the arrow jumping back up to the for line after each pass.",
-      "title": "Watch it: a running total"
+      "prompt": "Step through. Notice the arrow jumping back up to the for line after each pass.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Watch it: a running total",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -197,9 +206,18 @@
         "lp-o2"
       ],
       "output": "0\n1\n2\n",
-      "prompt": "Guess first; it's free. What does this print?",
+      "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
       "reveal": "0, 1, 2. range(n) gives n values starting at 0, which is exactly the valid positions of a list of length n.",
-      "title": "Predict before you peek: range(3)"
+      "title": "Predict before you peek: range(3)",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -248,8 +266,17 @@
         "lp-o1"
       ],
       "output": "3\n2\n1\ngo\n",
-      "prompt": "What does this print?",
-      "title": "The countdown"
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "The countdown",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "checkpoints": [
@@ -543,8 +570,14 @@
         "lp-o2",
         "lp-o3"
       ],
-      "prompt": "Step through. Fill in each hidden value before moving on.",
-      "title": "Trace: counting o's"
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Trace: counting o's",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "bugLine": 1,
@@ -587,12 +620,21 @@
       "outcomes": [
         "lp-o2"
       ],
-      "prompt": "This should print 1 to 5 but stops at 4. Tap the wrong line, then pick the repair.",
+      "prompt": "This should print 1 to 5 but stops at 4. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "1\n2\n3\n4\n",
         "expected": "1\n2\n3\n4\n5"
       },
-      "title": "One short"
+      "title": "One short",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -648,7 +690,7 @@
       "outcomes": [
         "lp-o3"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 12. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 12. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "d",
         "x",
@@ -657,7 +699,16 @@
         "b"
       ],
       "target": "12",
-      "title": "Put it in order: sum the evens"
+      "title": "Put it in order: sum the evens",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "grading": "self-check",
@@ -676,7 +727,7 @@
       "outcomes": [
         "lp-o1"
       ],
-      "prompt": "In your own words: the countdown printed 3, 2, 1 and then go. Why didn't it print 0, and when exactly does a while loop stop?",
+      "prompt": "In your own words: the countdown printed 3, 2, 1 and then go. Why didn't it print 0, and when exactly does a while loop stop?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "lp-g-explain#k1",
@@ -691,7 +742,13 @@
           "idea": "Something in the body has to change the condition, or the loop never ends."
         }
       ],
-      "title": "Explain it back: why no 0?"
+      "title": "Explain it back: why no 0?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -733,8 +790,14 @@
         "lp-o1"
       ],
       "output": "27\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "On your own: tripling"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: tripling",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -772,8 +835,14 @@
         "lp-o1"
       ],
       "output": "6\n",
-      "prompt": "Type exactly what this prints. // divides and drops any remainder (7 // 2 is 3).",
-      "title": "Comeback: halving"
+      "prompt": "Type exactly what this prints. // divides and drops any remainder (7 // 2 is 3).\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: halving",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -970,8 +1039,14 @@
         "lp-o2",
         "lp-o3"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "On your own: doubles"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: doubles",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1177,8 +1252,14 @@
         "lp-o2",
         "lp-o3"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "Comeback: building backwards"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: building backwards",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1224,12 +1305,21 @@
       "outcomes": [
         "lp-o3"
       ],
-      "prompt": "This should add up 4, 5 and 6 to make 15. Find the wrong line and repair it.",
+      "prompt": "This should add up 4, 5 and 6 to make 15. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "6\n",
         "expected": "15"
       },
-      "title": "On your own: the total that forgets"
+      "title": "On your own: the total that forgets",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1276,12 +1366,21 @@
       "outcomes": [
         "lp-o3"
       ],
-      "prompt": "This should multiply 2 × 3 × 4 to make 24. Find the wrong line and repair it.",
+      "prompt": "This should multiply 2 × 3 × 4 to make 24. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "0\n",
         "expected": "24"
       },
-      "title": "Comeback: the product that stays zero"
+      "title": "Comeback: the product that stays zero",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1325,7 +1424,7 @@
       "outcomes": [
         "lp-o2"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 3, 2, 1 on separate lines and then liftoff. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 3, 2, 1 on separate lines and then liftoff. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "c",
         "x",
@@ -1333,7 +1432,16 @@
         "a"
       ],
       "target": "3\n2\n1\nliftoff",
-      "title": "On your own: liftoff"
+      "title": "On your own: liftoff",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1378,7 +1486,7 @@
       "outcomes": [
         "lp-o2"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 4 and 9 on separate lines. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 4 and 9 on separate lines. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "c",
         "x",
@@ -1386,7 +1494,16 @@
         "b"
       ],
       "target": "1\n4\n9",
-      "title": "Comeback: squares"
+      "title": "Comeback: squares",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1404,7 +1521,7 @@
       "outcomes": [
         "lp-o2"
       ],
-      "prompt": "Explain to a Lua programmer why for i = 1, 5 do in Lua and for i in range(1, 5): in Python don't loop the same number of times. How do you write Lua's loop in Python, and why is Python's way handy for lists?",
+      "prompt": "Explain to a Lua programmer why for i = 1, 5 do in Lua and for i in range(1, 5): in Python don't loop the same number of times. How do you write Lua's loop in Python, and why is Python's way handy for lists?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "lp-i-explain#k1",
@@ -1419,7 +1536,13 @@
           "idea": "range(len(xs)) gives exactly the valid positions 0 … len(xs) − 1 of a list."
         }
       ],
-      "title": "On your own: Lua for vs Python range"
+      "title": "On your own: Lua for vs Python range",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     }
   ],
   "bridge": {

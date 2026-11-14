@@ -27,7 +27,7 @@ Scan scope: every source JSON in these two course directories and every resultin
 
 ## Included item ledger
 
-All rows: origin `original by owner AI agents`; disposition `included`; licence `CC-BY-SA-4.0`; creator `Collin Craig`. Pointers address public attachment JSON. Hashes use the exporter’s sorted compact UTF-8 JSON encoding with trailing newline. Course/lesson metadata rows cover the indicated metadata subset, not the full subtree. Bridge titles and all non-inventoried structural fields inherit their containing lesson provenance.
+All rows: origin `original by owner AI agents`; disposition `included`; licence `CC-BY-SA-4.0`; creator `Collin Craig`. Pointers address attachment JSON under `courses/cg-foundations-v1/1.0.0-draft/attachments/`. Hashes include the public input-guidance and feedback revisions. Hashes use the exporter’s sorted compact UTF-8 JSON encoding with trailing newline. Course/lesson metadata rows cover the indicated metadata subset, not the full subtree. Bridge titles and all non-inventoried structural fields inherit their containing lesson provenance.
 
 | Attachment | JSON pointer | Item kind | Stable ID | SHA-256 |
 | --- | --- | --- | --- | --- |
@@ -35,22 +35,22 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | cg-foundations-01-names-values.json | `/teach/0` | teach | nv-t1 | `95279ff0c8fed4f2db94b077cb1ce68f6ea2ceee098b29fbc86f9794ac6d89f5` |
 | cg-foundations-01-names-values.json | `/teach/1` | teach | nv-t2 | `2ee9ffca1ca85cc3c2ce07022607c8ba0766321e5fd75d0236c3d57995d84a6f` |
 | cg-foundations-01-names-values.json | `/teach/2` | teach | nv-t3 | `e539266f144e0efc7d48dd50602a40a9ed4aa7b22db9ab56d96394e3fa7164d2` |
-| cg-foundations-01-names-values.json | `/activities/0` | activities | nv-l-watch | `038d3e1e14e864cf6fc2164fcd9a7a0cc0b6b67371aa8b0ce19b1bd96387141f` |
-| cg-foundations-01-names-values.json | `/activities/1` | activities | nv-l-plus | `e2a92f439f73f8e7f84320bbc09dd059049e2ece07c510afdbf17de7c1947c60` |
-| cg-foundations-01-names-values.json | `/activities/2` | activities | nv-g-copy | `30a498c0bddd8e44224e2fdf92b440b840a36addce6cb5d847a41b11005de7ae` |
-| cg-foundations-01-names-values.json | `/activities/3` | activities | nv-g-trace | `e61b7e9b2db00e1010bd6b19bc36fe6bc3cd71df2c16514b87ec50bd0127b046` |
-| cg-foundations-01-names-values.json | `/activities/4` | activities | nv-g-fix | `8846f9a60f53a85ed12d1b722eb5d64b355d7d4512ed2ec746f32104f7d14cb1` |
-| cg-foundations-01-names-values.json | `/activities/5` | activities | nv-g-parsons | `0709d1de180e346784159c43cc6a1e30dfe0626056b1b5905d2f894a2109dacb` |
-| cg-foundations-01-names-values.json | `/activities/6` | activities | nv-g-explain | `01bee41a19a63f2fe3f9b7847e5f4af784f2d868325398de51337f3ecde42e76` |
-| cg-foundations-01-names-values.json | `/activities/7` | activities | nv-i-predict | `48cc7b68d086b6b7c5c33a4d6f1c2577624e47d55b7e561d698381e3778a4f1d` |
-| cg-foundations-01-names-values.json | `/activities/8` | activities | nv-i-predict-cb | `c12089cc5398c663e399f56c8e808dfeac2d67e55e6c463c8b314d9ec9d103c7` |
-| cg-foundations-01-names-values.json | `/activities/9` | activities | nv-i-trace | `0cdf15f60700e960a05e85819f16657175c4146aeb2dbe3986ba2dcb36ff5fcb` |
-| cg-foundations-01-names-values.json | `/activities/10` | activities | nv-i-trace-cb | `c11b96c6efaee340e232766691c7ecaeddfa060eebd936102918c5c341ef6b0c` |
-| cg-foundations-01-names-values.json | `/activities/11` | activities | nv-i-fix | `be86211c839323f3a6afdbd84d60ccdfc1bd124dedb18656e2a3fead5e7db3dd` |
-| cg-foundations-01-names-values.json | `/activities/12` | activities | nv-i-fix-cb | `ddd712e0e312054aaceea0a51aef0817a5b6fb77067e3af0085c905879cc39db` |
-| cg-foundations-01-names-values.json | `/activities/13` | activities | nv-i-parsons | `222016cbd80ec513ce2ef27222835c8de783b8a5f938aadb17a36bf0b9ca69f2` |
-| cg-foundations-01-names-values.json | `/activities/14` | activities | nv-i-parsons-cb | `03493a38a99c62b73212ad7429289aff4537836d67c79e6c0576b7bafb032218` |
-| cg-foundations-01-names-values.json | `/activities/15` | activities | nv-i-explain | `138adc0dce06cfce793293d6e7bd0d170d70dbf4b4e7aa7d5b13ff4328d1ab0f` |
+| cg-foundations-01-names-values.json | `/activities/0` | activities | nv-l-watch | `df3983e8fcf86c8f59d167a4950029d6aa9f222334ee5203076de4f4d052f63a` |
+| cg-foundations-01-names-values.json | `/activities/1` | activities | nv-l-plus | `4fe471e32f566c75e332e8d28685b61c464b90c01c42e66215fa2786debf4e33` |
+| cg-foundations-01-names-values.json | `/activities/2` | activities | nv-g-copy | `98fa88e930d24776f1481090c4ba5e4feee14032371a7a170698b9fa58d66967` |
+| cg-foundations-01-names-values.json | `/activities/3` | activities | nv-g-trace | `3588c8d723b9aff38afa5e65e485f1394f3baadb3cdaa72f39847bb7d82ec842` |
+| cg-foundations-01-names-values.json | `/activities/4` | activities | nv-g-fix | `0625be065db2da46ee56892367dc7b232faf8d8a1db4803e865fec3d30952bc5` |
+| cg-foundations-01-names-values.json | `/activities/5` | activities | nv-g-parsons | `7397c61a129586bd375fe6a6375062c4e8ccc78a635169192b7046a271c0c800` |
+| cg-foundations-01-names-values.json | `/activities/6` | activities | nv-g-explain | `c614b842b25e5b9ca6750316e1a13fd2399935d6b91a15a6bca4c21e3a3d9d69` |
+| cg-foundations-01-names-values.json | `/activities/7` | activities | nv-i-predict | `809e46d516ed7053ca693fe915dad3527d5c6b5a557c2253c1a8f95735344c3d` |
+| cg-foundations-01-names-values.json | `/activities/8` | activities | nv-i-predict-cb | `23456af8061cf55b931bcc72c1a5b86348ef357a01bd89170e6afbaf9d3e2925` |
+| cg-foundations-01-names-values.json | `/activities/9` | activities | nv-i-trace | `7c349c6b377674cdb84ca6b89849e024f57069d94b699455d834110be54c9846` |
+| cg-foundations-01-names-values.json | `/activities/10` | activities | nv-i-trace-cb | `0cec6d37f1f63762d0056e6f8f2982b1a831111ae72722602abc0fafd986a69a` |
+| cg-foundations-01-names-values.json | `/activities/11` | activities | nv-i-fix | `d7705f1211658c429382eec51ec4b537b8d888c0a180de3e3199dee159bc3b65` |
+| cg-foundations-01-names-values.json | `/activities/12` | activities | nv-i-fix-cb | `8724aec8129de6f59fd1b12bd3589fbe329cbeb21553d433fa139257b3897100` |
+| cg-foundations-01-names-values.json | `/activities/13` | activities | nv-i-parsons | `c8443872887fe3bbf7f138bc54280c2269bcec63a5ca8fa12a3d4a8ed409f2dc` |
+| cg-foundations-01-names-values.json | `/activities/14` | activities | nv-i-parsons-cb | `20d3953ee9a408f3c892f6ba38379d68ac504fafc1d40ecc4703d89e29944e37` |
+| cg-foundations-01-names-values.json | `/activities/15` | activities | nv-i-explain | `2396bbb54f759619c52610c19a79c2cc6474152b0ac812128feb31ceda0bb1fd` |
 | cg-foundations-01-names-values.json | `/bridge/rows/0` | bridge example | — | `978021978c4ebee088349a0a791998fd797d4c5d0a1f6e83cee5d6da739b6ee6` |
 | cg-foundations-01-names-values.json | `/bridge/rows/1` | bridge example | — | `bc2fd8d80a52230d198f641d2253630b22aa5832b97f55631d3f8226c13b3206` |
 | cg-foundations-01-names-values.json | `/bridge/rows/2` | bridge example | — | `5efe9ec599daafd3df80c0b998382964790d31d93d4001f786c02d229bf721e4` |
@@ -62,22 +62,22 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | cg-foundations-02-conditionals.json | `/teach/0` | teach | cd-t1 | `f21080a8e52cb149867008d35482e5d440b3252a469dd5fe74530b7e0d9dba69` |
 | cg-foundations-02-conditionals.json | `/teach/1` | teach | cd-t2 | `6a0b0ba3bf8751362d45e7cc81912bafbeda7d0c9109a0470b546dc096151ab6` |
 | cg-foundations-02-conditionals.json | `/teach/2` | teach | cd-t3 | `58b90dc8db99f0c197831e7422a78a1c20882e2baded07c92c0386b202f22efe` |
-| cg-foundations-02-conditionals.json | `/activities/0` | activities | cd-l-watch | `133427eebcde8b0b6b0d2f8cf1e1887f824cf7ced47fec01266de5d45c7e268d` |
-| cg-foundations-02-conditionals.json | `/activities/1` | activities | cd-l-order | `ac5b4fa0453f231c82a0d6a933d7ef6bc74e6ec54ff9c9aeecd8c400d743bd95` |
-| cg-foundations-02-conditionals.json | `/activities/2` | activities | cd-g-teen | `f094f4d2ec33d4b92c59a93120cec98c192c896f9e66d84c29681e1a3eaf8d97` |
-| cg-foundations-02-conditionals.json | `/activities/3` | activities | cd-g-trace | `8e39b30a987675cf5ca55594e3d0d69008347e4d7a4198a86bff456fa617e26f` |
-| cg-foundations-02-conditionals.json | `/activities/4` | activities | cd-g-fix | `a069769f8ab8b3c7a8d4e1e92dc1154e86f55dd7491df7a70f05822752a00f4f` |
-| cg-foundations-02-conditionals.json | `/activities/5` | activities | cd-g-parsons | `29416e4fb3adc126553614f3d5c203eb6a97da3e17299d365b81889bf11ce225` |
-| cg-foundations-02-conditionals.json | `/activities/6` | activities | cd-g-explain | `a3ef3d12ae3d9e83056c952149cde5e2240e18726d07139b71b1fe3d363d6b00` |
-| cg-foundations-02-conditionals.json | `/activities/7` | activities | cd-i-grade | `94dee7d310c3df74528c95266c2ad21110a8a24974662515930be7b703860a68` |
-| cg-foundations-02-conditionals.json | `/activities/8` | activities | cd-i-grade-cb | `3712c0f46bb7bc191e529075046a24f8af4f49ac9dd4ff332076f13f13ec22a1` |
-| cg-foundations-02-conditionals.json | `/activities/9` | activities | cd-i-trace | `d0156b9077a2815f7c0e78f1eb8d193a83a7f3b0ba2eadce0bfb7bef739171b1` |
-| cg-foundations-02-conditionals.json | `/activities/10` | activities | cd-i-trace-cb | `e9888b8c8ac125f10806f5c21a249868700707c3ebde16b9c297285811891153` |
-| cg-foundations-02-conditionals.json | `/activities/11` | activities | cd-i-fix | `a97a4f7638c0e00ba7f719d3437575df7b964ff58ae9c2732e901fedec19cbf8` |
-| cg-foundations-02-conditionals.json | `/activities/12` | activities | cd-i-fix-cb | `807d989912028c65291c0ce551745e91a9e0823d68ab6625399631f3f0d4bfe3` |
-| cg-foundations-02-conditionals.json | `/activities/13` | activities | cd-i-parsons | `dff376f3b51af8edd3e30e2edb4b988a04dac90836af505166a6f30b8c435464` |
-| cg-foundations-02-conditionals.json | `/activities/14` | activities | cd-i-parsons-cb | `c0ac304ab8aa6a904e1fa37615e2f488b141fedcd322f8ae97f02daecc351e12` |
-| cg-foundations-02-conditionals.json | `/activities/15` | activities | cd-i-explain | `5a5790cbcc273336ffbccadfb59170f5186d75b821847ef2dbc6d9f5876f8b33` |
+| cg-foundations-02-conditionals.json | `/activities/0` | activities | cd-l-watch | `4c8517d20bcd49a4bade1a8db5bee1cc8cc870c3e9f8dc1fcd35f71f252912ac` |
+| cg-foundations-02-conditionals.json | `/activities/1` | activities | cd-l-order | `4005655c9816aef92fb07a860b020f7324bb8efb32d0d220e04a4a87588a6db2` |
+| cg-foundations-02-conditionals.json | `/activities/2` | activities | cd-g-teen | `40cd8ed168cf5ccc6ab601a019cabc875e226e620443f7ab492ab4755cf01ec6` |
+| cg-foundations-02-conditionals.json | `/activities/3` | activities | cd-g-trace | `7c7b20fa3a2775adc0b12c827474a221f9a1d1811bfeea49dd73e584db5e3c6e` |
+| cg-foundations-02-conditionals.json | `/activities/4` | activities | cd-g-fix | `5bd825cdecca5a02997ca46ba2d5376588229778fb271f58b4c4400ef52183b9` |
+| cg-foundations-02-conditionals.json | `/activities/5` | activities | cd-g-parsons | `39568c35dbc93d0c5f9046df0ec6bfb4223689e3543268159e839a4eb94c8c44` |
+| cg-foundations-02-conditionals.json | `/activities/6` | activities | cd-g-explain | `4499135a9a4a700b8dd491f6531641ebffed4fb9dda16d9549fdeb7ba870fc9b` |
+| cg-foundations-02-conditionals.json | `/activities/7` | activities | cd-i-grade | `83f934d13beb44b3ccac35b797e94c6af38d66feb4af5234007e92fc350cdb32` |
+| cg-foundations-02-conditionals.json | `/activities/8` | activities | cd-i-grade-cb | `39b3b9a302d8d4ca13b71986046ba5a0a991d85cdc96ac365192d5ef6b4935ee` |
+| cg-foundations-02-conditionals.json | `/activities/9` | activities | cd-i-trace | `e6723835a547d02c877aec3f53b82c7889fc3eb6509858fedf2c5eed05d84203` |
+| cg-foundations-02-conditionals.json | `/activities/10` | activities | cd-i-trace-cb | `063ecf22c601b28db8edac60f64c854a7dc16f3777c9589e533eef555c49b53f` |
+| cg-foundations-02-conditionals.json | `/activities/11` | activities | cd-i-fix | `431afeac9486148243326d7471045bfa68f530f157d1636709f6022d35a159fe` |
+| cg-foundations-02-conditionals.json | `/activities/12` | activities | cd-i-fix-cb | `ff024e89d931d4ad284a9e7c191ee4364232deea5566f7d8bf2bf445efdf1c11` |
+| cg-foundations-02-conditionals.json | `/activities/13` | activities | cd-i-parsons | `d85a2b94bed7ff626e85de1c958086700e04b8af3b0f7016cfbb4bea807ff446` |
+| cg-foundations-02-conditionals.json | `/activities/14` | activities | cd-i-parsons-cb | `bf085dc7db3931b2522ccf67be29e8a398d69e124bb5cf09c8ab307f4f20629f` |
+| cg-foundations-02-conditionals.json | `/activities/15` | activities | cd-i-explain | `10fb7a57288e9c0a24991f07f23b8c0361a38e42cd08ba2016b1fab952575401` |
 | cg-foundations-02-conditionals.json | `/bridge/rows/0` | bridge example | — | `742d3dbab27d987a356fd437833b21bff2fdb1be8d0f43e2db5bfcc283015e89` |
 | cg-foundations-02-conditionals.json | `/bridge/rows/1` | bridge example | — | `ef799e9db89fa141f67b1e1d6ab684811953d388df195f82171865bb9af89175` |
 | cg-foundations-02-conditionals.json | `/bridge/rows/2` | bridge example | — | `c61c2ea5eeaaf8171664fb828d4eb75a6b1f7bd8c933bf0729ede289b7c9d8f6` |
@@ -88,22 +88,22 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | cg-foundations-03-loops.json | `/teach/0` | teach | lp-t1 | `da278aa953cee7aab32fc8a9a6f1865d15d054d149fee5aadd16204061d667a1` |
 | cg-foundations-03-loops.json | `/teach/1` | teach | lp-t2 | `3e396e44a228b8f8648e2aede5be3249e0cc892b88c87170646b6deaa65caff4` |
 | cg-foundations-03-loops.json | `/teach/2` | teach | lp-t3 | `71ca586be90f617ad2e36be822cb8adb7c71a68bf3d77e77a4c1fd24350f5342` |
-| cg-foundations-03-loops.json | `/activities/0` | activities | lp-l-watch | `31bf3a4a4d006f15402cb5d258527a425cf1c67b38129a5bc02d26319c99d748` |
-| cg-foundations-03-loops.json | `/activities/1` | activities | lp-l-range | `e70582e831a2c22f212b7e43b0cfcd1d20c73f47a387fb3a6b4a682a20e20144` |
-| cg-foundations-03-loops.json | `/activities/2` | activities | lp-g-countdown | `6cba0ba480101efe48d82f599789659767262018f92692e389fcf350b4e87293` |
-| cg-foundations-03-loops.json | `/activities/3` | activities | lp-g-trace | `54b4b08f0da7590825e9ebf71c8f4309dfdaed5515cdb2ae8754e3d8b0cc99d6` |
-| cg-foundations-03-loops.json | `/activities/4` | activities | lp-g-fix | `7ff6e142b130417286e18b8728282ed47cd35d1bcbce373ee8a1fee36607678e` |
-| cg-foundations-03-loops.json | `/activities/5` | activities | lp-g-parsons | `82fe04abebb38b02ef3a8413d4e6e2896d0c417e8e1f922bc6891bd93ba8774c` |
-| cg-foundations-03-loops.json | `/activities/6` | activities | lp-g-explain | `ed85465a56f110d07737f8059dfa3bca9163bdfd4a2d4bb819596d6f39c76e18` |
-| cg-foundations-03-loops.json | `/activities/7` | activities | lp-i-triple | `f5f2ec4a969c6f7173098917114e0b0bdee334052ab06ad316e3c50d4266fadd` |
-| cg-foundations-03-loops.json | `/activities/8` | activities | lp-i-triple-cb | `15e96a20a2f274c5c1093b1dfcf46dae059f9043a65c63020cd942f71ae80a1f` |
-| cg-foundations-03-loops.json | `/activities/9` | activities | lp-i-trace | `1490d6b6307f65e3187200fbec54c00a8ebcf4336e12b5fb2a64635ca762a951` |
-| cg-foundations-03-loops.json | `/activities/10` | activities | lp-i-trace-cb | `dbd61d23a0e165ff4a940f064ce7f74be02ffb5c4558eb7a198eee980f215b96` |
-| cg-foundations-03-loops.json | `/activities/11` | activities | lp-i-fix | `b9955797a82fd47be61c60b8694b36e503b8bcc55c98ab1947212036f08e1eae` |
-| cg-foundations-03-loops.json | `/activities/12` | activities | lp-i-fix-cb | `67bdb020e4add34323df36a7de7677c1578ea4ffbd4764af3ace4e1584b00cf9` |
-| cg-foundations-03-loops.json | `/activities/13` | activities | lp-i-parsons | `55580601cc681d6ade5ed17a0f84ee484a3c615249ad9a53b1d3d682734c388e` |
-| cg-foundations-03-loops.json | `/activities/14` | activities | lp-i-parsons-cb | `3d172e0969dca0b83738cc555a1fd7b829c99b53b117dd05ee97cc2851ea54c3` |
-| cg-foundations-03-loops.json | `/activities/15` | activities | lp-i-explain | `f67416dd5f4ade9525f3bb5f5a812affc9d04bb9168a8ac56353a3a5f8a5dde9` |
+| cg-foundations-03-loops.json | `/activities/0` | activities | lp-l-watch | `ba908372582725d391835d54a5a124a3e380b6b5c2b68b3930f730202cfaedb0` |
+| cg-foundations-03-loops.json | `/activities/1` | activities | lp-l-range | `b860b380e30cc8047ec5782039359e1bdc955d8ac513c09fcc3649364302f780` |
+| cg-foundations-03-loops.json | `/activities/2` | activities | lp-g-countdown | `da784e26329378cfea46aac2594dbbada8ca10a40c1ce67715c61c6d5b79b646` |
+| cg-foundations-03-loops.json | `/activities/3` | activities | lp-g-trace | `37cf49dec277acb82e7e02ae97d86465e75d93123b0aba90efe18dfb90f06051` |
+| cg-foundations-03-loops.json | `/activities/4` | activities | lp-g-fix | `660b55ccff08a81537b24e113c3cf878bb2e2eacddceb4adc201e55cf7ad641d` |
+| cg-foundations-03-loops.json | `/activities/5` | activities | lp-g-parsons | `65390391ed0cd34b4a8ed9099649bfba783cbce75b9fbb8979177f7e5e59d5dd` |
+| cg-foundations-03-loops.json | `/activities/6` | activities | lp-g-explain | `5b6d075a5e17b17ed5f6815c6e86fbf43ac31caf070525321f9faae4dc4e9118` |
+| cg-foundations-03-loops.json | `/activities/7` | activities | lp-i-triple | `e190512fae600dbf8911b18116f858a193faadcd1ab9c14e8fe11ba1efa348e0` |
+| cg-foundations-03-loops.json | `/activities/8` | activities | lp-i-triple-cb | `2ba5d93f450886d22884a1d65f78d54bef6b1323a608f0ad92eff1f89900fe0c` |
+| cg-foundations-03-loops.json | `/activities/9` | activities | lp-i-trace | `91d428591adf4dcb90bc1702da0d8f64f8b485d6f02ca22f3658c0eb721cb145` |
+| cg-foundations-03-loops.json | `/activities/10` | activities | lp-i-trace-cb | `04fba628985d0a26cc1cdda89565efe71b63b7cfe1de5de00dbaf2e68870ed35` |
+| cg-foundations-03-loops.json | `/activities/11` | activities | lp-i-fix | `f91959140527719329984139afedeea31e57fedba3762f3b31984a338d8a2b9e` |
+| cg-foundations-03-loops.json | `/activities/12` | activities | lp-i-fix-cb | `7af7c0bd7a7127a093e2a0d0241aa661c295262063ad76cf5e0d4be16899683c` |
+| cg-foundations-03-loops.json | `/activities/13` | activities | lp-i-parsons | `4f6d94c33faad7ce1d2c98fac582d5c2d1f7a4e94a1c8fa761b2d41b45e3c5e6` |
+| cg-foundations-03-loops.json | `/activities/14` | activities | lp-i-parsons-cb | `e3138498103d85e949a1080b2562d78d1646cb3b80960c97a6d55a85b77b1828` |
+| cg-foundations-03-loops.json | `/activities/15` | activities | lp-i-explain | `9aa9519b9a48f607d85a64778544c798773d91f470180723dc15249c3bb44d59` |
 | cg-foundations-03-loops.json | `/bridge/rows/0` | bridge example | — | `f5df41f8d9c5b8c80ffb995da66f71fa4c3b2d2d4c68170a59f73f4c55fdf1d4` |
 | cg-foundations-03-loops.json | `/bridge/rows/1` | bridge example | — | `e13de5ea74ee484e4986aabe8c4faea3b7c977b1623f95e05331a72abb50b080` |
 | cg-foundations-03-loops.json | `/bridge/rows/2` | bridge example | — | `709997610941d8caaaa12fb1e7cf9c130bd65ab767ac5100dd63a7095773a8d8` |
@@ -116,22 +116,22 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | cg-foundations-04-functions.json | `/teach/0` | teach | fn-t1 | `6ec616d814143e810dac15e8ef607cd28ecc46c528cce7e8823867ef62b39c5e` |
 | cg-foundations-04-functions.json | `/teach/1` | teach | fn-t2 | `889c87f65c5a3b489c43f4c7482120750e79ab460d3939e2fe015c3730517a3c` |
 | cg-foundations-04-functions.json | `/teach/2` | teach | fn-t3 | `6954b7235a2ba5c3360695d7acbc66f07188f13cc1ce00eb60aee4552f84bc26` |
-| cg-foundations-04-functions.json | `/activities/0` | activities | fn-l-watch | `2b81d247c75f3fdb20071b11e955ae9f02b87a9669f49e941b8ec51c4f7ffaf6` |
-| cg-foundations-04-functions.json | `/activities/1` | activities | fn-l-print-return | `3547c4e12a3bb24a6d474966b1120de241cad01b9ee2d3718df5c42259741fdc` |
-| cg-foundations-04-functions.json | `/activities/2` | activities | fn-g-area | `fa990c3b5168a539487dd5a743d5207956f147d7b864f95af7fd8987232ebb2d` |
-| cg-foundations-04-functions.json | `/activities/3` | activities | fn-g-trace | `09bb13538d7e95d452638d4cbc5ae4261d02b75b2efdaae45bc59910080727a6` |
-| cg-foundations-04-functions.json | `/activities/4` | activities | fn-g-fix | `37e7f97ac999c96c3b211c3ab6032ce3ba70b2ba8846cc8ecfb7fe8d7fd6ae3e` |
-| cg-foundations-04-functions.json | `/activities/5` | activities | fn-g-parsons | `82ce1d29ed394bd544aa161b53ebdcb52af15ff079c15e6f7c78c6f53c11dd51` |
-| cg-foundations-04-functions.json | `/activities/6` | activities | fn-g-explain | `ae88edc8752036100e695f67d01d7f2576894cbf62b5b0f45436cafb42f3f026` |
-| cg-foundations-04-functions.json | `/activities/7` | activities | fn-i-scope | `a7ed525c9b1fc2b1bb5b9110fe199b395e2604b6f04f262e8f651ab44ba698c9` |
-| cg-foundations-04-functions.json | `/activities/8` | activities | fn-i-scope-cb | `77760e52b3367927d364f52f17b58bc20afe3e149aa9c0fcfd01e6f99a5425e9` |
-| cg-foundations-04-functions.json | `/activities/9` | activities | fn-i-trace | `95c7de23388a97816506bc4ba311c1dc88961dce092ecd0f661935136ea6fd89` |
-| cg-foundations-04-functions.json | `/activities/10` | activities | fn-i-trace-cb | `b19a1ab716d75e5e677f2efb5fbea01d27f364ef755ec19dedd430240d29d21d` |
-| cg-foundations-04-functions.json | `/activities/11` | activities | fn-i-fix | `36e6194121b3c9d669dfdcad393797ee929ef064112dbd6f27b6d8baf471d988` |
-| cg-foundations-04-functions.json | `/activities/12` | activities | fn-i-fix-cb | `bd38cbd4ebce8558f600bff70dd2a47255e7652dabb72da4d250edb2168fc65e` |
-| cg-foundations-04-functions.json | `/activities/13` | activities | fn-i-parsons | `9dbe671f0bcb839ed322d241a82e6e9639137952358c3f87a55d8b2b4f881720` |
-| cg-foundations-04-functions.json | `/activities/14` | activities | fn-i-parsons-cb | `98d59a102576de5ae57508ef696e48fc3a8b0fe65bf55dc5dd696ef9ee90e46c` |
-| cg-foundations-04-functions.json | `/activities/15` | activities | fn-i-explain | `7b2ca017c5ea650ac4ed94a0f0ab3bdd0c2c48b8ae10725396c7c58dfea8f81b` |
+| cg-foundations-04-functions.json | `/activities/0` | activities | fn-l-watch | `b9e6069e95db35f385400105a1a1c61f2211dc0007d3222c8345a2a93ecd7de2` |
+| cg-foundations-04-functions.json | `/activities/1` | activities | fn-l-print-return | `ddca78cf667619374783dd2ef8280bae76fa2e6adc52da55d7da95db42d119dc` |
+| cg-foundations-04-functions.json | `/activities/2` | activities | fn-g-area | `45303b2179c180c819b8797701c6f2451f31ada4dd3b3272af2098dfeb908cfd` |
+| cg-foundations-04-functions.json | `/activities/3` | activities | fn-g-trace | `7313c84d184c16338963a2fa62124600617b087e89a2fe0f1ee43b41c404111c` |
+| cg-foundations-04-functions.json | `/activities/4` | activities | fn-g-fix | `a15526aa29c6dd1ecb3293733a0449f0d68c8c6fe0e731f5808251fb6641f17a` |
+| cg-foundations-04-functions.json | `/activities/5` | activities | fn-g-parsons | `f2da621a9ff64967430a0d9f9a524ac136194f73f5f48125b61b44ac05c37921` |
+| cg-foundations-04-functions.json | `/activities/6` | activities | fn-g-explain | `51b1ca0b7e333d2c7f7b1ce512bbb2b071aef3f1c03b3ff0199d639988f8538b` |
+| cg-foundations-04-functions.json | `/activities/7` | activities | fn-i-scope | `28d6daa47960e43a98ddb79cfa9e9c6fed2f26cbb3f397e204ecce08ea2933f3` |
+| cg-foundations-04-functions.json | `/activities/8` | activities | fn-i-scope-cb | `837b1af7cff4538aaf3cc13a75f710b6854d77edc007257d103912ed05eb70c9` |
+| cg-foundations-04-functions.json | `/activities/9` | activities | fn-i-trace | `14b899fd11ff19fd871560c57556c23a3343b45af07bd7cd4f55240fa05d51c8` |
+| cg-foundations-04-functions.json | `/activities/10` | activities | fn-i-trace-cb | `559fc698228cc6ae0467ecb0dec045688f9c31d11a1c80636a5145dd466c06d5` |
+| cg-foundations-04-functions.json | `/activities/11` | activities | fn-i-fix | `a68c1e0aeaf9d3f9c767ef4b20108f0843390d6929317e6ed36525042b7a1191` |
+| cg-foundations-04-functions.json | `/activities/12` | activities | fn-i-fix-cb | `4c76bdff7c6f7a7a935888113e4f057d7bb184c7ed9c37bdc05829afd440f40b` |
+| cg-foundations-04-functions.json | `/activities/13` | activities | fn-i-parsons | `e074f0fc033610a824b3813baeed98452a85fe3705e3a908b16441be4397c337` |
+| cg-foundations-04-functions.json | `/activities/14` | activities | fn-i-parsons-cb | `297840116f5ab466a85f4545577a9f7dd35d346fe6367b5969dbff77bde52485` |
+| cg-foundations-04-functions.json | `/activities/15` | activities | fn-i-explain | `135ba42de9a5278b18203631558662c60b03a54a68ec03aac20f39ed10b275b5` |
 | cg-foundations-04-functions.json | `/bridge/rows/0` | bridge example | — | `e69f829133999e1492ed5f9898651e7e921b6d62c2360c71b24656918cc4bdc4` |
 | cg-foundations-04-functions.json | `/bridge/rows/1` | bridge example | — | `0921696963d9188fb524b7b91fdab242de6305858001450d9e3ad0809e1a640d` |
 | cg-foundations-04-functions.json | `/bridge/rows/2` | bridge example | — | `efa67b758da5ea8e855391b2501b67be12b5a9ba235a27639a77c126ca356320` |
@@ -142,22 +142,22 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | cg-foundations-05-lists-dicts.json | `/teach/0` | teach | ld-t1 | `58545d4fd3d47caf7c15c4d64d7120f9fa6dc0b3ea25e71e29f6d934f309bc38` |
 | cg-foundations-05-lists-dicts.json | `/teach/1` | teach | ld-t2 | `faab366c00173f31e182d4a6aac16a2b9465ac7260b9fb01c10aff04ab45060e` |
 | cg-foundations-05-lists-dicts.json | `/teach/2` | teach | ld-t3 | `72d368389041e0a52146cf9cf44c52bbeb470d0de3e18ee4c458a56fd65d6e99` |
-| cg-foundations-05-lists-dicts.json | `/activities/0` | activities | ld-l-watch | `c445f43c3336261c740831e3be55db9eb40a3e3103885c1b2b039aceffe087aa` |
-| cg-foundations-05-lists-dicts.json | `/activities/1` | activities | ld-l-alias | `57442ef5ded110fdd94788e0c7611c49c194152936ca0f738090b8049b62240c` |
-| cg-foundations-05-lists-dicts.json | `/activities/2` | activities | ld-g-index | `825a90dfdfb69eafa6e5a9420b1717cafd96b21321a022029d46ca8608638ae5` |
-| cg-foundations-05-lists-dicts.json | `/activities/3` | activities | ld-g-trace | `9291fb2f721987e17710b26ba457c3515294d45162d75b8781af89fb30353d5d` |
-| cg-foundations-05-lists-dicts.json | `/activities/4` | activities | ld-g-fix | `7b2855d4da98957110dc5e5d4bb6fb56cec353c3a1affa25e5dc822aa6ed216a` |
-| cg-foundations-05-lists-dicts.json | `/activities/5` | activities | ld-g-parsons | `6a496294a2a093814da80f26b24cecdefc51759141b71b8b27187466446711cd` |
-| cg-foundations-05-lists-dicts.json | `/activities/6` | activities | ld-g-explain | `25276b37ae5d203c8369d39f6356c887307c4d56f9263ff422e4e3ba57ff12df` |
-| cg-foundations-05-lists-dicts.json | `/activities/7` | activities | ld-i-index | `8d0d64a42f803a84c4a56ac3160dd1932c3b57dee9b7be57ce05cc5eadbf9fed` |
-| cg-foundations-05-lists-dicts.json | `/activities/8` | activities | ld-i-index-cb | `e43aa6f20f1c5b27a1bcacf37887027e5134a7c1a63cbb604060e4bfb0d6e406` |
-| cg-foundations-05-lists-dicts.json | `/activities/9` | activities | ld-i-trace | `3ac558785806f7cc0f3680d90ba681b6face20154602ec6d3d3e857ad3d2e781` |
-| cg-foundations-05-lists-dicts.json | `/activities/10` | activities | ld-i-trace-cb | `928df74ef752c76ceb5c2d0b9d1730a9846507d5487b669779990220efa27771` |
-| cg-foundations-05-lists-dicts.json | `/activities/11` | activities | ld-i-fix | `e87cb45620b612e5641f3fe521b8cfbc0ec424a78f10a5f028dd3d4dd0967964` |
-| cg-foundations-05-lists-dicts.json | `/activities/12` | activities | ld-i-fix-cb | `12485090cf73972ac24d6e36d9b659c32518f5cab24aa20b25bcaa1465bb47bc` |
-| cg-foundations-05-lists-dicts.json | `/activities/13` | activities | ld-i-parsons | `097a3ba524798868bf8b77a8b94c9913614b078b066dee3b208b6f09f67486ed` |
-| cg-foundations-05-lists-dicts.json | `/activities/14` | activities | ld-i-parsons-cb | `9719bd66dd1459ca26980ba4cbed8e8aaea27b8dd62fe15f68e85d4b2a38d610` |
-| cg-foundations-05-lists-dicts.json | `/activities/15` | activities | ld-i-explain | `25b482414a742b513f448e5d447811c98c5250cfdac709125fa2b21b7d4b2635` |
+| cg-foundations-05-lists-dicts.json | `/activities/0` | activities | ld-l-watch | `451ff95851ddc408c126f5f88172bdd0e3f2233518c224dc0f26d521991f7c93` |
+| cg-foundations-05-lists-dicts.json | `/activities/1` | activities | ld-l-alias | `3bae1c67053d21861ce72de3b8f3d2bb24eba08e8932b3dc1dc3cb5e5a36eedb` |
+| cg-foundations-05-lists-dicts.json | `/activities/2` | activities | ld-g-index | `fe6c64d7206569ff7d4610fec4a23c12a6e6e3cf9ebff1381915f26c579c027f` |
+| cg-foundations-05-lists-dicts.json | `/activities/3` | activities | ld-g-trace | `e6415788bcdc9c333ba04ead19cf4589b97875b739b78bad1c1043715e3c6951` |
+| cg-foundations-05-lists-dicts.json | `/activities/4` | activities | ld-g-fix | `c603d0f8431fbdc32246ef6bcfd76fbad7d9ce7df131f6d346bab3a4e933ed1e` |
+| cg-foundations-05-lists-dicts.json | `/activities/5` | activities | ld-g-parsons | `fc6e9560bb5d46c1ee13ae54dfd61cb705c667467fc40a3c41736daa12fb60a6` |
+| cg-foundations-05-lists-dicts.json | `/activities/6` | activities | ld-g-explain | `07909af728baf45e5d0a55e46eed30d15a36fa74fc51a6ed8557dd96eaa2346b` |
+| cg-foundations-05-lists-dicts.json | `/activities/7` | activities | ld-i-index | `9fd768de85600ccd508a9d49bc2f17adc56c07ae42a198c3267f6e3a854b5b42` |
+| cg-foundations-05-lists-dicts.json | `/activities/8` | activities | ld-i-index-cb | `ac1bc08b36224dcc5c0af573fe338c32a3c89844627c8e120b0d8c375574f9f6` |
+| cg-foundations-05-lists-dicts.json | `/activities/9` | activities | ld-i-trace | `6509f805e77e4f1a46a727ad600b8fba44471411199b0a495436e74e334c39d3` |
+| cg-foundations-05-lists-dicts.json | `/activities/10` | activities | ld-i-trace-cb | `c45db31e9443f9440321a0cf735a7eb0ed6ddc4dedd9e6943225ff007929be8b` |
+| cg-foundations-05-lists-dicts.json | `/activities/11` | activities | ld-i-fix | `4b74b1458fa5655b11d4e44fdee261c98d06da9782fb7e07e3a6e0e1ba5c4108` |
+| cg-foundations-05-lists-dicts.json | `/activities/12` | activities | ld-i-fix-cb | `37f62cf9e81db2ad1dc74de5e009a326339c567144c1361ca8ae70af3007178e` |
+| cg-foundations-05-lists-dicts.json | `/activities/13` | activities | ld-i-parsons | `58d304d44fcb880e66b315d8b61fcc8ff0b18b7ea786bdd5475bde7b2af160c4` |
+| cg-foundations-05-lists-dicts.json | `/activities/14` | activities | ld-i-parsons-cb | `308f256ac5dd1df88a851d6879f31ff9428d68cbc7114864761abe342881a05f` |
+| cg-foundations-05-lists-dicts.json | `/activities/15` | activities | ld-i-explain | `728dca28853225464b1f4bae79b3ec3bd091d8ed30a0e270a6db21cd111b2174` |
 | cg-foundations-05-lists-dicts.json | `/bridge/rows/0` | bridge example | — | `64e8a90da17cc59e5e846c6a87c1ac9e01032e0b187a1f81c840380ae9c56a52` |
 | cg-foundations-05-lists-dicts.json | `/bridge/rows/1` | bridge example | — | `ccf6a01262065dd3e46741d0677a7fab872c24a6f2c9939787ded811dc8dbd28` |
 | cg-foundations-05-lists-dicts.json | `/bridge/rows/2` | bridge example | — | `3f1b5237dee4708396b84d155b75d201ef5121e859c2698d4bceb0461303b810` |
@@ -172,22 +172,22 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | cg-foundations-06-recursion.json | `/teach/0` | teach | rc-t1 | `20f319750d784fd0439b0c6775c139ac365ad84feb79bf9ce0d4c2cdcb8d1909` |
 | cg-foundations-06-recursion.json | `/teach/1` | teach | rc-t2 | `abc613fb031736dca46dfb26dd52c10ca2ba3b425c25adeb7470f118cc00f560` |
 | cg-foundations-06-recursion.json | `/teach/2` | teach | rc-t3 | `e5ace40d0b8bcbf96fb0332a1b1620c45eb3777ea14f75b3fcff344f38ec74ad` |
-| cg-foundations-06-recursion.json | `/activities/0` | activities | rc-l-watch | `e2508dc260918a73aaf91935af18b026f998eb0e337e97c567ef09fa84dfd75b` |
-| cg-foundations-06-recursion.json | `/activities/1` | activities | rc-l-order | `5bd695edf8f351f63446f9a7a7dfd833f6eb876ac9356518ba2222a5777259b2` |
-| cg-foundations-06-recursion.json | `/activities/2` | activities | rc-g-total | `bc60b581e946b58e14f874d469604a1a02fa71eece8bbfd3aa77ef9746f72aff` |
-| cg-foundations-06-recursion.json | `/activities/3` | activities | rc-g-trace | `df73ce86a41ba7512f95578e5d7ae291bfd32d506390cd54c3483e8b3eb7efce` |
-| cg-foundations-06-recursion.json | `/activities/4` | activities | rc-g-fix | `179e1db524b087c41e3d627014e2bc4ef125a78e52d1cd9bd71b744f2b633182` |
-| cg-foundations-06-recursion.json | `/activities/5` | activities | rc-g-parsons | `d9e86f6e78efa002939eaa03312f9c596dec807da1a6f8c030a84bd6d6177c67` |
-| cg-foundations-06-recursion.json | `/activities/6` | activities | rc-g-explain | `1cd95a3fbb007ce8b40877ed02f7dc250d832407df400ae093a11de924427b0e` |
-| cg-foundations-06-recursion.json | `/activities/7` | activities | rc-i-digits | `b56e5611bb23bdbbc1f14fbb8683bcb55593a778fdedf9a80cb49342e358515b` |
-| cg-foundations-06-recursion.json | `/activities/8` | activities | rc-i-digits-cb | `b29417a8d9741e3f6f2c42158c9098fd72a3324fbb05e05797b9fda345370d3c` |
-| cg-foundations-06-recursion.json | `/activities/9` | activities | rc-i-trace | `94816ec098de97f8c61aa561ba1d256750327e64653d01aa90e5ed822d8adc9f` |
-| cg-foundations-06-recursion.json | `/activities/10` | activities | rc-i-trace-cb | `7c2f74869400318e9216f648c25546774df96d730479a817285a9767ea688abc` |
-| cg-foundations-06-recursion.json | `/activities/11` | activities | rc-i-fix | `18b5f100fb57f3ac7d5d0d81b9bbe642ea4aa3a1eb257e9aa56c19f4c58c7a4b` |
-| cg-foundations-06-recursion.json | `/activities/12` | activities | rc-i-fix-cb | `9ae833c34aadd9a1cdbde0215c10a13ce5f9cf77a319a7c4bb63c736baac9ac7` |
-| cg-foundations-06-recursion.json | `/activities/13` | activities | rc-i-parsons | `d6f9fa3229d22c5b51c4b7ad1f468cb690fc56521f390acfdbfe8f52cf554d58` |
-| cg-foundations-06-recursion.json | `/activities/14` | activities | rc-i-parsons-cb | `83f6dec57bc57d59a7d4cb14b083eff722b753f82f60e226422813341496e38e` |
-| cg-foundations-06-recursion.json | `/activities/15` | activities | rc-i-explain | `f590a617669c563725f9fd57318cc6dd23b8a3e1a37fc3a920bc6d0946f7fdc0` |
+| cg-foundations-06-recursion.json | `/activities/0` | activities | rc-l-watch | `7fbd3b35e7eec3394a86aca1ee844162a26c551a9b69827d51fb9b0ddfe8f099` |
+| cg-foundations-06-recursion.json | `/activities/1` | activities | rc-l-order | `927a8af131f0e5658c23917f26871f1df201c0afb002c98e4f5b2dfe2237aa1d` |
+| cg-foundations-06-recursion.json | `/activities/2` | activities | rc-g-total | `503ac170796d0342fb15a33e75316532c460b9c8cba549f6d1571a450bbab8d5` |
+| cg-foundations-06-recursion.json | `/activities/3` | activities | rc-g-trace | `9567a74a02a239174c786f05d949eeb4cb991cda5ad00607359694d0c3787161` |
+| cg-foundations-06-recursion.json | `/activities/4` | activities | rc-g-fix | `2821e50fd336c501c914e9fb456ee55f9557e1a586b95519e914054526ec489b` |
+| cg-foundations-06-recursion.json | `/activities/5` | activities | rc-g-parsons | `b402e4cb1c83217efbb946118fe273c5dd4ba84cf4faa317c3c2f2a80a1a58c2` |
+| cg-foundations-06-recursion.json | `/activities/6` | activities | rc-g-explain | `e6bfc1fb057691a2ca9e3f22984a616141bda8ee84eda105ab4479e8c79acd37` |
+| cg-foundations-06-recursion.json | `/activities/7` | activities | rc-i-digits | `469b951d98b261a77722d0cae5de24bb08b25969d863151de3e44316c47305c4` |
+| cg-foundations-06-recursion.json | `/activities/8` | activities | rc-i-digits-cb | `7fc8920539d0ae6a9d10022cb18ff527f27d5ba15515dfe897b0cb1a9e6e46b2` |
+| cg-foundations-06-recursion.json | `/activities/9` | activities | rc-i-trace | `9b991020b33ff024e9c88ce6e6a7d633adf35543eecb8c6a42d2bac4e2aecef3` |
+| cg-foundations-06-recursion.json | `/activities/10` | activities | rc-i-trace-cb | `c3eed00526d5e8becd91e75c5bcee3b82c3d8fb6975a0ec6390e24d298cb6841` |
+| cg-foundations-06-recursion.json | `/activities/11` | activities | rc-i-fix | `dc3367bc292fd2e431b61e36a0dc2c4c5d7a8094b93228c9f85d2cc1b477eb60` |
+| cg-foundations-06-recursion.json | `/activities/12` | activities | rc-i-fix-cb | `cef36916727f29b86d4bdc985f4714282bb335ac29b1621e3b23291fdd2e923e` |
+| cg-foundations-06-recursion.json | `/activities/13` | activities | rc-i-parsons | `549e0a3da5184890d41b0424a5700fbe235ca3a641baa5e3631d0208d5b79242` |
+| cg-foundations-06-recursion.json | `/activities/14` | activities | rc-i-parsons-cb | `04607d33ec9856452e254f979b3c5a6b7c715446496941ac4293aa25667707dc` |
+| cg-foundations-06-recursion.json | `/activities/15` | activities | rc-i-explain | `4a81c7b87757b49fd63d0f58ae88d9c1fe063bdb9bcd9023c94082897b471871` |
 | cg-foundations-06-recursion.json | `/bridge/rows/0` | bridge example | — | `51790ee65266b14e9ab202fc5b3f25052bb85dc5053c4965f3e6d0441d9723dc` |
 | cg-foundations-06-recursion.json | `/bridge/rows/1` | bridge example | — | `24db096893b060e819a153508e955ac0f0a51391c4e5880c45ea4b7984c89aa8` |
 | cg-foundations-06-recursion.json | `/bridge/rows/2` | bridge example | — | `6918be29a7aee6a30db652b4bab65b2a4831e1a190668d20f17554a9126f4ce3` |
@@ -507,8 +507,9 @@ These hashes identify excluded source values without publishing their contents. 
 
 Additional course-level excluded fields: `course.activityKinds`, `course.audience`, `course.execution`, `course.helpPolicy`, `course.nextCourse`, `course.provenance`, `course.provides`, `course.roadmap`, `course.shape`, `course.status`.
 
-## Verification receipt (2026-11-14)
 
-Verified: public asset and registry hashes; CourseBundle validation for both drafts and the existing demo (Swift 6.0.3, Python 3.12.3); five public tests passed. Source/export equality was checked by decoded JSON value: all seven Code Gym resources match; Git differs only by removal of the named exercise. Gitleaks directory scans of both source course folders and both public course folders reported no leaks. Public attachment URL, email, private-host-path and credential-key scans found only the documented synthetic Git fixture paths.
+## Format-v1 revision (2026-11-14)
 
-Pending / NOT RUN: independent human provenance and factual review, private author-host semantic replay/parity tests, Python trace regeneration, native player/device acceptance and the future format-v1 review pipeline. These results do not establish teaching accuracy or public-app importability.
+Status: proposed; human approval pending. `course.json` now contains exhaustive source mappings for the course, topics, materials, questions, lessons, steps, activities and media. All eight original projection resources across the two courses remain declared JSON media; legacy package-level ledgers and provisional manifests are removed. The original inventory above covers embedded teaching content; structured public activity copies also map to the owner-AI source and the public revision source. Input declarations and keyboard/remote instructions are public additions, not evidence of implemented player controls. No withheld source answer fields were restored.
+
+Parsons exercises retain every distractor and accepted order in media. Their format-v1 activities are explicitly self-check explanations, since its single full permutation cannot encode these richer exercises. Typed prediction/checkpoint responses and written explanations require a keyboard; finite-choice activities and reading-based Parsons have focus/select alternatives for a remote.

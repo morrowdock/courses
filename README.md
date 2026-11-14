@@ -30,3 +30,5 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) and [REVIEW.md](docs/REVIEW.md). Create 
 Course content defaults to CC BY-SA 4.0 ([LICENSE](LICENSE)); individual course manifests may explicitly choose CC-BY-4.0 or CC0-1.0. Validation tooling and schemas are Apache-2.0 ([LICENSE-CODE](LICENSE-CODE)); see [NOTICE](NOTICE), [COPYRIGHT.md](COPYRIGHT.md) and [QUALITY.md](QUALITY.md). Names, mascot and logos are reserved ([TRADEMARKS.md](TRADEMARKS.md)). No trademark rights or university endorsements are granted.
 
 Public contact, Code of Conduct concerns and privacy/deletion requests: [hello@morrowdock.app](mailto:hello@morrowdock.app). For vulnerability reporting, see [SECURITY.md](SECURITY.md).
+
+The first owner-authored course drafts are [Git Lab and Code Gym foundations](docs/FIRST-OPEN-COURSES.md): 12 lessons, 29 Git tasks and 96 Code Gym activities, by Collin Craig under CC-BY-SA-4.0. Both remain draft with empty review receipts. Owner approval is required before any status change or announcement.

@@ -10,7 +10,7 @@ from tools.validate import ROOT, load_json, validate
 
 class CourseTests(unittest.TestCase):
     def test_original_and_open_course(self):
-        self.assertEqual(validate(), (1, 2))
+        self.assertEqual(validate(), (3, 4))
 
 
 class SwiftCompatibilityTests(unittest.TestCase):

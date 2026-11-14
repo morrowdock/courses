@@ -1,0 +1,1505 @@
+{
+  "format": "morrowdock-open-course",
+  "formatVersion": 1,
+  "id": "git-course-v1",
+  "version": "1.0.0-draft",
+  "title": "Git Lab: version control, taught",
+  "summary": "Six lessons in Git snapshots, branches, merge, rebase, reset and recovery; 29 keyboard-based tasks. Virtual-lab reading resources; no player acceptance claimed.",
+  "level": "beginner",
+  "prerequisites": [
+    "Know what a file and a folder are, and that a file's contents can change.",
+    "Type a command in the Terminal Lab and use echo text > file, cat, ls and rm (the Terminal Lab missions teach these)."
+  ],
+  "creators": [
+    {
+      "displayName": "Collin Craig"
+    }
+  ],
+  "licence": "CC-BY-SA-4.0",
+  "language": "en",
+  "bundle": {
+    "path": "bundle.json",
+    "sha256": "8a7e79fe92fe292ee0afb9eb92363b84588a4169a2f877f4a09b672b4bc7c558",
+    "size": 11552
+  },
+  "sources": [
+    {
+      "id": "owner-ai-source",
+      "title": "Owner-authorized original AI-authored git-course-v1; private source commit cc40e0a6315a9f86d21496f268b34aa8547786d3 (2026-11-03 content, 2026-11-14 audit)",
+      "origin": "generated",
+      "rightsHolder": "Collin Craig",
+      "licence": "CC-BY-SA-4.0",
+      "changes": "Learner allowlist export; author metadata withheld. One unresolved-origin example task and the contract-withheld capstone excluded.",
+      "permission": "Owner direction dated 2026-11-14 authorizes these original course materials under CC-BY-SA-4.0; independent human review pending."
+    },
+    {
+      "id": "public-v1-revision",
+      "title": "AI-assisted public format-v1 migration and accessibility revision (2026-11-14)",
+      "origin": "generated",
+      "rightsHolder": "Collin Craig",
+      "licence": "CC-BY-SA-4.0",
+      "changes": "Structured lessons, activity wrappers and input declarations; corrected recovery feedback: merging an ancestor is a no-op.",
+      "permission": "Prepared for Collin Craig under the owner-authorized course publication and coordinator revision instructions; approval and factual review pending."
+    }
+  ],
+  "provenance": [
+    {
+      "item": "course:git-course-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:git-course-snapshots-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:git-course-branches-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:git-course-merge-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:git-course-rebase-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:git-course-reset-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "topic:git-course-recovery-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:git-course-snapshots-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:git-course-branches-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:git-course-merge-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:git-course-rebase-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:git-course-reset-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "material:git-course-recovery-v1-material",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-snapshots-v1-predict",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-snapshots-v1-check",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-branches-v1-predict",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-branches-v1-check",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-merge-v1-predict",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-merge-v1-check",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-rebase-v1-predict",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-rebase-v1-check",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-reset-v1-predict",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-reset-v1-check",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-recovery-v1-predict",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "question:git-course-recovery-v1-check",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:git-course-snapshots-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:git-course-branches-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:git-course-merge-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:git-course-rebase-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:git-course-reset-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "lesson:git-course-recovery-v1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-snapshots-v1-g1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-snapshots-v1-g2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-snapshots-v1-debug",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-snapshots-v1-o1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-snapshots-v1-o1-comeback-v2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-branches-v1-g1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-branches-v1-g2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-branches-v1-debug",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-branches-v1-o1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-branches-v1-o1-comeback-v2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-merge-v1-g1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-merge-v1-g2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-merge-v1-debug",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-merge-v1-o1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-merge-v1-o1-comeback-v2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-rebase-v1-g1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-rebase-v1-g2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-rebase-v1-debug",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-rebase-v1-o1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-rebase-v1-o1-comeback-v2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-reset-v1-g2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-reset-v1-debug",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-reset-v1-o1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-reset-v1-o1-comeback-v2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-recovery-v1-g1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-recovery-v1-g2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-recovery-v1-debug",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-recovery-v1-o1",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "activity:git-course-recovery-v1-o1-comeback-v2",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "media:learner",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-g1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-g2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-debug-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-o1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-o1-comeback-v2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-predict-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-snapshots-v1-check-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-g1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-g2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-debug-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-o1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-o1-comeback-v2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-predict-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-branches-v1-check-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-g1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-g2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-debug-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-o1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-o1-comeback-v2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-predict-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-merge-v1-check-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-g1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-g2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-debug-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-o1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-o1-comeback-v2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-predict-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-rebase-v1-check-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-reset-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-reset-v1-g2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-reset-v1-debug-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-reset-v1-o1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-reset-v1-o1-comeback-v2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-reset-v1-predict-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-reset-v1-check-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-read",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-g1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-g2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-debug-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-o1-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-o1-comeback-v2-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-predict-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    },
+    {
+      "item": "step:git-course-recovery-v1-check-question-step",
+      "sources": [
+        "owner-ai-source",
+        "public-v1-revision"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "git-course-snapshots-v1",
+      "title": "Snapshots: working tree, staging area, commit",
+      "steps": [
+        {
+          "id": "git-course-snapshots-v1-read",
+          "kind": "reading",
+          "materialID": "git-course-snapshots-v1-material"
+        },
+        {
+          "id": "git-course-snapshots-v1-g1-step",
+          "kind": "activity",
+          "activityID": "git-course-snapshots-v1-g1"
+        },
+        {
+          "id": "git-course-snapshots-v1-g2-step",
+          "kind": "activity",
+          "activityID": "git-course-snapshots-v1-g2"
+        },
+        {
+          "id": "git-course-snapshots-v1-debug-step",
+          "kind": "activity",
+          "activityID": "git-course-snapshots-v1-debug"
+        },
+        {
+          "id": "git-course-snapshots-v1-o1-step",
+          "kind": "activity",
+          "activityID": "git-course-snapshots-v1-o1"
+        },
+        {
+          "id": "git-course-snapshots-v1-o1-comeback-v2-step",
+          "kind": "activity",
+          "activityID": "git-course-snapshots-v1-o1-comeback-v2"
+        },
+        {
+          "id": "git-course-snapshots-v1-predict-question-step",
+          "kind": "question",
+          "questionID": "git-course-snapshots-v1-predict"
+        },
+        {
+          "id": "git-course-snapshots-v1-check-question-step",
+          "kind": "question",
+          "questionID": "git-course-snapshots-v1-check"
+        }
+      ]
+    },
+    {
+      "id": "git-course-branches-v1",
+      "title": "Branches: movable labels on history",
+      "steps": [
+        {
+          "id": "git-course-branches-v1-read",
+          "kind": "reading",
+          "materialID": "git-course-branches-v1-material"
+        },
+        {
+          "id": "git-course-branches-v1-g1-step",
+          "kind": "activity",
+          "activityID": "git-course-branches-v1-g1"
+        },
+        {
+          "id": "git-course-branches-v1-g2-step",
+          "kind": "activity",
+          "activityID": "git-course-branches-v1-g2"
+        },
+        {
+          "id": "git-course-branches-v1-debug-step",
+          "kind": "activity",
+          "activityID": "git-course-branches-v1-debug"
+        },
+        {
+          "id": "git-course-branches-v1-o1-step",
+          "kind": "activity",
+          "activityID": "git-course-branches-v1-o1"
+        },
+        {
+          "id": "git-course-branches-v1-o1-comeback-v2-step",
+          "kind": "activity",
+          "activityID": "git-course-branches-v1-o1-comeback-v2"
+        },
+        {
+          "id": "git-course-branches-v1-predict-question-step",
+          "kind": "question",
+          "questionID": "git-course-branches-v1-predict"
+        },
+        {
+          "id": "git-course-branches-v1-check-question-step",
+          "kind": "question",
+          "questionID": "git-course-branches-v1-check"
+        }
+      ]
+    },
+    {
+      "id": "git-course-merge-v1",
+      "title": "Merge: bringing lines of work together",
+      "steps": [
+        {
+          "id": "git-course-merge-v1-read",
+          "kind": "reading",
+          "materialID": "git-course-merge-v1-material"
+        },
+        {
+          "id": "git-course-merge-v1-g1-step",
+          "kind": "activity",
+          "activityID": "git-course-merge-v1-g1"
+        },
+        {
+          "id": "git-course-merge-v1-g2-step",
+          "kind": "activity",
+          "activityID": "git-course-merge-v1-g2"
+        },
+        {
+          "id": "git-course-merge-v1-debug-step",
+          "kind": "activity",
+          "activityID": "git-course-merge-v1-debug"
+        },
+        {
+          "id": "git-course-merge-v1-o1-step",
+          "kind": "activity",
+          "activityID": "git-course-merge-v1-o1"
+        },
+        {
+          "id": "git-course-merge-v1-o1-comeback-v2-step",
+          "kind": "activity",
+          "activityID": "git-course-merge-v1-o1-comeback-v2"
+        },
+        {
+          "id": "git-course-merge-v1-predict-question-step",
+          "kind": "question",
+          "questionID": "git-course-merge-v1-predict"
+        },
+        {
+          "id": "git-course-merge-v1-check-question-step",
+          "kind": "question",
+          "questionID": "git-course-merge-v1-check"
+        }
+      ]
+    },
+    {
+      "id": "git-course-rebase-v1",
+      "title": "Rebase: replaying work on a new base",
+      "steps": [
+        {
+          "id": "git-course-rebase-v1-read",
+          "kind": "reading",
+          "materialID": "git-course-rebase-v1-material"
+        },
+        {
+          "id": "git-course-rebase-v1-g1-step",
+          "kind": "activity",
+          "activityID": "git-course-rebase-v1-g1"
+        },
+        {
+          "id": "git-course-rebase-v1-g2-step",
+          "kind": "activity",
+          "activityID": "git-course-rebase-v1-g2"
+        },
+        {
+          "id": "git-course-rebase-v1-debug-step",
+          "kind": "activity",
+          "activityID": "git-course-rebase-v1-debug"
+        },
+        {
+          "id": "git-course-rebase-v1-o1-step",
+          "kind": "activity",
+          "activityID": "git-course-rebase-v1-o1"
+        },
+        {
+          "id": "git-course-rebase-v1-o1-comeback-v2-step",
+          "kind": "activity",
+          "activityID": "git-course-rebase-v1-o1-comeback-v2"
+        },
+        {
+          "id": "git-course-rebase-v1-predict-question-step",
+          "kind": "question",
+          "questionID": "git-course-rebase-v1-predict"
+        },
+        {
+          "id": "git-course-rebase-v1-check-question-step",
+          "kind": "question",
+          "questionID": "git-course-rebase-v1-check"
+        }
+      ]
+    },
+    {
+      "id": "git-course-reset-v1",
+      "title": "Reset: moving the branch, the staging area and the files",
+      "steps": [
+        {
+          "id": "git-course-reset-v1-read",
+          "kind": "reading",
+          "materialID": "git-course-reset-v1-material"
+        },
+        {
+          "id": "git-course-reset-v1-g2-step",
+          "kind": "activity",
+          "activityID": "git-course-reset-v1-g2"
+        },
+        {
+          "id": "git-course-reset-v1-debug-step",
+          "kind": "activity",
+          "activityID": "git-course-reset-v1-debug"
+        },
+        {
+          "id": "git-course-reset-v1-o1-step",
+          "kind": "activity",
+          "activityID": "git-course-reset-v1-o1"
+        },
+        {
+          "id": "git-course-reset-v1-o1-comeback-v2-step",
+          "kind": "activity",
+          "activityID": "git-course-reset-v1-o1-comeback-v2"
+        },
+        {
+          "id": "git-course-reset-v1-predict-question-step",
+          "kind": "question",
+          "questionID": "git-course-reset-v1-predict"
+        },
+        {
+          "id": "git-course-reset-v1-check-question-step",
+          "kind": "question",
+          "questionID": "git-course-reset-v1-check"
+        }
+      ]
+    },
+    {
+      "id": "git-course-recovery-v1",
+      "title": "Recovery: getting lost work back",
+      "steps": [
+        {
+          "id": "git-course-recovery-v1-read",
+          "kind": "reading",
+          "materialID": "git-course-recovery-v1-material"
+        },
+        {
+          "id": "git-course-recovery-v1-g1-step",
+          "kind": "activity",
+          "activityID": "git-course-recovery-v1-g1"
+        },
+        {
+          "id": "git-course-recovery-v1-g2-step",
+          "kind": "activity",
+          "activityID": "git-course-recovery-v1-g2"
+        },
+        {
+          "id": "git-course-recovery-v1-debug-step",
+          "kind": "activity",
+          "activityID": "git-course-recovery-v1-debug"
+        },
+        {
+          "id": "git-course-recovery-v1-o1-step",
+          "kind": "activity",
+          "activityID": "git-course-recovery-v1-o1"
+        },
+        {
+          "id": "git-course-recovery-v1-o1-comeback-v2-step",
+          "kind": "activity",
+          "activityID": "git-course-recovery-v1-o1-comeback-v2"
+        },
+        {
+          "id": "git-course-recovery-v1-predict-question-step",
+          "kind": "question",
+          "questionID": "git-course-recovery-v1-predict"
+        },
+        {
+          "id": "git-course-recovery-v1-check-question-step",
+          "kind": "question",
+          "questionID": "git-course-recovery-v1-check"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "git-course-snapshots-v1-g1",
+      "kind": "explanation",
+      "prompt": "The harbor log has two files and no repository. Make one commit named exactly “Start the harbor log” that holds both files, and leave nothing unstaged or untracked.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 06:00 tide high > tides.txt\necho Berth 4 free > berths.txt",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Start the harbor log\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-snapshots-v1-g2",
+      "kind": "explanation",
+      "prompt": "You fixed the berth number in berths.txt (finished) and started a half-written note in tides.txt (not finished). Commit only the berth fix as “Fix berth number”. Keep your tides.txt edit in the working tree, uncommitted and unstaged.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 06:00 tide high > tides.txt\necho Berth 4 free > berths.txt\ngit init\ngit add .\ngit commit -m \"Start the harbor log\"\necho Berth 5 free > berths.txt\necho 06:00 tide high, check > tides.txt",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Fix berth number\", \"Start the harbor log\"]}, {\"headMessage\": \"Fix berth number\"}, {\"committed\": [\"/home/berths.txt\", \"Berth 5 free\\n\"]}, {\"committed\": [\"/home/tides.txt\", \"06:00 tide high\\n\"]}, {\"file\": [\"/home/tides.txt\", \"06:00 tide high, check\\n\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-snapshots-v1-debug",
+      "kind": "explanation",
+      "prompt": "A teammate fixed a typo and ran the command below. Git refused. Read the message, explain why, and fix it with the fewest commands.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho teh crane > crane.txt\ngit init\ngit add .\ngit commit -m \"Add crane\"\necho the crane > crane.txt\n\nBroken commands:\ngit commit -m \"Fix typo\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"headMessage\": \"Fix typo\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-snapshots-v1-o1",
+      "kind": "explanation",
+      "prompt": "The repository already has one commit. You added a new file crew.txt and edited cargo.txt. scratch.txt is your private scratchpad. Make two commits in this order: first “Add crew list” (only crew.txt), then “Update cargo weight” (only cargo.txt). scratch.txt must stay untracked.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 12 t steel > cargo.txt\ngit init\ngit add .\ngit commit -m \"Log cargo\"\necho Ada, Kofi > crew.txt\necho 14 t steel > cargo.txt\necho maybe 15? > scratch.txt",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Update cargo weight\", \"Add crew list\", \"Log cargo\"]}, {\"untracked\": \"/home/scratch.txt\"}, {\"trackedClean\": true}]\nIn two sentences: why did scratch.txt stay out of both commits, and what single command would have let it in?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-snapshots-v1-o1-comeback-v2",
+      "kind": "explanation",
+      "prompt": "Fresh variant. route.txt is new and fuel.txt changed; together they are one change, so commit both as a single commit “Plan the trip”. draft.txt is tracked and has an unfinished edit: keep that edit in your working tree, out of the commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho fuel 60% > fuel.txt\necho dear crew > draft.txt\ngit init\ngit add .\ngit commit -m \"Check fuel\"\necho north then east > route.txt\necho fuel 95% > fuel.txt\necho dear crew, we leave at > draft.txt",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Plan the trip\", \"Check fuel\"]}, {\"committed\": [\"/home/route.txt\", \"north then east\\n\"]}, {\"committed\": [\"/home/fuel.txt\", \"fuel 95%\\n\"]}, {\"committed\": [\"/home/draft.txt\", \"dear crew\\n\"]}, {\"file\": [\"/home/draft.txt\", \"dear crew, we leave at\\n\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-branches-v1-g1",
+      "kind": "explanation",
+      "prompt": "Start a branch named night-shift, commit night.txt (any text) on it as “Add night roster”, then return to main. main must still point at “Start roster”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho day: Ada > roster.txt\ngit init\ngit add .\ngit commit -m \"Start roster\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"night-shift\", \"Add night roster\"]}, {\"tipMessage\": [\"main\", \"Start roster\"]}, {\"branch\": \"main\"}, {\"absent\": \"/home/night.txt\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-branches-v1-g2",
+      "kind": "explanation",
+      "prompt": "A teammate says hull.txt was lost. It was committed on the repairs branch. Get hull.txt back into the working tree without making any new commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho dock > yard.txt\ngit init\ngit add .\ngit commit -m \"Open the yard\"\ngit switch -c repairs\necho patch port side > hull.txt\ngit add .\ngit commit -m \"Patch the hull\"\ngit switch main",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"branch\": \"repairs\"}, {\"file\": [\"/home/hull.txt\", \"patch port side\\n\"]}, {\"log\": [\"Patch the hull\", \"Open the yard\"]}, {\"tipMessage\": [\"main\", \"Open the yard\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-branches-v1-debug",
+      "kind": "explanation",
+      "prompt": "You edited guide.txt on main and tried to move to docs. The lab refused. Keep the edit on main as “Clarify the guide” and then get onto docs.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho read me > guide.txt\ngit init\ngit add .\ngit commit -m \"Add guide\"\ngit branch docs\necho read me first > guide.txt\n\nBroken commands:\ngit switch docs",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"branch\": \"docs\"}, {\"tipMessage\": [\"main\", \"Clarify the guide\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-branches-v1-o1",
+      "kind": "explanation",
+      "prompt": "From main, make two branches that each start at “Survey the bay”: east (commit east.txt as “Chart east”) and west (commit west.txt as “Chart west”). west must not contain east's commit. Finish on main with main unchanged.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho bay > survey.txt\ngit init\ngit add .\ngit commit -m \"Survey the bay\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"east\", \"Chart east\"]}, {\"tipMessage\": [\"west\", \"Chart west\"]}, {\"notIn\": [\"west\", \"Chart east\"]}, {\"notIn\": [\"east\", \"Chart west\"]}, {\"tipMessage\": [\"main\", \"Survey the bay\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nDraw (or describe) the commit graph you made. Which commit is the parent of “Chart west”, and which command decided that?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-branches-v1-o1-comeback-v2",
+      "kind": "explanation",
+      "prompt": "Fresh variant. roses needs the soil work from herbs. Make herbs from main (commit herbs.txt as “Plant herbs”), then make roses so that it starts from herbs' commit (commit roses.txt as “Plant roses”). Finish on main with main unchanged.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho soil > garden.txt\ngit init\ngit add .\ngit commit -m \"Plant the garden\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"herbs\", \"Plant herbs\"]}, {\"tipMessage\": [\"roses\", \"Plant roses\"]}, {\"parentsOf\": [\"roses\", \"Plant roses\", [\"Plant herbs\"]]}, {\"notIn\": [\"herbs\", \"Plant roses\"]}, {\"tipMessage\": [\"main\", \"Plant the garden\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-merge-v1-g1",
+      "kind": "explanation",
+      "prompt": "The lanterns branch is finished and main hasn't changed since it started. Bring it into main. main's history should stay a straight line.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho dark > street.txt\ngit init\ngit add .\ngit commit -m \"Map the street\"\ngit switch -c lanterns\necho lit > street.txt\ngit add .\ngit commit -m \"Light the lanterns\"\ngit switch main",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"main\", \"Light the lanterns\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"file\": [\"/home/street.txt\", \"lit\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-merge-v1-g2",
+      "kind": "explanation",
+      "prompt": "main added a timetable while the fares branch changed fares.txt. Bring fares into main so main holds both, with a merge commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 2 coins > fares.txt\ngit init\ngit add .\ngit commit -m \"Set fares\"\ngit switch -c fares\necho 3 coins > fares.txt\ngit add .\ngit commit -m \"Raise fares\"\ngit switch main\necho every 10 min > timetable.txt\ngit add .\ngit commit -m \"Add timetable\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"mergeTip\": \"main\"}, {\"in\": [\"main\", \"Raise fares\"]}, {\"in\": [\"main\", \"Add timetable\"]}, {\"file\": [\"/home/fares.txt\", \"3 coins\\n\"]}, {\"file\": [\"/home/timetable.txt\", \"every 10 min\\n\"]}, {\"tipMessage\": [\"fares\", \"Raise fares\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-merge-v1-debug",
+      "kind": "explanation",
+      "prompt": "Merging sign into main refuses with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. Resolve it on the sign branch, then merge.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho grey > colour.txt\ngit init\ngit add .\ngit commit -m \"Paint grey\"\ngit switch -c sign\necho green > colour.txt\necho large > size.txt\ngit add .\ngit commit -m \"New sign\"\ngit switch main\necho blue > colour.txt\ngit add .\ngit commit -m \"Paint blue\"\n\nBroken commands:\ngit merge sign",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"mergeTip\": \"main\"}, {\"file\": [\"/home/colour.txt\", \"blue\\n\"]}, {\"file\": [\"/home/size.txt\", \"large\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-merge-v1-o1",
+      "kind": "explanation",
+      "prompt": "main must end with both features. ramp (adds ramp.txt) can merge directly. paint changed gate.txt to red, but main has since changed it to white, and the decision is white. Bring ramp and paint into main, keep gate.txt white, and keep paint's lamp.txt.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho wood > gate.txt\ngit init\ngit add .\ngit commit -m \"Build gate\"\ngit switch -c ramp\necho concrete > ramp.txt\ngit add .\ngit commit -m \"Pour ramp\"\ngit switch main\ngit switch -c paint\necho red > gate.txt\necho amber > lamp.txt\ngit add .\ngit commit -m \"Paint and light\"\ngit switch main\necho white > gate.txt\ngit add .\ngit commit -m \"Paint gate white\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"in\": [\"main\", \"Pour ramp\"]}, {\"in\": [\"main\", \"Paint and light\"]}, {\"file\": [\"/home/gate.txt\", \"white\\n\"]}, {\"file\": [\"/home/lamp.txt\", \"amber\\n\"]}, {\"file\": [\"/home/ramp.txt\", \"concrete\\n\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nramp merged without a conflict. Was that merge a fast-forward? Use the graph (where main pointed when you merged) to say why or why not.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-merge-v1-o1-comeback-v2",
+      "kind": "explanation",
+      "prompt": "Fresh variant. main hasn't moved since benches and signs started. Both branches changed paths.txt (benches to brick, signs to gravel), and the decision is gravel. benches also adds benches.txt; signs also adds arrow.txt. Land benches first, then signs, recording the decision on main. main must end with gravel, both new files, and a merge commit for signs.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho dirt > paths.txt\ngit init\ngit add .\ngit commit -m \"Lay paths\"\ngit switch -c benches\necho oak > benches.txt\necho brick > paths.txt\ngit add .\ngit commit -m \"Benches and brick\"\ngit switch main\ngit switch -c signs\necho gravel > paths.txt\necho left > arrow.txt\ngit add .\ngit commit -m \"Signs and gravel\"\ngit switch main",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"in\": [\"main\", \"Benches and brick\"]}, {\"in\": [\"main\", \"Signs and gravel\"]}, {\"mergeTip\": \"main\"}, {\"file\": [\"/home/paths.txt\", \"gravel\\n\"]}, {\"file\": [\"/home/arrow.txt\", \"left\\n\"]}, {\"file\": [\"/home/benches.txt\", \"oak\\n\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-rebase-v1-g1",
+      "kind": "explanation",
+      "prompt": "main has moved on since you started signal. Rebase signal onto main, then bring it into main so main's history is a straight line ending in “Add signal”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho track > rail.txt\ngit init\ngit add .\ngit commit -m \"Lay rail\"\ngit switch -c signal\necho green > signal.txt\ngit add .\ngit commit -m \"Add signal\"\ngit switch main\necho brick > station.txt\ngit add .\ngit commit -m \"Build station\"\ngit switch signal",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"linear\": \"main\"}, {\"tipMessage\": [\"main\", \"Add signal\"]}, {\"in\": [\"main\", \"Build station\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-rebase-v1-g2",
+      "kind": "explanation",
+      "prompt": "kiosk has two commits (“Frame kiosk” then “Wire kiosk”). Rebase kiosk onto main. kiosk's history must read Wire kiosk → Frame kiosk → Paint hall → Open hall.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho empty > hall.txt\ngit init\ngit add .\ngit commit -m \"Open hall\"\ngit switch -c kiosk\necho pine > kiosk.txt\ngit add .\ngit commit -m \"Frame kiosk\"\necho cables > wires.txt\ngit add .\ngit commit -m \"Wire kiosk\"\ngit switch main\necho cream > paint.txt\ngit add .\ngit commit -m \"Paint hall\"\ngit switch kiosk",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"branch\": \"kiosk\"}, {\"log\": [\"Wire kiosk\", \"Frame kiosk\", \"Paint hall\", \"Open hall\"]}, {\"tipMessage\": [\"main\", \"Paint hall\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-rebase-v1-debug",
+      "kind": "explanation",
+      "prompt": "You tried to rebase menu onto main with an unsaved edit to menu.txt. It refused. The edit belongs to the feature: save it as “Add dessert”, then rebase.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho soup > menu.txt\ngit init\ngit add .\ngit commit -m \"Start menu\"\ngit switch -c menu\necho soup, salad > menu.txt\ngit add .\ngit commit -m \"Add salad\"\ngit switch main\necho 9-5 > hours.txt\ngit add .\ngit commit -m \"Set hours\"\ngit switch menu\necho soup, salad, pie > menu.txt\n\nBroken commands:\ngit rebase main",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add dessert\", \"Add salad\", \"Set hours\", \"Start menu\"]}, {\"file\": [\"/home/menu.txt\", \"soup, salad, pie\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-rebase-v1-o1",
+      "kind": "explanation",
+      "prompt": "audio and video both started from “Set up studio”, and main has since gained “Soundproof”. Make main a straight line reading video → audio → Soundproof → Set up studio (newest first): land audio first, then video.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho room > studio.txt\ngit init\ngit add .\ngit commit -m \"Set up studio\"\ngit switch -c audio\necho mic > audio.txt\ngit add .\ngit commit -m \"Add audio\"\ngit switch main\ngit switch -c video\necho camera > video.txt\ngit add .\ngit commit -m \"Add video\"\ngit switch main\necho foam > walls.txt\ngit add .\ngit commit -m \"Soundproof\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add video\", \"Add audio\", \"Soundproof\", \"Set up studio\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"clean\": true}]\nYour history is linear. Name one thing a reader of this history can no longer see that a merge-based history would have shown.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-rebase-v1-o1-comeback-v2",
+      "kind": "explanation",
+      "prompt": "Fresh variant. tour has three commits (Draft route, Add stops, Add times) and main has gained two (Hire guide, Print maps) since tour started. Make main a straight line ending Add times → Add stops → Draft route → Print maps → Hire guide → Open museum.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho doors > museum.txt\ngit init\ngit add .\ngit commit -m \"Open museum\"\ngit switch -c tour\necho hall A > route.txt\ngit add .\ngit commit -m \"Draft route\"\necho fossils > stops.txt\ngit add .\ngit commit -m \"Add stops\"\necho 10am > times.txt\ngit add .\ngit commit -m \"Add times\"\ngit switch main\necho Ada > guide.txt\ngit add .\ngit commit -m \"Hire guide\"\necho floor plan > maps.txt\ngit add .\ngit commit -m \"Print maps\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add times\", \"Add stops\", \"Draft route\", \"Print maps\", \"Hire guide\", \"Open museum\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-reset-v1-g2",
+      "kind": "explanation",
+      "prompt": "“Add chapter title” and “Add chapter body” should be one commit called “Add chapter one”, sitting on top of “Start book”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho cover > book.txt\ngit init\ngit add .\ngit commit -m \"Start book\"\necho Chapter One > title.txt\ngit add .\ngit commit -m \"Add chapter title\"\necho It began at the dock. > body.txt\ngit add .\ngit commit -m \"Add chapter body\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add chapter one\", \"Start book\"]}, {\"committed\": [\"/home/title.txt\", \"Chapter One\\n\"]}, {\"committed\": [\"/home/body.txt\", \"It began at the dock.\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-reset-v1-debug",
+      "kind": "explanation",
+      "prompt": "A teammate wanted to throw away a bad last commit completely and ran `git reset --soft HEAD~1`. The bad text is still in their file. Undo the bad change properly, leaving main at “Good config” with the good file.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho good > config.txt\ngit init\ngit add .\ngit commit -m \"Good config\"\necho bad > config.txt\ngit add .\ngit commit -m \"Bad config\"\n\nBroken commands:\ngit reset --soft HEAD~1",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"file\": [\"/home/config.txt\", \"good\\n\"]}, {\"tipMessage\": [\"main\", \"Good config\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-reset-v1-o1",
+      "kind": "explanation",
+      "prompt": "Your last commit, “Lights and doors”, mixed two unrelated changes. Replace it with two commits: “Fix lights” (lights.txt only), then “Fix doors” (doors.txt only), on top of “Open garage”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho off > lights.txt\necho stuck > doors.txt\ngit init\ngit add .\ngit commit -m \"Open garage\"\necho on > lights.txt\necho sliding > doors.txt\ngit add .\ngit commit -m \"Lights and doors\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Fix doors\", \"Fix lights\", \"Open garage\"]}, {\"committed\": [\"/home/lights.txt\", \"on\\n\"]}, {\"committed\": [\"/home/doors.txt\", \"sliding\\n\"]}, {\"clean\": true}]\nFill the table for the reset you used: did the branch, the staging area and the files each change?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-reset-v1-o1-comeback-v2",
+      "kind": "explanation",
+      "prompt": "Fresh variant. Your last commit, “Sails and rudder”, included a rudder change that isn't finished. Replace it with one commit “Raise sails” (sails.txt only) on top of “Launch boat”, and keep the rudder change in your working tree, uncommitted.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho furled > sails.txt\necho loose > rudder.txt\ngit init\ngit add .\ngit commit -m \"Launch boat\"\necho raised > sails.txt\necho tight > rudder.txt\ngit add .\ngit commit -m \"Sails and rudder\"",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Raise sails\", \"Launch boat\"]}, {\"committed\": [\"/home/sails.txt\", \"raised\\n\"]}, {\"committed\": [\"/home/rudder.txt\", \"loose\\n\"]}, {\"file\": [\"/home/rudder.txt\", \"tight\\n\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-recovery-v1-g1",
+      "kind": "explanation",
+      "prompt": "You meant to unstage something but ran `git reset --hard HEAD~1`, and “Add sails” vanished. Bring main back to that exact commit. Retyping the file doesn't count: the original commit must be restored.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho keel > hull.txt\ngit init\ngit add .\ngit commit -m \"Build hull\"\necho pine > mast.txt\ngit add .\ngit commit -m \"Raise mast\"\necho canvas > sails.txt\ngit add .\ngit commit -m \"Add sails\"\ngit reset --hard HEAD~1",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"main\", \"c3\"]}, {\"file\": [\"/home/sails.txt\", \"canvas\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-recovery-v1-g2",
+      "kind": "explanation",
+      "prompt": "You rebased crane onto main but the team wants crane exactly as it was. Put crane back on its original pre-rebase commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho quay > quay.txt\ngit init\ngit add .\ngit commit -m \"Build quay\"\ngit switch -c crane\necho hook > crane.txt\ngit add .\ngit commit -m \"Install crane\"\ngit switch main\necho rope > bollard.txt\ngit add .\ngit commit -m \"Add bollard\"\ngit switch crane\ngit rebase main",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"crane\", \"c2\"]}, {\"branch\": \"crane\"}, {\"absent\": \"/home/bollard.txt\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-recovery-v1-debug",
+      "kind": "explanation",
+      "prompt": "Goal: keep main where it is (at “Raise mast”) and save the lost “Add sails” commit on a branch called rescue. Your teammate's command recovered the commit but moved main. Do it without moving main.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho keel > hull.txt\ngit init\ngit add .\ngit commit -m \"Build hull\"\necho pine > mast.txt\ngit add .\ngit commit -m \"Raise mast\"\necho canvas > sails.txt\ngit add .\ngit commit -m \"Add sails\"\ngit reset --hard HEAD~1\n\nBroken commands:\ngit reset --hard c3",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"rescue\", \"c3\"]}, {\"tipIs\": [\"main\", \"c2\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-recovery-v1-o1",
+      "kind": "explanation",
+      "prompt": "You rebased wing onto main (its copies are the two newest commits), then, while still on wing, mistakenly ran `git reset --hard c4`. Restore wing to its rebased tip, then land it on main with a straight-line history. Use the commit graph to find ids; unreachable commits are dimmed.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho tarmac > runway.txt\ngit init\ngit add .\ngit commit -m \"Pave runway\"\ngit switch -c wing\necho left > left.txt\ngit add .\ngit commit -m \"Left wing\"\necho right > right.txt\ngit add .\ngit commit -m \"Right wing\"\ngit switch main\necho red > lights.txt\ngit add .\ngit commit -m \"Runway lights\"\ngit switch wing\ngit rebase main\ngit reset --hard c4",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"wing\", \"c6\"]}, {\"tipIs\": [\"main\", \"c6\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"clean\": true}]\nWhich commits are still unreachable at the end, and is that a problem? What would real Git eventually do with them?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    },
+    {
+      "id": "git-course-recovery-v1-o1-comeback-v2",
+      "kind": "explanation",
+      "prompt": "Fresh variant. You rebased cabin onto main and want to keep the rebase, but also keep the original, pre-rebase work on a branch named before-rebase. cabin must stay on its rebased tip, and you must finish on cabin. Use the commit graph to find ids.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho frame > hangar.txt\ngit init\ngit add .\ngit commit -m \"Frame hangar\"\ngit switch -c cabin\necho leather > seats.txt\ngit add .\ngit commit -m \"Fit seats\"\necho glass > windows.txt\ngit add .\ngit commit -m \"Fit windows\"\ngit switch main\necho steel > doors.txt\ngit add .\ngit commit -m \"Hang doors\"\ngit switch cabin\ngit rebase main",
+      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"before-rebase\", \"c3\"]}, {\"tipIs\": [\"cabin\", \"c6\"]}, {\"branch\": \"cabin\"}, {\"tipMessage\": [\"main\", \"Hang doors\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
+    }
+  ],
+  "answerChecks": [
+    {
+      "questionID": "git-course-snapshots-v1-predict",
+      "kind": "choice-index",
+      "expectedIndex": 1
+    },
+    {
+      "questionID": "git-course-snapshots-v1-check",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "git-course-branches-v1-predict",
+      "kind": "choice-index",
+      "expectedIndex": 1
+    },
+    {
+      "questionID": "git-course-branches-v1-check",
+      "kind": "choice-index",
+      "expectedIndex": 1
+    },
+    {
+      "questionID": "git-course-merge-v1-predict",
+      "kind": "choice-index",
+      "expectedIndex": 2
+    },
+    {
+      "questionID": "git-course-merge-v1-check",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "git-course-rebase-v1-predict",
+      "kind": "choice-index",
+      "expectedIndex": 1
+    },
+    {
+      "questionID": "git-course-rebase-v1-check",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "git-course-reset-v1-predict",
+      "kind": "choice-index",
+      "expectedIndex": 1
+    },
+    {
+      "questionID": "git-course-reset-v1-check",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    },
+    {
+      "questionID": "git-course-recovery-v1-predict",
+      "kind": "choice-index",
+      "expectedIndex": 1
+    },
+    {
+      "questionID": "git-course-recovery-v1-check",
+      "kind": "choice-index",
+      "expectedIndex": 0
+    }
+  ],
+  "media": [
+    {
+      "path": "attachments/learner.json",
+      "sha256": "d02ff9b2fd0479d100e3b4ffb8eeabde62136722ed60957e9a3351975b3fc989",
+      "size": 134218,
+      "id": "learner",
+      "mimeType": "application/json"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "reviewers": {
+      "aiChecks": [],
+      "humanApprover": null
+    }
+  }
+}

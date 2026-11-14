@@ -15,7 +15,7 @@ Evidence: source introduction commit `e7c274ada48538e283c5b22a5bb21efb6a61870d` 
 
 Included: **6 lessons; 29 tasks; 147 inventory units; 145 embedded code/command sample locations**. Units contain all their descendant prose, hints, rubrics, choices, examples and recorded data; sample locations overlap those units and are not additional activities. Images: 0. Third-party attributed quotes: 0. Third-party licensed items: 0.
 
-Excluded whole learning items: **2** — `git-course-reset-v1.g1` (one task containing a password-like example with unresolved string origin; excluded conservatively, never published) and `git-course-capstone-harbor-v1` (one capstone withheld by the private export contract). No other task or lesson is omitted. The capstone and course metadata also contain references to that withheld extension; the export retains only its explicit unavailable notice.
+Excluded whole learning items: **2** — `git-course-reset-v1.g1` (one task containing a password-like example with unresolved string origin; excluded conservatively, never published) and `git-course-capstone-harbor-v1` (one capstone withheld by the private export contract). No other task or lesson is omitted. Recovery prediction feedback is corrected in the public revision: merging the ancestor main leaves the rebased topic unchanged. The capstone and course metadata also contain references to that withheld extension; the export retains only its explicit unavailable notice.
 
 Withheld source subtrees listed below: **146** (separate from whole-item counts). Source README, tools and tests are excluded in full; they are author/integration material, not learner content. Source course-map metadata not admitted by the exporter is excluded.
 
@@ -27,7 +27,7 @@ Scan scope: every source JSON in these two course directories and every resultin
 
 ## Included item ledger
 
-All rows: origin `original by owner AI agents`; disposition `included`; licence `CC-BY-SA-4.0`; creator `Collin Craig`. Pointers address public attachment JSON. Hashes use the exporter’s sorted compact UTF-8 JSON encoding with trailing newline. Course/lesson metadata rows cover the indicated metadata subset, not the full subtree. Bridge titles and all non-inventoried structural fields inherit their containing lesson provenance.
+All rows: origin `original by owner AI agents`; disposition `included`; licence `CC-BY-SA-4.0`; creator `Collin Craig`. Pointers address attachment JSON under `courses/git-course-v1/1.0.0-draft/attachments/`. Hashes include the public input-guidance and feedback revisions. Hashes use the exporter’s sorted compact UTF-8 JSON encoding with trailing newline. Course/lesson metadata rows cover the indicated metadata subset, not the full subtree. Bridge titles and all non-inventoried structural fields inherit their containing lesson provenance.
 
 | Attachment | JSON pointer | Item kind | Stable ID | SHA-256 |
 | --- | --- | --- | --- | --- |
@@ -51,11 +51,11 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | learner.json | `/lessons/0/learn/realGit/3` | realGit | — | `70a024de8e6f119edcd38285a559f20e08b40222b75bead76bf78031f9014a85` |
 | learner.json | `/lessons/0/learn/realGit/4` | realGit | — | `e5280b644f1abb678f37d0eef4a6a8fbd2b0fa24072ee3c6036680920893f272` |
 | learner.json | `/lessons/0/learn/realGit/5` | realGit | — | `87dfe9919030a941d14917350239001665a28edc8e87d22615669e50273f11c9` |
-| learner.json | `/lessons/0/tasks/0` | activity | git-course-snapshots-v1.g1 | `7e57620af2159b829f2338b18c0348d6c73693505fdeb391a228d39a20f6bc77` |
-| learner.json | `/lessons/0/tasks/1` | activity | git-course-snapshots-v1.g2 | `5ae7ea9ae1a5d466838b28fd4ffa32e06fa92d78c95bf12bdea6777ed02331d1` |
-| learner.json | `/lessons/0/tasks/2` | activity | git-course-snapshots-v1.debug | `6fa713304bb87f30d0d0d5217db4aaabc316fb60de22c3fcce9687476ce83a94` |
-| learner.json | `/lessons/0/tasks/3` | activity | git-course-snapshots-v1.o1 | `32f6cb5bed5f0fb0daa1e572364cac7b59040ca8e11a91f044b5678dfb88ce35` |
-| learner.json | `/lessons/0/tasks/4` | activity | git-course-snapshots-v1.o1.comeback.v2 | `44f7f9c71cd1bbc5cea230cb32118b5c28c6001ac2ce8689e9fb418b7468f981` |
+| learner.json | `/lessons/0/tasks/0` | activity | git-course-snapshots-v1.g1 | `33d1a797d2365bdfe3778d48c1353bed07233a4fb590b1a94f8f27c03aeab3dd` |
+| learner.json | `/lessons/0/tasks/1` | activity | git-course-snapshots-v1.g2 | `118e2f9a925b6a2bb3131cce4ddfab68142787f259872a17e7891377d6e66d7a` |
+| learner.json | `/lessons/0/tasks/2` | activity | git-course-snapshots-v1.debug | `603a06c53e72d1323cc988eb47faa7d254cfa7959b12ad5fe68366b60840e977` |
+| learner.json | `/lessons/0/tasks/3` | activity | git-course-snapshots-v1.o1 | `66bfdd348d47683f05f7803a938bfa408547adc00543beea7b49082c89673eae` |
+| learner.json | `/lessons/0/tasks/4` | activity | git-course-snapshots-v1.o1.comeback.v2 | `1401761c909754a336d6e68ed6948214a1caff5ed7ecdd2c8830bb0bf2e0d76c` |
 | learner.json | `/lessons/0/referenceCard` | reference card | — | `267f0c4f6e3a7e69dda56fa33af0bb72f84d79684084d4a79d121738fdf87ca4` |
 | learner.json | `/lessons/1` | lesson | git-course-branches-v1 | `87d323b8873a2cfe12efdc7750ae54b2053db9eac5ee2768b82ae83bd900e7a7` |
 | learner.json | `/lessons/1/learn/concept/0` | concept | — | `7f0e1601e850450e1018d3b36eb07c5946347a85c51afbc00fa8d2550c981304` |
@@ -75,11 +75,11 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | learner.json | `/lessons/1/learn/realGit/1` | realGit | — | `65e029cd18118901aece682a1b5657c1a69128df75919d5e8cca90ccc6c35a1a` |
 | learner.json | `/lessons/1/learn/realGit/2` | realGit | — | `83669815b254edb92a5935bef1b64d21c4df85a8b5496dbce599d72103178326` |
 | learner.json | `/lessons/1/learn/realGit/3` | realGit | — | `e5c615fef010f7e3350f55dd0c043c039533addca1bb35b5d55d949af598d32e` |
-| learner.json | `/lessons/1/tasks/0` | activity | git-course-branches-v1.g1 | `180ac7d11cd72f5c17df4a95a2f4880e8fd93aec60838bdc63017e06ef2b85b0` |
-| learner.json | `/lessons/1/tasks/1` | activity | git-course-branches-v1.g2 | `8f8cc03bb4736c4dae1355edfd7cc488f61ac4f8c123f2c676c77a1ca41cc7c6` |
-| learner.json | `/lessons/1/tasks/2` | activity | git-course-branches-v1.debug | `156d6524b7255c396960246da3932256d4725fdb9ec271e4037a0d66a46e03f4` |
-| learner.json | `/lessons/1/tasks/3` | activity | git-course-branches-v1.o1 | `032d8682944a4418f633912ec4083f0bb96b255559450af905f3f91a0553e865` |
-| learner.json | `/lessons/1/tasks/4` | activity | git-course-branches-v1.o1.comeback.v2 | `cbfa16dd527907186dd355b0373debff087107d6fab0291bcf55af79a6f35412` |
+| learner.json | `/lessons/1/tasks/0` | activity | git-course-branches-v1.g1 | `07c8007fc1c5a2efbb432c01cfe4fd6e0d6e9a123d0ebbf8462248985ccfe60e` |
+| learner.json | `/lessons/1/tasks/1` | activity | git-course-branches-v1.g2 | `f91a7393b9170c800957120a4b33adff3ffbc40037739f66e756e6454a96313b` |
+| learner.json | `/lessons/1/tasks/2` | activity | git-course-branches-v1.debug | `91a235aff55146fb11474299552019f0b351e940d0ad16df18291ee710590b1b` |
+| learner.json | `/lessons/1/tasks/3` | activity | git-course-branches-v1.o1 | `82331f1c0afedb289ba73cd4782baeb4d293e77f69ab0f0cad144185e6da6f4e` |
+| learner.json | `/lessons/1/tasks/4` | activity | git-course-branches-v1.o1.comeback.v2 | `98b300f7785f85c48a5637751d83940c918cc9802f6560c1fb9c86700720a7cd` |
 | learner.json | `/lessons/1/referenceCard` | reference card | — | `0fa080d06e817f2643dbdbc3a4aa0d418e82a3702f0d5da49f6537b7e2916cb4` |
 | learner.json | `/lessons/2` | lesson | git-course-merge-v1 | `28fff99252e66a23a025ec2d159290a10e96943d3fa63028c8eb4e6f886e22a7` |
 | learner.json | `/lessons/2/learn/concept/0` | concept | — | `aaf42c017cbe8c0c4dc5eb7597cd2fd6633769de02a011f94fbefdae423f25de` |
@@ -99,11 +99,11 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | learner.json | `/lessons/2/learn/realGit/1` | realGit | — | `002c5cdfcb006c320642dbc9c78f16172e3d41d23dd061ce7cccd33134ce8e8a` |
 | learner.json | `/lessons/2/learn/realGit/2` | realGit | — | `ab6694094948f83c66a181287f56fce858c6cde9b54d2f4c543b3c9ac7ce1f38` |
 | learner.json | `/lessons/2/learn/realGit/3` | realGit | — | `adb34c022234af357204e810cd220aeb5afc08f906af6dc4af14c53127115bce` |
-| learner.json | `/lessons/2/tasks/0` | activity | git-course-merge-v1.g1 | `95d6c3772bbba1e9f9c41e955796d7bb9e7ce87e62e79f723198a5c1a2646b67` |
-| learner.json | `/lessons/2/tasks/1` | activity | git-course-merge-v1.g2 | `00d546dd4fb469f5c90211be910626f3838ee7c86c09b1ed8ba2eb72f06bed6a` |
-| learner.json | `/lessons/2/tasks/2` | activity | git-course-merge-v1.debug | `abc6be821f2fa08887f0afb34279b28b6593bc9072e9050512ed7c6109ad276f` |
-| learner.json | `/lessons/2/tasks/3` | activity | git-course-merge-v1.o1 | `82dca2e637855f4d8cdd55e7b1e14ad9398d1872989e7c7c68588227d1881324` |
-| learner.json | `/lessons/2/tasks/4` | activity | git-course-merge-v1.o1.comeback.v2 | `9206be85c820c278382652eb967d45456d6f1ef6e7b75f1b21786b2d4e813535` |
+| learner.json | `/lessons/2/tasks/0` | activity | git-course-merge-v1.g1 | `36f85b13327d784ce3206911288cea464c4a533aa879a38ef0d6767ca835cb91` |
+| learner.json | `/lessons/2/tasks/1` | activity | git-course-merge-v1.g2 | `13e11d36ed91441ecc013cd9564fe110cb90ef2c165b5287f766cb74bb569323` |
+| learner.json | `/lessons/2/tasks/2` | activity | git-course-merge-v1.debug | `8a8622310edb915f6972b78d7ffa0948e34b2d2996893d60c9d3cb15a6c965ee` |
+| learner.json | `/lessons/2/tasks/3` | activity | git-course-merge-v1.o1 | `e2f87d1ad12ae6982069c988f5a889213576003ace889e93eeec642f352a66e5` |
+| learner.json | `/lessons/2/tasks/4` | activity | git-course-merge-v1.o1.comeback.v2 | `1d7069c74bfc2ccfad39fbeea6148a98f659f2904937d8714850bb152381ef9d` |
 | learner.json | `/lessons/2/referenceCard` | reference card | — | `a23b3abc12e45bfac736e2b4dd992a6447d6368c3f1e63014f25316a9eac795c` |
 | learner.json | `/lessons/3` | lesson | git-course-rebase-v1 | `1f4aad270c457cb3cb30dd50c8f6191a58210b780e98316aa569a98e9d529a8f` |
 | learner.json | `/lessons/3/learn/concept/0` | concept | — | `a6d97b2c894999d0d7b793d1828fdf4592e534e89bfbe601d462adc89b534a29` |
@@ -123,11 +123,11 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | learner.json | `/lessons/3/learn/realGit/1` | realGit | — | `bbb7c820bb0e06a909e15cc024741a7222bf95ceee71f55b57114f771b0974eb` |
 | learner.json | `/lessons/3/learn/realGit/2` | realGit | — | `24fc9fadfb117e9f4183bd94a2ccd6fb92a8bf16e38e0d0799b950e382b92be5` |
 | learner.json | `/lessons/3/learn/realGit/3` | realGit | — | `8af1fa488bea251d0ec1e46737de73385eb7983fbe3a03119867d9ee1d256882` |
-| learner.json | `/lessons/3/tasks/0` | activity | git-course-rebase-v1.g1 | `6ff4a7e57fea225403ef7e0fc0aa3fbc8cff797eda8032e27bfd1e1f4a2f7f26` |
-| learner.json | `/lessons/3/tasks/1` | activity | git-course-rebase-v1.g2 | `8333af4207d90fb2735ee3aaf3d2d5b736a424ff6aba0af0bc02e072b1587285` |
-| learner.json | `/lessons/3/tasks/2` | activity | git-course-rebase-v1.debug | `7efd30814bfb01d0cc15db6218f032b517b064559ff74f79415807da233a3e7c` |
-| learner.json | `/lessons/3/tasks/3` | activity | git-course-rebase-v1.o1 | `ce1feeebec7c64d7cb5aad7270e7bf0b55e9a6047fcb6b030ede9ccf4a4e82ba` |
-| learner.json | `/lessons/3/tasks/4` | activity | git-course-rebase-v1.o1.comeback.v2 | `1b0bd8a852966647d07534b94f534645e8bea0585ee964b993d4b99700f556ee` |
+| learner.json | `/lessons/3/tasks/0` | activity | git-course-rebase-v1.g1 | `28d6eddff1dcc339c1b9a5db133b361c7f6d89bde9f239b58150e0b25292307a` |
+| learner.json | `/lessons/3/tasks/1` | activity | git-course-rebase-v1.g2 | `8a03106dc32bbf022f6b1336d6f9438b817316058d4ad7d1796d9e5ba3a7d7ef` |
+| learner.json | `/lessons/3/tasks/2` | activity | git-course-rebase-v1.debug | `471b34b66a06e6eeac66b4559d9e6c686d945db7192112a439418ccbe2932fb6` |
+| learner.json | `/lessons/3/tasks/3` | activity | git-course-rebase-v1.o1 | `da370f84c9f1568837ceec1a7f00c75acc2f356fce39d693fc4b43ec2951f5a2` |
+| learner.json | `/lessons/3/tasks/4` | activity | git-course-rebase-v1.o1.comeback.v2 | `a50a92a8671ae90a5fc70098c783322293b50464567245a1c1a04ca94baf9a53` |
 | learner.json | `/lessons/3/referenceCard` | reference card | — | `2264e8c1782d8923027c529b723b24ffee93636f3c680d4a3b07ad60c9276088` |
 | learner.json | `/lessons/4` | lesson | git-course-reset-v1 | `8ae1113d33c3cd81362045f1234ec97f7351a6d5e2bf47b694060eb2786c8a13` |
 | learner.json | `/lessons/4/learn/concept/0` | concept | — | `41c2a1889b852325a16360643d46537f6985104161bf73eeaf0e4d50cbb3a213` |
@@ -148,10 +148,10 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | learner.json | `/lessons/4/learn/realGit/1` | realGit | — | `9f6d3627c807aff7e8fcd355530f9c3965ff6e33fd186a793d0a2e8d1a571be7` |
 | learner.json | `/lessons/4/learn/realGit/2` | realGit | — | `d2854fafb6660984bab48eb4ad29202c4dff94b8f9aa78f5bf3814d8fdb2726e` |
 | learner.json | `/lessons/4/learn/realGit/3` | realGit | — | `85f1ca65843a099e8e916dbfa0a55b8bce2aa8b31876b0240d105c82a2ccc86e` |
-| learner.json | `/lessons/4/tasks/0` | activity | git-course-reset-v1.g2 | `b74af63e3c3e5716a72350df6fae42d4f41bcbe99a7c80201a5e752d5488574d` |
-| learner.json | `/lessons/4/tasks/1` | activity | git-course-reset-v1.debug | `64584f0613762db7cde50694a9415f4e8fa1d9f112aa494c06ccd99e34f1a942` |
-| learner.json | `/lessons/4/tasks/2` | activity | git-course-reset-v1.o1 | `c06b87144d522835be84ab516604f7e36e2a2847860525ba4783d15c7d76ba99` |
-| learner.json | `/lessons/4/tasks/3` | activity | git-course-reset-v1.o1.comeback.v2 | `b965d0775586047a81443fb609f0374b855821626b50dafceb7b1ba17ac8a442` |
+| learner.json | `/lessons/4/tasks/0` | activity | git-course-reset-v1.g2 | `1ce8ad7d171777803892475a6a2f0c16f6ba261fb8251322d93c75a1bafb07aa` |
+| learner.json | `/lessons/4/tasks/1` | activity | git-course-reset-v1.debug | `c65fb19993daef4735e5f355edc444caf6594a8a8293dd2f3ec1feb3d8422acb` |
+| learner.json | `/lessons/4/tasks/2` | activity | git-course-reset-v1.o1 | `bec6f2d712aceb9522e1a492d34d8500df0ad7d4f7bf689b4e8237053ba072fa` |
+| learner.json | `/lessons/4/tasks/3` | activity | git-course-reset-v1.o1.comeback.v2 | `780346d1be99e0a2ad1d6c9624b7443ccde1f72f79b3dde8fb4dc44e4be243e1` |
 | learner.json | `/lessons/4/referenceCard` | reference card | — | `e8f077fdd14a45e953048641a0c1164b513d9e400d10ca788999ca18c11fbeda` |
 | learner.json | `/lessons/5` | lesson | git-course-recovery-v1 | `5dec45eaacdfa63f5f02b6fd9f0a388f7761085b401773bc075338aebf8da46a` |
 | learner.json | `/lessons/5/learn/concept/0` | concept | — | `4299178a45c8da00997c3c7946851a6efbfdd3b42fe0ec07229e9393ed412f77` |
@@ -162,7 +162,7 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | learner.json | `/lessons/5/learn/assumptions/0` | assumptions | — | `1b0c1cbb19958345d4337e88ee8cad636ae5fe1a23c555408be803309d521689` |
 | learner.json | `/lessons/5/learn/assumptions/1` | assumptions | — | `536cb7fa043e41c967aadc613f994b256173e6e6823dfc0bc058265a2fd1af23` |
 | learner.json | `/lessons/5/learn/walkthrough` | walkthrough | — | `cabec0eccd7ae9408b4c5f2329ea9bf81d8d12d9451710ea752bceaeb4dfd340` |
-| learner.json | `/lessons/5/learn/questions/0` | questions | git-course-recovery-v1.predict | `b84b5c6fe57da6bdea040b3999b6eef4513f619f2ad883755391ebd18986a75f` |
+| learner.json | `/lessons/5/learn/questions/0` | questions | git-course-recovery-v1.predict | `e10ac511777a0e54cbcc2e0225ed46b43aa3b09ed3243af817fdf3e036c385bc` |
 | learner.json | `/lessons/5/learn/questions/1` | questions | git-course-recovery-v1.check | `d08011301db8cca171caa8dfb194c94e18c51af8934aa332877fe6d4083142ec` |
 | learner.json | `/lessons/5/learn/misconceptions/0` | misconceptions | git-course-recovery-v1.m-log-means-gone | `63be24d6d324a7d49f9d563ca80c6b5e915b641fdaf36a09fc189db04761cc82` |
 | learner.json | `/lessons/5/learn/misconceptions/1` | misconceptions | git-course-recovery-v1.m-everything | `4cb692088f794778f281ddad26da7f9d519b21e7588451d2f58e211c54904145` |
@@ -171,11 +171,11 @@ All rows: origin `original by owner AI agents`; disposition `included`; licence 
 | learner.json | `/lessons/5/learn/realGit/1` | realGit | — | `274a64f9044ac0f5e36682f2ef7608307281a9e3073ee4e28489d69c42440a47` |
 | learner.json | `/lessons/5/learn/realGit/2` | realGit | — | `a9cac0cd0db25359a707c88bffb15cb5a11abb3b96d67f756242ae9d5b16b9c9` |
 | learner.json | `/lessons/5/learn/realGit/3` | realGit | — | `aa47237a5632f42ab9d8e5d6e2b8563e56e0052230a11e3863f71f5d45e491d5` |
-| learner.json | `/lessons/5/tasks/0` | activity | git-course-recovery-v1.g1 | `c64e3c713c7bbf1047799f55ce55d5eb035062661000ca0db4d2f61c2a9791b4` |
-| learner.json | `/lessons/5/tasks/1` | activity | git-course-recovery-v1.g2 | `fbe2082232aa5699420497fa8e17bac3e6c6421cf87bbb59922050f090afc559` |
-| learner.json | `/lessons/5/tasks/2` | activity | git-course-recovery-v1.debug | `283c5d6f2bb5c27d0af277240050eec462741599b3b78c909d0b480085241c0f` |
-| learner.json | `/lessons/5/tasks/3` | activity | git-course-recovery-v1.o1 | `063846de28059d08bd608a9c656bf3bb7f105d41136215ec92a104a62dc0e5c0` |
-| learner.json | `/lessons/5/tasks/4` | activity | git-course-recovery-v1.o1.comeback.v2 | `88e3869ce2759714c7e7f8fb5b74db77299ff58d0e42a86514e5020fc9d4860a` |
+| learner.json | `/lessons/5/tasks/0` | activity | git-course-recovery-v1.g1 | `74cae620a31d8492b9f64b696c63e95032a86086b3c28232bed2043c58f47dc3` |
+| learner.json | `/lessons/5/tasks/1` | activity | git-course-recovery-v1.g2 | `cd7f608ec7ef1012f256b78a022c2503abef64c1798cb44ee5e9980ca8e68136` |
+| learner.json | `/lessons/5/tasks/2` | activity | git-course-recovery-v1.debug | `aa35dd27c17c4e6626d147ab2f272804e39112bb82689c7252256977dfe00da3` |
+| learner.json | `/lessons/5/tasks/3` | activity | git-course-recovery-v1.o1 | `da759e078a8bed7060eacaa3d3e0d8083a02d36c83753311666b29d700cac7a6` |
+| learner.json | `/lessons/5/tasks/4` | activity | git-course-recovery-v1.o1.comeback.v2 | `9c79ce06b5bb27607e588bd20bc65d39ae1f575d4d2f8a02915899c5a01db11e` |
 | learner.json | `/lessons/5/referenceCard` | reference card | — | `f654af37effe59ad14277d93ae703ab7e783393cb0c2d06e82cdfce2c19b196c` |
 | learner.json | `/` | course metadata | git-course-v1 | `8e6505866542935a80c6604c1d8d9025e7a7f8d328e23d748fab740216f72040` |
 
@@ -484,8 +484,7 @@ These hashes identify excluded source values without publishing their contents. 
 | 06-recovery.json | `/onYourOwn/0/comeback/reference` | reference | `aa6d3af42c9fa9abb9fcea2c4231300d09b1ac5500bb59297b3884a2a6907a56` |
 | 06-recovery.json | `/onYourOwn/0/comeback/mutants` | mutants | `aba3f262883f235a441dda41790a4cfd3a1886dafbb1f081183591307c6fd5c7` |
 
-## Verification receipt (2026-11-14)
 
-Verified: public asset and registry hashes; CourseBundle validation for both drafts and the existing demo (Swift 6.0.3, Python 3.12.3); five public tests passed. Source/export equality was checked by decoded JSON value: all seven Code Gym resources match; Git differs only by removal of the named exercise. Gitleaks directory scans of both source course folders and both public course folders reported no leaks. Public attachment URL, email, private-host-path and credential-key scans found only the documented synthetic Git fixture paths.
+## Format-v1 revision (2026-11-14)
 
-Pending / NOT RUN: independent human provenance and factual review, private author-host semantic replay/parity tests, Python trace regeneration, native player/device acceptance and the future format-v1 review pipeline. These results do not establish teaching accuracy or public-app importability.
+Status: proposed; human approval pending. `course.json` now contains exhaustive source mappings for the course, topics, materials, questions, lessons, steps, activities and media. All eight original projection resources across the two courses remain declared JSON media; legacy package-level ledgers and provisional manifests are removed. The original inventory above covers embedded teaching content; structured public activity copies also map to the owner-AI source and the public revision source. Input declarations and keyboard/remote instructions are public additions, not evidence of implemented player controls. No withheld source answer fields were restored.

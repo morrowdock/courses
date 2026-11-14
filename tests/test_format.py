@@ -17,9 +17,11 @@ class FormatTests(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
-        shutil.copytree(ROOT / "courses", self.root / "courses")
+        shutil.copytree(ROOT / "courses/demo", self.root / "courses/demo")
         shutil.copytree(ROOT / "demo", self.root / "demo")
-        shutil.copyfile(ROOT / "registry.json", self.root / "registry.json")
+        registry = load_json(ROOT / "registry.json")
+        registry["entries"] = [e for e in registry["entries"] if e["id"] == "demo"]
+        (self.root / "registry.json").write_text(json.dumps(registry))
         self.path = self.root / "courses/demo/1.0.0/course.json"
         self.course = load_json(self.path)
 
@@ -68,7 +70,7 @@ class FormatTests(unittest.TestCase):
         path.write_text(json.dumps(receipt))
         check["sha256"] = digest(path)
 
-    def test_complete_repository_python_checks(self):
+    def test_synthetic_fixture_python_checks(self):
         self.assertEqual(validate(self.root, swift=False), (1, 2))
 
     def test_all_schema_documents_compile(self):

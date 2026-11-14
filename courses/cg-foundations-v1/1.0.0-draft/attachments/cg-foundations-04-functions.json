@@ -127,8 +127,17 @@
       "outcomes": [
         "fn-o1"
       ],
-      "prompt": "Step through. The stack panel grows a new box when a function is called and drops it when the function returns.",
-      "title": "Watch it: a call and its return"
+      "prompt": "Step through. The stack panel grows a new box when a function is called and drops it when the function returns.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Watch it: a call and its return",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -162,9 +171,18 @@
         "fn-o2"
       ],
       "output": "hey!\nNone\n",
-      "prompt": "Guess first; it's free. What does this print?",
+      "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
       "reveal": "hey! then None. A function with no return gives back None. Printing is for people; returning is for the rest of the program.",
-      "title": "Predict before you peek: print isn't return"
+      "title": "Predict before you peek: print isn't return",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -211,8 +229,17 @@
         "fn-o1"
       ],
       "output": "14\n",
-      "prompt": "What does this print?",
-      "title": "Two calls in one line"
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Two calls in one line",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "checkpoints": [
@@ -491,8 +518,14 @@
         "fn-o1",
         "fn-o3"
       ],
-      "prompt": "Step through. Fill in each hidden value before moving on.",
-      "title": "Trace: tax added twice"
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Trace: tax added twice",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "bugLine": 2,
@@ -541,13 +574,22 @@
       "outcomes": [
         "fn-o2"
       ],
-      "prompt": "This should print 10, but it prints 9 and then stops with an error. Tap the wrong line, then pick the repair.",
+      "prompt": "This should print 10, but it prints 9 and then stops with an error. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "9\n",
         "expected": "10",
         "raises": "TypeError"
       },
-      "title": "The square that won't add"
+      "title": "The square that won't add",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -608,7 +650,7 @@
       "outcomes": [
         "fn-o1"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 7 9. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 7 9. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "e",
         "c",
@@ -618,7 +660,16 @@
         "b"
       ],
       "target": "7 9",
-      "title": "Put it in order: the bigger one"
+      "title": "Put it in order: the bigger one",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "grading": "self-check",
@@ -637,7 +688,7 @@
       "outcomes": [
         "fn-o2"
       ],
-      "prompt": "In your own words: in the shout program, hey! appeared on screen, but r was None. What's the difference between print and return?",
+      "prompt": "In your own words: in the shout program, hey! appeared on screen, but r was None. What's the difference between print and return?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "fn-g-explain#k1",
@@ -652,7 +703,13 @@
           "idea": "A function that never returns gives back None."
         }
       ],
-      "title": "Explain it back: why r was None"
+      "title": "Explain it back: why r was None",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -695,8 +752,14 @@
         "fn-o3"
       ],
       "output": "22 1\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "On your own: two n's"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: two n's",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -731,8 +794,14 @@
         "fn-o3"
       ],
       "output": "5 2\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "Comeback: two k's"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: two k's",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -976,8 +1045,14 @@
       "outcomes": [
         "fn-o1"
       ],
-      "prompt": "Step through and fill in each hidden value. Watch the stack grow three boxes tall.",
-      "title": "On your own: a call inside a call"
+      "prompt": "Step through and fill in each hidden value. Watch the stack grow three boxes tall.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: a call inside a call",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1245,8 +1320,14 @@
       "outcomes": [
         "fn-o1"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "Comeback: half of a half"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: half of a half",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1292,12 +1373,21 @@
       "outcomes": [
         "fn-o2"
       ],
-      "prompt": "The average of 4 and 8 should print as 6. Find the wrong line and repair it.",
+      "prompt": "The average of 4 and 8 should print as 6. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "12\n",
         "expected": "6"
       },
-      "title": "On your own: the average"
+      "title": "On your own: the average",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1344,12 +1434,21 @@
       "outcomes": [
         "fn-o2"
       ],
-      "prompt": "This should show Hi Mo and then done, but only done appears. Find the wrong line and repair it.",
+      "prompt": "This should show Hi Mo and then done, but only done appears. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "done\n",
         "expected": "Hi Mo\ndone"
       },
-      "title": "Comeback: the silent greeting"
+      "title": "Comeback: the silent greeting",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1408,7 +1507,7 @@
       "outcomes": [
         "fn-o1"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 9. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 9. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "f",
         "d",
@@ -1419,7 +1518,16 @@
         "b"
       ],
       "target": "9",
-      "title": "On your own: sum to n"
+      "title": "On your own: sum to n",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1480,7 +1588,7 @@
         "fn-o1",
         "fn-o2"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 2, 1 and go on separate lines. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 2, 1 and go on separate lines. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "d",
         "f",
@@ -1491,7 +1599,16 @@
         "c"
       ],
       "target": "2\n1\ngo",
-      "title": "Comeback: countdown function"
+      "title": "Comeback: countdown function",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1509,7 +1626,7 @@
       "outcomes": [
         "fn-o3"
       ],
-      "prompt": "Explain to a Lua programmer why f(n) didn't change the main program's n. In Lua, what happens if you assign to a name inside a function without writing local? What does Python do instead?",
+      "prompt": "Explain to a Lua programmer why f(n) didn't change the main program's n. In Lua, what happens if you assign to a name inside a function without writing local? What does Python do instead?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "fn-i-explain#k1",
@@ -1524,7 +1641,13 @@
           "idea": "In Python, assigning inside a function makes a local unless you say global; return is how a value gets out."
         }
       ],
-      "title": "On your own: local by default"
+      "title": "On your own: local by default",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     }
   ],
   "bridge": {

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-14",
-  "status": "Stage 1+2 implementation candidate; human review and release approval pending",
+  "status": "proposed format-v1 first open course drafts; human review and owner approval pending",
   "note": "Lists every tracked file except FILES.json itself.",
   "files": [
     {
@@ -33,7 +33,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "d2989d5ed574c54e3bec2f4ec93d7d3e48d3f9c5035550c939201749aa589d5c"
+      "sha256": "9b828bc2283b76f8cb0e02bdb0d8589acf805f64d3a3dfd35050093be160c19e"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -69,7 +69,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "7848298bd280ab542c5d75eb5215717d92bc23f6a33635374dec06ab2a75614b"
+      "sha256": "6164f7bc936861ec1654d7aa641b9e846d833065e019df94619bfac2cb50cb83"
     },
     {
       "path": "SECURITY.md",
@@ -84,6 +84,42 @@
       "sha256": "adcada3cad9f70d3574c727f887658076599281cbba39f083dc87c57cf293b37"
     },
     {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/authored-code-gym-foundations-v1.json",
+      "sha256": "910898696e830dd53da74ba4a68b8ddeec2481de13ae5c239985b879fd5d5a72"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-01-names-values.json",
+      "sha256": "018a7e5f5f64b4c8ec2b24727101c7e1c78998cada5c2830315dcdc9de788bd0"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-02-conditionals.json",
+      "sha256": "a4799bd7ecd540fc27f8ecf00865faf16112c7d0b4a6345b121539a55eb6fd8f"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-03-loops.json",
+      "sha256": "c706b6d342cdefde80731b0b73553b003ddd9bd37513887359ce52c543aab391"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-04-functions.json",
+      "sha256": "12584bcb0b6a3b670134bcfedb10ed00394632ecdbe04e9243656d3baecef69a"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-05-lists-dicts.json",
+      "sha256": "4d244c5dff41b6a991fee79efa624134032c495414cc132cb0eb93ef4a9ac925"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-06-recursion.json",
+      "sha256": "692710cf64e6fb23f06fec73945866bf854876f0a10dcb9b55905df8118d1424"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/bundle.json",
+      "sha256": "b94c477038b25ae865c90500072a7014826e6ba69f3fb7838d556fb654e84753"
+    },
+    {
+      "path": "courses/cg-foundations-v1/1.0.0-draft/course.json",
+      "sha256": "27edd330e2ccaf6301943786da23b32433c3510911af885c2209c87327d6be20"
+    },
+    {
       "path": "courses/demo/1.0.0/attachments/counting.txt",
       "sha256": "50907fdf68a16e35babae1c5bccd8e210a80c4451171ad1d85cee275afd8fad2"
     },
@@ -96,12 +132,28 @@
       "sha256": "0a39979ca12b3ff3e4652526877fd926511926770b524379f6c9fd82330913b8"
     },
     {
+      "path": "courses/git-course-v1/1.0.0-draft/attachments/learner.json",
+      "sha256": "d02ff9b2fd0479d100e3b4ffb8eeabde62136722ed60957e9a3351975b3fc989"
+    },
+    {
+      "path": "courses/git-course-v1/1.0.0-draft/bundle.json",
+      "sha256": "8a7e79fe92fe292ee0afb9eb92363b84588a4169a2f877f4a09b672b4bc7c558"
+    },
+    {
+      "path": "courses/git-course-v1/1.0.0-draft/course.json",
+      "sha256": "a312847386d79e81529ccd5ec75cf2cc7d380a9e095d1566fed92049a2456b73"
+    },
+    {
       "path": "demo/bundle.json",
       "sha256": "14fc13475a5010fa0d701099caad4b3d3ae4a358dc74e7252d6ff8bb5479995d"
     },
     {
       "path": "demo/provenance.json",
       "sha256": "fd15c3b3a67afa9c1be866af68e064c76fe275f702ee65494990e2e375f27543"
+    },
+    {
+      "path": "docs/FIRST-OPEN-COURSES.md",
+      "sha256": "06205bba24abb19d51cd9e4eefe61213a75bd77932813cef6509f584548c3b9f"
     },
     {
       "path": "docs/FORMAT.md",
@@ -112,8 +164,16 @@
       "sha256": "8d46e03202a082cd70f28d247fc11b2d5f45d402fda338e36d0bb2b4efb71270"
     },
     {
+      "path": "docs/provenance/code-gym-foundations-v1.md",
+      "sha256": "6cd5df7daf619c7bad3d5cf9bc45cba0b94ff990499f69a97d5a94b2b27cd80d"
+    },
+    {
+      "path": "docs/provenance/git-lab-v1.md",
+      "sha256": "708f2a1491b1cea5d7a349d964ae29521214d5b6416d7af1d4ff4eab3178f43f"
+    },
+    {
       "path": "registry.json",
-      "sha256": "6c24c046cf355c51ba0a4e13a9f3891aea1905dfdad078d410fb32f694b4ce38"
+      "sha256": "f6c15daa4c23705e0ea56fb7319a1328fe079e4c081e641aa07a2707c7fb17c2"
     },
     {
       "path": "requirements.txt",
@@ -145,11 +205,15 @@
     },
     {
       "path": "tests/test_courses.py",
-      "sha256": "68c36dc5daeae7b2046c7881d3e37d32496713a386adabcd385ec6acdd0d7548"
+      "sha256": "456d98f8783e431d65e55ff09525b1a21cd5eaba2708c3b147179c018193dbee"
     },
     {
       "path": "tests/test_format.py",
-      "sha256": "edd82e62033e84767614c7d4ffaacfebd7020ca6545cd479e63bb6f12f31fe72"
+      "sha256": "2deec7a1de38806d6fdd7f73312dc74d253115091465bc69585e3f1eeef9d1f5"
+    },
+    {
+      "path": "tests/test_open_courses.py",
+      "sha256": "e878f46c54b5a0dea72f7963fcef8f6db907ee6281a04c386a4d667cfa055f70"
     },
     {
       "path": "tests/test_secrets.py",

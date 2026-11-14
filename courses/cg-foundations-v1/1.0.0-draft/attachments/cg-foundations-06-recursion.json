@@ -276,8 +276,17 @@
         "rc-o1",
         "rc-o2"
       ],
-      "prompt": "Step through. Watch the stack panel grow one fact box per call, then shrink as each one returns.",
-      "title": "Watch it: the stack piles up, then unwinds"
+      "prompt": "Step through. Watch the stack panel grow one fact box per call, then shrink as each one returns.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Watch it: the stack piles up, then unwinds",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -313,9 +322,18 @@
         "rc-o2"
       ],
       "output": "3\n2\n1\n",
-      "prompt": "Guess first; it's free. What does show(3) print?",
+      "prompt": "Guess first; it's free. What does show(3) print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
       "reveal": "3, 2, 1. Print happens on the way in, before the smaller call. Move print below the call and it would happen on the way out: 1, 2, 3.",
-      "title": "Predict before you peek: print before the call"
+      "title": "Predict before you peek: print before the call",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -364,8 +382,17 @@
         "rc-o1"
       ],
       "output": "10\n",
-      "prompt": "What does this print?",
-      "title": "Add down to zero"
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Add down to zero",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "checkpoints": [
@@ -843,8 +870,14 @@
       "outcomes": [
         "rc-o2"
       ],
-      "prompt": "Step through. Fill in each hidden return value before moving on.",
-      "title": "Trace: powers of two"
+      "prompt": "Step through. Fill in each hidden return value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Trace: powers of two",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "bugLine": 4,
@@ -893,13 +926,22 @@
       "outcomes": [
         "rc-o3"
       ],
-      "prompt": "This should print go, but it stops with a RecursionError. Tap the wrong line, then pick the repair.",
+      "prompt": "This should print go, but it stops with a RecursionError. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "go",
         "raises": "RecursionError"
       },
-      "title": "The countdown that never lands"
+      "title": "The countdown that never lands",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -960,7 +1002,7 @@
       "outcomes": [
         "rc-o1"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 5. xs[1:] is the list without its first item. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 5. xs[1:] is the list without its first item. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "e",
         "d",
@@ -970,7 +1012,16 @@
         "c"
       ],
       "target": "5",
-      "title": "Put it in order: length without len"
+      "title": "Put it in order: length without len",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "grading": "self-check",
@@ -989,7 +1040,7 @@
       "outcomes": [
         "rc-o2"
       ],
-      "prompt": "In your own words: show(3) printed 3, 2, 1. Why that order? What would print if print(n) moved below show(n - 1), and why?",
+      "prompt": "In your own words: show(3) printed 3, 2, 1. Why that order? What would print if print(n) moved below show(n - 1), and why?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "rc-g-explain#k1",
@@ -1004,7 +1055,13 @@
           "idea": "Lines after it run on the way out, as calls return in reverse (smallest n first): 1, 2, 3."
         }
       ],
-      "title": "Explain it back: in and out"
+      "title": "Explain it back: in and out",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1042,8 +1099,14 @@
         "rc-o1"
       ],
       "output": "4\n",
-      "prompt": "Type exactly what this prints. n // 10 drops the last digit (4071 // 10 is 407).",
-      "title": "On your own: counting digits"
+      "prompt": "Type exactly what this prints. n // 10 drops the last digit (4071 // 10 is 407).\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: counting digits",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1082,8 +1145,14 @@
         "rc-o1"
       ],
       "output": "4\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "Comeback: how many halvings?"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: how many halvings?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1524,8 +1593,14 @@
       "outcomes": [
         "rc-o2"
       ],
-      "prompt": "Step through and fill in each hidden return value. s[0] is the first character; s[1:] is the rest.",
-      "title": "On your own: reversing a word"
+      "prompt": "Step through and fill in each hidden return value. s[0] is the first character; s[1:] is the rest.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: reversing a word",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1981,8 +2056,14 @@
       "outcomes": [
         "rc-o2"
       ],
-      "prompt": "Step through and fill in each hidden return value.",
-      "title": "Comeback: multiplying by adding"
+      "prompt": "Step through and fill in each hidden return value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: multiplying by adding",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -2030,12 +2111,21 @@
       "outcomes": [
         "rc-o3"
       ],
-      "prompt": "This should print 30 (2 × 3 × 5), but it prints 0. Find the wrong line and repair it.",
+      "prompt": "This should print 30 (2 × 3 × 5), but it prints 0. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "0\n",
         "expected": "30"
       },
-      "title": "On your own: the product that's always zero"
+      "title": "On your own: the product that's always zero",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -2085,13 +2175,22 @@
         "rc-o1",
         "rc-o3"
       ],
-      "prompt": "This should print 6 (3 + 2 + 1), but it stops with a TypeError. Find the wrong line and repair it.",
+      "prompt": "This should print 6 (3 + 2 + 1), but it stops with a TypeError. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "6",
         "raises": "TypeError"
       },
-      "title": "Comeback: the result that gets lost"
+      "title": "Comeback: the result that gets lost",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -2143,7 +2242,7 @@
       "outcomes": [
         "rc-o2"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 2 and 3 on separate lines.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 1, 2 and 3 on separate lines.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "f",
         "e",
@@ -2153,7 +2252,16 @@
         "b"
       ],
       "target": "1\n2\n3",
-      "title": "On your own: count up by recursion"
+      "title": "On your own: count up by recursion",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -2208,7 +2316,7 @@
       "outcomes": [
         "rc-o1"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 8. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 8. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "e",
         "x",
@@ -2218,7 +2326,16 @@
         "b"
       ],
       "target": "8",
-      "title": "Comeback: doubling"
+      "title": "Comeback: doubling",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -2237,7 +2354,7 @@
         "rc-o1",
         "rc-o3"
       ],
-      "prompt": "Explain to a friend: what is a base case, what happens without one (or if calls never reach it), and how the call stack lets fact(3) work out 3 × 2 × 1 when no single call knows the whole answer.",
+      "prompt": "Explain to a friend: what is a base case, what happens without one (or if calls never reach it), and how the call stack lets fact(3) work out 3 × 2 × 1 when no single call knows the whole answer.\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "rc-i-explain#k1",
@@ -2252,7 +2369,13 @@
           "idea": "Each waiting call keeps its own n on the stack; results come back last-in, first-out and combine on the way out."
         }
       ],
-      "title": "On your own: base case and stack"
+      "title": "On your own: base case and stack",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     }
   ],
   "bridge": {

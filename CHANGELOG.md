@@ -8,6 +8,9 @@ Implementation work dated 2026-11-14.
 
 ### Added
 
+- First owner-authorized Git Lab and Code Gym foundation drafts (`1.0.0-draft`, CC-BY-SA-4.0): 12 lessons, 29 Git tasks, 96 Code Gym activities and eight hashed learner-projection media files, with complete format-v1 provenance and draft registry entries. Exclude one unresolved-origin Git example and the contract-withheld capstone; keep author-only fields withheld.
+- Explicit activity input requirements, keyboard/remote alternatives where possible, and self-check Parsons representations preserving distractors and multiple accepted orders. No player acceptance or status approval is claimed.
+
 - Open course v1 manifest and JSON Schemas for authored lessons, steps, five activity kinds, answer checks, hashed media and per-item provenance, preserving the existing Swift bundle format.
 - Optional platform-neutral activity input needs for touch, pointer, keyboard and remote-only use across iPad, iPhone, Mac and Apple TV.
 - Registry v1 schema with creator credits, explicit content licences, pinned locations and draft/in-review/reviewed records; only the synthetic draft demo is listed.
@@ -21,3 +24,4 @@ Implementation work dated 2026-11-14.
 - Reject credentials in CI using checksum-pinned Gitleaks 8.24.3, with clearly synthetic detection/clean-course regression fixtures.
 - Require a new non-empty parsed Unreleased changelog entry rather than accepting any change to CHANGELOG.md.
 - Keep existing changelog entries: editing an old entry no longer counts as a new one.
+- Correct Git recovery feedback: merging main after rebasing topic onto it is already up to date and does not undo the rebase. Add a real-Git regression check and regenerate affected hashes.

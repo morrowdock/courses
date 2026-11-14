@@ -90,8 +90,17 @@
         "cd-o1",
         "cd-o3"
       ],
-      "prompt": "Step through. Watch the arrow skip the branches that don't run.",
-      "title": "Watch it: which branch runs?"
+      "prompt": "Step through. Watch the arrow skip the branches that don't run.\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Watch it: which branch runs?",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -126,9 +135,18 @@
         "cd-o1"
       ],
       "output": "big\n",
-      "prompt": "Guess first; it's free. 50 is bigger than 10 and bigger than 40. What prints?",
+      "prompt": "Guess first; it's free. 50 is bigger than 10 and bigger than 40. What prints?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
       "reveal": "big. The first True condition wins; put the most specific test first if you want it to win.",
-      "title": "Predict before you peek: the order trap"
+      "title": "Predict before you peek: the order trap",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "answer": {
@@ -177,8 +195,17 @@
         "cd-o2"
       ],
       "output": "teen\n",
-      "prompt": "What does this print?",
-      "title": "Two conditions at once"
+      "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.",
+      "title": "Two conditions at once",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "checkpoints": [
@@ -366,8 +393,14 @@
         "cd-o2",
         "cd-o3"
       ],
-      "prompt": "Step through. Fill in each hidden value before moving on.",
-      "title": "Trace the shield"
+      "prompt": "Step through. Fill in each hidden value before moving on.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Trace the shield",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "bugLine": 3,
@@ -416,12 +449,21 @@
       "outcomes": [
         "cd-o2"
       ],
-      "prompt": "5 coins should buy a 5-coin item, but this says not enough. Tap the wrong line, then pick the repair.",
+      "prompt": "5 coins should buy a 5-coin item, but this says not enough. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "not enough\n",
         "expected": "bought"
       },
-      "title": "Exactly enough coins"
+      "title": "Exactly enough coins",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -477,7 +519,7 @@
       "outcomes": [
         "cd-o3"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints even, then done. One line isn't needed.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints even, then done. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "d",
         "c",
@@ -486,7 +528,16 @@
         "a"
       ],
       "target": "even\ndone",
-      "title": "Put it in order: even or odd"
+      "title": "Put it in order: even or odd",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "grading": "self-check",
@@ -505,7 +556,7 @@
       "outcomes": [
         "cd-o1"
       ],
-      "prompt": "In your own words: in the order trap, n was 50 and n > 40 is true. Why didn't huge print, and how would you change the program so it does?",
+      "prompt": "In your own words: in the order trap, n was 50 and n > 40 is true. Why didn't huge print, and how would you change the program so it does?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "cd-g-explain#k1",
@@ -520,7 +571,13 @@
           "idea": "Put the more specific test (n > 40) before the general one (n > 10)."
         }
       ],
-      "title": "Explain it back: why huge never printed"
+      "title": "Explain it back: why huge never printed",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -567,8 +624,14 @@
         "cd-o1"
       ],
       "output": "B\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "On your own: the grade ladder"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: the grade ladder",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -607,8 +670,14 @@
         "cd-o1"
       ],
       "output": "morning\n",
-      "prompt": "Type exactly what this prints.",
-      "title": "Comeback: what part of the day?"
+      "prompt": "Type exactly what this prints.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: what part of the day?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -774,8 +843,14 @@
         "cd-o2",
         "cd-o3"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "On your own: or"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "On your own: or",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -916,8 +991,14 @@
         "cd-o2",
         "cd-o3"
       ],
-      "prompt": "Step through and fill in each hidden value.",
-      "title": "Comeback: and with an else"
+      "prompt": "Step through and fill in each hidden value.\n\nInput requirement: keyboard text entry for exact output or checkpoint values; a remote alone is insufficient. In a text-only reader, type your answer separately before revealing the recorded answer.",
+      "title": "Comeback: and with an else",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     },
     {
       "afterAttemptHelp": [
@@ -962,13 +1043,22 @@
       "outcomes": [
         "cd-o2"
       ],
-      "prompt": "This should print just right when temp is 20, but it won't even start. Find the wrong line and repair it.",
+      "prompt": "This should print just right when temp is 20, but it won't even start. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "just right",
         "raises": "SyntaxError"
       },
-      "title": "On your own: the thermostat"
+      "title": "On your own: the thermostat",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1015,12 +1105,21 @@
       "outcomes": [
         "cd-o2"
       ],
-      "prompt": "With 0 lives this should print game over, but prints nothing. Find the wrong line and repair it.",
+      "prompt": "With 0 lives this should print game over, but prints nothing. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "game over"
       },
-      "title": "Comeback: out of lives"
+      "title": "Comeback: out of lives",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1068,7 +1167,7 @@
         "cd-o1",
         "cd-o3"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints warm.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints warm.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "e",
         "b",
@@ -1077,7 +1176,16 @@
         "c"
       ],
       "target": "warm",
-      "title": "On your own: build the chain"
+      "title": "On your own: build the chain",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "accepted": [
@@ -1126,7 +1234,7 @@
         "cd-o1",
         "cd-o3"
       ],
-      "prompt": "Arrange the lines (indentation is shown) so the program prints small.",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints small.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.",
       "start": [
         "d",
         "e",
@@ -1135,7 +1243,16 @@
         "b"
       ],
       "target": "small",
-      "title": "Comeback: big or small"
+      "title": "Comeback: big or small",
+      "inputNeeds": {
+        "alternatives": [
+          "touch",
+          "pointer",
+          "keyboard",
+          "remote"
+        ],
+        "remoteOnlyOK": true
+      }
     },
     {
       "afterAttemptHelp": [
@@ -1153,7 +1270,7 @@
       "outcomes": [
         "cd-o2"
       ],
-      "prompt": "Explain to a Lua programmer why if 0: skips its block in Python, even though if 0 then runs its block in Lua. When would that difference bite you?",
+      "prompt": "Explain to a Lua programmer why if 0: skips its block in Python, even though if 0 then runs its block in Lua. When would that difference bite you?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "cd-i-explain#k1",
@@ -1168,7 +1285,13 @@
           "idea": "Write the comparison you mean (if count > 0, if name != \"\") when the difference matters."
         }
       ],
-      "title": "On your own: what counts as false?"
+      "title": "On your own: what counts as false?",
+      "inputNeeds": {
+        "alternatives": [
+          "keyboard"
+        ],
+        "remoteOnlyOK": false
+      }
     }
   ],
   "bridge": {

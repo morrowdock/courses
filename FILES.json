@@ -33,7 +33,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "9b828bc2283b76f8cb0e02bdb0d8589acf805f64d3a3dfd35050093be160c19e"
+      "sha256": "93f7a18cc7d64e5f82ac3faf7ea59c90202efe9e630762f00eaf765482bc1ebe"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -69,7 +69,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "6164f7bc936861ec1654d7aa641b9e846d833065e019df94619bfac2cb50cb83"
+      "sha256": "77d5ec79714043bac8a63beb00e0bb9ed308a1fd821cb05367afab2dee677393"
     },
     {
       "path": "SECURITY.md",
@@ -201,7 +201,7 @@
     },
     {
       "path": "tests/test_changelog.py",
-      "sha256": "f277227e5757119ec67411f205bfd3c7da2d88ea947767253f1ac716263b1aa8"
+      "sha256": "c637a1404a474a467d17ff53cc5da2aab3471f81fb9b5fdcdf359e55642ff1ba"
     },
     {
       "path": "tests/test_courses.py",
@@ -221,7 +221,7 @@
     },
     {
       "path": "tools/check_changelog.py",
-      "sha256": "dca671a237e9bebe2d234b998f4388b4afdb6f57c6c028877fdc24eb81bd07f3"
+      "sha256": "670a22b34a0aaa7268ca0e6c8ebfb22866e2effd771e8ff9e22e407f263fd9a7"
     },
     {
       "path": "tools/check_dco.py",

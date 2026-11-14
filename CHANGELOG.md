@@ -25,3 +25,4 @@ Implementation work dated 2026-11-14.
 - Require a new non-empty parsed Unreleased changelog entry rather than accepting any change to CHANGELOG.md.
 - Keep existing changelog entries: editing an old entry no longer counts as a new one.
 - Correct Git recovery feedback: merging main after rebasing topic onto it is already up to date and does not undo the rebase. Add a real-Git regression check and regenerate affected hashes.
+- Correct the README catalog count to three draft entries and state that Git Lab and Code Gym foundations await human review.

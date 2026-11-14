@@ -2,11 +2,11 @@
 
 Morrowdock is an open learning studio where anyone can learn and teach anything. Creators can submit courses to a catalog that credits them. Content is platform-neutral for iPad, iPhone, Mac and Apple TV; optional activity input metadata declares touch, pointer, keyboard and remote-only support.
 
-**As of 2026-11-14:** Stage 1+2 provides an open course v1 format, a registry, submission/review documentation and Linux CI checks. This is an early preview, not a stable tooling release or a public app launch. The catalog contains only the original synthetic demo, marked **draft**. No course has completed independent AI fact-checks and human approval. App ingestion, hosted course downloads, Apple UI/device acceptance and App Store/public-launch work are pending.
+**As of 2026-11-14:** Stage 1+2 provides an open course v1 format, a registry, submission/review documentation and Linux CI checks. This is an early preview, not a stable tooling release or a public app launch. The catalog contains three draft entries: the synthetic demo, Git Lab and Code Gym foundations. Both owner-authored courses are drafts, with human review pending. No course has completed independent AI fact-checks and human approval. App ingestion, hosted course downloads, Apple UI/device acceptance and App Store/public-launch work are pending.
 
 ## Format and catalog
 
-[FORMAT.md](docs/FORMAT.md) defines the [JSON Schemas](schema/), versioning, creator credits, provenance, lessons, steps, activities, answer checks and hashed media. The new manifest wraps the existing Swift `CourseBundle` without changing its wire format. Private app compatibility is not asserted. [registry.json](registry.json) contains the one synthetic course; [its manifest](courses/demo/1.0.0/course.json) illustrates all five activity kinds. Remote URLs plus SHA-256 are accepted as draft proposals, with no CI downloads.
+[FORMAT.md](docs/FORMAT.md) defines the [JSON Schemas](schema/), versioning, creator credits, provenance, lessons, steps, activities, answer checks and hashed media. The new manifest wraps the existing Swift `CourseBundle` without changing its wire format. Private app compatibility is not asserted. [registry.json](registry.json) lists all three draft entries. The [synthetic demo manifest](courses/demo/1.0.0/course.json) illustrates all five activity kinds; Git Lab and Code Gym foundations await human review. Remote URLs plus SHA-256 are accepted as draft proposals, with no CI downloads.
 
 ## Validate locally
 

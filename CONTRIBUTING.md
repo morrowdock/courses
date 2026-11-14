@@ -7,3 +7,7 @@ Sign every commit with `git commit -s`, certifying the [Developer Certificate of
 Use synthetic tests only. No keys, private URLs, owner configuration, instructor originals, textbook banks, Canvas exports, personal documents or learner records. Include per-asset sources, hashes, licenses, rights holder and change attribution; attest redistribution rights and employer/university permissions. Identify generated content. Attribution alone is not permission.
 
 Dependencies require exact version/source/hash/license and transitive distribution review. No GPL/AGPL/LGPL/MPL/custom-license runtimes; Pyodide and CheerpJ are excluded. CPython/PSF is a future permissive Python option subject to binary review. Preserve vendor notices. Never auto-merge or auto-publish. AI does not verify rights, award quality labels or merge.
+
+## Changelogs and releases
+
+Every merged user-facing change adds an entry to the relevant CHANGELOG.md (root, website/, or the public repo). Releases (TestFlight, site deploy, tags) fail without one. Batch site deploys into releases.

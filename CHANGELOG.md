@@ -20,6 +20,7 @@ Implementation work dated 2026-11-14.
 
 ### Fixed
 
+- Correct Git Lab and Code Gym draft facts, recovery safety, answer leakage, choice positions and teaching order from three content reviews; retain trace checkpoints and readable goals/options in format-v1 exports, and add public-only regeneration tooling and regression coverage. Both courses remain draft pending human review.
 - Support maintainer withdrawal/restoration with a recorded reason and preserved review evidence; require fresh review whenever the course content digest changes.
 - Reject credentials in CI using checksum-pinned Gitleaks 8.24.3, with clearly synthetic detection/clean-course regression fixtures.
 - Require a new non-empty parsed Unreleased changelog entry rather than accepting any change to CHANGELOG.md.

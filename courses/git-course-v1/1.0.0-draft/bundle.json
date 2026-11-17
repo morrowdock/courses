@@ -96,7 +96,7 @@
     {
       "id": "git-course-branches-v1-predict",
       "topicID": "git-course-branches-v1",
-      "prompt": "You are on main and you have edited map.txt but not committed. lighthouse points at the same commit as main. What happens in this lab when you run `git switch lighthouse`?\n\nStarting commands:\necho coastline > map.txt\ngit init\ngit add .\ngit commit -m \"Start the map\"\ngit branch lighthouse\necho coastline and reefs > map.txt\n\nThen run:\ngit switch lighthouse",
+      "prompt": "You are on main with an uncommitted edit to map.txt. lighthouse holds a different committed version of map.txt. What happens when you run `git switch lighthouse`?\n\nStarting commands:\necho coastline > map.txt\ngit init\ngit add .\ngit commit -m \"Start the map\"\ngit switch -c lighthouse\necho coastline and lighthouse > map.txt\ngit commit -am \"Mark lighthouse\"\ngit switch main\necho coastline and reefs > map.txt\n\nThen run:\ngit switch lighthouse",
       "choices": [
         "It switches and your edit is lost",
         "It refuses and changes nothing, so you can commit or undo first",
@@ -104,7 +104,7 @@
         "It switches and your edit comes along"
       ],
       "answer": 1,
-      "explanation": "Right for this lab: any uncommitted tracked change blocks the switch, and nothing changes. Real Git would carry this edit along, because both branches hold the same map.txt (see Real Git). It refuses only when the edit would be overwritten.",
+      "explanation": "Right: lighthouse holds a different committed map.txt, so switching would overwrite the uncommitted edit. Git refuses and keeps main and the file unchanged.",
       "materialID": "git-course-branches-v1-material"
     },
     {
@@ -128,7 +128,7 @@
       "choices": [
         "main gets price 3 (the branch you merge in wins)",
         "main keeps price 5 (your branch wins)",
-        "The merge refuses with a conflict and nothing changes",
+        "It stops with a conflict on price.txt; you must choose the final text",
         "Git averages them to price 4"
       ],
       "answer": 2,
@@ -188,7 +188,7 @@
         "The reset refuses because notes.txt is untracked"
       ],
       "answer": 1,
-      "explanation": "Right: tracked files match the target, untracked files survive.",
+      "explanation": "Right: tracked files match the target. Here notes.txt survives because the target does not track that path; colliding untracked files would be overwritten.",
       "materialID": "git-course-reset-v1-material"
     },
     {
@@ -208,7 +208,7 @@
     {
       "id": "git-course-recovery-v1-predict",
       "topicID": "git-course-recovery-v1",
-      "prompt": "You rebased topic (its old commit was c2; the copy is c4) and regret it. Which command puts topic back exactly as it was before the rebase?\n\nStarting commands:\necho a > a.txt\ngit init\ngit add .\ngit commit -m Base\ngit switch -c topic\necho b > b.txt\ngit add .\ngit commit -m \"Topic work\"\ngit switch main\necho c > c.txt\ngit add .\ngit commit -m \"Main work\"\ngit switch topic\ngit rebase main\n\nThen run:\ngit reset --hard c2",
+      "prompt": "You rebased topic (its old commit was c2; the copy is c4) and regret it. Which command puts topic back exactly as it was before the rebase?\n\nStarting commands:\necho a > a.txt\ngit init\ngit add .\ngit commit -m Base\ngit switch -c topic\necho b > b.txt\ngit add .\ngit commit -m \"Topic work\"\ngit switch main\necho c > c.txt\ngit add .\ngit commit -m \"Main work\"\ngit switch topic\ngit rebase main",
       "choices": [
         "git reset --hard HEAD~1",
         "git reset --hard c2",

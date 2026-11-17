@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-14",
+  "date": "2026-11-17",
   "status": "proposed format-v1 first open course drafts; human review and owner approval pending",
   "note": "Lists every tracked file except FILES.json itself.",
   "files": [
@@ -33,7 +33,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "93f7a18cc7d64e5f82ac3faf7ea59c90202efe9e630762f00eaf765482bc1ebe"
+      "sha256": "e8d6c72cdfd4606bc5ebe147248e2d1590e498dc2dd96dcd2a8d3a5923a2f48f"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -89,35 +89,35 @@
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-01-names-values.json",
-      "sha256": "018a7e5f5f64b4c8ec2b24727101c7e1c78998cada5c2830315dcdc9de788bd0"
+      "sha256": "d725eb4311cad2d7589ab087fc16f2a5ae9cc025e708b92c2cf959fe3af412ba"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-02-conditionals.json",
-      "sha256": "a4799bd7ecd540fc27f8ecf00865faf16112c7d0b4a6345b121539a55eb6fd8f"
+      "sha256": "6f112a5ee89739b9212701d5defde34dec225a22a7b6fa9d71cc74753e0ed6d8"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-03-loops.json",
-      "sha256": "c706b6d342cdefde80731b0b73553b003ddd9bd37513887359ce52c543aab391"
+      "sha256": "5550623fa0b678b2daad360a1301428be0c010bfb8432aa390b6cdbb757b5c02"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-04-functions.json",
-      "sha256": "12584bcb0b6a3b670134bcfedb10ed00394632ecdbe04e9243656d3baecef69a"
+      "sha256": "3c5ece0d6d54ad467d03a7a2ea70ebe1c765ef05facca23a4359c1753ed06185"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-05-lists-dicts.json",
-      "sha256": "4d244c5dff41b6a991fee79efa624134032c495414cc132cb0eb93ef4a9ac925"
+      "sha256": "78b8e97b10a2c73ae8bdbf342dc46b5a9145556fb48287feeb5313d2453d042f"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-06-recursion.json",
-      "sha256": "692710cf64e6fb23f06fec73945866bf854876f0a10dcb9b55905df8118d1424"
+      "sha256": "1952b0ca80753c2ac02c6c976e2d36ba1a64b02bd9514d65a1b27fee56d0b2b6"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/bundle.json",
-      "sha256": "b94c477038b25ae865c90500072a7014826e6ba69f3fb7838d556fb654e84753"
+      "sha256": "456cba4fe1c9c164927401aad6b20d32a4282588391f6fdf69c981ae3859406d"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/course.json",
-      "sha256": "27edd330e2ccaf6301943786da23b32433c3510911af885c2209c87327d6be20"
+      "sha256": "55e7be18af1a0e52503a48ae78ebdb99eac636b94d7c8bf7103ced71365df2c9"
     },
     {
       "path": "courses/demo/1.0.0/attachments/counting.txt",
@@ -133,15 +133,15 @@
     },
     {
       "path": "courses/git-course-v1/1.0.0-draft/attachments/learner.json",
-      "sha256": "d02ff9b2fd0479d100e3b4ffb8eeabde62136722ed60957e9a3351975b3fc989"
+      "sha256": "a76545e32c2b8ebd2993379c4faef22a88f2adaeda37ecb130e2a6cb913462a7"
     },
     {
       "path": "courses/git-course-v1/1.0.0-draft/bundle.json",
-      "sha256": "8a7e79fe92fe292ee0afb9eb92363b84588a4169a2f877f4a09b672b4bc7c558"
+      "sha256": "ecc587fec09e81d06170ef5866d9803b4d0866f0babfec0ba46886b29d71a25c"
     },
     {
       "path": "courses/git-course-v1/1.0.0-draft/course.json",
-      "sha256": "a312847386d79e81529ccd5ec75cf2cc7d380a9e095d1566fed92049a2456b73"
+      "sha256": "25fe8fea83e7e577ed6d28263c8100125a5d0032df362b45db6fd12366875e7a"
     },
     {
       "path": "demo/bundle.json",
@@ -153,7 +153,7 @@
     },
     {
       "path": "docs/FIRST-OPEN-COURSES.md",
-      "sha256": "06205bba24abb19d51cd9e4eefe61213a75bd77932813cef6509f584548c3b9f"
+      "sha256": "18f771aafb618aaf0542b1aa24cd94f5ad911ff300e0df0e515640b79346cef5"
     },
     {
       "path": "docs/FORMAT.md",
@@ -170,6 +170,10 @@
     {
       "path": "docs/provenance/git-lab-v1.md",
       "sha256": "708f2a1491b1cea5d7a349d964ae29521214d5b6416d7af1d4ff4eab3178f43f"
+    },
+    {
+      "path": "docs/reviews/course-draft-fixes-20261117.md",
+      "sha256": "f4c9072f173b74c7dcbc5220731e21ada9dcbd045457e5d227853c2526361a05"
     },
     {
       "path": "registry.json",
@@ -208,12 +212,16 @@
       "sha256": "456d98f8783e431d65e55ff09525b1a21cd5eaba2708c3b147179c018193dbee"
     },
     {
+      "path": "tests/test_draft_exports.py",
+      "sha256": "3c99e687439e4b051a4ab9faf8e0f6e717fb910d4313a81aa6be0ec2ce30c04c"
+    },
+    {
       "path": "tests/test_format.py",
       "sha256": "2deec7a1de38806d6fdd7f73312dc74d253115091465bc69585e3f1eeef9d1f5"
     },
     {
       "path": "tests/test_open_courses.py",
-      "sha256": "e878f46c54b5a0dea72f7963fcef8f6db907ee6281a04c386a4d667cfa055f70"
+      "sha256": "7ce0d0235c7fda8649c58b09bd7ae0f21dd3553f6a16380bc09870d53a72e27c"
     },
     {
       "path": "tests/test_secrets.py",
@@ -226,6 +234,10 @@
     {
       "path": "tools/check_dco.py",
       "sha256": "d6f3693eebbc82a50402b89e4cbab9c3f8c73deae45fc30109cb4b10cfe1141f"
+    },
+    {
+      "path": "tools/export_drafts.py",
+      "sha256": "78a476075cb91f3c77fb38d42811bf4af3863087fe644bc3fad1c327fd758adf"
     },
     {
       "path": "tools/install_gitleaks.sh",

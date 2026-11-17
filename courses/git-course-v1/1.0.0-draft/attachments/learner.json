@@ -21,8 +21,7 @@
         "Read `git status`, `git diff` and `git diff --cached` to see which of the three places differ."
       ],
       "prerequisites": [
-        "entry-files",
-        "entry-shell-basics"
+        "Can create and read text files and enter basic shell commands."
       ],
       "learn": {
         "concept": [
@@ -34,7 +33,7 @@
         ],
         "assumptions": [
           "You are in the Git Lab's virtual shell. Nothing touches a real disk, network or account.",
-          "Commit ids here are short labels (c1, c2 …) given in creation order. Real Git uses 40-character hashes of the content; the idea of 'one id per snapshot' is the same.",
+          "Commit ids here are short labels (c1, c2 …) given in creation order. Real Git hashes the commit: its snapshot, parent(s), author, committer, timestamps and message. Most repositories use 40 hex characters (SHA-1); SHA-256 repositories use 64. The same snapshot can have different commit ids.",
           "The repository is the folder where you ran `git init` (here, /home)."
         ],
         "walkthrough": {
@@ -201,7 +200,7 @@
           },
           {
             "here": "`git init` names the first branch main",
-            "realGit": "Older setups name it master. Use `git init -b main`, or set `git config --global init.defaultBranch main`.",
+            "realGit": "With no configuration, current Git 2.x still defaults to master and prints a hint. Use `git init -b main` explicitly, or set `git config --global init.defaultBranch main` once.",
             "note": ""
           }
         ]
@@ -319,6 +318,12 @@
                 "/home/tides.txt",
                 "06:00 tide high, check\n"
               ]
+            },
+            {
+              "staged": [
+                "/home/tides.txt",
+                "06:00 tide high\n"
+              ]
             }
           ],
           "hints": [
@@ -366,7 +371,7 @@
           ],
           "kind": "debug",
           "title": "Debug the command",
-          "instruction": "A teammate fixed a typo and ran the command below. Git refused. Read the message, explain why, and fix it with the fewest commands.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
+          "instruction": "A teammate fixed a typo and ran the command below. Git refused. Read the message, explain why, and fix it with the fewest commands.\n\nReal Git message: no changes added to commit (use \"git add\" and/or \"git commit -a\").\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
           "goals": [
             {
               "headMessage": "Fix typo"
@@ -527,7 +532,7 @@
           "A branch is not a folder or a copy of your files. It is a name that points at one commit. Creating a branch costs nothing: no files are copied.",
           "HEAD means 'the branch you are on'. When you commit, the new commit's parent is the commit your current branch points at, and only that branch label moves forward to the new commit.",
           "`git switch name` moves HEAD to another branch and rewrites the tracked files in the working tree to match that branch's snapshot. A file that only exists on another branch disappears from the folder, but it is safe inside that branch's commit.",
-          "Untracked files belong to no branch, so switching leaves them where they are.",
+          "Untracked files belong to no branch. Switching leaves them where they are unless the target branch tracks the same path; real Git then refuses to overwrite the untracked file.",
           "Where you stand when you create a branch matters: `git switch -c new` starts the new label at the current commit. Start from the wrong branch and the new branch quietly includes work it should not."
         ],
         "assumptions": [
@@ -596,13 +601,16 @@
         "questions": [
           {
             "id": "git-course-branches-v1.predict",
-            "prompt": "You are on main and you have edited map.txt but not committed. lighthouse points at the same commit as main. What happens in this lab when you run `git switch lighthouse`?",
+            "prompt": "You are on main with an uncommitted edit to map.txt. lighthouse holds a different committed version of map.txt. What happens when you run `git switch lighthouse`?",
             "setup": [
               "echo coastline > map.txt",
               "git init",
               "git add .",
               "git commit -m \"Start the map\"",
-              "git branch lighthouse",
+              "git switch -c lighthouse",
+              "echo coastline and lighthouse > map.txt",
+              "git commit -am \"Mark lighthouse\"",
+              "git switch main",
               "echo coastline and reefs > map.txt"
             ],
             "commands": [
@@ -617,9 +625,9 @@
             "answer": 1,
             "why": [
               "Git never silently throws away uncommitted work on a switch.",
-              "Right for this lab: any uncommitted tracked change blocks the switch, and nothing changes. Real Git would carry this edit along, because both branches hold the same map.txt (see Real Git). It refuses only when the edit would be overwritten.",
+              "Right: lighthouse holds a different committed map.txt, so switching would overwrite the uncommitted edit. Git refuses and keeps main and the file unchanged.",
               "Switching never makes a commit.",
-              "That is what real Git does here. This lab is stricter, so you form the habit of saving work before moving."
+              "Real Git can carry edits when both branches hold the same version. Here lighthouse has different text, so the switch would overwrite the edit and is refused."
             ]
           },
           {
@@ -688,14 +696,14 @@
             "commands": [
               "git switch lighthouse"
             ],
-            "truth": "Git never stored notes.txt, so it travels with the folder, not with a branch. Commit it on the branch where it belongs."
+            "truth": "A branch points at a commit, and commits only hold tracked files. Untracked files stay in the folder across switches unless the target branch tracks the same path: real Git refuses that switch to protect the file."
           }
         ],
         "realGit": [
           {
             "here": "Any uncommitted tracked change blocks `git switch`",
             "realGit": "Switch succeeds and carries edits along if the target branch has the same version of those files; it refuses only if an edit would be overwritten. `git stash` can set edits aside.",
-            "note": "Checked: the prediction scenario really differs from real Git."
+            "note": "The prediction now uses different committed file versions, so real Git and the lab both refuse."
           },
           {
             "here": "No detached HEAD",
@@ -711,6 +719,11 @@
             "here": "`git checkout` and `git switch` both switch",
             "realGit": "Same; `switch` is the newer, clearer command. `checkout` also restores files.",
             "note": ""
+          },
+          {
+            "here": "Untracked file collides with a tracked target path",
+            "realGit": "`git switch` refuses: The following untracked working tree files would be overwritten by checkout. Move or preserve the untracked file before retrying.",
+            "note": "Unlike --hard reset, switch protects this untracked content."
           }
         ]
       },
@@ -878,12 +891,15 @@
             "git init",
             "git add .",
             "git commit -m \"Add guide\"",
-            "git branch docs",
+            "git switch -c docs",
+            "echo documentation draft > guide.txt",
+            "git commit -am \"Draft documentation\"",
+            "git switch main",
             "echo read me first > guide.txt"
           ],
           "kind": "debug",
           "title": "Debug the command",
-          "instruction": "You edited guide.txt on main and tried to move to docs. The lab refused. Keep the edit on main as “Clarify the guide” and then get onto docs.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
+          "instruction": "You edited guide.txt on main and tried to move to docs. Git refused because docs holds a different guide.txt. Keep the edit on main as “Clarify the guide” and then get onto docs.\n\nReal Git message: error: Your local changes to the following files would be overwritten by checkout: guide.txt. Please commit your changes or stash them before you switch branches. Aborting.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
           "goals": [
             {
               "branch": "docs"
@@ -1171,7 +1187,7 @@
             "choices": [
               "main gets price 3 (the branch you merge in wins)",
               "main keeps price 5 (your branch wins)",
-              "The merge refuses with a conflict and nothing changes",
+              "It stops with a conflict on price.txt; you must choose the final text",
               "Git averages them to price 4"
             ],
             "answer": 2,
@@ -1287,6 +1303,11 @@
             "here": "Fast-forward when possible",
             "realGit": "Same; `git merge --no-ff` forces a merge commit to record that a branch existed.",
             "note": ""
+          },
+          {
+            "here": "Lab conflict leaves files unchanged",
+            "realGit": "A conflicting real merge writes <<<<<<<, ======= and >>>>>>> markers; git status reports unmerged paths and MERGE_HEAD records the unfinished merge. Resolve, git add and git commit, or git merge --abort to return to the pre-merge state.",
+            "note": "Start with a clean working tree. You cannot switch branches mid-merge; run git merge --abort before the lab-style resolve-on-feature recipe."
           }
         ]
       },
@@ -1484,7 +1505,7 @@
           ],
           "kind": "debug",
           "title": "Debug the command",
-          "instruction": "Merging sign into main refuses with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. Resolve it on the sign branch, then merge.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
+          "instruction": "Merging sign into main stops with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. In real Git the file now has conflict markers and the merge is half-finished. Run `git merge --abort` first: you cannot switch branches while merging. (The lab already left the files unchanged.) Then resolve the agreed text on the sign branch and merge again.\n\nReal Git output: CONFLICT (content): Merge conflict in colour.txt. Automatic merge failed; fix conflicts and then commit the result. The file contains conflict markers and git status reports UU colour.txt. Abort the merge before switching branches.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
           "goals": [
             {
               "mergeTip": "main"
@@ -2101,7 +2122,7 @@
           ],
           "kind": "debug",
           "title": "Debug the command",
-          "instruction": "You tried to rebase menu onto main with an unsaved edit to menu.txt. It refused. The edit belongs to the feature: save it as “Add dessert”, then rebase.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
+          "instruction": "You tried to rebase menu onto main with an uncommitted edit to menu.txt. It refused. The edit belongs to the feature: save it as “Add dessert”, then rebase.\n\nReal Git message: error: cannot rebase: You have unstaged changes. error: Please commit or stash them.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
           "goals": [
             {
               "log": [
@@ -2290,12 +2311,12 @@
           "`git reset <mode> <commit>` always moves your current branch label to that commit. The mode decides how much else follows.",
           "--soft moves only the label. The staging area and the files keep the newer content, so the undone commit's changes sit there staged, ready to commit again.",
           "--mixed (Git's default) moves the label and resets the staging area to match. Your files are untouched, but the changes are now unstaged.",
-          "--hard moves the label, the staging area and the tracked files. Uncommitted changes to tracked files are gone. Untracked files Git never saw are left alone.",
+          "--hard moves the label, the staging area and the tracked files. Uncommitted working-tree edits are discarded. Unrelated untracked files stay, but an untracked file or directory in the way of a tracked path in the target commit is overwritten or removed without warning.",
           "Reset doesn't destroy the commits it moves away from. They stay in the graph with no label. The next lesson uses that to recover them.",
-          "In the lab, `HEAD~1` means 'the parent of the commit I'm on'. With no commit named, reset uses the commit you're on, which is how `git reset --mixed` unstages everything and `git reset --hard` throws away edits."
+          "In the lab, `HEAD~1` means 'the first parent of the commit I am on'. You can also use an id from `git log`: if c1 is the base before two newer commits, `git reset --soft c1` moves back to that base and keeps both changes staged, ready for one replacement commit. With no commit named, reset uses the commit you're on, which is how `git reset --mixed` unstages everything and `git reset --hard` throws away edits."
         ],
         "assumptions": [
-          "The lab names commits as c1, c2 … or `HEAD~1`. Real Git also accepts `HEAD~2`, `HEAD^` and branch names.",
+          "The lab names commits as c1, c2 … or `HEAD~1`. Real Git also accepts branch names, `HEAD~2` (two first-parent steps) and `HEAD^` (first parent, same as HEAD^1). On a two-parent merge, HEAD~1 is the tip you merged into; HEAD^2 is the tip you merged in.",
           "--mixed resets the whole staging area. Real Git can unstage a single file with `git restore --staged file`."
         ],
         "walkthrough": {
@@ -2332,7 +2353,7 @@
             },
             {
               "command": "rm junk.txt",
-              "narration": "...but c3 still exists in the graph with no label (the lab draws it dimmed). Tidy the untracked file by hand."
+              "narration": "...but c3 still exists in the graph with no label (the lab draws it dimmed). Tidy junk.txt by hand. Careful: rm permanently deletes an untracked file; Git cannot recover content it never saved. Here a copy survives in c3 only because you committed it earlier."
             }
           ]
         },
@@ -2361,10 +2382,10 @@
             ],
             "answer": 1,
             "why": [
-              "A hard reset only rewrites files Git tracks. It has no saved version of notes.txt to go back to.",
-              "Right: tracked files match the target, untracked files survive.",
+              "The target commit does not track notes.txt, so it is unrelated to this reset and stays. An untracked file in the way of a tracked target path would be overwritten.",
+              "Right: tracked files match the target. Here notes.txt survives because the target does not track that path; colliding untracked files would be overwritten.",
               "That's --soft.",
-              "Untracked files only matter when the target commit has a file at the same path."
+              "A hard reset does not refuse to protect untracked content: it overwrites or removes anything in the way of a tracked target path. Here notes.txt is not in the way and stays."
             ]
           },
           {
@@ -2379,7 +2400,7 @@
             "answer": 0,
             "why": [
               "Right: the changes stay staged, so `git commit -m \"better\"` recreates the commit.",
-              "You'd need to `git add` again first: two commands.",
+              "After --mixed the changes are unstaged, so you must stage them again (and `commit -a` would miss any newly added file).",
               "That throws the changes away.",
               "--soft is exactly this. Real Git also offers `git commit --amend`."
             ]
@@ -2446,17 +2467,17 @@
           {
             "here": "`git reset --hard` with no commit throws away tracked edits",
             "realGit": "Same; `git restore file` discards edits to one file.",
-            "note": "Both are permanent for uncommitted work: it was never saved."
+            "note": "Never-staged edits are permanently discarded. A staged-only file is lost in practice, though its blob may survive for git fsck --lost-found until garbage collection."
           },
           {
-            "here": "Untracked files survive a hard reset",
-            "realGit": "Same. `git clean -n` lists untracked files and `git clean -f` deletes them (careful).",
+            "here": "Unrelated untracked files survive; untracked content in the way does not",
+            "realGit": "`git reset --hard` overwrites untracked content in the way of tracked target paths. For unrelated untracked files, `git clean -n` previews removal and `git clean -f` deletes them permanently; inspect the preview first.",
             "note": "Checked against real Git."
           },
           {
             "here": "Reset only your own unshared history",
             "realGit": "Resetting a pushed branch rewrites history others have, just like rebase. Use `git revert` to undo a shared commit with a new commit.",
-            "note": "revert isn't modelled in the lab."
+            "note": "revert is not modelled in the lab. Reverting a merge needs a mainline parent: `git revert -m 1 <merge-id>` keeps parent 1 as the baseline; choose that parent deliberately."
           }
         ]
       },
@@ -2466,12 +2487,12 @@
           "git reset --soft <c>: label only",
           "git reset --mixed <c>: label + staging area",
           "git reset --hard <c>: label + staging area + tracked files",
-          "HEAD~1 = parent of the current commit"
+          "HEAD~1 = first parent of the current commit; real Git HEAD^2 = second parent of a merge"
         ],
         "pitfalls": [
-          "Using --hard when you meant to keep edits (uncommitted work can't be recovered).",
+          "Using --hard before git status and preserving edits: never-staged edits are gone; staged blobs are at best recoverable with fsck until GC.",
           "Resetting a shared branch.",
-          "Expecting --hard to delete untracked files.",
+          "Assuming untracked content is safe: --hard overwrites it when it is in the way of a tracked target path; unrelated untracked files stay.",
           "`--hard` also removes a new file that was only staged: staging made it tracked, and the target commit doesn't have it."
         ],
         "model": "soft ⊂ mixed ⊂ hard: each mode changes one more place"
@@ -2564,7 +2585,7 @@
           ],
           "kind": "debug",
           "title": "Debug the command",
-          "instruction": "A teammate wanted to throw away a bad last commit completely and ran `git reset --soft HEAD~1`. The bad text is still in their file. Undo the bad change properly, leaving main at “Good config” with the good file.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
+          "instruction": "A teammate wanted to throw away a bad last commit completely and ran `git reset --soft HEAD~1`. The bad text is still in their file. Undo the bad change properly, leaving main at “Good config” with the good file.\n\nReal Git observation: --soft succeeds with no output. git status shows config.txt staged with the bad text; the working file still says bad.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
           "goals": [
             {
               "file": [
@@ -2730,7 +2751,7 @@
         "Explain why a commit that vanished from `git log` after a reset or rebase is usually still recoverable.",
         "Recover an exact earlier commit, as opposed to retyping a copy, after a bad reset or an unwanted rebase.",
         "Save a lost commit onto a new branch without moving the branch you're on.",
-        "Tell recoverable situations (anything once committed) from unrecoverable ones (edits never committed), and use a backup branch before risky steps."
+        "Distinguish committed work (recoverable until GC), staged-only work (lost in practice, blob may survive until GC), and never-staged edits (unrecoverable); use a backup branch for commits before risky steps."
       ],
       "prerequisites": [
         "git-course-rebase-v1",
@@ -2740,9 +2761,9 @@
         "concept": [
           "`git log` only shows commits reachable from the branch you're on. A reset or rebase moves a label, and the commits it leaves behind drop out of the log. They aren't deleted.",
           "To recover one, you need its id. In this lab the commit graph shows every commit and dims the unreachable ones. In real Git, `git reflog` lists every commit HEAD has pointed at, newest first.",
-          "`git reset --hard <id>` moves your current branch back onto that exact commit, the same snapshot with the same id. Retyping the change makes a new commit that only looks the same.",
-          "To keep your branch where it is and still save the lost commit, make a new branch and reset that one: `git switch -c rescue`, then `git reset --hard <id>`.",
-          "What Git can't give back is anything it never saved. Uncommitted edits discarded by `--hard` are gone. So is a new file that was only staged, never committed, when `--hard` removes it. Before a risky rebase or reset, `git branch backup` costs nothing."
+          "Run `git status` first. Commit or stash edits you want to keep before any --hard reset (real Git: git stash push -u includes untracked files): it discards uncommitted working-tree edits and can overwrite untracked content in the way. `git reset --hard <id>` moves your current branch back onto that exact commit, the same snapshot with the same id. Retyping the change makes a new commit that only looks the same.",
+          "In real Git, save a lost commit with `git branch rescue <id>`: this creates a label without moving your current branch or touching your files, even with uncommitted edits. The lab only supports creating a branch at HEAD, so its fallback is `git switch -c rescue`, then `git reset --hard <id>`; use that fallback only after `git status` and preserving all edits, then switch back.",
+          "Git cannot recover working-tree content it never saved with add or commit. A staged-only new file removed by --hard is lost in practice: real Git may recover its blob with `git fsck --lost-found` until garbage collection prunes it, without its original filename. Do not rely on that. Commit first. `git branch backup` protects commits before risky operations, but does not save uncommitted edits."
         ],
         "assumptions": [
           "The lab has no reflog. Read ids from the commit graph, or from earlier `git log` output.",
@@ -2809,9 +2830,7 @@
               "git switch topic",
               "git rebase main"
             ],
-            "commands": [
-              "git reset --hard c2"
-            ],
+            "commands": [],
             "choices": [
               "git reset --hard HEAD~1",
               "git reset --hard c2",
@@ -2892,7 +2911,7 @@
             "commands": [
               "git reset --hard"
             ],
-            "truth": "Staging made summary.txt tracked, and the target commit doesn't have it, so --hard removes it. Real Git keeps the staged content as a loose object that only `git fsck --lost-found` can dig out. Treat it as lost, and commit first."
+            "truth": "Staging made summary.txt tracked, and the target commit does not have it, so --hard removes it. It is lost in practice; real Git may recover its blob with `git fsck --lost-found` until garbage collection prunes it, without its original filename. Commit first."
           }
         ],
         "realGit": [
@@ -2902,8 +2921,8 @@
             "note": "Checked in real Git (2.50): after a two-commit rebase, topic@{1} and ORIG_HEAD are the pre-rebase tip and HEAD@{1} is not. The reflog is local and isn't pushed."
           },
           {
-            "here": "Rescue = new branch, then reset it",
-            "realGit": "One step: `git branch rescue <hash>` or `git switch -c rescue <hash>`.",
+            "here": "Rescue without touching files",
+            "realGit": "Use `git branch rescue <hash>` to preserve the commit without moving HEAD or touching uncommitted files. Switch to it later only after checking `git status` and preserving edits.",
             "note": ""
           },
           {
@@ -2921,17 +2940,19 @@
       "referenceCard": {
         "recognise": "Work vanished after reset, rebase or a wrong branch move.",
         "commands": [
+          "git status first; preserve edits before --hard (real Git: git stash push -u includes untracked files)",
           "Find the id: commit graph (lab) / `git reflog` (real Git)",
           "git reset --hard <id>: move this branch back onto it",
-          "git switch -c rescue → git reset --hard <id>: save it without moving your branch",
-          "git branch backup: before anything risky"
+          "Real Git: git branch rescue <id> saves it without moving HEAD or touching files",
+          "git branch backup: before anything risky",
+          "Lab-only rescue fallback: switch -c rescue, reset --hard <id>, switch back; only after preserving edits"
         ],
         "pitfalls": [
           "Retyping instead of recovering the original commit.",
           "Confusing a rebased copy with its original: compare parents.",
-          "Expecting to recover edits that were never committed."
+          "Expecting to recover never-staged edits; a staged-only file is lost in practice (its blob may survive until GC)."
         ],
-        "model": "committed = recoverable (until garbage collection); never committed = gone"
+        "model": "Committed = recoverable until GC; staged-only = lost in practice, blob may survive until GC; never saved by Git = gone"
       },
       "tasks": [
         {
@@ -3092,7 +3113,7 @@
           ],
           "kind": "debug",
           "title": "Debug the command",
-          "instruction": "Goal: keep main where it is (at “Raise mast”) and save the lost “Add sails” commit on a branch called rescue. Your teammate's command recovered the commit but moved main. Do it without moving main.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
+          "instruction": "Goal: keep main where it is (at “Raise mast”) and save the lost “Add sails” commit on a branch called rescue. Your teammate's command recovered the commit but moved main. Do it without moving main.\n\nReal Git observation: HEAD is now at <Add sails hash> Add sails. git status says On branch main; main moved to Add sails instead of staying at Raise mast.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
           "goals": [
             {
               "tipIs": [
@@ -3272,7 +3293,7 @@
   ],
   "startingKnowledge": [
     "Know what a file and a folder are, and that a file's contents can change.",
-    "Type a command in the Terminal Lab and use echo text > file, cat, ls and rm (the Terminal Lab missions teach these)."
+    "Can enter shell commands: create a file with echo text > file, read it with cat, and list files with ls. Understand that rm deletes a file."
   ],
   "capstoneFollowUp": "The harbor repair capstone is not available here yet. It needs a saved, exportable repair log and rubric review. The real-Git follow-on is not run or checked by the app."
 }

@@ -292,17 +292,17 @@
       "answer": {
         "choices": [
           {
-            "correct": true,
-            "reaction": "Yes. Each call prints its own n first, then calls with one less. n = 0 is the base case and prints nothing.",
-            "text": "3\n2\n1"
+            "reaction": "show(0) hits the base case and returns before reaching print.",
+            "text": "3\n2\n1\n0"
           },
           {
             "reaction": "That's what you'd get if print came after the call. Here print runs first, on the way in.",
             "text": "1\n2\n3"
           },
           {
-            "reaction": "show(0) hits the base case and returns before reaching print.",
-            "text": "3\n2\n1\n0"
+            "correct": true,
+            "reaction": "Yes. Each call prints its own n first, then calls with one less. n = 0 is the base case and prints nothing.",
+            "text": "3\n2\n1"
           }
         ],
         "type": "choice"
@@ -339,6 +339,10 @@
       "answer": {
         "choices": [
           {
+            "reaction": "That's 4 × 3 × 2 × 1. This function adds with +.",
+            "text": "24"
+          },
+          {
             "correct": true,
             "reaction": "Right: 4 + 3 + 2 + 1 + 0.",
             "text": "10"
@@ -346,10 +350,6 @@
           {
             "reaction": "total(4) doesn't stop at 4; it adds total(3), which adds total(2), and so on.",
             "text": "4"
-          },
-          {
-            "reaction": "That's 4 × 3 × 2 × 1. This function adds with +.",
-            "text": "24"
           }
         ],
         "type": "choice"
@@ -400,17 +400,17 @@
           "answer": {
             "choices": [
               {
-                "correct": true,
-                "reaction": "Yes: anything to the power 0 is 1, and that's what the base case says.",
-                "text": "1"
+                "reaction": "The base case doesn't multiply; it answers 1 directly.",
+                "text": "2"
               },
               {
                 "reaction": "Look at line 3: the base case returns 1.",
                 "text": "0"
               },
               {
-                "reaction": "The base case doesn't multiply; it answers 1 directly.",
-                "text": "2"
+                "correct": true,
+                "reaction": "Yes: anything to the power 0 is 1, and that's what the base case says.",
+                "text": "1"
               }
             ],
             "type": "choice"
@@ -428,12 +428,12 @@
                 "text": "8"
               },
               {
-                "reaction": "Each level multiplies by b: 2 × 4.",
-                "text": "6"
-              },
-              {
                 "reaction": "There are three multiplications, not four: e goes 3, 2, 1, then the base case.",
                 "text": "16"
+              },
+              {
+                "reaction": "Each level multiplies by b: 2 × 4.",
+                "text": "6"
               }
             ],
             "type": "choice"
@@ -896,15 +896,15 @@
           "reaction": "Yes. Each call must move closer to the base case; n - 1 eventually reaches 0."
         },
         {
+          "fixLine": "    return n - 1",
+          "output": "2\n",
+          "reaction": "No more recursion error, but it returns 2 instead of counting down to go."
+        },
+        {
           "fixLine": "    return countdown(n + 1)",
           "output": "",
           "raises": "RecursionError",
           "reaction": "That moves away from 0, so the base case is never reached: still a RecursionError."
-        },
-        {
-          "fixLine": "    return n - 1",
-          "output": "2\n",
-          "reaction": "No more recursion error, but it returns 2 instead of counting down to go."
         }
       ],
       "hints": [
@@ -920,13 +920,14 @@
       "lineReactions": {
         "2": "The base case is right: at 0 we're done.",
         "3": "This is what should come back at the end.",
-        "5": "The call is fine. The problem is what happens inside."
+        "5": "The call is fine. The problem is what happens inside.",
+        "1": "countdown correctly takes n as a parameter; check the value passed to the next call."
       },
       "mode": "guided",
       "outcomes": [
         "rc-o3"
       ],
-      "prompt": "This should print go, but it stops with a RecursionError. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
+      "prompt": "This should print go, but it stops with a RecursionError. Select the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "go",
@@ -1167,17 +1168,17 @@
           "answer": {
             "choices": [
               {
-                "correct": true,
-                "reaction": "Yes: the call below returned the reversed rest, then this box adds its own first character at the end.",
-                "text": "'cb'"
-              },
-              {
                 "reaction": "Each box puts its first character after the reversed rest, so b goes last here.",
                 "text": "'bc'"
               },
               {
                 "reaction": "It adds b to what the call below returned, and that wasn't empty.",
                 "text": "'b'"
+              },
+              {
+                "correct": true,
+                "reaction": "Yes: the call below returned the reversed rest, then this box adds its own first character at the end.",
+                "text": "'cb'"
               }
             ],
             "type": "choice"
@@ -1190,17 +1191,17 @@
           "answer": {
             "choices": [
               {
-                "correct": true,
-                "reaction": "Right: each box puts its first character after the reversed rest.",
-                "text": "'cba'"
-              },
-              {
                 "reaction": "Each box adds its first character at the end, so 'a' ends up last.",
                 "text": "'abc'"
               },
               {
                 "reaction": "It returns rev('bc') + 'a', and rev('bc') isn't empty.",
                 "text": "'a'"
+              },
+              {
+                "correct": true,
+                "reaction": "Right: each box puts its first character after the reversed rest.",
+                "text": "'cba'"
               }
             ],
             "type": "choice"
@@ -2083,12 +2084,6 @@
       ],
       "fixes": [
         {
-          "correct": true,
-          "fixLine": "        return 1",
-          "output": "30\n",
-          "reaction": "Yes: the product of nothing is 1, just as the sum of nothing is 0."
-        },
-        {
           "fixLine": "        return xs",
           "output": "[]\n",
           "reaction": "That returns an empty list, and multiplying numbers by a list doesn't give 30."
@@ -2098,6 +2093,12 @@
           "output": "",
           "raises": "IndexError",
           "reaction": "xs is empty here, so there's no position 0: IndexError."
+        },
+        {
+          "correct": true,
+          "fixLine": "        return 1",
+          "output": "30\n",
+          "reaction": "Yes: the product of nothing is 1, just as the sum of nothing is 0."
         }
       ],
       "id": "rc-i-fix",
@@ -2105,7 +2106,8 @@
       "lineReactions": {
         "2": "Stopping at the empty list is the right base case.",
         "4": "First item times the product of the rest: that's right. What does the bottom of the chain return?",
-        "5": "The call is fine."
+        "5": "The call is fine.",
+        "1": "product correctly takes xs as a parameter; check the empty-list branch inside it."
       },
       "mode": "independent",
       "outcomes": [
@@ -2168,7 +2170,8 @@
       "lineReactions": {
         "2": "Stopping at 0 is right.",
         "3": "The base case returns a value; fine.",
-        "5": "The call is fine."
+        "5": "The call is fine.",
+        "1": "sum_down is defined correctly; check how the recursive path hands its result back."
       },
       "mode": "independent",
       "outcomes": [
@@ -2389,7 +2392,7 @@
       {
         "concept": "Too deep",
         "lua": "stack overflow",
-        "note": "Lua does proper tail calls; Python doesn't, so very deep recursion needs a loop instead.",
+        "note": "Lua supports proper tail calls only for calls written as return f(...); n * fact(n - 1) is not a tail call and also grows the stack in Lua. Python does not optimize tail calls, so very deep recursion needs a loop instead.",
         "python": "RecursionError (about 1000 calls deep by default)"
       },
       {
@@ -2407,7 +2410,6 @@
   },
   "format": "morrowdock-code-gym-foundations-lesson",
   "id": "cg-found-recursion-v1",
-  "nextCourse": "swe-course-v1",
   "nextLesson": null,
   "order": 6,
   "outcomes": [
@@ -2443,7 +2445,7 @@
       "title": "Solve a smaller version"
     },
     {
-      "body": "When fact(3) calls fact(2), fact(3) isn't finished. Its box stays on the call stack, waiting, with its own n = 3. The newest box is always on top and always the one running. When the base case returns, the boxes come off one at a time, newest first, each finishing its own multiplication. Last in, first out: the call stack is a stack (the SWE track's stack lesson, swe-course-stack-v1, uses the same idea on purpose).\n\nFor strings and lists: s[0] is the first item and s[1:] is everything after it.",
+      "body": "When fact(3) calls fact(2), fact(3) isn't finished. Its box stays on the call stack, waiting, with its own n = 3. The newest box is always on top and always the one running. When the base case returns, the boxes come off one at a time, newest first, each finishing its own multiplication. Last in, first out: the call stack is a stack, a structure where the last item added is the first removed.\n\nFor strings and lists: s[0] is the first item and s[1:] is everything after it.",
       "id": "rc-t2",
       "title": "The call stack does the remembering"
     },

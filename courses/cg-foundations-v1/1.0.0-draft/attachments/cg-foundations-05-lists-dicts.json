@@ -149,13 +149,13 @@
       "answer": {
         "choices": [
           {
+            "reaction": "Python lists start at position 0, so pets[1] is the second item.",
+            "text": "cat 3"
+          },
+          {
             "correct": true,
             "reaction": "Right: position 1 is the second item, and there are 3 items.",
             "text": "dog 3"
-          },
-          {
-            "reaction": "That's Lua's t[1]. Python lists start at position 0, so pets[1] is the second item.",
-            "text": "cat 3"
           },
           {
             "reaction": "len counts the items: 3. The last position is 2.",
@@ -207,6 +207,10 @@
           "answer": {
             "choices": [
               {
+                "reaction": "The second word was 'yo', not 'hi'.",
+                "text": "{'hi': 2}"
+              },
+              {
                 "correct": true,
                 "reaction": "Yes: each new word got 1.",
                 "text": "{'hi': 1, 'yo': 1}"
@@ -214,10 +218,6 @@
               {
                 "reaction": "'yo' wasn't a key, so the else block added it too.",
                 "text": "{'hi': 1}"
-              },
-              {
-                "reaction": "The second word was 'yo', not 'hi'.",
-                "text": "{'hi': 2}"
               }
             ],
             "type": "choice"
@@ -235,12 +235,12 @@
                 "text": "{'hi': 2, 'yo': 1}"
               },
               {
-                "reaction": "The third word was 'hi' again; since it's already a key, its count rises.",
-                "text": "{'hi': 1, 'yo': 1}"
-              },
-              {
                 "reaction": "Only the key for this word changes.",
                 "text": "{'hi': 2, 'yo': 2}"
+              },
+              {
+                "reaction": "The third word was 'hi' again; since it's already a key, its count rises.",
+                "text": "{'hi': 1, 'yo': 1}"
               }
             ],
             "type": "choice"
@@ -476,6 +476,12 @@
       ],
       "fixes": [
         {
+          "fixLine": "stock.pear = 2",
+          "output": "",
+          "raises": "AttributeError",
+          "reaction": "Python dict keys use brackets: t[\"pear\"]. Attribute-style access t.pear stops with an AttributeError."
+        },
+        {
           "correct": true,
           "fixLine": "stock[\"pear\"] = stock.get(\"pear\", 0) + 2",
           "output": "{'apple': 3, 'pear': 2}\n",
@@ -485,12 +491,6 @@
           "fixLine": "stock[\"pear\"] = stock[\"apple\"] + 2",
           "output": "{'apple': 3, 'pear': 5}\n",
           "reaction": "That runs, but it gives 5 pears: it starts from the apple count."
-        },
-        {
-          "fixLine": "stock.pear = 2",
-          "output": "",
-          "raises": "AttributeError",
-          "reaction": "Lua lets you write t.pear for t[\"pear\"]; Python dicts don't, so this stops with an AttributeError."
         }
       ],
       "hints": [
@@ -511,7 +511,7 @@
       "outcomes": [
         "ld-o2"
       ],
-      "prompt": "This should add 2 pears to the stock, but it stops with a KeyError. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
+      "prompt": "This should add 2 pears to the stock, but it stops with a KeyError. Select the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "",
         "expected": "{'apple': 3, 'pear': 2}",
@@ -754,13 +754,13 @@
           "answer": {
             "choices": [
               {
+                "reaction": "Passing a list doesn't copy it: scores is another label on mine's list.",
+                "text": "[50]"
+              },
+              {
                 "correct": true,
                 "reaction": "Yes. scores and mine label the same list, so the append is visible through mine.",
                 "text": "[50, 100]"
-              },
-              {
-                "reaction": "Passing a list doesn't copy it: scores is another label on mine's list.",
-                "text": "[50]"
               },
               {
                 "reaction": "append adds to the end; 50 is still there.",
@@ -1086,6 +1086,12 @@
       ],
       "fixes": [
         {
+          "fixLine": "for i in range(0, len(names) + 1):",
+          "output": "Ana\nBo\nCy\n",
+          "raises": "IndexError",
+          "reaction": "Now Ana prints, but i reaches 3, which is past the end."
+        },
+        {
           "correct": true,
           "fixLine": "for i in range(len(names)):",
           "output": "Ana\nBo\nCy\n",
@@ -1095,12 +1101,6 @@
           "fixLine": "for i in range(1, len(names)):",
           "output": "Bo\nCy\n",
           "reaction": "No more IndexError, but it starts at 1 and still skips Ana."
-        },
-        {
-          "fixLine": "for i in range(0, len(names) + 1):",
-          "output": "Ana\nBo\nCy\n",
-          "raises": "IndexError",
-          "reaction": "Now Ana prints, but i reaches 3, which is past the end."
         }
       ],
       "id": "ld-i-fix",
@@ -1146,6 +1146,11 @@
       "comebackFor": "ld-i-fix",
       "fixes": [
         {
+          "fixLine": "print(ages.get(30))",
+          "output": "None\n",
+          "reaction": "No error now, but 30 isn't a key, so .get gives None."
+        },
+        {
           "correct": true,
           "fixLine": "print(ages[\"Ana\"])",
           "output": "30\n",
@@ -1156,11 +1161,6 @@
           "output": "",
           "raises": "KeyError",
           "reaction": "Dicts don't have positions; 0 isn't a key."
-        },
-        {
-          "fixLine": "print(ages.get(30))",
-          "output": "None\n",
-          "reaction": "No error now, but 30 isn't a key, so .get gives None."
         }
       ],
       "id": "ld-i-fix-cb",
@@ -1303,7 +1303,7 @@
         },
         {
           "id": "b",
-          "line": "for v in [3, 6, 2]:"
+          "line": "for v in [4, 6, 2]:"
         },
         {
           "id": "c",
@@ -1348,18 +1348,18 @@
         {
           "exposure": "returns-later",
           "id": "ld-i-explain#help-1",
-          "text": "Think of one job for each, then compare t[1] and t.missing in Lua with Python."
+          "text": "Think of one job for each, then compare lookup by position with lookup by key."
         }
       ],
       "grading": "self-check",
       "id": "ld-i-explain",
       "kind": "explain",
       "mode": "independent",
-      "model": "Use a list when order and position matter (scores in order, names in a line). Use a dict when you look things up by a name (a word's count, a person's age). Two traps from Lua: lists start at 0, so xs[0] is the first item and xs[-1] the last; and reading a missing key stops with a KeyError instead of giving nil, so check with k in d or use d.get(k, default).",
+      "model": "Use a list for an ordered sequence looked up by position; use a dict to look up values by key. List positions start at 0; xs[-1] is the last item. Reading a missing dict key raises KeyError: check with k in d or use d.get(k, default).",
       "outcomes": [
         "ld-o2"
       ],
-      "prompt": "A Lua table does the job of both a list and a dict. Explain how to pick between a Python list and a dict, and the two indexing differences that trip up Lua programmers.\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "prompt": "Explain when to choose a Python list or a dict. Where do list positions start, and how can you read a dict key safely when it might be missing?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "ld-i-explain#k1",
@@ -1367,14 +1367,14 @@
         },
         {
           "id": "ld-i-explain#k2",
-          "idea": "List positions start at 0 (Lua tables used as arrays start at 1)."
+          "idea": "List positions start at 0; -1 is the last item."
         },
         {
           "id": "ld-i-explain#k3",
-          "idea": "A missing key is an error in Python (KeyError), where Lua gives nil; use in or .get."
+          "idea": "Reading a missing key raises KeyError; use in or .get."
         }
       ],
-      "title": "On your own: Lua tables, Python lists and dicts",
+      "title": "On your own: lists and dicts",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1471,12 +1471,12 @@
   "subtitle": "Many values under one name: in order (list) or by key (dict). And two names can share one.",
   "teach": [
     {
-      "body": "xs = [5, 8, 3] is a list. Positions start at 0: xs[0] is 5, xs[2] is 3, and xs[-1] counts from the end (3). len(xs) is 3, so the valid positions are 0 to len(xs) − 1; xs[3] stops with an IndexError. xs.append(4) adds to the end, changing the list in place. for x in xs: visits each item.",
+      "body": "xs = [5, 8, 3] is a list. Positions start at 0: xs[0] is 5, xs[2] is 3, and xs[-1] counts from the end (3). len(xs) is 3, so the valid positions are 0 to len(xs) − 1; xs[3] stops with an IndexError. xs.append(4) adds to the end, changing the list in place. for x in xs: visits each item. sum(xs) adds the numeric items of a list: sum([5, 8, 3]) is 16.",
       "id": "ld-t1",
       "title": "Lists: in order, by position"
     },
     {
-      "body": "ages = {\"Ana\": 30} maps keys to values. ages[\"Ana\"] reads 30; ages[\"Bo\"] = 25 adds or updates a key. Reading a key that isn't there stops with a KeyError, so ask first with \"Bo\" in ages, or read with a default: ages.get(\"Bo\", 0). Counting pattern: d[k] = d.get(k, 0) + 1.\n\nA related Python habit: and / or hand back one of their two values, not always True or False. name or \"guest\" gives name unless it's empty, so it's a quick default; 3 or 0 is 3 and 0 and 5 is 0.",
+      "body": "ages = {\"Ana\": 30} maps keys to values. ages[\"Ana\"] reads 30; ages[\"Bo\"] = 25 adds or updates a key. Reading a key that isn't there stops with a KeyError, so ask first with \"Bo\" in ages, or read with a default: ages.get(\"Bo\", 0). Counting pattern: d[k] = d.get(k, 0) + 1.",
       "id": "ld-t2",
       "title": "Dicts: by key"
     },

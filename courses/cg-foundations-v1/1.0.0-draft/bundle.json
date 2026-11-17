@@ -70,12 +70,12 @@
       "topicID": "cg-found-names-values-v1",
       "prompt": "Make a guess first. It's free. What do these two lines print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nprint(3 + 4)\nprint(\"3\" + \"4\")",
       "choices": [
+        "34\n34",
         "7\n34",
-        "7\n7",
-        "34\n34"
+        "7\n7"
       ],
-      "answer": 0,
-      "explanation": "Yes. Numbers add; strings join, character by character.",
+      "answer": 1,
+      "explanation": "Yes. Numbers add; strings join end to end.",
       "materialID": "cg-found-names-values-v1-material"
     },
     {
@@ -83,11 +83,11 @@
       "topicID": "cg-found-names-values-v1",
       "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\na = 5\nb = a\na = a + 1\nprint(a, b)",
       "choices": [
-        "6 5",
+        "5 5",
         "6 6",
-        "5 5"
+        "6 5"
       ],
-      "answer": 0,
+      "answer": 2,
       "explanation": "Right. b took a's value, 5, when line 2 ran. Line 3 moves only a.",
       "materialID": "cg-found-names-values-v1-material"
     },
@@ -96,11 +96,11 @@
       "topicID": "cg-found-conditionals-v1",
       "prompt": "Guess first; it's free. 50 is bigger than 10 and bigger than 40. What prints?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nn = 50\nif n > 10:\n    print(\"big\")\nelif n > 40:\n    print(\"huge\")",
       "choices": [
-        "big",
         "huge",
+        "big",
         "big\nhuge"
       ],
-      "answer": 0,
+      "answer": 1,
       "explanation": "Yes. Python checks top to bottom and stops at the first True. elif is never even asked.",
       "materialID": "cg-found-conditionals-v1-material"
     },
@@ -109,11 +109,11 @@
       "topicID": "cg-found-conditionals-v1",
       "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nage = 15\nif age >= 13 and age < 20:\n    print(\"teen\")\nelse:\n    print(\"not teen\")",
       "choices": [
-        "teen",
         "not teen",
-        "teen\nnot teen"
+        "teen\nnot teen",
+        "teen"
       ],
-      "answer": 0,
+      "answer": 2,
       "explanation": "Right: 15 >= 13 is True and 15 < 20 is True, so and gives True.",
       "materialID": "cg-found-conditionals-v1-material"
     },
@@ -123,8 +123,8 @@
       "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nfor i in range(3):\n    print(i)",
       "choices": [
         "0\n1\n2",
-        "1\n2\n3",
-        "0\n1\n2\n3"
+        "0\n1\n2\n3",
+        "1\n2\n3"
       ],
       "answer": 0,
       "explanation": "Yes. range(3) starts at 0 and stops before 3: three values.",
@@ -136,8 +136,8 @@
       "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\nn = 3\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint(\"go\")",
       "choices": [
         "3\n2\n1\ngo",
-        "3\n2\n1\n0\ngo",
-        "2\n1\n0\ngo"
+        "2\n1\n0\ngo",
+        "3\n2\n1\n0\ngo"
       ],
       "answer": 0,
       "explanation": "Right. When n reaches 0, the while checks 0 > 0, which is False, so the body doesn't run again.",
@@ -148,11 +148,11 @@
       "topicID": "cg-found-functions-v1",
       "prompt": "Guess first; it's free. What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\ndef shout(w):\n    print(w + \"!\")\nr = shout(\"hey\")\nprint(r)",
       "choices": [
-        "hey!\nNone",
+        "hey!",
         "hey!\nhey!",
-        "hey!"
+        "hey!\nNone"
       ],
-      "answer": 0,
+      "answer": 2,
       "explanation": "Yes. shout prints, but returns nothing, so r gets None.",
       "materialID": "cg-found-functions-v1-material"
     },
@@ -162,8 +162,8 @@
       "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\ndef area(w, h):\n    return w * h\nprint(area(3, 4) + area(1, 2))",
       "choices": [
         "14",
-        "12",
-        "12\n2"
+        "12\n2",
+        "12"
       ],
       "answer": 0,
       "explanation": "Right: each call is replaced by its return value, 12 + 2.",
@@ -187,11 +187,11 @@
       "topicID": "cg-found-lists-dicts-v1",
       "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\npets = [\"cat\", \"dog\", \"eel\"]\nprint(pets[1], len(pets))",
       "choices": [
-        "dog 3",
         "cat 3",
+        "dog 3",
         "dog 2"
       ],
-      "answer": 0,
+      "answer": 1,
       "explanation": "Right: position 1 is the second item, and there are 3 items.",
       "materialID": "cg-found-lists-dicts-v1-material"
     },
@@ -200,11 +200,11 @@
       "topicID": "cg-found-recursion-v1",
       "prompt": "Guess first; it's free. What does show(3) print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\ndef show(n):\n    if n == 0:\n        return\n    print(n)\n    show(n - 1)\nshow(3)",
       "choices": [
-        "3\n2\n1",
+        "3\n2\n1\n0",
         "1\n2\n3",
-        "3\n2\n1\n0"
+        "3\n2\n1"
       ],
-      "answer": 0,
+      "answer": 2,
       "explanation": "Yes. Each call prints its own n first, then calls with one less. n = 0 is the base case and prints nothing.",
       "materialID": "cg-found-recursion-v1-material"
     },
@@ -213,11 +213,11 @@
       "topicID": "cg-found-recursion-v1",
       "prompt": "What does this print?\n\nInput alternatives: use touch, pointer, keyboard focus and Enter, or remote focus and select for the supplied choices or recorded frame controls. In a text-only reader, identify your choice or frame before reading its recorded feedback.\n\ndef total(n):\n    if n == 0:\n        return 0\n    return n + total(n - 1)\nprint(total(4))",
       "choices": [
+        "24",
         "10",
-        "4",
-        "24"
+        "4"
       ],
-      "answer": 0,
+      "answer": 1,
       "explanation": "Right: 4 + 3 + 2 + 1 + 0.",
       "materialID": "cg-found-recursion-v1-material"
     }

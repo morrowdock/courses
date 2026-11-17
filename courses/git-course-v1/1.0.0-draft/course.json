@@ -8,7 +8,7 @@
   "level": "beginner",
   "prerequisites": [
     "Know what a file and a folder are, and that a file's contents can change.",
-    "Type a command in the Terminal Lab and use echo text > file, cat, ls and rm (the Terminal Lab missions teach these)."
+    "Can enter shell commands: create a file with echo text > file, read it with cat, and list files with ls. Understand that rm deletes a file."
   ],
   "creators": [
     {
@@ -19,8 +19,8 @@
   "language": "en",
   "bundle": {
     "path": "bundle.json",
-    "sha256": "8a7e79fe92fe292ee0afb9eb92363b84588a4169a2f877f4a09b672b4bc7c558",
-    "size": 11552
+    "sha256": "ecc587fec09e81d06170ef5866d9803b4d0866f0babfec0ba46886b29d71a25c",
+    "size": 11630
   },
   "sources": [
     {
@@ -38,7 +38,7 @@
       "origin": "generated",
       "rightsHolder": "Collin Craig",
       "licence": "CC-BY-SA-4.0",
-      "changes": "Structured lessons, activity wrappers and input declarations; corrected recovery feedback: merging an ancestor is a no-op.",
+      "changes": "Structured lessons, activity wrappers and input declarations; corrected recovery feedback: merging an ancestor is a no-op. Public draft corrections dated 2026-11-17 address content-review findings, safety, assessment keys and readable format-v1 exports; no approval or status change.",
       "permission": "Prepared for Collin Craig under the owner-authorized course publication and coordinator revision instructions; approval and factual review pending."
     }
   ],
@@ -1078,7 +1078,7 @@
       "id": "git-course-snapshots-v1-g1",
       "kind": "explanation",
       "prompt": "The harbor log has two files and no repository. Make one commit named exactly “Start the harbor log” that holds both files, and leave nothing unstaged or untracked.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 06:00 tide high > tides.txt\necho Berth 4 free > berths.txt",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Start the harbor log\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Start the harbor log.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1090,7 +1090,7 @@
       "id": "git-course-snapshots-v1-g2",
       "kind": "explanation",
       "prompt": "You fixed the berth number in berths.txt (finished) and started a half-written note in tides.txt (not finished). Commit only the berth fix as “Fix berth number”. Keep your tides.txt edit in the working tree, uncommitted and unstaged.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 06:00 tide high > tides.txt\necho Berth 4 free > berths.txt\ngit init\ngit add .\ngit commit -m \"Start the harbor log\"\necho Berth 5 free > berths.txt\necho 06:00 tide high, check > tides.txt",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Fix berth number\", \"Start the harbor log\"]}, {\"headMessage\": \"Fix berth number\"}, {\"committed\": [\"/home/berths.txt\", \"Berth 5 free\\n\"]}, {\"committed\": [\"/home/tides.txt\", \"06:00 tide high\\n\"]}, {\"file\": [\"/home/tides.txt\", \"06:00 tide high, check\\n\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Fix berth number → Start the harbor log.\n- The current commit is named “Fix berth number”.\n- Last committed version of berths.txt: 'Berth 5 free' (ending with a newline).\n- Last committed version of tides.txt: '06:00 tide high' (ending with a newline).\n- Working file tides.txt: '06:00 tide high, check' (ending with a newline).\n- Staged version of tides.txt: '06:00 tide high' (ending with a newline).\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1101,8 +1101,8 @@
     {
       "id": "git-course-snapshots-v1-debug",
       "kind": "explanation",
-      "prompt": "A teammate fixed a typo and ran the command below. Git refused. Read the message, explain why, and fix it with the fewest commands.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho teh crane > crane.txt\ngit init\ngit add .\ngit commit -m \"Add crane\"\necho the crane > crane.txt\n\nBroken commands:\ngit commit -m \"Fix typo\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"headMessage\": \"Fix typo\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "prompt": "A teammate fixed a typo and ran the command below. Git refused. Read the message, explain why, and fix it with the fewest commands.\n\nReal Git message: no changes added to commit (use \"git add\" and/or \"git commit -a\").\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho teh crane > crane.txt\ngit init\ngit add .\ngit commit -m \"Add crane\"\necho the crane > crane.txt\n\nBroken commands:\ngit commit -m \"Fix typo\"",
+      "explanation": "Self-check your proposed final state:\n- The current commit is named “Fix typo”.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1114,7 +1114,7 @@
       "id": "git-course-snapshots-v1-o1",
       "kind": "explanation",
       "prompt": "The repository already has one commit. You added a new file crew.txt and edited cargo.txt. scratch.txt is your private scratchpad. Make two commits in this order: first “Add crew list” (only crew.txt), then “Update cargo weight” (only cargo.txt). scratch.txt must stay untracked.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 12 t steel > cargo.txt\ngit init\ngit add .\ngit commit -m \"Log cargo\"\necho Ada, Kofi > crew.txt\necho 14 t steel > cargo.txt\necho maybe 15? > scratch.txt",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Update cargo weight\", \"Add crew list\", \"Log cargo\"]}, {\"untracked\": \"/home/scratch.txt\"}, {\"trackedClean\": true}]\nIn two sentences: why did scratch.txt stay out of both commits, and what single command would have let it in?",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Update cargo weight → Add crew list → Log cargo.\n- scratch.txt is untracked.\n- All tracked files match the staging area and last commit; untracked files may remain.\nIn two sentences: why did scratch.txt stay out of both commits, and what single command would have let it in?",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1126,7 +1126,7 @@
       "id": "git-course-snapshots-v1-o1-comeback-v2",
       "kind": "explanation",
       "prompt": "Fresh variant. route.txt is new and fuel.txt changed; together they are one change, so commit both as a single commit “Plan the trip”. draft.txt is tracked and has an unfinished edit: keep that edit in your working tree, out of the commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho fuel 60% > fuel.txt\necho dear crew > draft.txt\ngit init\ngit add .\ngit commit -m \"Check fuel\"\necho north then east > route.txt\necho fuel 95% > fuel.txt\necho dear crew, we leave at > draft.txt",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Plan the trip\", \"Check fuel\"]}, {\"committed\": [\"/home/route.txt\", \"north then east\\n\"]}, {\"committed\": [\"/home/fuel.txt\", \"fuel 95%\\n\"]}, {\"committed\": [\"/home/draft.txt\", \"dear crew\\n\"]}, {\"file\": [\"/home/draft.txt\", \"dear crew, we leave at\\n\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Plan the trip → Check fuel.\n- Last committed version of route.txt: 'north then east' (ending with a newline).\n- Last committed version of fuel.txt: 'fuel 95%' (ending with a newline).\n- Last committed version of draft.txt: 'dear crew' (ending with a newline).\n- Working file draft.txt: 'dear crew, we leave at' (ending with a newline).\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1138,7 +1138,7 @@
       "id": "git-course-branches-v1-g1",
       "kind": "explanation",
       "prompt": "Start a branch named night-shift, commit night.txt (any text) on it as “Add night roster”, then return to main. main must still point at “Start roster”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho day: Ada > roster.txt\ngit init\ngit add .\ngit commit -m \"Start roster\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"night-shift\", \"Add night roster\"]}, {\"tipMessage\": [\"main\", \"Start roster\"]}, {\"branch\": \"main\"}, {\"absent\": \"/home/night.txt\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- night-shift points at the commit named “Add night roster”.\n- main points at the commit named “Start roster”.\n- Finish on branch main.\n- night.txt is absent from the working folder.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1150,7 +1150,7 @@
       "id": "git-course-branches-v1-g2",
       "kind": "explanation",
       "prompt": "A teammate says hull.txt was lost. It was committed on the repairs branch. Get hull.txt back into the working tree without making any new commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho dock > yard.txt\ngit init\ngit add .\ngit commit -m \"Open the yard\"\ngit switch -c repairs\necho patch port side > hull.txt\ngit add .\ngit commit -m \"Patch the hull\"\ngit switch main",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"branch\": \"repairs\"}, {\"file\": [\"/home/hull.txt\", \"patch port side\\n\"]}, {\"log\": [\"Patch the hull\", \"Open the yard\"]}, {\"tipMessage\": [\"main\", \"Open the yard\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- Finish on branch repairs.\n- Working file hull.txt: 'patch port side' (ending with a newline).\n- History, newest first: Patch the hull → Open the yard.\n- main points at the commit named “Open the yard”.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1161,8 +1161,8 @@
     {
       "id": "git-course-branches-v1-debug",
       "kind": "explanation",
-      "prompt": "You edited guide.txt on main and tried to move to docs. The lab refused. Keep the edit on main as “Clarify the guide” and then get onto docs.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho read me > guide.txt\ngit init\ngit add .\ngit commit -m \"Add guide\"\ngit branch docs\necho read me first > guide.txt\n\nBroken commands:\ngit switch docs",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"branch\": \"docs\"}, {\"tipMessage\": [\"main\", \"Clarify the guide\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "prompt": "You edited guide.txt on main and tried to move to docs. Git refused because docs holds a different guide.txt. Keep the edit on main as “Clarify the guide” and then get onto docs.\n\nReal Git message: error: Your local changes to the following files would be overwritten by checkout: guide.txt. Please commit your changes or stash them before you switch branches. Aborting.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho read me > guide.txt\ngit init\ngit add .\ngit commit -m \"Add guide\"\ngit switch -c docs\necho documentation draft > guide.txt\ngit commit -am \"Draft documentation\"\ngit switch main\necho read me first > guide.txt\n\nBroken commands:\ngit switch docs",
+      "explanation": "Self-check your proposed final state:\n- Finish on branch docs.\n- main points at the commit named “Clarify the guide”.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1174,7 +1174,7 @@
       "id": "git-course-branches-v1-o1",
       "kind": "explanation",
       "prompt": "From main, make two branches that each start at “Survey the bay”: east (commit east.txt as “Chart east”) and west (commit west.txt as “Chart west”). west must not contain east's commit. Finish on main with main unchanged.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho bay > survey.txt\ngit init\ngit add .\ngit commit -m \"Survey the bay\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"east\", \"Chart east\"]}, {\"tipMessage\": [\"west\", \"Chart west\"]}, {\"notIn\": [\"west\", \"Chart east\"]}, {\"notIn\": [\"east\", \"Chart west\"]}, {\"tipMessage\": [\"main\", \"Survey the bay\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nDraw (or describe) the commit graph you made. Which commit is the parent of “Chart west”, and which command decided that?",
+      "explanation": "Self-check your proposed final state:\n- east points at the commit named “Chart east”.\n- west points at the commit named “Chart west”.\n- west history does not contain “Chart east”.\n- east history does not contain “Chart west”.\n- main points at the commit named “Survey the bay”.\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nDraw (or describe) the commit graph you made. Which commit is the parent of “Chart west”, and which command decided that?",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1186,7 +1186,7 @@
       "id": "git-course-branches-v1-o1-comeback-v2",
       "kind": "explanation",
       "prompt": "Fresh variant. roses needs the soil work from herbs. Make herbs from main (commit herbs.txt as “Plant herbs”), then make roses so that it starts from herbs' commit (commit roses.txt as “Plant roses”). Finish on main with main unchanged.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho soil > garden.txt\ngit init\ngit add .\ngit commit -m \"Plant the garden\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"herbs\", \"Plant herbs\"]}, {\"tipMessage\": [\"roses\", \"Plant roses\"]}, {\"parentsOf\": [\"roses\", \"Plant roses\", [\"Plant herbs\"]]}, {\"notIn\": [\"herbs\", \"Plant roses\"]}, {\"tipMessage\": [\"main\", \"Plant the garden\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- herbs points at the commit named “Plant herbs”.\n- roses points at the commit named “Plant roses”.\n- On roses, “Plant roses” has these parent commit(s): Plant herbs.\n- herbs history does not contain “Plant roses”.\n- main points at the commit named “Plant the garden”.\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1198,7 +1198,7 @@
       "id": "git-course-merge-v1-g1",
       "kind": "explanation",
       "prompt": "The lanterns branch is finished and main hasn't changed since it started. Bring it into main. main's history should stay a straight line.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho dark > street.txt\ngit init\ngit add .\ngit commit -m \"Map the street\"\ngit switch -c lanterns\necho lit > street.txt\ngit add .\ngit commit -m \"Light the lanterns\"\ngit switch main",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipMessage\": [\"main\", \"Light the lanterns\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"file\": [\"/home/street.txt\", \"lit\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- main points at the commit named “Light the lanterns”.\n- main has a straight-line history without merge commits.\n- Finish on branch main.\n- Working file street.txt: 'lit' (ending with a newline).\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1210,7 +1210,7 @@
       "id": "git-course-merge-v1-g2",
       "kind": "explanation",
       "prompt": "main added a timetable while the fares branch changed fares.txt. Bring fares into main so main holds both, with a merge commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho 2 coins > fares.txt\ngit init\ngit add .\ngit commit -m \"Set fares\"\ngit switch -c fares\necho 3 coins > fares.txt\ngit add .\ngit commit -m \"Raise fares\"\ngit switch main\necho every 10 min > timetable.txt\ngit add .\ngit commit -m \"Add timetable\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"mergeTip\": \"main\"}, {\"in\": [\"main\", \"Raise fares\"]}, {\"in\": [\"main\", \"Add timetable\"]}, {\"file\": [\"/home/fares.txt\", \"3 coins\\n\"]}, {\"file\": [\"/home/timetable.txt\", \"every 10 min\\n\"]}, {\"tipMessage\": [\"fares\", \"Raise fares\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- main ends at a merge commit with two parents.\n- main history contains “Raise fares”.\n- main history contains “Add timetable”.\n- Working file fares.txt: '3 coins' (ending with a newline).\n- Working file timetable.txt: 'every 10 min' (ending with a newline).\n- fares points at the commit named “Raise fares”.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1221,8 +1221,8 @@
     {
       "id": "git-course-merge-v1-debug",
       "kind": "explanation",
-      "prompt": "Merging sign into main refuses with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. Resolve it on the sign branch, then merge.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho grey > colour.txt\ngit init\ngit add .\ngit commit -m \"Paint grey\"\ngit switch -c sign\necho green > colour.txt\necho large > size.txt\ngit add .\ngit commit -m \"New sign\"\ngit switch main\necho blue > colour.txt\ngit add .\ngit commit -m \"Paint blue\"\n\nBroken commands:\ngit merge sign",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"mergeTip\": \"main\"}, {\"file\": [\"/home/colour.txt\", \"blue\\n\"]}, {\"file\": [\"/home/size.txt\", \"large\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "prompt": "Merging sign into main stops with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. In real Git the file now has conflict markers and the merge is half-finished. Run `git merge --abort` first: you cannot switch branches while merging. (The lab already left the files unchanged.) Then resolve the agreed text on the sign branch and merge again.\n\nReal Git output: CONFLICT (content): Merge conflict in colour.txt. Automatic merge failed; fix conflicts and then commit the result. The file contains conflict markers and git status reports UU colour.txt. Abort the merge before switching branches.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho grey > colour.txt\ngit init\ngit add .\ngit commit -m \"Paint grey\"\ngit switch -c sign\necho green > colour.txt\necho large > size.txt\ngit add .\ngit commit -m \"New sign\"\ngit switch main\necho blue > colour.txt\ngit add .\ngit commit -m \"Paint blue\"\n\nBroken commands:\ngit merge sign",
+      "explanation": "Self-check your proposed final state:\n- main ends at a merge commit with two parents.\n- Working file colour.txt: 'blue' (ending with a newline).\n- Working file size.txt: 'large' (ending with a newline).\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1234,7 +1234,7 @@
       "id": "git-course-merge-v1-o1",
       "kind": "explanation",
       "prompt": "main must end with both features. ramp (adds ramp.txt) can merge directly. paint changed gate.txt to red, but main has since changed it to white, and the decision is white. Bring ramp and paint into main, keep gate.txt white, and keep paint's lamp.txt.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho wood > gate.txt\ngit init\ngit add .\ngit commit -m \"Build gate\"\ngit switch -c ramp\necho concrete > ramp.txt\ngit add .\ngit commit -m \"Pour ramp\"\ngit switch main\ngit switch -c paint\necho red > gate.txt\necho amber > lamp.txt\ngit add .\ngit commit -m \"Paint and light\"\ngit switch main\necho white > gate.txt\ngit add .\ngit commit -m \"Paint gate white\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"in\": [\"main\", \"Pour ramp\"]}, {\"in\": [\"main\", \"Paint and light\"]}, {\"file\": [\"/home/gate.txt\", \"white\\n\"]}, {\"file\": [\"/home/lamp.txt\", \"amber\\n\"]}, {\"file\": [\"/home/ramp.txt\", \"concrete\\n\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nramp merged without a conflict. Was that merge a fast-forward? Use the graph (where main pointed when you merged) to say why or why not.",
+      "explanation": "Self-check your proposed final state:\n- main history contains “Pour ramp”.\n- main history contains “Paint and light”.\n- Working file gate.txt: 'white' (ending with a newline).\n- Working file lamp.txt: 'amber' (ending with a newline).\n- Working file ramp.txt: 'concrete' (ending with a newline).\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nramp merged without a conflict. Was that merge a fast-forward? Use the graph (where main pointed when you merged) to say why or why not.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1246,7 +1246,7 @@
       "id": "git-course-merge-v1-o1-comeback-v2",
       "kind": "explanation",
       "prompt": "Fresh variant. main hasn't moved since benches and signs started. Both branches changed paths.txt (benches to brick, signs to gravel), and the decision is gravel. benches also adds benches.txt; signs also adds arrow.txt. Land benches first, then signs, recording the decision on main. main must end with gravel, both new files, and a merge commit for signs.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho dirt > paths.txt\ngit init\ngit add .\ngit commit -m \"Lay paths\"\ngit switch -c benches\necho oak > benches.txt\necho brick > paths.txt\ngit add .\ngit commit -m \"Benches and brick\"\ngit switch main\ngit switch -c signs\necho gravel > paths.txt\necho left > arrow.txt\ngit add .\ngit commit -m \"Signs and gravel\"\ngit switch main",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"in\": [\"main\", \"Benches and brick\"]}, {\"in\": [\"main\", \"Signs and gravel\"]}, {\"mergeTip\": \"main\"}, {\"file\": [\"/home/paths.txt\", \"gravel\\n\"]}, {\"file\": [\"/home/arrow.txt\", \"left\\n\"]}, {\"file\": [\"/home/benches.txt\", \"oak\\n\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- main history contains “Benches and brick”.\n- main history contains “Signs and gravel”.\n- main ends at a merge commit with two parents.\n- Working file paths.txt: 'gravel' (ending with a newline).\n- Working file arrow.txt: 'left' (ending with a newline).\n- Working file benches.txt: 'oak' (ending with a newline).\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1258,7 +1258,7 @@
       "id": "git-course-rebase-v1-g1",
       "kind": "explanation",
       "prompt": "main has moved on since you started signal. Rebase signal onto main, then bring it into main so main's history is a straight line ending in “Add signal”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho track > rail.txt\ngit init\ngit add .\ngit commit -m \"Lay rail\"\ngit switch -c signal\necho green > signal.txt\ngit add .\ngit commit -m \"Add signal\"\ngit switch main\necho brick > station.txt\ngit add .\ngit commit -m \"Build station\"\ngit switch signal",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"linear\": \"main\"}, {\"tipMessage\": [\"main\", \"Add signal\"]}, {\"in\": [\"main\", \"Build station\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- main has a straight-line history without merge commits.\n- main points at the commit named “Add signal”.\n- main history contains “Build station”.\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1270,7 +1270,7 @@
       "id": "git-course-rebase-v1-g2",
       "kind": "explanation",
       "prompt": "kiosk has two commits (“Frame kiosk” then “Wire kiosk”). Rebase kiosk onto main. kiosk's history must read Wire kiosk → Frame kiosk → Paint hall → Open hall.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho empty > hall.txt\ngit init\ngit add .\ngit commit -m \"Open hall\"\ngit switch -c kiosk\necho pine > kiosk.txt\ngit add .\ngit commit -m \"Frame kiosk\"\necho cables > wires.txt\ngit add .\ngit commit -m \"Wire kiosk\"\ngit switch main\necho cream > paint.txt\ngit add .\ngit commit -m \"Paint hall\"\ngit switch kiosk",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"branch\": \"kiosk\"}, {\"log\": [\"Wire kiosk\", \"Frame kiosk\", \"Paint hall\", \"Open hall\"]}, {\"tipMessage\": [\"main\", \"Paint hall\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- Finish on branch kiosk.\n- History, newest first: Wire kiosk → Frame kiosk → Paint hall → Open hall.\n- main points at the commit named “Paint hall”.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1281,8 +1281,8 @@
     {
       "id": "git-course-rebase-v1-debug",
       "kind": "explanation",
-      "prompt": "You tried to rebase menu onto main with an unsaved edit to menu.txt. It refused. The edit belongs to the feature: save it as “Add dessert”, then rebase.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho soup > menu.txt\ngit init\ngit add .\ngit commit -m \"Start menu\"\ngit switch -c menu\necho soup, salad > menu.txt\ngit add .\ngit commit -m \"Add salad\"\ngit switch main\necho 9-5 > hours.txt\ngit add .\ngit commit -m \"Set hours\"\ngit switch menu\necho soup, salad, pie > menu.txt\n\nBroken commands:\ngit rebase main",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add dessert\", \"Add salad\", \"Set hours\", \"Start menu\"]}, {\"file\": [\"/home/menu.txt\", \"soup, salad, pie\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "prompt": "You tried to rebase menu onto main with an uncommitted edit to menu.txt. It refused. The edit belongs to the feature: save it as “Add dessert”, then rebase.\n\nReal Git message: error: cannot rebase: You have unstaged changes. error: Please commit or stash them.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho soup > menu.txt\ngit init\ngit add .\ngit commit -m \"Start menu\"\ngit switch -c menu\necho soup, salad > menu.txt\ngit add .\ngit commit -m \"Add salad\"\ngit switch main\necho 9-5 > hours.txt\ngit add .\ngit commit -m \"Set hours\"\ngit switch menu\necho soup, salad, pie > menu.txt\n\nBroken commands:\ngit rebase main",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Add dessert → Add salad → Set hours → Start menu.\n- Working file menu.txt: 'soup, salad, pie' (ending with a newline).\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1294,7 +1294,7 @@
       "id": "git-course-rebase-v1-o1",
       "kind": "explanation",
       "prompt": "audio and video both started from “Set up studio”, and main has since gained “Soundproof”. Make main a straight line reading video → audio → Soundproof → Set up studio (newest first): land audio first, then video.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho room > studio.txt\ngit init\ngit add .\ngit commit -m \"Set up studio\"\ngit switch -c audio\necho mic > audio.txt\ngit add .\ngit commit -m \"Add audio\"\ngit switch main\ngit switch -c video\necho camera > video.txt\ngit add .\ngit commit -m \"Add video\"\ngit switch main\necho foam > walls.txt\ngit add .\ngit commit -m \"Soundproof\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add video\", \"Add audio\", \"Soundproof\", \"Set up studio\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"clean\": true}]\nYour history is linear. Name one thing a reader of this history can no longer see that a merge-based history would have shown.",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Add video → Add audio → Soundproof → Set up studio.\n- main has a straight-line history without merge commits.\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nYour history is linear. Name one thing a reader of this history can no longer see that a merge-based history would have shown.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1306,7 +1306,7 @@
       "id": "git-course-rebase-v1-o1-comeback-v2",
       "kind": "explanation",
       "prompt": "Fresh variant. tour has three commits (Draft route, Add stops, Add times) and main has gained two (Hire guide, Print maps) since tour started. Make main a straight line ending Add times → Add stops → Draft route → Print maps → Hire guide → Open museum.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho doors > museum.txt\ngit init\ngit add .\ngit commit -m \"Open museum\"\ngit switch -c tour\necho hall A > route.txt\ngit add .\ngit commit -m \"Draft route\"\necho fossils > stops.txt\ngit add .\ngit commit -m \"Add stops\"\necho 10am > times.txt\ngit add .\ngit commit -m \"Add times\"\ngit switch main\necho Ada > guide.txt\ngit add .\ngit commit -m \"Hire guide\"\necho floor plan > maps.txt\ngit add .\ngit commit -m \"Print maps\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add times\", \"Add stops\", \"Draft route\", \"Print maps\", \"Hire guide\", \"Open museum\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Add times → Add stops → Draft route → Print maps → Hire guide → Open museum.\n- main has a straight-line history without merge commits.\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1318,7 +1318,7 @@
       "id": "git-course-reset-v1-g2",
       "kind": "explanation",
       "prompt": "“Add chapter title” and “Add chapter body” should be one commit called “Add chapter one”, sitting on top of “Start book”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho cover > book.txt\ngit init\ngit add .\ngit commit -m \"Start book\"\necho Chapter One > title.txt\ngit add .\ngit commit -m \"Add chapter title\"\necho It began at the dock. > body.txt\ngit add .\ngit commit -m \"Add chapter body\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Add chapter one\", \"Start book\"]}, {\"committed\": [\"/home/title.txt\", \"Chapter One\\n\"]}, {\"committed\": [\"/home/body.txt\", \"It began at the dock.\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Add chapter one → Start book.\n- Last committed version of title.txt: 'Chapter One' (ending with a newline).\n- Last committed version of body.txt: 'It began at the dock.' (ending with a newline).\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1329,8 +1329,8 @@
     {
       "id": "git-course-reset-v1-debug",
       "kind": "explanation",
-      "prompt": "A teammate wanted to throw away a bad last commit completely and ran `git reset --soft HEAD~1`. The bad text is still in their file. Undo the bad change properly, leaving main at “Good config” with the good file.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho good > config.txt\ngit init\ngit add .\ngit commit -m \"Good config\"\necho bad > config.txt\ngit add .\ngit commit -m \"Bad config\"\n\nBroken commands:\ngit reset --soft HEAD~1",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"file\": [\"/home/config.txt\", \"good\\n\"]}, {\"tipMessage\": [\"main\", \"Good config\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "prompt": "A teammate wanted to throw away a bad last commit completely and ran `git reset --soft HEAD~1`. The bad text is still in their file. Undo the bad change properly, leaving main at “Good config” with the good file.\n\nReal Git observation: --soft succeeds with no output. git status shows config.txt staged with the bad text; the working file still says bad.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho good > config.txt\ngit init\ngit add .\ngit commit -m \"Good config\"\necho bad > config.txt\ngit add .\ngit commit -m \"Bad config\"\n\nBroken commands:\ngit reset --soft HEAD~1",
+      "explanation": "Self-check your proposed final state:\n- Working file config.txt: 'good' (ending with a newline).\n- main points at the commit named “Good config”.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1342,7 +1342,7 @@
       "id": "git-course-reset-v1-o1",
       "kind": "explanation",
       "prompt": "Your last commit, “Lights and doors”, mixed two unrelated changes. Replace it with two commits: “Fix lights” (lights.txt only), then “Fix doors” (doors.txt only), on top of “Open garage”.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho off > lights.txt\necho stuck > doors.txt\ngit init\ngit add .\ngit commit -m \"Open garage\"\necho on > lights.txt\necho sliding > doors.txt\ngit add .\ngit commit -m \"Lights and doors\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Fix doors\", \"Fix lights\", \"Open garage\"]}, {\"committed\": [\"/home/lights.txt\", \"on\\n\"]}, {\"committed\": [\"/home/doors.txt\", \"sliding\\n\"]}, {\"clean\": true}]\nFill the table for the reset you used: did the branch, the staging area and the files each change?",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Fix doors → Fix lights → Open garage.\n- Last committed version of lights.txt: 'on' (ending with a newline).\n- Last committed version of doors.txt: 'sliding' (ending with a newline).\n- No staged changes, unstaged changes or untracked files remain.\nFill the table for the reset you used: did the branch, the staging area and the files each change?",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1354,7 +1354,7 @@
       "id": "git-course-reset-v1-o1-comeback-v2",
       "kind": "explanation",
       "prompt": "Fresh variant. Your last commit, “Sails and rudder”, included a rudder change that isn't finished. Replace it with one commit “Raise sails” (sails.txt only) on top of “Launch boat”, and keep the rudder change in your working tree, uncommitted.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho furled > sails.txt\necho loose > rudder.txt\ngit init\ngit add .\ngit commit -m \"Launch boat\"\necho raised > sails.txt\necho tight > rudder.txt\ngit add .\ngit commit -m \"Sails and rudder\"",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"log\": [\"Raise sails\", \"Launch boat\"]}, {\"committed\": [\"/home/sails.txt\", \"raised\\n\"]}, {\"committed\": [\"/home/rudder.txt\", \"loose\\n\"]}, {\"file\": [\"/home/rudder.txt\", \"tight\\n\"]}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- History, newest first: Raise sails → Launch boat.\n- Last committed version of sails.txt: 'raised' (ending with a newline).\n- Last committed version of rudder.txt: 'loose' (ending with a newline).\n- Working file rudder.txt: 'tight' (ending with a newline).\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1366,7 +1366,7 @@
       "id": "git-course-recovery-v1-g1",
       "kind": "explanation",
       "prompt": "You meant to unstage something but ran `git reset --hard HEAD~1`, and “Add sails” vanished. Bring main back to that exact commit. Retyping the file doesn't count: the original commit must be restored.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho keel > hull.txt\ngit init\ngit add .\ngit commit -m \"Build hull\"\necho pine > mast.txt\ngit add .\ngit commit -m \"Raise mast\"\necho canvas > sails.txt\ngit add .\ngit commit -m \"Add sails\"\ngit reset --hard HEAD~1",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"main\", \"c3\"]}, {\"file\": [\"/home/sails.txt\", \"canvas\\n\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- main points at the original commit c3.\n- Working file sails.txt: 'canvas' (ending with a newline).\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1378,7 +1378,7 @@
       "id": "git-course-recovery-v1-g2",
       "kind": "explanation",
       "prompt": "You rebased crane onto main but the team wants crane exactly as it was. Put crane back on its original pre-rebase commit.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho quay > quay.txt\ngit init\ngit add .\ngit commit -m \"Build quay\"\ngit switch -c crane\necho hook > crane.txt\ngit add .\ngit commit -m \"Install crane\"\ngit switch main\necho rope > bollard.txt\ngit add .\ngit commit -m \"Add bollard\"\ngit switch crane\ngit rebase main",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"crane\", \"c2\"]}, {\"branch\": \"crane\"}, {\"absent\": \"/home/bollard.txt\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- crane points at the original commit c2.\n- Finish on branch crane.\n- bollard.txt is absent from the working folder.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1389,8 +1389,8 @@
     {
       "id": "git-course-recovery-v1-debug",
       "kind": "explanation",
-      "prompt": "Goal: keep main where it is (at “Raise mast”) and save the lost “Add sails” commit on a branch called rescue. Your teammate's command recovered the commit but moved main. Do it without moving main.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho keel > hull.txt\ngit init\ngit add .\ngit commit -m \"Build hull\"\necho pine > mast.txt\ngit add .\ngit commit -m \"Raise mast\"\necho canvas > sails.txt\ngit add .\ngit commit -m \"Add sails\"\ngit reset --hard HEAD~1\n\nBroken commands:\ngit reset --hard c3",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"rescue\", \"c3\"]}, {\"tipIs\": [\"main\", \"c2\"]}, {\"branch\": \"main\"}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "prompt": "Goal: keep main where it is (at “Raise mast”) and save the lost “Add sails” commit on a branch called rescue. Your teammate's command recovered the commit but moved main. Do it without moving main.\n\nReal Git observation: HEAD is now at <Add sails hash> Add sails. git status says On branch main; main moved to Add sails instead of staying at Raise mast.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho keel > hull.txt\ngit init\ngit add .\ngit commit -m \"Build hull\"\necho pine > mast.txt\ngit add .\ngit commit -m \"Raise mast\"\necho canvas > sails.txt\ngit add .\ngit commit -m \"Add sails\"\ngit reset --hard HEAD~1\n\nBroken commands:\ngit reset --hard c3",
+      "explanation": "Self-check your proposed final state:\n- rescue points at the original commit c3.\n- main points at the original commit c2.\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1402,7 +1402,7 @@
       "id": "git-course-recovery-v1-o1",
       "kind": "explanation",
       "prompt": "You rebased wing onto main (its copies are the two newest commits), then, while still on wing, mistakenly ran `git reset --hard c4`. Restore wing to its rebased tip, then land it on main with a straight-line history. Use the commit graph to find ids; unreachable commits are dimmed.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho tarmac > runway.txt\ngit init\ngit add .\ngit commit -m \"Pave runway\"\ngit switch -c wing\necho left > left.txt\ngit add .\ngit commit -m \"Left wing\"\necho right > right.txt\ngit add .\ngit commit -m \"Right wing\"\ngit switch main\necho red > lights.txt\ngit add .\ngit commit -m \"Runway lights\"\ngit switch wing\ngit rebase main\ngit reset --hard c4",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"wing\", \"c6\"]}, {\"tipIs\": [\"main\", \"c6\"]}, {\"linear\": \"main\"}, {\"branch\": \"main\"}, {\"clean\": true}]\nWhich commits are still unreachable at the end, and is that a problem? What would real Git eventually do with them?",
+      "explanation": "Self-check your proposed final state:\n- wing points at the original commit c6.\n- main points at the original commit c6.\n- main has a straight-line history without merge commits.\n- Finish on branch main.\n- No staged changes, unstaged changes or untracked files remain.\nWhich commits are still unreachable at the end, and is that a problem? What would real Git eventually do with them?",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1414,7 +1414,7 @@
       "id": "git-course-recovery-v1-o1-comeback-v2",
       "kind": "explanation",
       "prompt": "Fresh variant. You rebased cabin onto main and want to keep the rebase, but also keep the original, pre-rebase work on a branch named before-rebase. cabin must stay on its rebased tip, and you must finish on cabin. Use the commit graph to find ids.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.\n\nStarting commands:\necho frame > hangar.txt\ngit init\ngit add .\ngit commit -m \"Frame hangar\"\ngit switch -c cabin\necho leather > seats.txt\ngit add .\ngit commit -m \"Fit seats\"\necho glass > windows.txt\ngit add .\ngit commit -m \"Fit windows\"\ngit switch main\necho steel > doors.txt\ngit add .\ngit commit -m \"Hang doors\"\ngit switch cabin\ngit rebase main",
-      "explanation": "Self-check your proposed final state against these learner-visible goals:\n[{\"tipIs\": [\"before-rebase\", \"c3\"]}, {\"tipIs\": [\"cabin\", \"c6\"]}, {\"branch\": \"cabin\"}, {\"tipMessage\": [\"main\", \"Hang doors\"]}, {\"clean\": true}]\nExplain why your commands reach those goals. Reference solutions remain withheld.",
+      "explanation": "Self-check your proposed final state:\n- before-rebase points at the original commit c3.\n- cabin points at the original commit c6.\n- Finish on branch cabin.\n- main points at the commit named “Hang doors”.\n- No staged changes, unstaged changes or untracked files remain.\nExplain why your commands reach these goals. Worked answers, when supplied, are in the lesson reading’s final hint.",
       "inputNeeds": {
         "alternatives": [
           "keyboard"
@@ -1488,8 +1488,8 @@
   "media": [
     {
       "path": "attachments/learner.json",
-      "sha256": "d02ff9b2fd0479d100e3b4ffb8eeabde62136722ed60957e9a3351975b3fc989",
-      "size": 134218,
+      "sha256": "a76545e32c2b8ebd2993379c4faef22a88f2adaeda37ecb130e2a6cb913462a7",
+      "size": 139781,
       "id": "learner",
       "mimeType": "application/json"
     }

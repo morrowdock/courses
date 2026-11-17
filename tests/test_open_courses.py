@@ -8,6 +8,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from tools.validate import ROOT, check_course, load_json, validate
+from tools.export_drafts import frame_text
 
 GIT = ROOT / 'courses/git-course-v1/1.0.0-draft'
 GYM = ROOT / 'courses/cg-foundations-v1/1.0.0-draft'
@@ -76,7 +77,8 @@ class OpenCoursesTests(unittest.TestCase):
                 self.assertIn('keyboard', activity['prompt'].lower())
                 if activity['kind'] in ('parsons', 'fix'):
                     self.assertTrue(inputs['remoteOnlyOK'])
-                    self.assertNotIn('Tap the line', activity['prompt'])
+                    self.assertNotRegex(activity['prompt'], r'Tap the (wrong )?line')
+                    self.assertNotIn('Pencil', activity['prompt'])
                     self.assertNotIn('Drag the lines', activity['prompt'])
                 if activity.get('answer', {}).get('type') == 'typed':
                     self.assertFalse(inputs['remoteOnlyOK'])
@@ -108,10 +110,11 @@ class OpenCoursesTests(unittest.TestCase):
                     expected[source['bugLine'] - 1] = correct['fixLine']
                     self.assertEqual(activity['solution'], '\n'.join(expected))
                 elif source['kind'] == 'trace':
-                    self.assertEqual([json.loads(f) for f in activity['expectedTrace']], source['frames'])
+                    self.assertEqual(activity['expectedTrace'], [frame_text(f, i) for i, f in enumerate(source['frames'])])
                 elif source['kind'] == 'predict':
                     answer = source['answer']
-                    expected = answer.get('expected') or next(c['text'] for c in answer['choices'] if c.get('correct'))
+                    expected = (answer['expected'] if answer['type'] == 'typed' else
+                                str(next(i for i, c in enumerate(answer['choices']) if c.get('correct')) + 1))
                     self.assertEqual(activity['expected'], expected)
 
     def test_recovery_merge_ancestor_feedback_with_real_git(self):

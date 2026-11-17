@@ -143,17 +143,17 @@
       "answer": {
         "choices": [
           {
-            "correct": true,
-            "reaction": "Yes. shout prints, but returns nothing, so r gets None.",
-            "text": "hey!\nNone"
+            "reaction": "The last line still runs. It prints r, and r is None.",
+            "text": "hey!"
           },
           {
             "reaction": "print shows text on screen; it doesn't hand a value back. Only return does.",
             "text": "hey!\nhey!"
           },
           {
-            "reaction": "The last line still runs. It prints r, and r is None.",
-            "text": "hey!"
+            "correct": true,
+            "reaction": "Yes. shout prints, but returns nothing, so r gets None.",
+            "text": "hey!\nNone"
           }
         ],
         "type": "choice"
@@ -193,12 +193,12 @@
             "text": "14"
           },
           {
-            "reaction": "Both calls run: area(1, 2) adds 2 more.",
-            "text": "12"
-          },
-          {
             "reaction": "area returns its values instead of printing them, so there's one print: the sum.",
             "text": "12\n2"
+          },
+          {
+            "reaction": "Both calls run: area(1, 2) adds 2 more.",
+            "text": "12"
           }
         ],
         "type": "choice"
@@ -247,17 +247,17 @@
           "answer": {
             "choices": [
               {
-                "correct": true,
-                "reaction": "Yes: 50 // 10.",
-                "text": "5"
+                "reaction": "50 // 10 is 5; // only drops a remainder, and there isn't one here.",
+                "text": "0"
               },
               {
                 "reaction": "tax is price // 10, a tenth of the price.",
                 "text": "50"
               },
               {
-                "reaction": "50 // 10 is 5; // only drops a remainder, and there isn't one here.",
-                "text": "0"
+                "correct": true,
+                "reaction": "Yes: 50 // 10.",
+                "text": "5"
               }
             ],
             "type": "choice"
@@ -270,17 +270,17 @@
           "answer": {
             "choices": [
               {
-                "correct": true,
-                "reaction": "Right: price + tax.",
-                "text": "55"
-              },
-              {
                 "reaction": "It returns price + tax, not just tax.",
                 "text": "5"
               },
               {
                 "reaction": "It adds tax on before returning.",
                 "text": "50"
+              },
+              {
+                "correct": true,
+                "reaction": "Right: price + tax.",
+                "text": "55"
               }
             ],
             "type": "choice"
@@ -293,6 +293,10 @@
           "answer": {
             "choices": [
               {
+                "reaction": "Line 5 adds the second call's result to cost.",
+                "text": "55"
+              },
+              {
                 "correct": true,
                 "reaction": "Yes: 55 + 22.",
                 "text": "77"
@@ -300,10 +304,6 @@
               {
                 "reaction": "The second call adds its own tax: 20 + 2 = 22.",
                 "text": "75"
-              },
-              {
-                "reaction": "Line 5 adds the second call's result to cost.",
-                "text": "55"
               }
             ],
             "type": "choice"
@@ -543,16 +543,16 @@
           "reaction": "Yes. return hands 9 back to line 3, so total is 10. Nothing prints 9 any more."
         },
         {
-          "fixLine": "    print(n * n + 1)",
-          "output": "10\n",
-          "raises": "TypeError",
-          "reaction": "That prints 10, but square still returns None, so line 3 still stops with an error."
-        },
-        {
           "fixLine": "    n = n * n",
           "output": "",
           "raises": "TypeError",
           "reaction": "n changes inside the box, but nothing is returned, so it's still None."
+        },
+        {
+          "fixLine": "    print(n * n + 1)",
+          "output": "10\n",
+          "raises": "TypeError",
+          "reaction": "That prints 10, but square still returns None, so line 3 still stops with an error."
         }
       ],
       "hints": [
@@ -574,7 +574,7 @@
       "outcomes": [
         "fn-o2"
       ],
-      "prompt": "This should print 10, but it prints 9 and then stops with an error. Tap the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
+      "prompt": "This should print 10, but it prints 9 and then stops with an error. Select the wrong line, then pick the repair.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "9\n",
         "expected": "10",
@@ -1346,10 +1346,10 @@
       ],
       "fixes": [
         {
-          "correct": true,
-          "fixLine": "    return total // 2",
-          "output": "6\n",
-          "reaction": "Yes: the average is the total split in two."
+          "fixLine": "    return total / 2",
+          "output": "6.0\n",
+          "reaction": "Yes: / divides by two without rounding down, so avg(4, 7) is 5.5 as well.",
+          "correct": true
         },
         {
           "fixLine": "    return a + b // 2",
@@ -1357,9 +1357,9 @@
           "reaction": "// happens before +, so this is 4 + (8 // 2), which is 8."
         },
         {
-          "fixLine": "    return total / 2",
-          "output": "6.0\n",
-          "reaction": "/ always gives a decimal number: 6.0, not 6. // keeps it whole."
+          "fixLine": "    return total // 2",
+          "output": "6\n",
+          "reaction": "// rounds down: avg(4, 7) becomes 5 instead of 5.5. Use / for the average."
         }
       ],
       "id": "fn-i-fix",
@@ -1373,10 +1373,10 @@
       "outcomes": [
         "fn-o2"
       ],
-      "prompt": "The average of 4 and 8 should print as 6. Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
+      "prompt": "The average of 4 and 8 should print as 6.0. The repair must also give 5.5 for avg(4, 7). Find the wrong line and repair it.\n\nInput alternatives: select the line number and a supplied repair using touch, pointer, keyboard focus and Enter, or remote focus and select. In a text-only reader, type the line number and repair choice, then self-check. No free-form code editor is required.",
       "symptom": {
         "actual": "12\n",
-        "expected": "6"
+        "expected": "6.0"
       },
       "title": "On your own: the average",
       "inputNeeds": {
@@ -1413,22 +1413,23 @@
           "reaction": "Yes: the returned value has to be printed (or stored) to be seen."
         },
         {
-          "fixLine": "greet(\"Mo\") + \"\"",
-          "output": "done\n",
-          "reaction": "The joined string is worked out and then thrown away; nothing shows it."
-        },
-        {
           "fixLine": "return greet(\"Mo\")",
           "output": "",
           "raises": "SyntaxError",
           "reaction": "return only makes sense inside a function; here the program won't even start."
+        },
+        {
+          "fixLine": "greet(\"Mo\") + \"\"",
+          "output": "done\n",
+          "reaction": "The joined string is worked out and then thrown away; nothing shows it."
         }
       ],
       "id": "fn-i-fix-cb",
       "kind": "fix",
       "lineReactions": {
         "2": "greet returns the right string. Where does that string go?",
-        "4": "This line works."
+        "4": "This line works.",
+        "1": "greet is defined correctly and returns a string. Look at how the caller uses that returned value."
       },
       "mode": "independent",
       "outcomes": [
@@ -1622,11 +1623,11 @@
       "id": "fn-i-explain",
       "kind": "explain",
       "mode": "independent",
-      "model": "When f(n) was called, f got its own box with its own n, starting at 1. n = n + 10 changed that box only, and the box vanished when f returned. In Lua, x = 5 inside a function without local writes a global; Python flips the default: any name you assign inside a function is local to it. To get a value out, return it.",
+      "model": "When f(n) was called, f got its own box with its own n, starting at 1. n = n + 10 changed that box only, and the box vanished when f returned. Parameters and names assigned inside the function are local to that call. return hands a value back to the caller.",
       "outcomes": [
         "fn-o3"
       ],
-      "prompt": "Explain to a Lua programmer why f(n) didn't change the main program's n. In Lua, what happens if you assign to a name inside a function without writing local? What does Python do instead?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
+      "prompt": "Explain why f(n) did not change the main program's n. Where do a function's parameters and assigned names live, and how can it hand a value back?\n\nInput requirement: keyboard text entry for the explanation. Read the supplied model and self-check; prose is not automatically graded. A remote alone is insufficient.",
       "rubric": [
         {
           "id": "fn-i-explain#k1",
@@ -1634,7 +1635,7 @@
         },
         {
           "id": "fn-i-explain#k2",
-          "idea": "In Lua, assigning without local creates or changes a global."
+          "idea": "Changing the local n does not reassign the caller's n."
         },
         {
           "id": "fn-i-explain#k3",
@@ -1726,7 +1727,7 @@
       "title": "return hands a value back"
     },
     {
-      "body": "Parameters and any name assigned inside a function live in that call's box. They vanish when the call returns, and they don't touch names outside, even ones with the same spelling. Calls inside calls stack up: the newest box is on top, and it's always the one running. That pile is called the call stack; it works like the stack you'll meet in the SWE track.",
+      "body": "Parameters and any name assigned inside a function live in that call's box. They vanish when the call returns, and they don't touch names outside, even ones with the same spelling. Calls inside calls stack up: the newest box is on top, and it's always the one running. That pile is called the call stack: the newest call runs and finishes before the waiting calls below it.",
       "id": "fn-t3",
       "title": "Each call has its own names"
     }

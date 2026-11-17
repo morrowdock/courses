@@ -14,7 +14,7 @@ Both versions are `1.0.0-draft`, language `en`, licence `CC-BY-SA-4.0`. Creator:
 
 ## Learner boundary and review corrections
 
-The private exporter's `project_git` and `build_code_gym` allowlists define the starting projection. Public changes are limited to removing Git task `git-course-reset-v1.g1`, correcting the recovery prediction feedback, and adding input declarations and instructions. Source README, tests, tools, author-only metadata, Git capstone and withheld reference answers remain excluded. The complete [Git Lab](provenance/git-lab-v1.md) and [Code Gym](provenance/code-gym-foundations-v1.md) ledgers retain original origin evidence and exclusions; structured `sources` and exhaustive per-item `provenance` mappings are in each course.json.
+The private exporter's `project_git` and `build_code_gym` allowlists define the starting projection. The initial public changes removed Git task `git-course-reset-v1.g1`, corrected recovery feedback, and added input declarations. The 2026-11-17 draft revision also corrects facts, safety guidance, assessment choices and teaching gaps identified by three content reviews; the public learner attachments remain the source for regenerated wrappers. Source README, tests, tools, author-only metadata, Git capstone and withheld reference answers remain excluded. The complete [Git Lab](provenance/git-lab-v1.md) and [Code Gym](provenance/code-gym-foundations-v1.md) ledgers retain original origin evidence and exclusions; structured `sources` and exhaustive per-item `provenance` mappings are in each course.json.
 
 Recovery correction: after topic has been rebased onto main, main is an ancestor. `git merge main` reports “Already up to date.” and leaves HEAD unchanged; it does not add a merge or undo the rebase. A regression test constructs this state in a synthetic real Git repository and verifies it.
 
@@ -22,7 +22,7 @@ All eight projection attachments (one Git JSON, one Code Gym index and six Code 
 
 ## Activities and input requirements
 
-All 29 Git tasks and 96 Code Gym activities have corresponding format-v1 activities and explicit `inputNeeds`. Lessons include reading, activity and question steps, with complete source mappings. The 24 already learner-visible multiple-choice checks retain matching `answerChecks`; no private answer key is restored.
+All 29 Git tasks and 96 Code Gym activities have corresponding format-v1 activities and explicit `inputNeeds`. Git lessons include reading, activity and question steps. Code Gym lessons use reading and activity steps; their 12 bundle questions remain available for standalone quizzes without repeating the same questions in each lesson. Source mappings cover all retained steps. The 24 already learner-visible multiple-choice checks retain matching `answerChecks`; no private answer key is restored.
 
 - Git tasks require keyboard commands. Their format-v1 activities are explanation/self-check plans against existing learner-visible goals; they do not pretend to run or grade Git.
 - Code Gym predictions, trace frames and fixes map to the corresponding v1 activity types using only already admitted recorded data. Written explanations remain self-check activities.
@@ -36,12 +36,20 @@ These are content input requirements and alternative interaction designs, **not 
 
 Each strict CourseBundle keeps integer `version: 1`, its six topics/materials and twelve multiple-choice checks, examBlueprint and equationSheet. The 30-minute blueprint remains a compatibility placeholder, not an authored exam claim. No assignments, due dates or learner data are invented.
 
-The extracted `CourseBundleImporter` rejects local attachments. Successful shared schema and Swift decoding checks establish structural validity, not app importability or playback. Git needs its virtual-shell player; Code Gym needs its recorded-frame player. Follow-on references to other courses remain source text, not public availability claims. AI-written content needs independent factual/provenance review.
+The extracted `CourseBundleImporter` rejects local attachments. Successful shared schema and Swift decoding checks establish structural validity, not app importability or playback. Git needs its virtual-shell player; Code Gym needs its recorded-frame player. Prerequisites use plain skill statements; unpublished Terminal Lab and SWE-track references are removed. AI-written content needs independent factual/provenance review.
 
 ## Verification
 
-Run the shared validator and complete test suite using the repository's pinned dependency and Swift 6. On the Omarchy laptop every install, test and Swift command must run through the owner-provided `md-heavy` gate; no home-service containers are changed.
+Run the shared validator and complete test suite using the repository's pinned dependency and Swift 6. Keep commands at low priority (`nice -n 10`) on the Omarchy laptop. For this revision the owner prohibits deletion commands, so do not invoke helpers that remove their own temporary files. No home-service containers are changed.
 
 The full public repository now contains three open-format manifests and four bundles, including the unchanged legacy demo. Course-specific tests check the 12 lessons, 125 activities, eight media assets, answer boundary, declared input alternatives, rich Parsons preservation, recorded-answer conversion, provenance coverage and the real-Git recovery correction. The PR records actual command results at its head.
 
-NOT RUN: private author-host semantic/replay/parity suites, Python trace regeneration, native/device/player acceptance, independent external fact-checks and owner approval. **Owner approval is required before any status change or announcement.**
+The 2026-11-17 revision replays the public Git and Python content locally; results and every content-review finding are recorded in [the disposition](reviews/course-draft-fixes-20261117.md). These implementation checks are not approval receipts. NOT RUN: private author-host suites, native/device/player acceptance and owner approval. **Owner approval is required before any status change or announcement.**
+
+## Regenerating the public drafts
+
+Verified workflow for the 2026-11-17 correction branch: edit the admitted JSON files under each course's `attachments/`, then run `nice -n 10 python3 tools/export_drafts.py`. This repository-owned tool rebuilds `bundle.json`, format-v1 activity wrappers, answer checks, bundle pins and media hashes/sizes using public files only. It never changes review status. There are no other public export outputs.
+
+Format v1 has no structured checkpoint field. The exporter includes checkpoint questions, their 1-based frame numbers, variable names, stack depth when specified, and choices in each trace prompt; reference answers live in the explanation. `expectedTrace` contains readable frame observations. Multiple-choice predictions ask for a choice number and store that number in `expected`; each option has a labelled, indented block so multiline output stays unambiguous. The rich learner attachments retain structured frames and checkpoints for a future player.
+
+After staging explicitly selected new files, `nice -n 10 python3 tools/export_drafts.py --inventory` also refreshes `FILES.json` for the tracked/staged file set (excluding itself). Run the validator and unit tests after regeneration. Source bytes outside the corrected drafts and publication tooling are preserved.

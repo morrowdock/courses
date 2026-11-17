@@ -84,8 +84,15 @@ class DraftExportTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()) as stdout:
                 exec(compile('\n'.join(pool[k] for k in order), '<decoy-regression>', 'exec'), {})
             return stdout.getvalue()
-        self.assertEqual(output(source['accepted'][0]), '6\n')
-        self.assertEqual(output(['a', 'b', 'c', 'd', 'x', 'e']), '8\n')
+        accepted = source['accepted'][0]
+        self.assertEqual(output(accepted), '6\n')
+        for at in range(len(accepted) + 1):
+            order = accepted[:at] + ['x'] + accepted[at:]
+            try:
+                printed = output(order)
+            except SyntaxError:
+                continue
+            self.assertNotEqual(printed, '6\n', order)
 
     def test_line_feedback_and_python_only_core_explanations(self):
         for source in gym_sources():

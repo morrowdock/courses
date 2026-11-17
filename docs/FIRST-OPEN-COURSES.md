@@ -40,7 +40,7 @@ The extracted `CourseBundleImporter` rejects local attachments. Successful share
 
 ## Verification
 
-Run the shared validator and complete test suite using the repository's pinned dependency and Swift 6. Keep commands at low priority (`nice -n 10`) on the Omarchy laptop. For this revision the owner prohibits deletion commands, so do not invoke helpers that remove their own temporary files. No home-service containers are changed.
+Run the shared validator and complete test suite using the repository's pinned dependency and Swift 6.
 
 The full public repository now contains three open-format manifests and four bundles, including the unchanged legacy demo. Course-specific tests check the 12 lessons, 125 activities, eight media assets, answer boundary, declared input alternatives, rich Parsons preservation, recorded-answer conversion, provenance coverage and the real-Git recovery correction. The PR records actual command results at its head.
 

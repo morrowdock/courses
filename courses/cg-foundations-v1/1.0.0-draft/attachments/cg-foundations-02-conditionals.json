@@ -1346,7 +1346,7 @@
     },
     {
       "id": "cd-o2",
-      "text": "Work out comparisons and and / or / not to True or False."
+      "text": "Work out comparisons and not to True or False, and tell what and / or return: one of their operands, whose truthiness an if tests."
     },
     {
       "id": "cd-o3",

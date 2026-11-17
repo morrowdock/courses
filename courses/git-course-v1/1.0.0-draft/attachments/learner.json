@@ -175,8 +175,8 @@
         "realGit": [
           {
             "here": "Commit ids c1, c2 …",
-            "realGit": "40-character hashes such as 3f9a1c…; you can type a unique prefix.",
-            "note": "Same idea: one id per snapshot."
+            "realGit": "Hashes of 40 hex characters (SHA-1) or 64 (SHA-256), such as 3f9a1c…; you can type a unique prefix.",
+            "note": "Same idea, but a real id hashes the snapshot plus parents, author, time and message, so the same snapshot can get different ids."
           },
           {
             "here": "`git status` prints Staged / Unstaged / Untracked lines",
@@ -609,7 +609,8 @@
               "git commit -m \"Start the map\"",
               "git switch -c lighthouse",
               "echo coastline and lighthouse > map.txt",
-              "git commit -am \"Mark lighthouse\"",
+              "git add .",
+              "git commit -m \"Mark lighthouse\"",
               "git switch main",
               "echo coastline and reefs > map.txt"
             ],
@@ -893,7 +894,8 @@
             "git commit -m \"Add guide\"",
             "git switch -c docs",
             "echo documentation draft > guide.txt",
-            "git commit -am \"Draft documentation\"",
+            "git add .",
+            "git commit -m \"Draft documentation\"",
             "git switch main",
             "echo read me first > guide.txt"
           ],
@@ -1505,7 +1507,7 @@
           ],
           "kind": "debug",
           "title": "Debug the command",
-          "instruction": "Merging sign into main stops with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. In real Git the file now has conflict markers and the merge is half-finished. Run `git merge --abort` first: you cannot switch branches while merging. (The lab already left the files unchanged.) Then resolve the agreed text on the sign branch and merge again.\n\nReal Git output: CONFLICT (content): Merge conflict in colour.txt. Automatic merge failed; fix conflicts and then commit the result. The file contains conflict markers and git status reports UU colour.txt. Abort the merge before switching branches.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
+          "instruction": "Merging sign into main stops with a conflict on colour.txt. The team agreed that main's colour (blue) is right, and sign's new size.txt must land. In real Git the file now has conflict markers and the merge is half-finished. In real Git, run `git merge --abort` first: you cannot switch branches while merging. In the lab, skip that step: the lab already left the files unchanged. Then resolve the agreed text on the sign branch and merge again.\n\nReal Git output: CONFLICT (content): Merge conflict in colour.txt. Automatic merge failed; fix conflicts and then commit the result. The file contains conflict markers and git status reports colour.txt as \"both modified\" (git status --short shows UU colour.txt). Abort the merge before switching branches.\n\nInput requirement: keyboard command entry in a virtual Git player. In a text-only reader, write the command plan and explanation with a keyboard and self-check against the stated goals; this does not execute commands or grade the task. A remote alone is insufficient.",
           "goals": [
             {
               "mergeTip": "main"
@@ -2345,7 +2347,7 @@
             },
             {
               "command": "git reset --hard",
-              "narration": "--hard on c2: the tracked file essay.txt goes back to c2's text. junk.txt is untracked, so the reset leaves it alone."
+              "narration": "--hard on c2: the tracked file essay.txt goes back to c2's text. junk.txt stays because c2 does not track that path. (An untracked file on a path that c2 tracks would be overwritten.)"
             },
             {
               "command": "git log",

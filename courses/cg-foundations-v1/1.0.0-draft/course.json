@@ -3653,7 +3653,7 @@
     {
       "id": "ld-i-parsons-cb",
       "kind": "explanation",
-      "prompt": "Arrange the lines (indentation is shown) so the program prints 6. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\na: best = 0\nb: for v in [4, 6, 2]:\nc:     if v > best:\nd:         best = v\ne: print(best)\nx:         best = best + v",
+      "prompt": "Arrange the lines (indentation is shown) so the program prints 6. One line isn't needed.\n\nInput alternatives: select a line and move it up or down, or leave it unused; use touch/pointer controls, keyboard focus with move controls, or remote focus and select. Dragging is optional. In a text-only reader, write the ordered line IDs with a keyboard and self-check against the recorded accepted orders.\n\nReading-based Parsons exercise (exactly 5 lines):\na: best = 0\nb: for v in [4, 6, 2]:\nc:     if v > best:\nd:         best = v\ne: print(best)\nx:     best = v",
       "explanation": "Self-check only. Preserve indentation and choose exactly the required number of lines. Recorded accepted line-ID orders: [[\"a\", \"b\", \"c\", \"d\", \"e\"]]. These include every admitted alternative; the format-v1 single-permutation checker cannot represent this exercise faithfully.",
       "inputNeeds": {
         "alternatives": [
@@ -4070,8 +4070,8 @@
     },
     {
       "path": "attachments/cg-foundations-02-conditionals.json",
-      "sha256": "6f112a5ee89739b9212701d5defde34dec225a22a7b6fa9d71cc74753e0ed6d8",
-      "size": 40642,
+      "sha256": "0c23bb0edab39bdbb6a596a3866567872d3c2f12e73157b20f41afd21fe84463",
+      "size": 40715,
       "id": "cg-foundations-02-conditionals",
       "mimeType": "application/json"
     },
@@ -4091,8 +4091,8 @@
     },
     {
       "path": "attachments/cg-foundations-05-lists-dicts.json",
-      "sha256": "78b8e97b10a2c73ae8bdbf342dc46b5a9145556fb48287feeb5313d2453d042f",
-      "size": 42963,
+      "sha256": "1012b9bcb368767c92d426822905c90868708cb05a9d71ba84d7405ea266a001",
+      "size": 42992,
       "id": "cg-foundations-05-lists-dicts",
       "mimeType": "application/json"
     },

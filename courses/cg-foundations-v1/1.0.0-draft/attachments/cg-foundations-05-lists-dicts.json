@@ -1290,8 +1290,8 @@
       "distractors": [
         {
           "id": "x",
-          "line": "        best = best + v",
-          "reaction": "That adds scores together; the program wants the biggest one."
+          "line": "    best = v",
+          "reaction": "At loop level this sets best on every pass, so the program ends with the last score, not the biggest."
         }
       ],
       "id": "ld-i-parsons-cb",

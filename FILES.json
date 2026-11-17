@@ -93,7 +93,7 @@
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-02-conditionals.json",
-      "sha256": "6f112a5ee89739b9212701d5defde34dec225a22a7b6fa9d71cc74753e0ed6d8"
+      "sha256": "0c23bb0edab39bdbb6a596a3866567872d3c2f12e73157b20f41afd21fe84463"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-03-loops.json",
@@ -105,7 +105,7 @@
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-05-lists-dicts.json",
-      "sha256": "78b8e97b10a2c73ae8bdbf342dc46b5a9145556fb48287feeb5313d2453d042f"
+      "sha256": "1012b9bcb368767c92d426822905c90868708cb05a9d71ba84d7405ea266a001"
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/attachments/cg-foundations-06-recursion.json",
@@ -117,7 +117,7 @@
     },
     {
       "path": "courses/cg-foundations-v1/1.0.0-draft/course.json",
-      "sha256": "55e7be18af1a0e52503a48ae78ebdb99eac636b94d7c8bf7103ced71365df2c9"
+      "sha256": "e24b473715ab6649a50aea404975ebb5e8d63fa6d0f11b8b4f95d0648e9dc75c"
     },
     {
       "path": "courses/demo/1.0.0/attachments/counting.txt",
@@ -133,15 +133,15 @@
     },
     {
       "path": "courses/git-course-v1/1.0.0-draft/attachments/learner.json",
-      "sha256": "a76545e32c2b8ebd2993379c4faef22a88f2adaeda37ecb130e2a6cb913462a7"
+      "sha256": "b8f1ab065c704b0739abf0f611cbf357b06f5decbfd3d6b3e325d3d6d17328b7"
     },
     {
       "path": "courses/git-course-v1/1.0.0-draft/bundle.json",
-      "sha256": "ecc587fec09e81d06170ef5866d9803b4d0866f0babfec0ba46886b29d71a25c"
+      "sha256": "db7429df8a68893c2f18f8d2da49dca7b8a7c9f800beb2434f473e32725c6d2b"
     },
     {
       "path": "courses/git-course-v1/1.0.0-draft/course.json",
-      "sha256": "25fe8fea83e7e577ed6d28263c8100125a5d0032df362b45db6fd12366875e7a"
+      "sha256": "a9bafb6281824b8901d6afb92c173084e7c757e73a4e96ead3436ed0e48adf07"
     },
     {
       "path": "demo/bundle.json",
@@ -153,7 +153,7 @@
     },
     {
       "path": "docs/FIRST-OPEN-COURSES.md",
-      "sha256": "18f771aafb618aaf0542b1aa24cd94f5ad911ff300e0df0e515640b79346cef5"
+      "sha256": "080d7f5379f965c689c73d9ca9b465e9a9807ad2c0e82b36b3a5eee5f8d0d4e9"
     },
     {
       "path": "docs/FORMAT.md",
@@ -173,7 +173,7 @@
     },
     {
       "path": "docs/reviews/course-draft-fixes-20261117.md",
-      "sha256": "f4c9072f173b74c7dcbc5220731e21ada9dcbd045457e5d227853c2526361a05"
+      "sha256": "b61aac6c66d82c23e238845404b6f963f4328256d8a788d18809faeb0913068b"
     },
     {
       "path": "registry.json",
@@ -213,7 +213,7 @@
     },
     {
       "path": "tests/test_draft_exports.py",
-      "sha256": "3c99e687439e4b051a4ab9faf8e0f6e717fb910d4313a81aa6be0ec2ce30c04c"
+      "sha256": "479e684bc14e560e03dbee3a17b8493777bd74bffad99bdac26fbe4ac578eb86"
     },
     {
       "path": "tests/test_format.py",

@@ -96,7 +96,7 @@
     {
       "id": "git-course-branches-v1-predict",
       "topicID": "git-course-branches-v1",
-      "prompt": "You are on main with an uncommitted edit to map.txt. lighthouse holds a different committed version of map.txt. What happens when you run `git switch lighthouse`?\n\nStarting commands:\necho coastline > map.txt\ngit init\ngit add .\ngit commit -m \"Start the map\"\ngit switch -c lighthouse\necho coastline and lighthouse > map.txt\ngit commit -am \"Mark lighthouse\"\ngit switch main\necho coastline and reefs > map.txt\n\nThen run:\ngit switch lighthouse",
+      "prompt": "You are on main with an uncommitted edit to map.txt. lighthouse holds a different committed version of map.txt. What happens when you run `git switch lighthouse`?\n\nStarting commands:\necho coastline > map.txt\ngit init\ngit add .\ngit commit -m \"Start the map\"\ngit switch -c lighthouse\necho coastline and lighthouse > map.txt\ngit add .\ngit commit -m \"Mark lighthouse\"\ngit switch main\necho coastline and reefs > map.txt\n\nThen run:\ngit switch lighthouse",
       "choices": [
         "It switches and your edit is lost",
         "It refuses and changes nothing, so you can commit or undo first",
